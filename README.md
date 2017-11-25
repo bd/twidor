@@ -1,6 +1,6 @@
 ## Twidor - a typing tutor for the Twiddler keyboard
 
-This is a slightly modified version of [Evan Dower's}(https://github.com/evantd) Twidor
+This is a slightly modified version of [Evan Dower's](https://github.com/evantd) Twidor
 typing tutor for the [Twiddler keyboard](https://twiddler.tekgear.com/).
 
 Please note: This version is not yet stable.
