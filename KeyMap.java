@@ -44,10 +44,33 @@ public class KeyMap implements TwidorConstants {
 	private Vector keylist;
 
 	/**
+	 *  a map from html tag key names in input file to ASCII caracter values.
+	 */
+	private HashMap<String, Integer> keyTags;
+
+	/**
 	 * default constructor
 	 */
 	private KeyMap () {
 		keylist = new Vector();
+
+                keyTags = new HashMap<String, Integer>();
+		keyTags.put("<Backspace>",	8);
+		keyTags.put("<Delete>",		127);
+		keyTags.put("<Return>",		13);
+		keyTags.put("<Tab>",		9);
+		keyTags.put("<Escape>",		27);
+		// "<LeftArrow>",		0,
+		// "<DownArrow>",		0,
+		// "<RightArrow>",		0,
+		// "<UpArrow>",			0,
+		// "<PageDown>",		0,
+		// "<PageUp>",			0,
+		// "<End>",			0,
+		// "<Home>",			0,
+		// "<Insert>",			0,
+		// "<NumLock>",			0
+		// <F1>..<F12>
 	}// end KeyMap
 
 	/**
@@ -185,7 +208,7 @@ public class KeyMap implements TwidorConstants {
 				temp = remove_comment(temp, "!");
 				temp = remove_comment(temp, "//");
 				/* Comments removed */
-				test = temp.indexOf('=');
+				test = temp.indexOf(',');
 				if (test == -1) {
 					if (bDEBUG) System.out.println("Discarding line (=)");
 				}
@@ -254,94 +277,98 @@ public class KeyMap implements TwidorConstants {
 	 * @param String the string to parse
 	 */
 	private void parseLine(String line) {
-		String token;
-		int pos1, pos2;
-		KeyElement newKey = new KeyElement();
-		StringTokenizer mainTokens = new StringTokenizer(line, "=");
-
-		if (mainTokens.countTokens() != 2) {
-			if (bDEBUG) {
-				System.out.println("Not a valid entry");
-			}
-			return;
+	    String token;
+	    int pos1, pos2;
+	    KeyElement newKey = new KeyElement();
+	    
+	    try {
+		String column[] = line.split("\",\"", 2);
+		if ( (line.charAt(0) != '"') ||
+		     (line.charAt(line.length() - 1) != '"') ||
+		     (column.length != 2) ) {
+		    if (bDEBUG) {
+			System.out.println("Not a valid entry");
+		    }
+		    return;
 		}
-		try {
-			StringTokenizer LeftSide = new StringTokenizer(mainTokens.nextToken());
-			StringTokenizer RightSide = new StringTokenizer(mainTokens.nextToken(), ",");
-
-			if (LeftSide.countTokens() != 2) {
-				if (bDEBUG) System.out.println("Malformed chord");
-				return;
-			}
-
-			/* Thumb Modifiers */
-			token = LeftSide.nextToken().trim();
-			pos2 = 0;
-			do {
-				String temp;
-				pos1 = token.indexOf('+', pos2);
-				if (pos1 != -1) {
-					temp = token.substring(pos2, pos1);
-				}
-				else {
-					temp = token.substring(pos2);
-				}
-				/* Match up the thumb buttons */
-				if (temp.equalsIgnoreCase("0")) {
-				}
-				else if (temp.equalsIgnoreCase("NUM")) {
-					newKey.setButton(THUMB_OFFSET + B_NUM, true);
-				}
-				else if (temp.equalsIgnoreCase("ALT")) {
-					newKey.setButton(THUMB_OFFSET + B_ALT, true);
-				}
-				else if (temp.equalsIgnoreCase("CTRL")) {
-					newKey.setButton(THUMB_OFFSET + B_CTRL, true);
-				}
-				else if (temp.equalsIgnoreCase("SHIFT")) {
-					newKey.setButton(THUMB_OFFSET + B_SHIFT, true);
-				}
-				else if (temp.equalsIgnoreCase("FUNC")) {
-					newKey.setButton(THUMB_OFFSET + B_NUM, true);
-					newKey.setButton(THUMB_OFFSET + B_ALT, true);
-				}
-				else {
-					if (bDEBUG) System.out.println("Unknown token: " + temp);
-				}
-				pos2 = pos1 + 1;
-			} while (pos1 != -1);
-
-			/* Finger Modifiers */
-			token = LeftSide.nextToken().trim();
-			for (int finger = 0; finger < 4; finger++) {
-				int ftemp = finger_button(token.charAt(finger));
-				if (ftemp != -1) {
-					newKey.setButton(finger * FINGER_OFFSET + ftemp, true);
-				}
-			}
-
-			/* And what the chord produces */
-			//while (RightSide.hasMoreTokens()) {
-			token = RightSide.nextToken().trim();
-			if (token.matches("\"\\w*\"")) {
-				/* Looks like a macro */
-				newKey.setLetter(token.replaceAll("\"", ""));
-			}
-			else {
-				/* Assume it's a number */
-				int ctemp = Integer.parseInt(token.trim());
-				if (ctemp != -1) {
-					newKey.setNumber(ctemp);
-				}
-			}
-
-			if (newKey.displayLetter() != null) {
-				addKey(newKey);
-			}
+		// line: "  NA RMOO","<Right Alt><Shift><UpArrow></Shift></Right Alt>"
+		// chord:  NA RMOO
+		String chord = column[0].substring(1, column[0].length());
+		// keystrokes: <Right Alt><Shift><UpArrow></Shift></Right Alt>
+		String keystrokes = column[1].substring(0, column[1].length() - 1);
+		
+		if( chord.compareTo("Chord") == 0 ) {
+		    return;
 		}
-		catch (Exception e) {
+
+		// modifiers:  NA
+		String modifiers = chord.substring(0, 4);
+		// keys:RMOO
+		String keys = chord.substring(5, 9);
+
+		if (modifiers.indexOf('N') > 0) {
+		    newKey.setButton(THUMB_OFFSET + B_NUM, true);
+		}
+		if (modifiers.indexOf('A') > 0) {
+		    newKey.setButton(THUMB_OFFSET + B_ALT, true);
+		}
+		if (modifiers.indexOf('C') > 0) {
+		    newKey.setButton(THUMB_OFFSET + B_CTRL, true);
+		}
+		if (modifiers.indexOf('S') > 0) {
+		    newKey.setButton(THUMB_OFFSET + B_SHIFT, true);
+		}
+
+		/* Finger Modifiers */
+		for (int finger = 0; finger < 4; finger++) {
+		    int ftemp = finger_button(keys.charAt(finger));
+		    if (ftemp != -1) {
+			newKey.setButton(finger * FINGER_OFFSET + ftemp, true);
+		    }
+		}
+
+		/* And what the chord produces */
+		String ascii_keys = ""; // keystrokes after converting tags to ASCII characters
+		int begin = 0;
+		while( ( begin < keystrokes.length() ) &&
+		       (! keystrokes.startsWith("</", begin) )) {
+
+		    if( keystrokes.startsWith("<Left Ctrl>", begin)) {
+			newKey.setButton(THUMB_OFFSET + B_CTRL, true);
+			begin += "<Left Ctrl>".length();
+		    }
+		    if( keystrokes.startsWith("<Shift>", begin)) {
+			newKey.setButton(THUMB_OFFSET + B_CTRL, true);
+			begin += "<Shift>".length();
+		    }
+		    // todo:
+		    // note: these are not contained in current Twidor lessons.
+		    // <Left Ctrl>
+		    // <Left GUI>
+		    // <CapsLock>
+		    // <Right Alt>
+		    int end = keystrokes.indexOf('>', begin);
+		    if( ( keystrokes.charAt(begin) == '<' ) &&
+			( (keystrokes.length() - begin) > 3 ) &&
+			( end > 0 ) ) {
+			String tag = keystrokes.substring(begin, end + 1);
+			if( keyTags.containsKey( tag ) ) {
+			    ascii_keys += (char)(int)(keyTags.get(tag));
+			}
+			begin += tag.length();
+		    } else {
+			ascii_keys += keystrokes.charAt(begin);
+			begin += 1;
+		    }
+                }
+		newKey.setLetter(ascii_keys);
+                if (newKey.displayLetter() != null) {
+                    addKey(newKey);
+                }
+	    }
+	    catch (Exception e) {
 		//	if (bDEBUG) System.out.println("KeyMap: " + e.toString());
-		}
+	    }
 
 	}// end parseLine (String)
 
@@ -351,13 +378,14 @@ public class KeyMap implements TwidorConstants {
 	 */
 	public static void main (String[] argv) {
 		KeyMap test = new KeyMap(DEFAULT_KEYMAP);
+                System.out.println(test.getKeylist().size());
 		for (int i = 0; i < test.getKeylist().size(); i++) {
 			System.out.println(((KeyElement)test.getKeylist().elementAt(i)).toString());
 		}
 
 		System.out.println("getKey test");
 
-		KeyElement check = test.getKey(new String("A"));
+		KeyElement check = test.getKey(new String("a"));
 		if (check == null) {
 			System.out.println("Go fix the getKey software");
 			return;
