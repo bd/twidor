@@ -31,5 +31,5 @@ sufficiently tested to be declared stable.
 
 ## Authors
 
-Evan Dower wrote Twidor.  Rich Murphey just modified the input file
+Evan Dower wrote Twidor.  Rich Murphey modified the input file
 format to accept the twidler tuner web app CSV format.
