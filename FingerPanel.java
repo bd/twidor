@@ -53,6 +53,31 @@ public class FingerPanel extends JPanel implements TwiddlerSubPanel, TwidorConst
 	}// end FingerPanel ()
 
 	/**
+	 * add a label to a key in the keyboard display
+         * string must be three chara for top middle and bottom of label.
+	 */
+        private void add_label ( JPanel panel, Color color, String text ) {
+            JLabel label;
+            label = new JLabel(text);
+            label.setFont(FONT_DIALOG);
+            label.setForeground(color);
+            label.setHorizontalAlignment(JLabel.CENTER);
+            panel.add(label);
+	}// end add_label ()
+
+	/**
+	 * add a label to a key in the keyboard display
+         * string must be three chara for top middle and bottom of label.
+	 */
+        private void add_long_label ( JPanel panel, String text ) {
+            JLabel label;
+            for (int i = 0; i < 3; i++) {
+                add_label( panel, TEXT_DEFAULT, text.substring(i, i+1));
+            }
+	}// end add_long_label ()
+
+
+	/**
 	 * default constructor
 	 * @param int the which finger we are (0-3; index-pinky)
 	 * @param boolean the orientation
@@ -65,7 +90,7 @@ public class FingerPanel extends JPanel implements TwiddlerSubPanel, TwidorConst
 		Vector lookup;
 
 		if (bDEBUG) System.out.println("FingerPanel: creating panel");
-		setPreferredSize(new Dimension(twiddlerX, (int)(windowY / 5)));
+		// setPreferredSize(new Dimension(twiddlerX, (int)(windowY / 5)));
 		initButtons();
 
 		/* How to arrange the keys) */
@@ -89,25 +114,26 @@ public class FingerPanel extends JPanel implements TwiddlerSubPanel, TwidorConst
 		/* Row 1: Labels or Nothing */
 		for (int i = 0; i < 6; i++) {
 			panel = new JPanel();
+                        Font font = new Font("Monospaced", Font.BOLD, 6);
 			panel.setBackground(twiddlerBackground);
-
 			if (finger == 0) {
-				if (i == 0) {
-					panel.add(new JLabel(loadIcon(ICON_RED)));
-				}
-				else if (i == 2) {
-					panel.add(new JLabel(loadIcon(ICON_BLUE)));
-				}
-				else if (i == 4) {
-					panel.add(new JLabel(loadIcon(ICON_GREEN)));
-				}
-				else {
-					JLabel label = new JLabel("n");
-					label.setFont(new Font("Monospaced", Font.BOLD, 12));
-					label.setHorizontalAlignment(JLabel.CENTER);
-					label.setForeground(twiddlerBackground);
-					panel.add(label);
-				}
+                            Color color = twiddlerBackground;
+                            if (i == 0) {
+                                color = lightRed;
+                            }
+                            else if (i == 2) {
+                                color = lightBlue;
+                            }
+                            else if (i == 4) {
+                                color = lightGreen;
+                            }
+                            JLabel label = new JLabel("XX");
+                            label.setFont(font);
+                            label.setForeground(color);
+                            label.setBackground(color);
+                            label.setHorizontalAlignment(JLabel.CENTER);
+                            label.setOpaque(true);
+                            panel.add(label);
 			}
 			if (i == 5) {
 				constraints.gridwidth = GridBagConstraints.REMAINDER;
@@ -139,12 +165,11 @@ public class FingerPanel extends JPanel implements TwiddlerSubPanel, TwidorConst
 				}
 				if (finger != 0 && visibleKeys) {
 					for (int j = 0; j < 3; j++) {
-						((KeyStatus)buttons.elementAt(INDEX_OFFSET +
-									      j)).setStatus(true);
+						((KeyStatus)buttons.elementAt(INDEX_OFFSET + j)).setStatus(true);
 						KeyElement myButton = keys.getKey(buttons);
 						if (myButton != null) {
 							JLabel label = new JLabel();
-							label.setFont(new Font("Monospaced", Font.BOLD, 12));
+							label.setFont(FONT_DIALOG);
 							label.setHorizontalAlignment(JLabel.CENTER);
 
 							/* set the text, and the color */
@@ -153,27 +178,38 @@ public class FingerPanel extends JPanel implements TwiddlerSubPanel, TwidorConst
 								label.setForeground(twiddlerBackground);
 							}
 							else {
-								label.setText(myButton.displayLetter().toUpperCase());
-								if (j == 0) {
-									label.setForeground(Color.RED);
-								}
-								else if (j == 1) {
-									label.setForeground(Color.BLUE);
-								}
-								else {
-									label.setForeground(Color.GREEN);
-								}
+                                                            Color color = Color.YELLOW;
+                                                            if (j == 0) {
+                                                                color = lightRed;
+                                                            }
+                                                            else if (j == 1) {
+                                                                color  = lightBlue;
+                                                            }
+                                                            else if (j == 2) {
+                                                                color  = lightGreen;
+                                                            }
+                                                            label.setForeground( color );
+                                                            String displayLetter = myButton.displayLetter().toUpperCase();
+                                                            if( displayLetter.length() == 1 ) {
+                                                                    label.setText(myButton.displayLetter().toUpperCase());
+                                                                } else {
+                                                                    label.setText("+");
+                                                                    label.setForeground(twiddlerBackground);
+                                                                }
+
 							}
 
 							panel.add(label);
-						}
+						} else {
+                                                    add_label( panel, twiddlerBackground, "n");
+                                                }
 						((KeyStatus)buttons.elementAt(INDEX_OFFSET +
 								j)).setStatus(false);
 					}
 				}
 				else {
 					JLabel label = new JLabel("z");
-					label.setFont(new Font("Monospaced", Font.BOLD, 12));
+					label.setFont(FONT_DIALOG);
 					label.setHorizontalAlignment(JLabel.CENTER);
 					label.setForeground(twiddlerBackground);
 					panel.add(label);
@@ -187,56 +223,33 @@ public class FingerPanel extends JPanel implements TwiddlerSubPanel, TwidorConst
 				panel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 				KeyElement myButton = keys.getKey(buttons);
 				if (myButton != null && visibleKeys) {
-					JLabel label;
-					if (myButton.getNumber() == KEY_SPACE) {
-						// space
-						panel.add(new JLabel());
-						label = new JLabel("S");
-						label.setFont(new Font("Monospaced", Font.BOLD, 12));
-						label.setHorizontalAlignment(JLabel.CENTER);
-						panel.add(label);
-						label = new JLabel("P");
+					if ((myButton.getNumber() == KEY_SPACE) ||
+                                            (myButton.getLetter().equals(" "))) {
+                                            add_long_label( panel, "SP ");
 					}
-					else if (myButton.getNumber() == KEY_BACKSPACE) {
-						// backspace
-						panel.add(new JLabel());
-						label = new JLabel("B");
-						label.setFont(new Font("Monospaced", Font.BOLD, 12));
-						label.setHorizontalAlignment(JLabel.CENTER);
-						panel.add(label);
-						label = new JLabel("S");
+					else if ((myButton.getNumber() == KEY_BACKSPACE) ||
+                                                 (myButton.getLetter().equals("\b"))) {
+                                            add_long_label( panel, "BS ");
 					}
-					else if (myButton.getNumber() == KEY_DELETE) {
-						// delete
-						label = new JLabel("D");
-						label.setFont(new Font("Monospaced", Font.BOLD, 12));
-						label.setHorizontalAlignment(JLabel.CENTER);
-						panel.add(label);
-						label = new JLabel("E");
-						label.setFont(new Font("Monospaced", Font.BOLD, 12));
-						label.setHorizontalAlignment(JLabel.CENTER);
-						panel.add(label);
-						label = new JLabel("L");
+					else if ((myButton.getNumber() == KEY_DELETE) ||
+                                                 (myButton.getLetter().equals("\177"))) {
+                                            add_long_label( panel, "DEL");
 					}
-					else if (myButton.getNumber() == KEY_ENTER) {
-						// enter
-						label = new JLabel("E");
-						label.setFont(new Font("Monospaced", Font.BOLD, 12));
-						label.setHorizontalAlignment(JLabel.CENTER);
-						panel.add(label);
-						label = new JLabel("N");
-						label.setFont(new Font("Monospaced", Font.BOLD, 12));
-						label.setHorizontalAlignment(JLabel.CENTER);
-						panel.add(label);
-						label = new JLabel("T");
+					else if ((myButton.getNumber() == KEY_ENTER) ||
+                                                 (myButton.getLetter().equals("\r"))) {
+                                            add_long_label( panel, "ENT");
+					}
+					else if ((myButton.getNumber() == KEY_EOL) ||
+                                                 (myButton.getLetter().equals("\n"))) {
+                                            add_long_label( panel, "NL ");
+					}
+					else if ((myButton.getNumber() == KEY_TAB) ||
+                                                 (myButton.getLetter().equals("\t"))) {
+                                            add_long_label( panel, "TAB");
 					}
 					else {
-						panel.add(new JLabel());
-						label = new JLabel(myButton.displayLetter().toUpperCase());
+                                            add_long_label( panel, " " + myButton.displayLetter().toUpperCase() + " "); // letter
 					}
-					label.setFont(new Font("Monospaced", Font.BOLD, 12));
-					label.setHorizontalAlignment(JLabel.CENTER);
-					panel.add(label);
 				}
 				else {
 					panel.add(new JLabel());

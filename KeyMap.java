@@ -47,6 +47,7 @@ public class KeyMap implements TwidorConstants {
 	 *  a map from html tag key names in input file to ASCII caracter values.
 	 */
 	private HashMap<String, Integer> keyTags;
+	private HashMap<String, Integer> letterToKeyIndex;
 
 	/**
 	 * default constructor
@@ -57,7 +58,7 @@ public class KeyMap implements TwidorConstants {
                 keyTags = new HashMap<String, Integer>();
 		keyTags.put("<Backspace>",	8);
 		keyTags.put("<Delete>",		127);
-		keyTags.put("<Return>",		13);
+		keyTags.put("<Return>",		10); // note: should be 13, but keyboard emit 10?
 		keyTags.put("<Tab>",		9);
 		keyTags.put("<Escape>",		27);
 		// "<LeftArrow>",		0,
@@ -71,6 +72,8 @@ public class KeyMap implements TwidorConstants {
 		// "<Insert>",			0,
 		// "<NumLock>",			0
 		// <F1>..<F12>
+
+                letterToKeyIndex = new HashMap<String, Integer>();
 	}// end KeyMap
 
 	/**
@@ -93,7 +96,9 @@ public class KeyMap implements TwidorConstants {
 
 		if (i >= 0) {
 			toReturn = (KeyElement) getKeylist().elementAt(i);
-		}
+		} else {
+                        toReturn = (KeyElement) getKeyByLetter( key );
+                }
 		return toReturn;
 	}// end getKey (String)
 
@@ -172,6 +177,37 @@ public class KeyMap implements TwidorConstants {
 	}// end addKey (KeyElement)
 
 	/**
+	 * Set up a hashmap of letter to key index.
+	 */
+        private void setupLetterMap () {
+		int i;
+		for (i = 0; i < getKeylist().size(); i++) {
+			KeyElement key = (KeyElement)(getKeylist().elementAt(i));
+			// try {
+                            if ( ( key.getLetter() != null ) &&
+                                 ( key.getLetter().length() > 0) ) {
+                                letterToKeyIndex.put(key.getLetter(), i);
+                            }
+			// } catch (Exception e) {
+			// 	System.out.println("Error in setupLetterMap " + i + " " + key.getLetter());
+			// }
+		}
+	}// end setupLetterMap ()
+
+	/**
+	 * returns the index in the keymap of a given letter
+	 * @param letter the keyboard letter of the given key
+	 * @return the index of the letter in the keymap
+	 */
+        public KeyElement getKeyByLetter (String letter) {
+                Integer keyIndex = letterToKeyIndex.get( letter );
+                if ( keyIndex == null ) {
+			return null;
+		}
+		return (KeyElement) getKeylist().elementAt( keyIndex );
+	}// end addKey (KeyElement)
+
+	/**
 	 * sets the new keymap
 	 * @param String the source file
 	 */
@@ -234,7 +270,7 @@ public class KeyMap implements TwidorConstants {
 			}
 		} catch (Exception e) {
 		}
-
+                setupLetterMap();
 		if (bDEBUG) System.out.println("KeyMap: file read");
 	}// end setKeyMap (String)
 

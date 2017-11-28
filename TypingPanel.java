@@ -219,7 +219,7 @@ public class TypingPanel extends JPanel implements TwidorConstants {
 			setCurrent(0);
 		}
 		if (getCurrent() >= Type.size()) {
-			if (typed.getNumber() == KEY_EOL || typed.getNumber() == KEY_ENTER) {
+			if (typed.getNumber() == KEY_EOL || typed.getNumber() == KEY_ENTER || typed.getLetter().equals("\n")) {
 				if (getAllowErrors()) {
 					setEntered(true);
 				}
@@ -237,7 +237,7 @@ public class TypingPanel extends JPanel implements TwidorConstants {
 		}
 
 		setVisible(false);
-		if (typed.getNumber() == KEY_EOL || typed.getNumber() == KEY_ENTER) {
+		if (typed.getNumber() == KEY_EOL || typed.getNumber() == KEY_ENTER || typed.getLetter().equals("\n")) {
 			/* Enter only matters if we're allowing errors and the sentence is finished */
 			if (getCurrent() >= Sentence.size() - 6) {
 				setEntered(true);

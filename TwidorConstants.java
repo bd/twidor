@@ -34,6 +34,7 @@ USA.
  * @version Version 0.5; 17 July 2003
  */
 import java.awt.Color;
+import java.awt.Font;
 public interface TwidorConstants {
 
 	/**
@@ -56,10 +57,18 @@ public interface TwidorConstants {
 	 */
 	public static final int buttonX = (twiddlerX - 30) / 6;
 	public static final int buttonY = windowY * 2 / 15; // 2/3 of 1/4 of 4/5 of windowY
-	public static final Color buttonBackground = Color.LIGHT_GRAY;
-	public static final Color buttonHighlight = Color.yellow;
-	public static final Color mccHighlight = Color.green;
-	public static final Color twiddlerBackground = Color.GRAY;
+	public static final Color buttonBackground = Color.getHSBColor(0.f, 0.f, 0.95f); // light gray
+	public static final Color buttonHighlight = Color.getHSBColor(0.16f, 1.0f, 1.0f); // light yellow
+	public static final Color mccHighlight = Color.getHSBColor(0.8333f, 1.0f, 1.0f); // light yellow
+	// public static final Color twiddlerBackground = Color.getHSBColor(0.f, 0.f, .0f); // dark grey
+	public static final Color twiddlerBackground = Color.getHSBColor(0.f, 0.f, 1.f); // dark grey
+
+	// public static final Color lightRed    = Color.getHSBColor(0.0000f, 0.6f, 1.f);
+	// public static final Color lightBlue   = Color.getHSBColor(0.5600f, 0.5f, 1.f);
+	// public static final Color lightGreen  = Color.getHSBColor(0.3333f, 1.0f, 1.f);
+	public static final Color lightRed    = Color.getHSBColor(0.0000f, 1.f, .7f);
+	public static final Color lightBlue   = Color.getHSBColor(0.6000f, 1.f, 1.f);
+	public static final Color lightGreen  = Color.getHSBColor(0.3333f, 1.f, .7f);
 
 	/**
 	 * icons
@@ -69,10 +78,17 @@ public interface TwidorConstants {
 	public static final String ICON_GREEN = "green.gif";
 	
 	/**
+	 * fonts
+	 */
+	public static final Font FONT_DIALOG = new Font("Dialog", Font.BOLD, 12);
+	public static final Font FONT_TEXT = new Font("Monospaced", Font.BOLD, 12);
+	public static final Font FONT_LABEL = new Font("Helvetica", Font.BOLD, 12);
+
+	/**
 	 * character colors
 	 */
 	public static final Color TEXT_DEFAULT = Color.BLACK;
-	public static final Color TEXT_ERROR = Color.RED;
+	public static final Color TEXT_ERROR = Color.getHSBColor(0.f, 1.f, 0.1f); // dark red
 	public static final Color TEXT_GOOD = Color.GRAY;
 	public static final Color TEXT_BLINK = Color.BLUE;
 	public static final Color TEXT_BACKGROUND = Color.WHITE;
@@ -134,11 +150,11 @@ public interface TwidorConstants {
 	 * And because they might change...
 	 */
 	public static final int KEY_BACKSPACE = 8;
+	public static final int KEY_TAB = 9;
 	public static final int KEY_ENTER = 13;
 	public static final int KEY_SPACE = 32;
 	public static final int KEY_DELETE = 127;
-	/* I'm not sure why this is different from KEY_ENTER, but it makes a
-	 * difference */
+	/* Note: keyboards emit 10 for enter key. */
 	public static final int KEY_EOL = 10;
 
 	public static final int C = 0;
