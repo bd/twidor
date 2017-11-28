@@ -120,7 +120,10 @@ public class Stats implements TwidorConstants {
 	 */
 	public void addPressed (KeyElement pressed, long time) {
 		getKeyPresses().add(new StatsElement(pressed, time));
-		if (pressed.getNumber() == KEY_BACKSPACE || pressed.getNumber() == KEY_DELETE) {
+		if ( pressed.getNumber() == KEY_BACKSPACE ||
+                     pressed.getNumber() == KEY_DELETE ||
+                     pressed.getLetter().equals("\b") ||
+                     pressed.getLetter().equals("\177") ) {
 			int last = transcribedInput.size() - 1;
 			transcribedInput.removeElementAt(last);
 			typed = typed.substring(0, typed.length() - 1);

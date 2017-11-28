@@ -16,13 +16,6 @@ As an example, one may:
 * download the CSV file, and change the filename to keymap.txt, and
 * place keymap.txt in the same direcory as the Twidor java .class files.
   
-## Current Bugs
-
-Pressing <enter> at the end of a line fails to present the next
-line of the lesson.
-
-<space>, <backspace> and <enter> key labels are not displayed.
-
 ## Authors
 
 Evan Dower wrote Twidor.  Rich Murphey just modified the input file

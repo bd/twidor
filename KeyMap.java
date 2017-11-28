@@ -364,7 +364,7 @@ public class KeyMap implements TwidorConstants {
 		}
 
 		/* And what the chord produces */
-		String ascii_keys = ""; // keystrokes after converting tags to ASCII characters
+		String macro = ""; // keystrokes after converting tags to ASCII characters
 		int begin = 0;
 		while( ( begin < keystrokes.length() ) &&
 		       (! keystrokes.startsWith("</", begin) )) {
@@ -386,18 +386,23 @@ public class KeyMap implements TwidorConstants {
 		    int end = keystrokes.indexOf('>', begin);
 		    if( ( keystrokes.charAt(begin) == '<' ) &&
 			( (keystrokes.length() - begin) > 3 ) &&
-			( end > 0 ) ) {
-			String tag = keystrokes.substring(begin, end + 1);
-			if( keyTags.containsKey( tag ) ) {
-			    ascii_keys += (char)(int)(keyTags.get(tag));
+			( end > begin ) ) {
+			String keyName = keystrokes.substring(begin, end + 1);
+			if( keyTags.containsKey( keyName ) ) {
+			    macro += (char)(int)(keyTags.get(keyName));
 			}
-			begin += tag.length();
+			begin = end + 1;
 		    } else {
-			ascii_keys += keystrokes.charAt(begin);
+			macro += keystrokes.charAt(begin);
 			begin += 1;
 		    }
                 }
-		newKey.setLetter(ascii_keys);
+		if( ( macro.length() == 1 ) &&
+                    ( (int)macro.charAt(0) <= 177 ) ) {
+                        newKey.setNumberAndLetter((int)macro.charAt(0), macro);
+                } else {
+		        newKey.setLetter(macro);
+                }
                 if (newKey.displayLetter() != null) {
                     addKey(newKey);
                 }

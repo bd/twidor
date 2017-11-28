@@ -117,6 +117,15 @@ public class KeyElement extends java.lang.Object implements TwidorConstants {
 	}// end setNumber (int)
 
 	/**
+	 * modifier for the numeric value and letter or macro of this key
+	 * @param int the value to set
+	 */
+        public void setNumberAndLetter (int num, String letter) {
+		number = num;
+		letter = letter;
+	}// end setNumberAndLetter (int, String)
+
+	/**
 	 * accessor for the value of this key
 	 * @return char the character this number matches
 	 */
