@@ -78,15 +78,15 @@ public class ThumbPanel extends JPanel implements TwiddlerSubPanel, TwidorConsta
                     labels = new String[]{"", "", "", ""};
                 }
 		setBackground(twiddlerBackground);
-		button(0, gridbag, false, constraints, labels[0]);
-		filler(   gridbag, false, constraints);
-		filler(   gridbag, false, constraints);
 		button(3, gridbag, true,  constraints, labels[3]);
-
 		filler(   gridbag, false, constraints);
-		button(1, gridbag, false, constraints, labels[1]);
-		button(2, gridbag, false, constraints, labels[2]);
+		filler(   gridbag, false, constraints);
+		button(0, gridbag, false, constraints, labels[0]);
+
 		filler(   gridbag, true,  constraints);
+		button(2, gridbag, false, constraints, labels[2]);
+		button(1, gridbag, false, constraints, labels[1]);
+		filler(   gridbag, false, constraints);
 
 		if (bDEBUG) System.out.println("ThumbPanel: panel created");
 	}// end ThumbPanel (boolean)
