@@ -1,6 +1,6 @@
 ## Twidor - a typing tutor for the Twiddler mobile keyboard
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_screenshot.png"
-width="50%" style="float: right; padding-left: 5em">
+width="50%" align="right">
 Twidor is a typing tutor for the [Twiddler chording keyboard](https://twiddler.tekgear.com/).
 
 The current release includes only a single keyboard layout,
