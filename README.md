@@ -3,11 +3,17 @@
 width="50%" align="right">
 Twidor is a typing tutor for the [Twiddler one-handed keyboard](https://twiddler.tekgear.com/).
 
-The current release includes only a single keyboard layout,
+Twidor was originally written in part as a way to gather
+research data on [learning rates and keyboard performance]
+(https://www.researchgate.net/publication/27521297_Twiddler_Typing_One-Handed_Chording_Text_Entry_for_Mobile_Phones) by
+the [Mobile & Ubiquitous Computing Group at the Georgia Institute of Technology](https://wiki.cc.gatech.edu/ccg/classes/7470/7470-f06/projects_ii).
+
+Note that, the current release includes only a single keyboard layout,
 the [Backspice keymap](https://raw.githubusercontent.com/AlexBravo/Twiddler/master/Backspice2%20cheat%20sheet.txt).
 
-Please note: This is a beta pre-release. It has received
-very limited testing and is not yet stable.
+This is a beta release because it has received limited testing.
+Feedback and reports of issues are
+welcome [here](https://github.com/rich-murphey/twidor/issues).
 
 ## How to Install
 
@@ -58,17 +64,12 @@ chord mapping.
 
 ## Resources
 
-Twidor was originally written in part as a way to gather
-research data on learning rates and keyboard performance by the
-[Mobile & Ubiquitous Computing at the Georgia Institute of
-Technology](https://wiki.cc.gatech.edu/ccg/classes/7470/7470-f06/projects_ii).
-
 Expert Chording Text Entry on the Twiddler One-Handed Keyboard,
 Kent Lyons, Thad Starner, Daniel Plaisted,
 James Fusia, Amanda Lyons, Aaron Drew, E. W. Looney, 
 2012 16th International Symposium on Wearable Computers (2004)
-Arlington, Virginia, Oct. 31, 2004 to Nov. 3, 2004,
-[full text](https://www.researchgate.net/publication/27521297_Twiddler_Typing_One-Handed_Chording_Text_Entry_for_Mobile_Phones)
+Arlington, Virginia, Oct. 31, 2004 to Nov. 3, 2004.
+[full text.](https://www.researchgate.net/publication/27521297_Twiddler_Typing_One-Handed_Chording_Text_Entry_for_Mobile_Phones)
 
 Mobile Text Entry, Kent Loyons, [Lecture slides.](https://wiki.cc.gatech.edu/ccg/_media/classes/7470/7470-f06/mobile-text-entry.pdf?id=classes%3A7470%3A7470-f06%3Apowerpoint_slides&cache=cache)
 
