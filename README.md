@@ -68,9 +68,9 @@ Kent Lyons, Thad Starner, Daniel Plaisted,
 James Fusia, Amanda Lyons, Aaron Drew, E. W. Looney, 
 2012 16th International Symposium on Wearable Computers (2004)
 Arlington, Virginia, Oct. 31, 2004 to Nov. 3, 2004,
-[full text]https://www.researchgate.net/publication/27521297_Twiddler_Typing_One-Handed_Chording_Text_Entry_for_Mobile_Phones)
+[full text](https://www.researchgate.net/publication/27521297_Twiddler_Typing_One-Handed_Chording_Text_Entry_for_Mobile_Phones)
 
-Mobile Text Entry, Kent Loyons, [Lecture slices.](https://wiki.cc.gatech.edu/ccg/_media/classes/7470/7470-f06/mobile-text-entry.pdf?id=classes%3A7470%3A7470-f06%3Apowerpoint_slides&cache=cache)
+Mobile Text Entry, Kent Loyons, [Lecture slides.](https://wiki.cc.gatech.edu/ccg/_media/classes/7470/7470-f06/mobile-text-entry.pdf?id=classes%3A7470%3A7470-f06%3Apowerpoint_slides&cache=cache)
 
 Experimental Evaluations of the Twiddler One-Handed Chording
 Mobile Keyboard. Kent Lyons, Brian Gane, and Thad Starner. HCI
