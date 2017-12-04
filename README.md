@@ -11,7 +11,6 @@ at the Georgia Institute of Technology.
 Note that, the current release includes only a single keyboard layout,
 the [Backspice keymap](https://raw.githubusercontent.com/AlexBravo/Twiddler/master/Backspice2%20cheat%20sheet.txt).
 
-This is a beta release because it has received limited testing.
 Feedback and reports of issues are
 welcome [here](https://github.com/rich-murphey/twidor/issues).
 
