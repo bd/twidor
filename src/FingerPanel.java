@@ -59,7 +59,7 @@ public class FingerPanel extends JPanel implements TwiddlerSubPanel, TwidorConst
         private void add_label ( JPanel panel, Color color, String text ) {
             JLabel label;
             label = new JLabel(text);
-            label.setFont(FONT_DIALOG);
+            label.setFont(FONT_KEYPAD);
             label.setForeground(color);
             label.setHorizontalAlignment(JLabel.CENTER);
             panel.add(label);
@@ -70,7 +70,6 @@ public class FingerPanel extends JPanel implements TwiddlerSubPanel, TwidorConst
          * string must be three chara for top middle and bottom of label.
 	 */
         private void add_long_label ( JPanel panel, String text ) {
-            JLabel label;
             for (int i = 0; i < 3; i++) {
                 add_label( panel, TEXT_DEFAULT, text.substring(i, i+1));
             }
@@ -114,7 +113,6 @@ public class FingerPanel extends JPanel implements TwiddlerSubPanel, TwidorConst
 		/* Row 1: Labels or Nothing */
 		for (int i = 0; i < 6; i++) {
 			panel = new JPanel();
-                        Font font = new Font("Monospaced", Font.BOLD, 6);
 			panel.setBackground(twiddlerBackground);
 			if (finger == 0) {
                             Color color = twiddlerBackground;
@@ -127,8 +125,8 @@ public class FingerPanel extends JPanel implements TwiddlerSubPanel, TwidorConst
                             else if (i == 4) {
                                 color = lightGreen;
                             }
-                            JLabel label = new JLabel("XX");
-                            label.setFont(font);
+                            JLabel label = new JLabel("xx");
+                            label.setFont(FONT_DIALOG);
                             label.setForeground(color);
                             label.setBackground(color);
                             label.setHorizontalAlignment(JLabel.CENTER);
@@ -169,7 +167,7 @@ public class FingerPanel extends JPanel implements TwiddlerSubPanel, TwidorConst
 						KeyElement myButton = keys.getKey(buttons);
 						if (myButton != null) {
 							JLabel label = new JLabel();
-							label.setFont(FONT_DIALOG);
+							label.setFont(FONT_KEYPAD);
 							label.setHorizontalAlignment(JLabel.CENTER);
 
 							/* set the text, and the color */
@@ -209,7 +207,7 @@ public class FingerPanel extends JPanel implements TwiddlerSubPanel, TwidorConst
 				}
 				else {
 					JLabel label = new JLabel("z");
-					label.setFont(FONT_DIALOG);
+					label.setFont(FONT_KEYPAD);
 					label.setHorizontalAlignment(JLabel.CENTER);
 					label.setForeground(twiddlerBackground);
 					panel.add(label);

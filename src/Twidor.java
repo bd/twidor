@@ -36,6 +36,10 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.net.URL;
+import java.io.File;
+import java.io.IOException;
+import java.awt.Font;
+
 public class Twidor extends JFrame implements TwidorConstants {
 
 	/**
@@ -58,6 +62,19 @@ public class Twidor extends JFrame implements TwidorConstants {
 	 * Default Constructor.
 	 */
 	public Twidor () {
+		try {
+			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, this.getClass().getResourceAsStream("RobotoMono-Bold.ttf")));
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, this.getClass().getResourceAsStream("RobotoMono-Light.ttf")));
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, this.getClass().getResourceAsStream("RobotoMono-Regular.ttf")));
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, this.getClass().getResourceAsStream("RobotoCondensed-Bold.ttf")));
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, this.getClass().getResourceAsStream("Roboto-Regular.ttf")));
+		} catch(IOException e) {
+			e.printStackTrace();
+		} catch(FontFormatException e) {
+			e.printStackTrace();
+		}
+
 		ignoreInput(true);
 		showingStats(false);
 		/* JFrame Settings */

@@ -7,6 +7,7 @@
   <property name="src" location="src"/>
   <property name="build" location="build"/>
   <property name="dist" location="dist"/>
+  <property name="fonts" location="fonts"/>
 
   <target name="init">
     <!-- Create the time stamp -->
@@ -17,10 +18,11 @@
 
   <target name="compile" depends="init" description="compile the source">
     <!-- Compile the java code from ${src} into ${build} -->
-    <javac srcdir="${src}" destdir="${build}"/>
+    <javac srcdir="${src}" destdir="${build}" includeantruntime="false"/>
     <copy todir="${build}">
       <fileset dir="${src}" excludes="**/*.java **/*~"/>
     </copy>
+    <!-- <copy todir="${build}" file="fonts/Roboto_Mono/RobotoMono-Bold.ttf"/> -->
   </target>
 
   <target name="dist" depends="compile" description="generate the distribution">

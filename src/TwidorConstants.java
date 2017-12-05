@@ -35,6 +35,10 @@ USA.
  */
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Font;
+import javax.swing.border.Border;
+import javax.swing.BorderFactory;
+
 public interface TwidorConstants {
 
 	/**
@@ -60,40 +64,34 @@ public interface TwidorConstants {
 	public static final Color buttonBackground = Color.getHSBColor(0.f, 0.f, 0.95f); // light gray
 	public static final Color buttonHighlight = Color.getHSBColor(0.16f, 1.0f, 1.0f); // light yellow
 	public static final Color mccHighlight = Color.getHSBColor(0.8333f, 1.0f, 1.0f); // light yellow
-	// public static final Color twiddlerBackground = Color.getHSBColor(0.f, 0.f, .0f); // dark grey
 	public static final Color twiddlerBackground = Color.getHSBColor(0.f, 0.f, 1.f); // dark grey
 
-	// public static final Color lightRed    = Color.getHSBColor(0.0000f, 0.6f, 1.f);
-	// public static final Color lightBlue   = Color.getHSBColor(0.5600f, 0.5f, 1.f);
-	// public static final Color lightGreen  = Color.getHSBColor(0.3333f, 1.0f, 1.f);
 	public static final Color lightRed    = Color.getHSBColor(0.0000f, 1.f, .7f);
 	public static final Color lightBlue   = Color.getHSBColor(0.6000f, 1.f, 1.f);
 	public static final Color lightGreen  = Color.getHSBColor(0.3333f, 1.f, .7f);
 
 	/**
-	 * icons
-	 */
-	public static final String ICON_RED = "red.gif";
-	public static final String ICON_BLUE = "blue.gif";
-	public static final String ICON_GREEN = "green.gif";
-	
-	/**
 	 * fonts
 	 */
-	public static final Font FONT_DIALOG = new Font("Dialog", Font.BOLD, 12);
-	public static final Font FONT_TEXT = new Font("Monospaced", Font.BOLD, 12);
-	public static final Font FONT_LABEL = new Font("Helvetica", Font.BOLD, 12);
+	public static final Font FONT_DIALOG = new Font("RobotoCondensed", Font.BOLD, 12);
+	public static final Font FONT_KEYPAD = new Font("RobotoCondensed", Font.BOLD, 15);
+	public static final Font FONT_TEXT = new Font("RobotoMono", Font.BOLD, 20);
+	public static final Font FONT_LABEL = new Font("Roboto", Font.PLAIN, 20);
 
 	/**
 	 * character colors
 	 */
 	public static final Color TEXT_DEFAULT = Color.BLACK;
-	public static final Color TEXT_ERROR = Color.getHSBColor(0.f, 1.f, 0.1f); // dark red
-	public static final Color TEXT_GOOD = Color.GRAY;
+	public static final Color TEXT_ERROR = Color.getHSBColor(0.f, 1.f, .7f);
+	public static final Color TEXT_GOOD = Color.getHSBColor(0.f, 0.f, .7f);
 	public static final Color TEXT_BLINK = Color.BLUE;
 	public static final Color TEXT_BACKGROUND = Color.WHITE;
 	public static final Color TEXT_CURSOR = Color.BLUE;
 	public static final String CURSOR = "_";
+
+	public static Border noBorder = BorderFactory.createEmptyBorder(0,0,0,0);
+	public static Border lineBorder = BorderFactory.createLineBorder(Color.BLACK);
+	public static Border buttonBorder = BorderFactory.createLineBorder(Color.BLACK, 1, true);
 
 	/**
 	 * Files that are searched for by the program when none are specified

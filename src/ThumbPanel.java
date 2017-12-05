@@ -78,15 +78,15 @@ public class ThumbPanel extends JPanel implements TwiddlerSubPanel, TwidorConsta
                     labels = new String[]{"", "", "", ""};
                 }
 		setBackground(twiddlerBackground);
-		button(3, gridbag, true,  constraints, labels[3]);
+		button(3, gridbag, false,  constraints, labels[3]);
 		filler(   gridbag, false, constraints);
 		filler(   gridbag, false, constraints);
-		button(0, gridbag, false, constraints, labels[0]);
+		button(0, gridbag, true, constraints, labels[0]);
 
-		filler(   gridbag, true,  constraints);
+		filler(   gridbag, false,  constraints);
 		button(2, gridbag, false, constraints, labels[2]);
 		button(1, gridbag, false, constraints, labels[1]);
-		filler(   gridbag, false, constraints);
+		filler(   gridbag, true, constraints);
 
 		if (bDEBUG) System.out.println("ThumbPanel: panel created");
 	}// end ThumbPanel (boolean)
@@ -135,8 +135,9 @@ public class ThumbPanel extends JPanel implements TwiddlerSubPanel, TwidorConsta
         private void label (String label, GridBagLayout gridbag, boolean is_end, GridBagConstraints constraints) {
 		JPanel panel = new JPanel();
 		JLabel jlabel = new JLabel(label, JLabel.CENTER);
-		jlabel.setFont(new Font("Dialog", Font.PLAIN, 12));
+		jlabel.setFont(FONT_DIALOG);
 		jlabel.setForeground(Color.BLACK);
+                jlabel.setBorder(noBorder);
 		panel.setBackground(twiddlerBackground);
 		panel.add(jlabel);
                 if ( is_end ) {
@@ -158,10 +159,11 @@ public class ThumbPanel extends JPanel implements TwiddlerSubPanel, TwidorConsta
 		JPanel panel = new JPanel();
                 if( label != null ) {
                     JLabel jlabel = new JLabel(label, JLabel.CENTER);
-                    jlabel.setFont(new Font("Dialog", Font.BOLD, 12));
+                    jlabel.setFont(FONT_KEYPAD);
                     jlabel.setForeground(Color.BLACK);
                     panel.add(jlabel);
                 }
+                
 		panel.setBackground(buttonBackground);
 		panel.setBorder( BorderFactory.createCompoundBorder( BorderFactory.createLineBorder(Color.BLACK), BorderFactory.createEmptyBorder()));
 		getButtons().setElementAt(panel, number);

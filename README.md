@@ -27,7 +27,7 @@ install Java, and invoke the application using javaw. For
 example, on Debian or Ubuntu, one may use:
 
     sudo apt install openjdk-8-jre
-    javaw -jar Twidor.jar Twidor
+    javaw -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -jar Twidor.jar Twidor
 
 ## How to Build
 

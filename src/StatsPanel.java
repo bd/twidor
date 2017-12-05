@@ -154,7 +154,7 @@ public class StatsPanel extends JPanel implements TwidorConstants {
 	 */
 	private JLabel quickLabel (String label) {
 		JLabel temp = new JLabel(label);
-		temp.setFont(new Font("Monospaced", Font.PLAIN, 20));
+		temp.setFont(FONT_LABEL);
 		temp.setForeground(TEXT_DEFAULT);
 		temp.setBackground(TEXT_BACKGROUND);
 		temp.setHorizontalAlignment(SwingConstants.TRAILING);

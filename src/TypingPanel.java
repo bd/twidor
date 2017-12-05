@@ -203,7 +203,7 @@ public class TypingPanel extends JPanel implements TwidorConstants {
 
 	private JLabel letterLabel (String letter) {
 		JLabel newLetter = new JLabel(letter);
-		newLetter.setFont(new Font("Monospaced", Font.PLAIN, 20));
+		newLetter.setFont(FONT_TEXT);
 		newLetter.setForeground(TEXT_DEFAULT);
 		newLetter.setBackground(TEXT_BACKGROUND);
 		return newLetter;

@@ -41,6 +41,7 @@ public class InfoPanel extends JPanel implements TwidorConstants {
 		setBackground(Color.WHITE);
 		setLayout(new FlowLayout());
 		myTitle = new JLabel();
+                myTitle.setFont(FONT_LABEL);
 		add(myTitle);
 		setVisible(true);
 		if (bDEBUG) System.out.println("InfoPanel: Created");
