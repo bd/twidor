@@ -116,12 +116,16 @@ public interface TwidorConstants {
 	public boolean HIGHLIGHT_ERRORS = true;
 
 	/* Twiddler */
-	public static final String TWIDDLER_SHOW_TEXT = "Show Twiddler";
+	public static final String TWIDDLER_SHOW_TEXT = "Show Keyboard";
 	public boolean TWIDDLER_SHOW = true;
-	public static final String TWIDDLER_MIRROR_TEXT = "Mirror Twiddler";
+	public static final String TWIDDLER_MIRROR_TEXT = "Horizontal Reverse Keyboard";
 	public boolean TWIDDLER_MIRROR = false;
-	public static final String TWIDDLER_SHOW_LETTERS_TEXT = "Show Twiddler Letters";
+	public static final String TWIDDLER_SHOW_LETTERS_TEXT = "Show Labels on Keyboard";
 	public boolean TWIDDLER_SHOW_LETTERS = true;
+	public static final String TWIDDLER_SHOW_THUMB_TEXT = "Show Thumb Buttons";
+	public boolean TWIDDLER_SHOW_THUMB = true;
+	public static final String TWIDDLER_MIRROR_THUMB_TEXT = "Horizontal Reverse Thumb Buttons";
+	public boolean TWIDDLER_MIRROR_THUMB = false;
 
 	public static final String MACRO_REGEXP = "\"\\w*\"";
 

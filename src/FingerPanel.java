@@ -218,7 +218,7 @@ public class FingerPanel extends JPanel implements TwiddlerSubPanel, TwidorConst
 				//panel.setPreferredSize(new Dimension(buttonX, buttonY));
 				panel.setBackground(buttonBackground);
 				panel.setLayout(new GridLayout(3, 1));
-				panel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+				panel.setBorder(buttonBorder);
 				KeyElement myButton = keys.getKey(buttons);
 				if (myButton != null && visibleKeys) {
 					if ((myButton.getNumber() == KEY_SPACE) ||

@@ -66,13 +66,32 @@ public class TwidorMenu extends JMenuBar implements TwidorConstants {
 		Tutor(tutor);
 		Events(events);
 
-		menu = new JMenu("Twidor");
+		menu = new JMenu("File");
 		jmItem = jmenuItem(QUIT_TEXT);
 		menu.add(jmItem);
 		add(menu);
 
+		Twiddler = new Vector();
+		menu = new JMenu("Keyboard");
+		jmItem = jcheckItem(TWIDDLER_SHOW_TEXT, TWIDDLER_SHOW);
+		Twiddler.add(jmItem);
+		menu.add(jmItem);
+		jmItem = jcheckItem(TWIDDLER_MIRROR_TEXT, TWIDDLER_MIRROR);
+		Twiddler.add(jmItem);
+		menu.add(jmItem);
+		jmItem = jcheckItem(TWIDDLER_SHOW_LETTERS_TEXT, TWIDDLER_SHOW_LETTERS);
+		Twiddler.add(jmItem);
+		menu.add(jmItem);
+		jmItem = jcheckItem(TWIDDLER_SHOW_THUMB_TEXT, TWIDDLER_SHOW_THUMB);
+		Twiddler.add(jmItem);
+		menu.add(jmItem);
+		jmItem = jcheckItem(TWIDDLER_MIRROR_THUMB_TEXT, TWIDDLER_MIRROR_THUMB);
+		Twiddler.add(jmItem);
+		menu.add(jmItem);
+		add(menu);
+
 		Tutor = new Vector();
-		menu = new JMenu("Tutor");
+		menu = new JMenu("Hints");
 		jmItem = jcheckItem(HIGHLIGHT_HINT_TEXT, HIGHLIGHT_HINT);
 		Tutor.add(jmItem);
 		menu.add(jmItem);
@@ -84,22 +103,10 @@ public class TwidorMenu extends JMenuBar implements TwidorConstants {
 		menu.add(jmItem);
 		add(menu);
 
-		Twiddler = new Vector();
-		menu = new JMenu("Twiddler");
-		jmItem = jcheckItem(TWIDDLER_SHOW_TEXT, TWIDDLER_SHOW);
-		Twiddler.add(jmItem);
-		menu.add(jmItem);
-		jmItem = jcheckItem(TWIDDLER_MIRROR_TEXT, TWIDDLER_MIRROR);
-		Twiddler.add(jmItem);
-		menu.add(jmItem);
-		jmItem = jcheckItem(TWIDDLER_SHOW_LETTERS_TEXT, TWIDDLER_SHOW_LETTERS);
-		Twiddler.add(jmItem);
-		menu.add(jmItem);
-		add(menu);
 
 		Lesson = new ButtonGroup();
 		lessonButtons = new Vector();
-		menu = new JMenu("Lesson");
+		menu = new JMenu("Lessons");
 		rbItem = jradioItem("Lesson 1", true);
 		Lesson.add(rbItem);
 		lessonButtons.add(rbItem);

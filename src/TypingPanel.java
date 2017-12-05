@@ -195,7 +195,8 @@ public class TypingPanel extends JPanel implements TwidorConstants {
 			center.add(newLetter);
 		}
 		center.setMaximumSize(center.getPreferredSize());
-		add(Box.createVerticalGlue());
+		// add(Box.createVerticalGlue());
+                // add(Box.createRigidArea(new Dimension(0,3)));
 		add(center);
 		setVisible(true);
 		if (bDEBUG) System.out.println("TypingPanel: New sentence displayed");

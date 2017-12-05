@@ -44,6 +44,7 @@ public class TwiddlerPanel extends JPanel implements TwidorConstants {
 	private boolean thumbOrientation;
 	private boolean fingerOrientation;
 	private boolean showThumbMap;
+    	private boolean showThumbBoard;
 	private boolean showFingerMap;
 	private boolean showTwiddler;
 	private Vector panelList;
@@ -57,11 +58,12 @@ public class TwiddlerPanel extends JPanel implements TwidorConstants {
 		setKeyMap(newMap);
 		setThumbOrientation(thumb);
 		setFingerOrientation(finger);
-		setThumbKeysVisible(true);
-		setFingerKeysVisible(true);
+		setThumbKeysVisible(TWIDDLER_SHOW);
+		setThumbBoardVisible(TWIDDLER_SHOW_THUMB);
+		setFingerKeysVisible(TWIDDLER_SHOW);
 		setTwiddlerVisible(true);
 		setBackground(twiddlerBackground);
-		setBorder(BorderFactory.createLineBorder(Color.BLACK));
+		setBorder(lineBorder);
 
 		initPanels();
 		/* general doodlings with the JPanel */
@@ -94,6 +96,14 @@ public class TwiddlerPanel extends JPanel implements TwidorConstants {
 	public boolean getThumbKeysVisible () {
 		return showThumbMap;
 	}// end getThumbKeysVisible ()
+
+	/**
+	 * accessor for thumb board visibility
+	 * @return boolean the current thumb board visability
+	 */
+	public boolean getThumbBoardVisible () {
+		return showThumbBoard;
+	}// end getThumbBoardVisible ()
 
 	/**
 	 * accessor for finger keys
@@ -150,6 +160,14 @@ public class TwiddlerPanel extends JPanel implements TwidorConstants {
 	public void setThumbKeysVisible (boolean status) {
 		showThumbMap = status;
 	}// end setThumbKeysVisible (boolean)
+
+	/**
+	 * modifier for thumb board visibility
+	 * @param boolean the new status
+	 */
+	public void setThumbBoardVisible (boolean status) {
+		showThumbBoard = status;
+	}// end setThumbBoardVisible (boolean)
 
 	/**
 	 * modifier for finger key visiblity
@@ -251,8 +269,10 @@ public class TwiddlerPanel extends JPanel implements TwidorConstants {
 		removeAll();
 		setMinimumSize(new Dimension(twiddlerX, windowY));
 		getPanels().clear();
-		getPanels().addElement(new ThumbPanel(getThumbOrientation(), getKeyMap(),
-					getThumbKeysVisible()));
+                if (getThumbBoardVisible()) {
+                    getPanels().addElement(new ThumbPanel(getThumbOrientation(), getKeyMap(),
+                                                          getThumbKeysVisible()));
+                }
 		for (int i = 0; i < 4; i++) {
 			getPanels().addElement(new FingerPanel(i, getFingerOrientation(),
 						getKeyMap(), getFingerKeysVisible()));

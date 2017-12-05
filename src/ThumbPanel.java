@@ -165,7 +165,7 @@ public class ThumbPanel extends JPanel implements TwiddlerSubPanel, TwidorConsta
                 }
                 
 		panel.setBackground(buttonBackground);
-		panel.setBorder( BorderFactory.createCompoundBorder( BorderFactory.createLineBorder(Color.BLACK), BorderFactory.createEmptyBorder()));
+		panel.setBorder(buttonBorder);
 		getButtons().setElementAt(panel, number);
                 if ( is_end ) {
                     constraints.gridwidth = GridBagConstraints.REMAINDER;

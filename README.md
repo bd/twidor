@@ -56,10 +56,10 @@ To generate a keymap suitable for input, one may:
   
 ## Other Relevant Projects
 
-[Twidlit](https://github.com/pushkarkp/twidlit) is a a tutor and
-companion for The Twiddler keyboard. It is intended to assist in
-all aspects of learning to twiddle and developing a personal
-chord mapping.
+[Twidlit](https://github.com/pushkarkp/twidlit) is a a tutor and companion for The Twiddler keyboard. It
+is intended to assist in all aspects of learning to twiddle and
+developing a personal chord mapping. Like Twidor, Twidlit is
+written in Java.
 
 ## Resources
 

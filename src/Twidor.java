@@ -78,14 +78,14 @@ public class Twidor extends JFrame implements TwidorConstants {
 		ignoreInput(true);
 		showingStats(false);
 		/* JFrame Settings */
-		setSize(new Dimension(windowX, windowY));
+		// setSize(new Dimension(windowX, windowY));
 		setTitle(windowTitle);
 		setBackground(windowBackground);
 		setResizable(windowResizable);
 
 		/* Root Panel Settings */
-		Container tempRoot = getContentPane();
-		tempRoot.setLayout(new BorderLayout());
+		Container root = getContentPane();
+		root.setLayout(new BorderLayout());
 
 		setEventHandler();
 		setKeyMap(DEFAULT_KEYMAP);
@@ -97,7 +97,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 		setInfoPanel();
 		setTwidorIcon();
 
-		tempRoot.add(getTwiddlerPanel(), BorderLayout.WEST);
+		root.add(getTwiddlerPanel(), BorderLayout.WEST);
 
 		JPanel CenterPane = new JPanel();
 		CenterPane.setLayout(new GridLayout(3, 1));
@@ -107,7 +107,8 @@ public class Twidor extends JFrame implements TwidorConstants {
 		CenterPane.setBackground(TEXT_BACKGROUND);
 		CenterPane.setVisible(true);
 
-		tempRoot.add(CenterPane, BorderLayout.CENTER);
+		root.add(CenterPane, BorderLayout.CENTER);
+                pack();
 		/* Show it all */
 		setVisible(true);
 		setLesson("Lesson 1");
@@ -320,6 +321,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 		doHighlighting();
 		getInfoPanel().setTitle(getLesson().getLessonName() + ": Sentence " +
 			getLesson().getSentenceNumber());
+                pack();
 	}// end nextSentence ()
 
 	/**
@@ -452,7 +454,16 @@ public class Twidor extends JFrame implements TwidorConstants {
 		}
 		if (option.equals(TWIDDLER_MIRROR_TEXT)) {
 			getTwiddlerPanel().setThumbOrientation(status);
-			getTwiddlerPanel().setFingerOrientation(status);
+			getTwiddlerPanel().reOrient();
+			return;
+		}
+		if (option.equals(TWIDDLER_SHOW_THUMB_TEXT)) {
+			getTwiddlerPanel().setThumbBoardVisible(status);
+			getTwiddlerPanel().reOrient();
+			return;
+		}
+		if (option.equals(TWIDDLER_MIRROR_THUMB_TEXT)) {
+			getTwiddlerPanel().setThumbOrientation(status);
 			getTwiddlerPanel().reOrient();
 			return;
 		}
