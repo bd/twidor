@@ -71,6 +71,8 @@ written in Java.
 
 The [Backspice keymap](https://github.com/AlexBravo/Twiddler) by [Alex Bravo](https://plus.google.com/+AlexBravo).
 
+The [Tabspace 3 layout](http://ivanwfr.github.io/Twiddler3-Layout/) discusses a range of layout issues, including ngram occurence frequency and ranking the dexterity required for various multi-key chords.
+
 The [Twiddler 3 Google Group](https://groups.google.com/forum/?hl=en#!forum/twiddler-3) has links to various resources.
 
 ## References
