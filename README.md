@@ -3,8 +3,8 @@
 width="50%" align="right">
 Twidor is a typing tutor for the [Twiddler one-handed keyboard](https://twiddler.tekgear.com/).
 
-Twidor was originally written for research on [learning rates and keyboard
-performance](https://www.researchgate.net/publication/27521297_Twiddler_Typing_One-Handed_Chording_Text_Entry_for_Mobile_Phones) by
+Twidor was originally written for research on [learning rates and 
+performance of one-handed chording keyboards](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.4.3606&rep=rep1&type=pdf) by
 the [Contextual Computing Group](https://wiki.cc.gatech.edu/ccg/classes/7470/7470-f06/projects_ii)
 at the Georgia Institute of Technology.
 
