@@ -4,16 +4,14 @@ width="50%" align="right">
 Twidor is a typing tutor for the [Twiddler one-handed keyboard](https://twiddler.tekgear.com/).
 
 Twidor was originally written by researchers studying
-[learning rates and performance](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.4.3606&rep=rep1&type=pdf) in
-the [Contextual Computing Group](http://wearables.cc.gatech.edu/projects/twidor/) at
-the Georgia Institute of Technology.
+[Twiddler learning rates and performance](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.4.3606&rep=rep1&type=pdf).
 
-Their research [2] states, "faster typists would reach
+Lyons [2] states, "faster typists would reach
 60 wpm, the rate of our expert, after 10,000 phrases
 (approximately 80 sessions or 27 hours) while the slower typists
-could achieve 45 wpm. [3] states, "We found that users initially had a faster average typing
+could achieve 45 wpm. Lyons [3] states, "We found that users initially had a faster average typing
 rate with multitap; however, after 4 sessions the difference became negligible, and
-by the 8th session participants typed faster with chording on the Twiddler." [3] also states, "lack of visual
+by the 8th session participants typed faster with chording on the Twiddler." Lyons [3] also states, "lack of visual
 feedback does not hinder expert typing speed."
 
 ## How to Install
