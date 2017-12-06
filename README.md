@@ -16,13 +16,10 @@ rate with multitap; however, after 4 sessions the difference became negligible, 
 by the 8th session participants typed faster with chording on the Twiddler." [3] also states, "lack of visual
 feedback does not hinder expert typing speed."
 
-Note that, the current release includes only a single keyboard layout,
-the [Backspice keymap](https://raw.githubusercontent.com/AlexBravo/Twiddler/master/Backspice2%20cheat%20sheet.txt).
-
-Feedback and reports of issues are
-welcome [here](https://github.com/rich-murphey/twidor/issues).
-
 ## How to Install
+
+Please note, the current release includes only a single keyboard layout,
+the [Backspice keymap](https://raw.githubusercontent.com/AlexBravo/Twiddler/master/Backspice2%20cheat%20sheet.txt).
 
 Download the releases from here:
 
@@ -37,6 +34,9 @@ example, on Debian or Ubuntu, one may use:
     sudo apt install openjdk-8-jre
     javaw -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -jar Twidor.jar Twidor
 
+Feedback and reports of issues are
+welcome [here](https://github.com/rich-murphey/twidor/issues).
+
 ## How to Build
 
 To compile and build Twidor.jar, one may use:
@@ -47,8 +47,6 @@ To compile and build Twidor.jar, one may use:
     ant
 
 ## Road-map
-
-The current release includes only one keyboard layout, the [Backspice keymap](https://raw.githubusercontent.com/AlexBravo/Twiddler/master/Backspice2%20cheat%20sheet.txt).
 
 In a future release, Twidor will be able to load other keymaps.
 This will include the capability to read keymaps in the CSV format exported from
