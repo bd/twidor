@@ -157,7 +157,7 @@ public class TypingPanel extends JPanel implements TwidorConstants {
 		removeAll();
 		JLabel myMessage = new JLabel(message);
 		JPanel temp = new JPanel();
-		temp.setAlignmentY(Component.LEFT_ALIGNMENT);
+		temp.setAlignmentY(Component.CENTER_ALIGNMENT);
 		temp.add(myMessage);
 		temp.setBackground(TEXT_BACKGROUND);
 		add(temp);
@@ -173,7 +173,7 @@ public class TypingPanel extends JPanel implements TwidorConstants {
 		setVisible(false);
 		setSentenceText(sentence);
 		JPanel sentence_panel = new JPanel();
-		sentence_panel.setAlignmentY(LEFT_ALIGNMENT);
+		sentence_panel.setAlignmentY(CENTER_ALIGNMENT);
 
 		if (bDEBUG) System.out.println("TypingPanel: Displaying new sentence");
 		/* Empty everything in this JPanel, and clear all associated variables */
@@ -212,7 +212,7 @@ public class TypingPanel extends JPanel implements TwidorConstants {
 			Typed.add(newLetter);
 			sentence_panel.add(newLetter);
 		}
-		sentence_panel.setMaximumSize(sentence_panel.getPreferredSize()); // FIXME: necessary?
+		sentence_panel.setMaximumSize(sentence_panel.getPreferredSize());
 
 		// add(Box.createVerticalGlue());
                 // add(Box.createRigidArea(new Dimension(0,pad)));
