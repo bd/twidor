@@ -69,6 +69,7 @@ public class TypingPanel extends JPanel implements TwidorConstants {
 		setAllowErrors(true);
 		setBackground(TEXT_BACKGROUND);
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+		setBorder(margin);
 		setVisible(true);
 		if (bDEBUG) System.out.println("TypingPanel: Created New Panel");
 	}// end TypingPanel ()

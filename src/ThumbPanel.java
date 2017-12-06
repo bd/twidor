@@ -75,7 +75,7 @@ public class ThumbPanel extends JPanel implements TwiddlerSubPanel, TwidorConsta
 		if (visibleKeys) {
                     labels = new String[]{"Num", "Alt", "Ctrl", "Shft"};
                 } else {
-                    labels = new String[]{"", "", "", ""};
+                    labels = new String[]{"    ", "    ", "    ", "    "};
                 }
 		setBackground(twiddlerBackground);
 		button(3, gridbag, false,  constraints, labels[3]);

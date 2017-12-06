@@ -61,9 +61,9 @@ public class TwiddlerPanel extends JPanel implements TwidorConstants {
 		setThumbKeysVisible(TWIDDLER_SHOW);
 		setThumbBoardVisible(TWIDDLER_SHOW_THUMB);
 		setFingerKeysVisible(TWIDDLER_SHOW);
-		setTwiddlerVisible(true);
 		setBackground(twiddlerBackground);
-		setBorder(lineBorder);
+		setBorder(margin);
+		setTwiddlerVisible(true);
 
 		initPanels();
 		/* general doodlings with the JPanel */
@@ -267,7 +267,7 @@ public class TwiddlerPanel extends JPanel implements TwidorConstants {
 		if (bDEBUG) System.out.println("TwiddlerPanel: rearranging twiddler layout");
 		setVisible(false);
 		removeAll();
-		setMinimumSize(new Dimension(twiddlerX, windowY));
+		// setMinimumSize(new Dimension(twiddlerX, windowY));
 		getPanels().clear();
                 if (getThumbBoardVisible()) {
                     getPanels().addElement(new ThumbPanel(getThumbOrientation(), getKeyMap(),

@@ -91,7 +91,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 		setKeyMap(DEFAULT_KEYMAP);
 		setLessonPlan(DEFAULT_LESSON);
 		setTwidorMenu();
-		setTwiddlerPanel(TWIDDLER_MIRROR, TWIDDLER_MIRROR);
+		setTwiddlerPanel(TWIDDLER_MIRROR_THUMB, TWIDDLER_MIRROR);
 		setTypingPanel();
 		setStatsPanel();
 		setInfoPanel();
@@ -453,7 +453,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 			return;
 		}
 		if (option.equals(TWIDDLER_MIRROR_TEXT)) {
-			getTwiddlerPanel().setThumbOrientation(status);
+			getTwiddlerPanel().setFingerOrientation(status);
 			getTwiddlerPanel().reOrient();
 			return;
 		}

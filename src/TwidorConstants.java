@@ -90,6 +90,7 @@ public interface TwidorConstants {
 	public static final String CURSOR = "_";
 
 	public static Border noBorder = BorderFactory.createEmptyBorder(0,0,0,0);
+	public static Border margin = BorderFactory.createEmptyBorder(0,3,3,3);
 	public static Border lineBorder = BorderFactory.createLineBorder(Color.BLACK);
 	public static Border buttonBorder = BorderFactory.createLineBorder(Color.BLACK, 1, true);
 
