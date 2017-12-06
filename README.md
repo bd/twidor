@@ -61,7 +61,7 @@ is intended to assist in all aspects of learning to twiddle and
 developing a personal chord mapping. Like Twidor, Twidlit is
 written in Java.
 
-## Resources
+## References
 
 Expert Chording Text Entry on the Twiddler One-Handed Keyboard,
 Kent Lyons, Thad Starner, Daniel Plaisted,
@@ -70,20 +70,30 @@ James Fusia, Amanda Lyons, Aaron Drew, E. W. Looney,
 Arlington, Virginia, Oct. 31, 2004 to Nov. 3, 2004.
 [full text.](https://www.researchgate.net/publication/27521297_Twiddler_Typing_One-Handed_Chording_Text_Entry_for_Mobile_Phones)
 
-Mobile Text Entry, Kent Loyons, [Lecture slides.](https://wiki.cc.gatech.edu/ccg/_media/classes/7470/7470-f06/mobile-text-entry.pdf?id=classes%3A7470%3A7470-f06%3Apowerpoint_slides&cache=cache)
+Twiddler Typing: One-Handed Chording Text Entry for Mobile
+Phones, Kent Lyons, Thad Starner, Daniel Plaisted, James Fusia,
+Amanda Lyons, Aaron Drew, E. W. Looney. Proceeding CHI '04
+Proceedings of the SIGCHI Conference on Human Factors in
+Computing Systems, Pages
+671-678. [full text](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.4.3606&rep=rep1&type=pdf)
 
 Experimental Evaluations of the Twiddler One-Handed Chording
-Mobile Keyboard. Kent Lyons, Brian Gane, and Thad Starner. HCI
-Journal.
+Mobile Keyboard. Kent Lyons, Brian Gane, and Thad
+Starner. Journal Human-Computer Interaction archive Volume 21
+Issue 4, November 2006 Pages
+343-392. [full text](https://pdfs.semanticscholar.org/70c3/995e2487921b8a08bec07977f8cc161655fa.pdf)
 
 The Impacts of Limited Visual Feedback on Mobile Text Entry for
 the Twiddler and Mini-QWERTY Keyboards. James Clawson, Kent
 Lyons, Thad Starner, and Edward Clarkson. Proceedings of
 ISWC 2005. Osaka, Japan. November 2005.
+[full text.](https://pdfs.semanticscholar.org/70c3/995e2487921b8a08bec07977f8cc161655fa.pdf)
+
+Mobile Text Entry, Kent Loyons, [Lecture slides.](https://wiki.cc.gatech.edu/ccg/_media/classes/7470/7470-f06/mobile-text-entry.pdf?id=classes%3A7470%3A7470-f06%3Apowerpoint_slides&cache=cache)
 
 ## Acknowledgements
 
-[James Gibson Fusia](http://wearables.cc.gatech.edu/people/james/),
+[James Gibson Fusia](http://wearables.cc.gatech.edu/people/james/)
 is the original author of Twidor.
 
 [Evan Dower](https://github.com/evantd) collaborated and made
@@ -91,5 +101,5 @@ the source code available on github.
 
 [Rich Murphey](https://github.com/rich-murphey) modified Twidor
 to support [Twiddler v3 keyboard layouts](https://twiddler.tekgear.com/tuner/edit.xhtml),
-released a simplified windows installer, and added build files
-and documentation.
+released a simplified windows installer, added build files
+and documentation, and continued development.
