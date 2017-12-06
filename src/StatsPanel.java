@@ -93,14 +93,14 @@ public class StatsPanel extends JPanel implements TwidorConstants {
 		center.add(quickLabel(""));
 		/* Row 1: 2 */
 		temp = quickLabel("WPM");
-		temp.setPreferredSize(new Dimension(120, 24));
+		// temp.setPreferredSize(new Dimension(120, 24));
 		center.add(temp);
 		/* Row 1: 3 */
 		temp = quickLabel("AER");
-		temp.setPreferredSize(new Dimension(120, 24));
+		// temp.setPreferredSize(new Dimension(120, 24));
 		center.add(temp);
 		/* Row 2: 1 */
-		temp = quickLabel("Last");
+		temp = quickLabel("Sentence");
 		temp.setHorizontalAlignment(SwingConstants.LEADING);
 		center.add(temp);
 		/* Row 2: 2 */

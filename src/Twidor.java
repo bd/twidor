@@ -492,12 +492,6 @@ public class Twidor extends JFrame implements TwidorConstants {
 		}
 		else if (option.startsWith("Lesson")) {
 			setLesson(option);
-
-			/* FIXME */
-			//getInfoPanel().setTitle(getSentences().getSource() + ": Sentence " + getSentenceNumber());
-
-			//getTypingPanel().displaySentence(getSentence());
-			//getStatsPanel().nextSentence(getSentence());
 		}
 	}// end menuOption (String)
 
