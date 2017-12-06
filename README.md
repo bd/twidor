@@ -48,7 +48,7 @@ To compile and build Twidor.jar, one may use:
 
 In a future release, Twidor will be able to load other keymaps.
 This will include the capability to read keymaps in the CSV format exported from
-the[official [Twiddler layout editor](https://twiddler.tekgear.com/tuner/edit.xhtml).
+the[official Twiddler layout editor](https://twiddler.tekgear.com/tuner/edit.xhtml).
 
 To generate a keymap suitable for input, one may:
 
