@@ -9,8 +9,7 @@ Twidor was originally written by researchers studying
 (approximately 80 sessions or 27 hours) while the slower typists
 could achieve 45 wpm.
 
-Please note, the current release includes only a single keyboard layout,
-the [Backspice keymap](https://raw.githubusercontent.com/AlexBravo/Twiddler/master/Backspice2%20cheat%20sheet.txt).
+## How to Install
 
 Download the releases from here:
 
@@ -28,6 +27,27 @@ example, on Debian or Ubuntu, one may use:
 Feedback and reports of issues are
 welcome [here](https://github.com/rich-murphey/twidor/issues).
 
+## Usage
+
+Upon startup, Twidoar loads the the
+[Backspice keymap](https://raw.githubusercontent.com/AlexBravo/Twiddler/master/Backspice2%20cheat%20sheet.txt) by
+default.  Twidor can read CSV format keyaps exported from the 
+the [official Twiddler layout editor](https://twiddler.tekgear.com/tuner/edit.xhtml).
+
+To generate a keymap suitable for input, one may:
+
+* open https://twiddler.tekgear.com/tuner/edit.xhtml,
+* select 'Edit Configuration' for a given configuration file,
+* with the configuration file open, select Export, and then CSV.
+* download the CSV file.
+* In Twidor, select File > Load Keymap, and select the CSV file.
+
+## Road-map
+
+In a future release, Twidor will be able to load other keymaps.
+This will include the capability to read keymaps in the CSV format exported from
+
+
 ## How to Build
 
 To compile and build Twidor.jar, one may use:
@@ -37,20 +57,6 @@ To compile and build Twidor.jar, one may use:
     cd twidor
     ant
 
-## Road-map
-
-In a future release, Twidor will be able to load other keymaps.
-This will include the capability to read keymaps in the CSV format exported from
-the [official Twiddler layout editor](https://twiddler.tekgear.com/tuner/edit.xhtml).
-
-To generate a keymap suitable for input, one may:
-
-* open https://twiddler.tekgear.com/tuner/edit.xhtml,
-* select 'Edit Configuration' for a given configuration file,
-* with the configuration file open, select Export, and then CSV.
-* download the CSV file, and change the filename to keymap.txt, and
-* place keymap.txt in the same directory as the Twidor Java .class files.
-  
 ## Other Relevant Projects
 
 The [original Twidor source code and documentation](http://wearables.cc.gatech.edu/projects/twidor/) at Georgia Tech.
