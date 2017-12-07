@@ -108,8 +108,8 @@ is the original author of Twidor.
 the source code available on github.
 
 [Rich Murphey](https://github.com/rich-murphey) modified Twidor
-to support [Twiddler v3 keyboard layouts](https://twiddler.tekgear.com/tuner/edit.xhtml),
+to parse [Twiddler v3 keyboard layouts](https://twiddler.tekgear.com/tuner/edit.xhtml),
 released a simplified windows installer, added build files
 and documentation, revised keypad display, added options such as
 thumbpad orientation and thumbpad labels visibility, and added the ability
-to load Twilder Keymaps files form the filesystem.
+to load Twilder Keymaps files from the filesystem.
