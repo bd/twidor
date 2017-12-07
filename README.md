@@ -112,4 +112,4 @@ to parse [Twiddler v3 keyboard layouts](https://twiddler.tekgear.com/tuner/edit.
 released a simplified windows installer, added build files
 and documentation, revised keypad display, added options such as
 thumbpad orientation and thumbpad labels visibility, and added the ability
-to load Twilder Keymaps files from the filesystem.
+to load TWidler Tuner keymap files from the filesystem.
