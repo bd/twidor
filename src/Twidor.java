@@ -57,6 +57,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 	private LessonParser myLessonPlan;
 	private Lesson currentLesson;
 	private String currentSentence;
+	private JFileChooser fc;
 
 	/**
 	 * Default Constructor.
@@ -113,6 +114,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 		setVisible(true);
 		setLesson("Lesson 1");
 		ignoreInput(false);
+		fc = new JFileChooser(".");
 	}// end Twidor
 
 // EventHandler stuff
@@ -490,6 +492,18 @@ public class Twidor extends JFrame implements TwidorConstants {
 		if (option.equals(QUIT_TEXT)) {
 			twidorQuit();
 		}
+		else if (option.equals(LOAD_KEYMAP_TEXT)) {
+                    int choice = fc.showOpenDialog(this);
+                    if (choice == JFileChooser.APPROVE_OPTION) {
+                        try {
+							setKeyMap(fc.getSelectedFile().getCanonicalPath());
+						} catch (IOException e) {
+							e.printStackTrace();
+						}
+                        getTwiddlerPanel().setKeyMap(getKeyMap());
+                        getTwiddlerPanel().reOrient();
+                    }
+                }
 		else if (option.startsWith("Lesson")) {
 			setLesson(option);
 		}
