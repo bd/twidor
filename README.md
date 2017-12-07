@@ -110,4 +110,5 @@ the source code available on github.
 [Rich Murphey](https://github.com/rich-murphey) modified Twidor
 to support [Twiddler v3 keyboard layouts](https://twiddler.tekgear.com/tuner/edit.xhtml),
 released a simplified windows installer, added build files
-and documentation, and continued development.
+and documentation, revised keypad display, and added the ability
+to load Twilder Tuner CVS exported keymaps.
