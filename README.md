@@ -6,15 +6,10 @@ Twidor is a typing tutor for the [Twiddler one-handed keyboard](https://twiddler
 Twidor was originally written by researchers studying
 [Twiddler learning rates and performance](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.4.3606&rep=rep1&type=pdf).
 
-Lyons [2] states, "faster typists would reach
+In article [2] below, Lyons states, "faster typists would reach
 60 wpm, the rate of our expert, after 10,000 phrases
 (approximately 80 sessions or 27 hours) while the slower typists
-could achieve 45 wpm. Lyons [3] states, "We found that users initially had a faster average typing
-rate with multitap; however, after 4 sessions the difference became negligible, and
-by the 8th session participants typed faster with chording on the Twiddler." Lyons [3] also states, "lack of visual
-feedback does not hinder expert typing speed."
-
-## How to Install
+could achieve 45 wpm.
 
 Please note, the current release includes only a single keyboard layout,
 the [Backspice keymap](https://raw.githubusercontent.com/AlexBravo/Twiddler/master/Backspice2%20cheat%20sheet.txt).
