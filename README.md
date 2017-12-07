@@ -4,10 +4,10 @@ width="50%" align="right">
 Twidor is a typing tutor for the [Twiddler one-handed keyboard](https://twiddler.tekgear.com/).
 
 Twidor was originally written by researchers studying
-[Twiddler learning rates and performance](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.4.3606&rep=rep1&type=pdf). Their research susggests that typing speed can be faster on single-handed chording keyboards than two-handed querty keyboards given equal amount of practice.  In article [2] below, Lyons states, "faster typists would reach
-60 wpm, the rate of our expert, after 10,000 phrases
+[Twiddler learning rates and performance](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.4.3606&rep=rep1&type=pdf). Their research suggests that typing speed can be faster on single-handed chording keyboards than two-handed QWERTY keyboards given equal amount of practice.  In article [2] below, Lyons states, "faster typists would reach
+60 WPM, the rate of our expert, after 10,000 phrases
 (approximately 80 sessions or 27 hours) while the slower typists
-could achieve 45 wpm.
+could achieve 45 WPM.
 
 ## How to Install
 
@@ -29,9 +29,9 @@ welcome [here](https://github.com/rich-murphey/twidor/issues).
 
 ## Usage
 
-Upon startup, Twidoar loads the the
+Upon startup, Twidor loads the the
 [Backspice keymap](https://raw.githubusercontent.com/AlexBravo/Twiddler/master/Backspice2%20cheat%20sheet.txt) by
-default.  Twidor can read CSV format keyaps exported from the 
+default.  Twidor can read CSV format keymaps exported from the 
 the [official Twiddler layout editor](https://twiddler.tekgear.com/tuner/edit.xhtml).
 
 To generate a keymap suitable for input, one may:
@@ -64,7 +64,7 @@ written in Java.
 
 The [Backspice keymap](https://github.com/AlexBravo/Twiddler) by [Alex Bravo](https://plus.google.com/+AlexBravo).
 
-The [Tabspace 3 layout](http://ivanwfr.github.io/Twiddler3-Layout/) discusses a range of layout issues, including ngram occurence frequency and ranking the dexterity required for various multi-key chords.
+The [Tabspace 3 layout](http://ivanwfr.github.io/Twiddler3-Layout/) discusses a range of layout issues, including ngram occurrence frequency and ranking the dexterity required for various multi-key chords.
 
 The [Twiddler 3 Google Group](https://groups.google.com/forum/?hl=en#!forum/twiddler-3) has links to various resources.
 
