@@ -8,7 +8,7 @@ Twidor was originally written by researchers studying
 research suggests that learners may achive faster typing speeds on single-handed chording keyboards than two-handed QWERTY keyboards given equal amount of practice.  In article [2] below, Lyons states, "faster typists would reach
 60 WPM, the rate of our expert, after 10,000 phrases
 (approximately 80 sessions or 27 hours) while the slower typists
-could achieve 45 WPM.
+could achieve 45 WPM."
 
 ## How to Install
 
