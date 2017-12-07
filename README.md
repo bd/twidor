@@ -4,9 +4,7 @@ width="50%" align="right">
 Twidor is a typing tutor for the [Twiddler one-handed keyboard](https://twiddler.tekgear.com/).
 
 Twidor was originally written by researchers studying
-[Twiddler learning rates and performance](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.4.3606&rep=rep1&type=pdf).
-
-In article [2] below, Lyons states, "faster typists would reach
+[Twiddler learning rates and performance](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.4.3606&rep=rep1&type=pdf). Their research susggests that typing speed can be faster on single-handed chording keyboards than two-handed querty keyboards given equal amount of practice.  In article [2] below, Lyons states, "faster typists would reach
 60 wpm, the rate of our expert, after 10,000 phrases
 (approximately 80 sessions or 27 hours) while the slower typists
 could achieve 45 wpm.
