@@ -42,12 +42,6 @@ To generate a keymap suitable for input, one may:
 * download the CSV file.
 * In Twidor, select File > Load Keymap, and select the CSV file.
 
-## Road-map
-
-In a future release, Twidor will be able to load other keymaps.
-This will include the capability to read keymaps in the CSV format exported from
-
-
 ## How to Build
 
 To compile and build Twidor.jar, one may use:
