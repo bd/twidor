@@ -69,6 +69,8 @@ public class TwidorMenu extends JMenuBar implements TwidorConstants {
 		menu = new JMenu("File");
 		jmItem = jmenuItem(LOAD_KEYMAP_TEXT);
 		menu.add(jmItem);
+		jmItem = jmenuItem(LOAD_LESSON_TEXT);
+		menu.add(jmItem);
 		jmItem = jmenuItem(QUIT_TEXT);
 		menu.add(jmItem);
 		add(menu);

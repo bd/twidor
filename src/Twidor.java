@@ -1,4 +1,4 @@
-/*
+/*  -*- indent-tabs-mode: t; tab-width: 8; c-basic-offset: 8 -*-
 Twidor: the twiddler typing tutor.
 Copyright (C) 2005	James Fusia
 
@@ -294,6 +294,20 @@ public class Twidor extends JFrame implements TwidorConstants {
 	}// end setLesson (String)
 
 	/**
+	 * Sets the current lesson from the set of lessons
+	 * @param String the name of the lesson to set
+	 */
+	private void loadSingleLesson (String path) {
+		currentLesson = new Lesson(path);
+		// int lesson_num = getLessonPlan().getLessonCount() + 1;
+		// lesson.setLessonNumber( lesson_num );
+		currentLesson.reloadSentences();
+		getStatsPanel().reset();
+		nextSentence();
+		return;
+	}// end setLesson (String)
+
+	/**
 	 * gets the current lesson
 	 * @return Lesson the current lesson
 	 */
@@ -493,16 +507,26 @@ public class Twidor extends JFrame implements TwidorConstants {
 			twidorQuit();
 		}
 		else if (option.equals(LOAD_KEYMAP_TEXT)) {
-                    int choice = fc.showOpenDialog(this);
-                    if (choice == JFileChooser.APPROVE_OPTION) {
-                        try {
-							setKeyMap(fc.getSelectedFile().getCanonicalPath());
-						} catch (IOException e) {
-							e.printStackTrace();
-						}
-                        getTwiddlerPanel().setKeyMap(getKeyMap());
-                        getTwiddlerPanel().reOrient();
-                    }
+			int choice = fc.showOpenDialog(this);
+			if (choice == JFileChooser.APPROVE_OPTION) {
+				try {
+					setKeyMap(fc.getSelectedFile().getCanonicalPath());
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+				getTwiddlerPanel().setKeyMap(getKeyMap());
+				getTwiddlerPanel().reOrient();
+			}
+                }
+		else if (option.equals(LOAD_LESSON_TEXT)) {
+			int choice = fc.showOpenDialog(this);
+			if (choice == JFileChooser.APPROVE_OPTION) {
+				try {
+					loadSingleLesson(fc.getSelectedFile().getCanonicalPath());
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
                 }
 		else if (option.startsWith("Lesson")) {
 			setLesson(option);

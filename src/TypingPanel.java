@@ -1,3 +1,4 @@
+/*  -*- indent-tabs-mode: t; tab-width: 8; c-basic-offset: 8 -*-
 /*
 Twidor: the twiddler typing tutor.
 Copyright (C) 2005	James Fusia
@@ -191,21 +192,32 @@ public class TypingPanel extends JPanel implements TwidorConstants {
                 min_display_length = java.lang.Math.max(min_display_length, sentence.length());
 		int pad = java.lang.Math.max( 3, min_display_length - sentence.length());
                 
-		sentence_panel.setLayout(new GridLayout(2, sentence.length() + pad));
+		FontMetrics metrics = getGraphics().getFontMetrics(FONT_TEXT);
+		int hgt = metrics.getHeight();
+		int wid = metrics.stringWidth("m"); // M=14 x 26 m=17x26
+		Dimension size = new Dimension(wid - 2, hgt);
+//		System.out.println("font: " + size);
+
+		sentence_panel.setLayout(new GridLayout(2, sentence.length() + pad, 0, 0));
 		sentence_panel.setBackground(TEXT_BACKGROUND);
+//		int maxWid = 0;
 		for (int i = 0; i < sentence.length(); i++) {
-			JLabel newLetter = letterLabel(String.valueOf(sentence.charAt(i)));
+			String letter = String.valueOf(sentence.charAt(i));
+			JLabel newLetter = letterLabel(letter, size);
 			Sentence.add(newLetter);
 			sentence_panel.add(newLetter);
+//			int w = metrics.stringWidth(letter);
+//			if( w > maxWid ) { maxWid = w; }
 		}
+//		System.out.println("maxWid: " + maxWid);
 		/* text alignment. We allow typers to go +/- 3 characters before hitting enter. */
 		for (int i = sentence.length();  i < sentence.length() + pad; i++) {
-			JLabel newLetter = letterLabel("");
+			JLabel newLetter = letterLabel("", size);
 			Sentence.add(newLetter);
 			sentence_panel.add(newLetter);
 		}
 		for (int i = 0; i < sentence.length() + pad; i++) {
-			JLabel newLetter = letterLabel("");
+			JLabel newLetter = letterLabel("", size);
 			if (i == 0) {
 				newLetter.setText(CURSOR);
 				newLetter.setForeground(TEXT_CURSOR);
@@ -214,20 +226,28 @@ public class TypingPanel extends JPanel implements TwidorConstants {
 			sentence_panel.add(newLetter);
 		}
 		sentence_panel.setMaximumSize(sentence_panel.getPreferredSize());
-
 		// add(Box.createVerticalGlue());
                 // add(Box.createRigidArea(new Dimension(0,pad)));
 		add(sentence_panel);
+                validate();
 		setVisible(true);
 		if (bDEBUG) System.out.println("TypingPanel: New sentence displayed");
 	}// end displaySentence ()
 
 	private JLabel letterLabel (String letter) {
+		return letterLabel( letter, null);
+	}
+
+	private JLabel letterLabel (String letter, Dimension size) {
 		JLabel newLetter = new JLabel(letter, javax.swing.SwingConstants.CENTER);
 		newLetter.setFont(FONT_TEXT);
 		newLetter.setForeground(TEXT_DEFAULT);
 		newLetter.setBackground(TEXT_BACKGROUND);
-                newLetter.setBorder(noBorder);
+		newLetter.setBorder(noBorder);
+		if (size != null) {
+//			newLetter.setMinimumSize( size );
+			newLetter.setMaximumSize( size );
+		}
 		return newLetter;
 	}
 

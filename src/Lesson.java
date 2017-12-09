@@ -42,8 +42,8 @@ public class Lesson implements TwidorConstants {
 
 	private Vector lessonSentences; // array of sentences to show
 	private Vector trash;
-	private int lessonCount; // number of sentences shown
-	private int lessonTotal; // number of sentences to show
+	private int currentSentence; // index sentences shown
+	private int totalSentences; // number of sentences to show
 
 	/**
 	 * default constructor
@@ -55,8 +55,8 @@ public class Lesson implements TwidorConstants {
 		trash = new Vector();
 		highlightChord = false;
 		highlightMCC = false;
-		lessonCount = 0;
-		lessonTotal = 0;
+		currentSentence = 0;
+		totalSentences = 0;
 	}// end Lesson ()
 
 	/**
@@ -80,7 +80,7 @@ public class Lesson implements TwidorConstants {
 	}
 
 	public boolean isComplete () {
-		if (lessonCount >= lessonTotal)
+		if (currentSentence >= totalSentences)
 			return true;
 		return false;
 	}
@@ -102,12 +102,12 @@ public class Lesson implements TwidorConstants {
 		String sentence = (String)lessonSentences.elementAt(victim);
 		lessonSentences.removeElementAt(victim);
 		trash.add(sentence);
-		lessonCount++;
+		currentSentence++;
 		return sentence;
 	}
 
 	public int getSentenceNumber () {
-		return lessonCount;
+		return currentSentence;
 	}
 
 	/**
@@ -118,7 +118,7 @@ public class Lesson implements TwidorConstants {
 	}
 
 	public void setLessonTotal (int count) {
-		lessonTotal = count;
+		totalSentences = count;
 	}
 
 	public void setHighlight (boolean status) {
@@ -175,6 +175,7 @@ public class Lesson implements TwidorConstants {
 			}
 		} catch (Exception e) {
 		}
+                setLessonTotal( lessonSentences.size() );
 
 		if (bDEBUG)
 			System.out.println("Lesson: " + lessonSentences.size()
@@ -185,7 +186,7 @@ public class Lesson implements TwidorConstants {
 		lessonSentences.clear();
 		trash.clear();
 		readFile(fileName);
-		lessonCount = 0;
+		currentSentence = 0;
 	}
 
 }
