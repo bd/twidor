@@ -52,22 +52,19 @@ public class TypingPanel extends JPanel implements TwidorConstants {
 	Vector Typed;           // characters typed by user
 	int current;            // cursor on typed text
 	boolean highlightErrors;
-	boolean allowErrors;
 	boolean finished;
 	int min_display_length = 40;
-
+	JTable table;
 	/**
 	 * default constructor
 	 */
 	public TypingPanel () {
 		Sentence = new Vector();
-                String sentenceText = "";
+		String sentenceText = "";
 		Typed = new Vector();
 		setCurrent(0);
 		setEntered(false);
 		setHighlightErrors(HIGHLIGHT_ERRORS);
-		//setAllowErrors(ALLOW_ERRORS);
-		setAllowErrors(true);
 		setBackground(TEXT_BACKGROUND);
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		setBorder(margin);
@@ -82,14 +79,6 @@ public class TypingPanel extends JPanel implements TwidorConstants {
 	public void setHighlightErrors (boolean status) {
 		highlightErrors = status;
 	}// end setHighlightErrors (boolean)
-
-	/**
-	 * Modifier for whether or not we allow errors
-	 * @param boolean the new status of errors
-	 */
-	public void setAllowErrors (boolean status) {
-		allowErrors = status;
-	}// end setAllowErrors (boolean)
 
 	/**
 	 * Modifier for the current JLabel in the typing panel
@@ -119,14 +108,6 @@ public class TypingPanel extends JPanel implements TwidorConstants {
 	public boolean getHighlightErrors () {
 		return highlightErrors;
 	}// end getHighlightErrors ()
-
-	/**
-	 * Accessor for whether or not we allow errors
-	 * @return boolean the status of errors
-	 */
-	public boolean getAllowErrors () {
-		return allowErrors;
-	}// end getAllowErrors ()
 
 	/**
 	 * Accessor for the current JLabel in the typing panel
@@ -167,167 +148,88 @@ public class TypingPanel extends JPanel implements TwidorConstants {
 		setVisible(true);
 	}
 
-	/**
-	 * Called when a new sentence is to be displayed
-	 * @param String the new sentence to display
-	 */
 	public void displaySentence (String sentence) {
 		setVisible(false);
 		setSentenceText(sentence);
-		JPanel sentence_panel = new JPanel();
-		sentence_panel.setAlignmentY(CENTER_ALIGNMENT);
-
-		if (bDEBUG) System.out.println("TypingPanel: Displaying new sentence");
-		/* Empty everything in this JPanel, and clear all associated variables */
 		Sentence.clear();
 		Typed.clear();
 		setCurrent(0);
 		setEntered(false);
 		removeAll();
-
 		if (sentence == null) {
-			if (bDEBUG) System.out.println("TypingPanel: Got sent a null sentence");
 			return;
 		}
-                min_display_length = java.lang.Math.max(min_display_length, sentence.length());
-		int pad = java.lang.Math.max( 3, min_display_length - sentence.length());
-                
-		FontMetrics metrics = getGraphics().getFontMetrics(FONT_TEXT);
-		int hgt = metrics.getHeight();
-		int wid = metrics.stringWidth("m"); // M=14 x 26 m=17x26
-		Dimension size = new Dimension(wid - 2, hgt);
-//		System.out.println("font: " + size);
 
-		sentence_panel.setLayout(new GridLayout(2, sentence.length() + pad, 0, 0));
+		JPanel sentence_panel = new JPanel();
+		sentence_panel.setAlignmentY(CENTER_ALIGNMENT);
+		sentence_panel.setFont(FONT_TEXT);
 		sentence_panel.setBackground(TEXT_BACKGROUND);
-//		int maxWid = 0;
+		FlowLayout layout = (FlowLayout)sentence_panel.getLayout();
+		layout.setHgap(0);
 		for (int i = 0; i < sentence.length(); i++) {
+			JPanel subPanel = new JPanel();
+			subPanel.setLayout(new GridLayout(2, 1));
+			subPanel.setBorder(noBorder);
+			subPanel.setBackground(TEXT_BACKGROUND);
 			String letter = String.valueOf(sentence.charAt(i));
-			JLabel newLetter = letterLabel(letter, size);
-			Sentence.add(newLetter);
-			sentence_panel.add(newLetter);
-//			int w = metrics.stringWidth(letter);
-//			if( w > maxWid ) { maxWid = w; }
+			JLabel jlabel = new JLabel(letter, javax.swing.SwingConstants.CENTER);
+			jlabel.setBorder(noBorder);
+			jlabel.setFont(FONT_TEXT);
+			jlabel.setBackground(TEXT_BACKGROUND);
+			subPanel.add( jlabel );
+			jlabel = new JLabel("", javax.swing.SwingConstants.CENTER);
+			jlabel.setFont(FONT_TEXT);
+			jlabel.setBackground(TEXT_BACKGROUND);
+			subPanel.add( jlabel );
+			Sentence.add( jlabel );
+			sentence_panel.add( subPanel );
 		}
-//		System.out.println("maxWid: " + maxWid);
-		/* text alignment. We allow typers to go +/- 3 characters before hitting enter. */
-		for (int i = sentence.length();  i < sentence.length() + pad; i++) {
-			JLabel newLetter = letterLabel("", size);
-			Sentence.add(newLetter);
-			sentence_panel.add(newLetter);
-		}
-		for (int i = 0; i < sentence.length() + pad; i++) {
-			JLabel newLetter = letterLabel("", size);
-			if (i == 0) {
-				newLetter.setText(CURSOR);
-				newLetter.setForeground(TEXT_CURSOR);
-			}
-			Typed.add(newLetter);
-			sentence_panel.add(newLetter);
-		}
-		sentence_panel.setMaximumSize(sentence_panel.getPreferredSize());
-		// add(Box.createVerticalGlue());
-                // add(Box.createRigidArea(new Dimension(0,pad)));
 		add(sentence_panel);
                 validate();
 		setVisible(true);
-		if (bDEBUG) System.out.println("TypingPanel: New sentence displayed");
 	}// end displaySentence ()
 
-	private JLabel letterLabel (String letter) {
-		return letterLabel( letter, null);
-	}
-
-	private JLabel letterLabel (String letter, Dimension size) {
-		JLabel newLetter = new JLabel(letter, javax.swing.SwingConstants.CENTER);
-		newLetter.setFont(FONT_TEXT);
-		newLetter.setForeground(TEXT_DEFAULT);
-		newLetter.setBackground(TEXT_BACKGROUND);
-		newLetter.setBorder(noBorder);
-		if (size != null) {
-//			newLetter.setMinimumSize( size );
-			newLetter.setMaximumSize( size );
-		}
-		return newLetter;
-	}
-
-	/**
-	 * Called when a character was typed
-	 * @param KeyElement the character that was typed
-	 */
 	public void charTyped (KeyElement typed) {
-		/* Make sure we're in valid character range */
 		if (getCurrent() < 0) {
 			setCurrent(0);
 		}
-		if (getCurrent() > getSentenceText().length()) {
-			if (typed.getNumber() == KEY_EOL || typed.getNumber() == KEY_ENTER || typed.getLetter().equals("\n")) {
-				if (getAllowErrors()) {
-					setEntered(true);
-				}
-			}
-			else if (typed.getNumber() == KEY_BACKSPACE || typed.getNumber() == KEY_DELETE) {
-				setCurrent(getCurrent() - 1);
-				((JLabel)Sentence.elementAt(getCurrent())).setForeground(TEXT_DEFAULT);
-				((JLabel)Typed.elementAt(getCurrent())).setForeground(TEXT_CURSOR);
-				((JLabel)Typed.elementAt(getCurrent())).setText(CURSOR);
-			}
-			else {
-				if (bDEBUG) System.out.println("TypingPanel: Not accepting other input.");
-			}
+		if (typed.getNumber() == KEY_BACKSPACE || typed.getNumber() == KEY_DELETE) {
+			setCurrent(getCurrent() - 1);
+			JLabel label = (JLabel)Sentence.elementAt(getCurrent());
+			label.setForeground(TEXT_DEFAULT);
+			label.setText(CURSOR);
 			return;
 		}
-
 		setVisible(false);
 		if (typed.getNumber() == KEY_EOL || typed.getNumber() == KEY_ENTER || typed.getLetter().equals("\n")) {
 			/* Enter only matters if we're allowing errors and the sentence is finished */
 			if (getCurrent() >= getSentenceText().length()) {
 				setEntered(true);
 			}
-		}
-		else if ((typed.getNumber() == KEY_BACKSPACE) || (typed.getNumber() == KEY_DELETE)) {
-			/* Erase */
-			if (getCurrent() <= 0) {
-				if (bDEBUG) System.out.println("TypingPanel: Can't delete what's not there");
-			}
-			else {
-				((JLabel)Typed.elementAt(getCurrent())).setText("");
-				((JLabel)Typed.elementAt(getCurrent())).setForeground(TEXT_DEFAULT);
-				setCurrent(getCurrent() - 1);
-				((JLabel)Sentence.elementAt(getCurrent())).setForeground(TEXT_DEFAULT);
-			}
-		}
-		else {
-			/* Treat it like a normal character */
-			String toMatch = ((JLabel)Sentence.elementAt(getCurrent())).getText();
-			((JLabel)Typed.elementAt(getCurrent())).setForeground(TEXT_DEFAULT);
-			((JLabel)Typed.elementAt(getCurrent())).setText(typed.displayLetter());
-			if (typed.displayLetter().equals(toMatch)) {
-				((JLabel)Sentence.elementAt(getCurrent())).setForeground(TEXT_GOOD);
+		} else {
+			if (getCurrent() < getSentenceText().length()) {
+				/* Treat it like a normal character */
+				JLabel label = (JLabel)Sentence.elementAt(getCurrent());
+				label.setForeground(TEXT_DEFAULT);
+				label.setText(typed.displayLetter());
+				String toMatch = sentenceText.substring(getCurrent());
+				if (toMatch.startsWith(typed.displayLetter())) {
+					label.setForeground(TEXT_GOOD);
+				} else {
+					label.setForeground(TEXT_ERROR);
+				}
 				setCurrent(getCurrent() + 1);
 			}
-			else {
-				((JLabel)Sentence.elementAt(getCurrent())).setForeground(TEXT_ERROR);
-				if (getAllowErrors()) {
-					setCurrent(getCurrent() + 1);
-				}
-			}
-		}
-		if (getCurrent() < Typed.size()) {
-			((JLabel)Typed.elementAt(getCurrent())).setForeground(TEXT_CURSOR);
-			((JLabel)Typed.elementAt(getCurrent())).setText(CURSOR);
 		}
 		setVisible(true);
-	}// end charTyped (KeyElement)
+	}
 
 	/**
 	 * Called to check and see if the sentence is complete
 	 */
 	public boolean sentenceComplete () {
-		if (getAllowErrors()) {
-			return getEntered();
-		}
-		return (getCurrent() >= getSentenceText().length());
+		return getEntered();
+		// return (getCurrent() >= getSentenceText().length());
 	}// end sentenceComplete ()
 
 }// end class TypingPanel

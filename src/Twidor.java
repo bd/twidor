@@ -79,7 +79,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 		ignoreInput(true);
 		showingStats(false);
 		/* JFrame Settings */
-		// setSize(new Dimension(windowX, windowY));
+		setMinimumSize(new Dimension(windowX, windowY));
 		setTitle(windowTitle);
 		setBackground(windowBackground);
 		setResizable(windowResizable);
