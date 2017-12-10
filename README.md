@@ -42,9 +42,9 @@ Menu options include:
 * <kbd>File | Load Lesson</kbd> imports a arbitrary ascii text file, displayed one line at a time.
 * <kbd>Keyboard | Show..</kbd> to show/hide key labels or flip right-to-left orientation.
 * <kbd>Hints | Highlight...</kbd> to show/hide buttons for the next letter of the lesson.
-* <kbd>Keymaps</kbd> for Backspice, Default_V5, TabSpace, or Typemax.
+* <kbd>Keymaps</kbd> to load Backspice, Default_V5, TabSpace, or Typemax.
 
-To use a custom keymap, users may generate a keymap and load it as follows:
+To load a custom keymap, users may:
 
 * open https://twiddler.tekgear.com/tuner/edit.xhtml,
 * load the kemmap.cfg if not alreay present there.
