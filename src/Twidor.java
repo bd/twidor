@@ -529,6 +529,15 @@ public class Twidor extends JFrame implements TwidorConstants {
 				}
 			}
                 }
+		else if ( (option.equals(KEYMAP_Backspice)) ||
+			  (option.equals(KEYMAP_Default_V5)) ||
+			  (option.equals(KEYMAP_TabSpace)) ||
+			  (option.equals(KEYMAP_Typemax)) )
+			{
+				setKeyMap(option + ".csv");
+				getTwiddlerPanel().setKeyMap(getKeyMap());
+				getTwiddlerPanel().reOrient();
+			}
 		else if (option.startsWith("Lesson")) {
 			setLesson(option);
 		}

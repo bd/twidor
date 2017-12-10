@@ -1,4 +1,4 @@
-/*
+/*  -*- indent-tabs-mode: t; tab-width: 4; c-basic-offset: 4 -*-
 Twidor: the twiddler typing tutor.
 Copyright (C) 2005	James Fusia
 Copyright (C) 2017	Carey Richard Murphey
@@ -129,6 +129,12 @@ public interface TwidorConstants {
 	public boolean TWIDDLER_SHOW_THUMB = true;
 	public static final String TWIDDLER_MIRROR_THUMB_TEXT = "Horizontal Reverse Thumb Buttons";
 	public boolean TWIDDLER_MIRROR_THUMB = false;
+
+	// Kemap menu items. Filename is <name>.csv.
+	public static final String KEYMAP_Backspice = "Backspice";
+	public static final String KEYMAP_Default_V5 = "Default_V5";
+	public static final String KEYMAP_TabSpace = "TabSpace";
+	public static final String KEYMAP_Typemax = "Typemax";
 
 	public static final String MACRO_REGEXP = "\"\\w*\"";
 

@@ -1,4 +1,4 @@
-/*
+/*  -*- indent-tabs-mode: t; tab-width: 4; c-basic-offset: 4 -*-
 Twidor: the twiddler typing tutor.
 Copyright (C) 2005	James Fusia
 Copyright (C) 2017	Carey Richard Murphey
@@ -108,7 +108,6 @@ public class TwidorMenu extends JMenuBar implements TwidorConstants {
 		menu.add(jmItem);
 		add(menu);
 
-
 		Lesson = new ButtonGroup();
 		lessonButtons = new Vector();
 		menu = new JMenu("Lessons");
@@ -122,6 +121,17 @@ public class TwidorMenu extends JMenuBar implements TwidorConstants {
 			lessonButtons.add(rbItem);
 			menu.add(rbItem);
 		}
+		add(menu);
+
+		menu = new JMenu("Keymaps");
+		jmItem = jmenuItem(KEYMAP_Backspice);
+		menu.add(jmItem);
+		jmItem = jmenuItem(KEYMAP_Default_V5);
+		menu.add(jmItem);
+		jmItem = jmenuItem(KEYMAP_TabSpace);
+		menu.add(jmItem);
+		jmItem = jmenuItem(KEYMAP_Typemax);
+		menu.add(jmItem);
 		add(menu);
 
 		if (bDEBUG) System.out.println("TwidorMenu: Finished Creating");
