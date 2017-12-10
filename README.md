@@ -40,7 +40,7 @@ the same as the top level button boxes: horizontally green-red-blue, and vertica
 finger.  
 
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_chord_map.png"
-width="30%" align="right"> Here are all two-button chords using the <kbd>I</kbd> key.
+width="30%" align="right"> Here are all two-button chords that use the <kbd>I</kbd> key.
 
 They include:
 * <kbd>I + S</kbd> sends "is".
