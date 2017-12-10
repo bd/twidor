@@ -1,6 +1,7 @@
-/*
+/*  -*- indent-tabs-mode: t; tab-width: 4; c-basic-offset: 4 -*-
 Twidor: the twiddler typing tutor.
 Copyright (C) 2005	James Fusia
+Copyright (C) 2017	Carey Richard Murphey
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -194,6 +195,10 @@ public class KeyElement extends java.lang.Object implements TwidorConstants {
 		}
 		return false;
 	}// end equals (Object)
+
+    public boolean match (int number, String letter) {
+		return ((getNumber() == number) || (getLetter().equals(letter)));
+	}
 
 	/**
 	 * Function for returning this KeyElement in an easy-to-debug format

@@ -1,6 +1,7 @@
 /*
 Twidor: the twiddler typing tutor.
 Copyright (C) 2005	James Fusia
+Copyright (C) 2017	Carey Richard Murphey
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License

@@ -1,6 +1,7 @@
 /*  -*- indent-tabs-mode: t; tab-width: 4; c-basic-offset: 4 -*-
 Twidor: the twiddler typing tutor.
 Copyright (C) 2005	James Fusia
+Copyright (C) 2017	Carey Richard Murphey
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -81,6 +82,28 @@ public class FingerPanel extends JPanel implements TwiddlerSubPanel, TwidorConst
             }
 	}// end add_long_label ()
 
+	public String getLabel(KeyElement keyElement) {
+		if (keyElement == null)
+			return "";
+		String keyLabel = keyElement.displayLetter();
+		if (keyElement.match(KEY_SPACE, " ")) {
+			keyLabel = "SP";
+		} else if (keyElement.match(KEY_BACKSPACE, "\b")) {
+			keyLabel = "BS";
+		} else if (keyElement.match(KEY_DELETE, "\177")) {
+			keyLabel = "DEL";
+		} else if (keyElement.match(KEY_ENTER, "\r")) {
+			keyLabel = "ENT";
+		} else if (keyElement.match(KEY_EOL, "\n")) {
+			keyLabel = "NL";
+		} else if (keyElement.match(KEY_TAB, "\t")) {
+			keyLabel = "TAB";
+		} else {
+			keyLabel = keyLabel.toUpperCase();
+		}
+		return keyLabel;
+	}		
+
 	/**
 	 * add one row of buttons for specified <finger>
 	 * @param int the which finger we are (0-3; index-pinky)
@@ -102,19 +125,19 @@ public class FingerPanel extends JPanel implements TwiddlerSubPanel, TwidorConst
 		{ // Above finger 0: add key for chording: green, blue, red boxes
 			JPanel panel = new JPanel();
 			panel.setComponentOrientation( keyOrient );
-			panel.setLayout(new GridLayout(0, 6, 1, 3));
+			panel.setLayout(new GridLayout(0, 12, 1, 3));
 			panel.setBackground(twiddlerBackground);
-			for (int col = 0; col < 6; col++) {
+			for (int col = 0; col < 12; col++) {
 				JPanel subPanel = new JPanel();
 				subPanel.setBackground(twiddlerBackground);
 				Color color = twiddlerBackground;
-				if (col == 0) {
+				if (col == 3) {
 					color = lightRed;
 				}
-				else if (col == 2) {
+				else if (col == 7) {
 					color = lightBlue;
 				}
-				else if (col == 4) {
+				else if (col == 11) {
 					color = lightGreen;
 				}
 
@@ -133,95 +156,92 @@ public class FingerPanel extends JPanel implements TwiddlerSubPanel, TwidorConst
 		{
 			JPanel panel = new JPanel();
 			panel.setComponentOrientation( keyOrient );
-			panel.setLayout(new GridLayout(0, 6, 1, 3));
+			panel.setLayout(new GridLayout(0, 12, 0, 4));
 			panel.setBackground(twiddlerBackground);
 
 			for (int finger = 0; finger < 4; finger++) { // four rows, one per finger
-				for (int col = 0; col < 6; col++) {			 // three button columns, and three chord columns
-					Vector buttons = new Vector(16,0);
-					for (int x = 0; x < 16; x++) {
-						buttons.add(x, new KeyStatus());
-					}
-					((KeyStatus)buttons.elementAt(finger * FINGER_OFFSET + (int)(col / 2))).setStatus(true);
-					JPanel subPanel = new JPanel();
-					if (col % 2 == 1) { // chord column
-						subPanel.setBackground(twiddlerBackground);
-						subPanel.setLayout(new GridLayout(3, 1));
-						if (finger != 0 && visibleKeys) {
-							for (int buttonRow = 0; buttonRow < 3; buttonRow++) {
-								((KeyStatus)buttons.elementAt(INDEX_OFFSET + buttonRow)).setStatus(true);
-								KeyElement myButton = keys.getKey(buttons);
-								if (myButton != null) {
-									Color color = Color.YELLOW;
-									if (buttonRow == 0) {
-										color = lightRed;
-									}
-									else if (buttonRow == 1) {
-										color  = lightBlue;
-									}
-									else if (buttonRow == 2) {
-										color  = lightGreen;
-									}
-									JLabel label = new JLabel();
-									label.setFont(FONT_KEYPAD);
-									label.setHorizontalAlignment(JLabel.CENTER);
-									label.setBorder(noBorder);
-									label.setForeground( color );
-									String displayLetter = myButton.displayLetter();
-									if( displayLetter.length() == 1 ) {
-										label.setText(myButton.displayLetter().toUpperCase());
-									} else if (displayLetter.length() <= 3) {
-										label.setFont(FONT_MACRO);
-										label.setText(displayLetter);
-									} else {
-										label.setFont(FONT_MACRO);
-										label.setText(displayLetter.substring(0,2));
-									}
-									subPanel.add(label);
-								} else {
-									add_label( subPanel, twiddlerBackground, FONT_KEYPAD, "");
-								}
-								((KeyStatus)buttons.elementAt(INDEX_OFFSET + buttonRow)).setStatus(false);
-							}
-						} else {
-							add_label( subPanel, twiddlerBackground,  FONT_KEYPAD, "z");
+				for (int fingerCol = 0; fingerCol < 3; fingerCol++) {			 // three button columns, and three chord columns
+					{			// chord map
+						Vector buttons = new Vector(16,0);
+						for (int x = 0; x < 16; x++) {
+							buttons.add(x, new KeyStatus());
 						}
-					} else {		// button column
+						((KeyStatus)buttons.elementAt(finger * FINGER_OFFSET + fingerCol)).setStatus(true);
+
+						for (int chordCol = 0; chordCol < 3; chordCol++) {
+							JPanel subPanel = new JPanel();
+							subPanel.setComponentOrientation( keyOrient );
+							subPanel.setLayout(new GridLayout(4, 1, 0, 0));
+							subPanel.setBackground(twiddlerBackground);
+							for (int chordFinger = 0; chordFinger < 4; chordFinger++) { // anchor finger
+								if (finger != chordFinger && visibleKeys) {
+									((KeyStatus)buttons.elementAt(chordFinger * FINGER_OFFSET + chordCol)).setStatus(true);
+									KeyElement myButton = keys.getKey(buttons);
+									if (myButton != null) {
+										Color color = Color.YELLOW;
+										if (chordCol == 0) {
+											color = lightRed;
+										}
+										else if (chordCol == 1) {
+											color  = lightBlue;
+										}
+										else if (chordCol == 2) {
+											color  = lightGreen;
+										}
+										JLabel label = new JLabel();
+										label.setFont(FONT_KEYPAD);
+										label.setHorizontalAlignment(JLabel.CENTER);
+										label.setBorder(noBorder);
+										label.setForeground( color );
+										String displayLetter = myButton.displayLetter();
+										if( displayLetter.length() == 1 ) {
+											label.setText(myButton.displayLetter().toUpperCase());
+										} else if (displayLetter.length() <= 3) {
+											label.setFont(FONT_MACRO);
+											label.setText(displayLetter);
+										} else {
+											label.setFont(FONT_MACRO);
+											label.setText(displayLetter.substring(0,2));
+										}
+										subPanel.add(label);
+									} else {
+										add_label( subPanel, twiddlerBackground, FONT_KEYPAD, "");
+									}
+									((KeyStatus)buttons.elementAt(chordFinger * FINGER_OFFSET + chordCol)).setStatus(false);
+								} else {
+									add_label( subPanel, twiddlerBackground,  FONT_KEYPAD, "z");
+								}
+							}
+							panel.add(subPanel);
+						}
+					}
+					{			// single button keymap
+						Vector buttons = new Vector(16,0);
+						for (int x = 0; x < 16; x++) {
+							buttons.add(x, new KeyStatus());
+						}
+						((KeyStatus)buttons.elementAt(finger * FINGER_OFFSET + fingerCol)).setStatus(true);
+
+						JPanel subPanel = new JPanel();
 						subPanel.setBackground(buttonBackground);
 						subPanel.setLayout(new GridLayout(3, 1));
 						subPanel.setBorder(buttonBorder);
 						subPanel.add(new JLabel()); // empty top row (label is in middle)
 						KeyElement myButton = keys.getKey(buttons);
 						if (myButton != null && visibleKeys) {
-							String displayLetter = myButton.displayLetter();
-							if ((myButton.getNumber() == KEY_SPACE) || (myButton.getLetter().equals(" "))) {
-								displayLetter = "SP";
-							} else if ((myButton.getNumber() == KEY_BACKSPACE) || (myButton.getLetter().equals("\b"))) {
-								displayLetter = "BS";
-							} else if ((myButton.getNumber() == KEY_DELETE) || (myButton.getLetter().equals("\177"))) {
-								displayLetter = "DEL";
-							} else if ((myButton.getNumber() == KEY_ENTER) || (myButton.getLetter().equals("\r"))) {
-								displayLetter = "ENT";
-							} else if ((myButton.getNumber() == KEY_EOL) || (myButton.getLetter().equals("\n"))) {
-								displayLetter = "NL";
-							} else if ((myButton.getNumber() == KEY_TAB) || (myButton.getLetter().equals("\t"))) {
-								displayLetter = "TAB";
+							String keyLabel = getLabel(myButton);
+							if (keyLabel.length() > 1) {
+								add_label( subPanel, TEXT_DEFAULT,  FONT_MACRO, keyLabel);
 							} else {
-								displayLetter = displayLetter.toUpperCase();
+								add_label( subPanel, TEXT_DEFAULT,  FONT_KEYPAD, keyLabel);
 							}
-							if (displayLetter.length() > 1) {
-								add_label( subPanel, TEXT_DEFAULT,  FONT_MACRO, displayLetter);
-							} else {
-								add_label( subPanel, TEXT_DEFAULT,  FONT_KEYPAD, displayLetter);
-							}
-						}
-						else {
+						} else {
 							subPanel.add(new JLabel());
 						}
 						/* We want to keep the "Buttons" around to 'highlight' */
 						getButtons().add(subPanel);
+						panel.add(subPanel);
 					}
-					panel.add(subPanel);
 				}
 			}
 			add(panel);

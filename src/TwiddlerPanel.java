@@ -1,6 +1,7 @@
-/*
+/*  -*- indent-tabs-mode: t; tab-width: 4; c-basic-offset: 4 -*-
 Twidor: the twiddler typing tutor.
 Copyright (C) 2005	James Fusia
+Copyright (C) 2017	Carey Richard Murphey
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -48,7 +49,7 @@ public class TwiddlerPanel extends JPanel implements TwidorConstants {
 	private boolean showFingerMap;
 	private boolean showTwiddler;
 	private Vector panelList;
-
+    private FingerPanel fingerPanel;
 	/**
 	 * default constructor
 	 */
@@ -224,6 +225,10 @@ public class TwiddlerPanel extends JPanel implements TwidorConstants {
 			if (bDEBUG) System.out.println("TwiddlerPanel: Can't highlight key.");
 			return;
 		}
+		if (fingerPanel == null) {
+			if (bDEBUG) System.out.println("TwiddlerPanel: null fingerPanel. Can't highlight key.");
+			return;
+		}
 		try {
 			if (key.getLetter().length() > 1) {
 				hColor = mccHighlight;
@@ -233,8 +238,7 @@ public class TwiddlerPanel extends JPanel implements TwidorConstants {
 			for (int finger = 0; finger < 4; finger++) {
 				for (int button = 0; button < 3; button++) {
 					if (key.getButton(finger * FINGER_OFFSET + button)) {
-						((TwiddlerSubPanel)getPanels().elementAt(finger +
-								1)).highlight(button, hColor);
+						fingerPanel.highlight(finger * FINGER_OFFSET + button, hColor);
 					}
 				}
 			}
@@ -272,11 +276,13 @@ public class TwiddlerPanel extends JPanel implements TwidorConstants {
 
 		setMinimumSize(new Dimension(twiddlerX, windowY));
 		getPanels().clear();
-                if (getThumbBoardVisible()) {
-                    getPanels().addElement(new ThumbPanel(getThumbOrientation(), getKeyMap(),
-                                                          getThumbKeysVisible()));
-                }
-                getPanels().addElement(new FingerPanel(getFingerOrientation(), getKeyMap(), getFingerKeysVisible()));
+		if (getThumbBoardVisible()) {
+			getPanels().addElement(new ThumbPanel(getThumbOrientation(), getKeyMap(), getThumbKeysVisible()));
+		}
+
+		// FIXME just keep refereces to the two panels. get rid of the vector.
+		fingerPanel = new FingerPanel(getFingerOrientation(), getKeyMap(), getFingerKeysVisible());
+		getPanels().addElement(fingerPanel);
 
 		for (int i = 0; i < getPanels().size(); i++) {
 			add((JPanel)getPanels().elementAt(i));

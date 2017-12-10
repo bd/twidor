@@ -1,6 +1,7 @@
-/*
+/*  -*- indent-tabs-mode: t; tab-width: 4; c-basic-offset: 4 -*-
 Twidor: the twiddler typing tutor.
 Copyright (C) 2005	James Fusia
+Copyright (C) 2017	Carey Richard Murphey
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -56,8 +57,10 @@ public class ThumbPanel extends JPanel implements TwiddlerSubPanel, TwidorConsta
 	 * @param KeyMap the keymap to implement
 	 */
 	public ThumbPanel (boolean orient, KeyMap keys, boolean visibleKeys) {
-                GridBagLayout gridbag = new GridBagLayout();
-                setLayout(gridbag);
+		setAlignmentX(Component.CENTER_ALIGNMENT);
+		setAlignmentY(Component.CENTER_ALIGNMENT);
+		GridBagLayout gridbag = new GridBagLayout();
+		setLayout(gridbag);
 		// setPreferredSize(new Dimension(twiddlerX, (int)(windowY / 5)));
 		// setMaximumSize(new Dimension(twiddlerX, (int)(windowY / 5)));
 		GridBagConstraints constraints = new GridBagConstraints();
@@ -71,12 +74,12 @@ public class ThumbPanel extends JPanel implements TwiddlerSubPanel, TwidorConsta
 		}
 		if (bDEBUG) System.out.println("ThumbPanel: creating panel");
 
-                String[] labels;
+		String[] labels;
 		if (visibleKeys) {
-                    labels = new String[]{"Num", "Alt", "Ctrl", "Shft"};
-                } else {
-                    labels = new String[]{"    ", "    ", "    ", "    "};
-                }
+			labels = new String[]{"Num", "Alt", "Ctrl", "Shft"};
+		} else {
+			labels = new String[]{"    ", "    ", "    ", "    "};
+		}
 		setBackground(twiddlerBackground);
 		button(3, gridbag, false,  constraints, labels[3]);
 		filler(   gridbag, false, constraints);
@@ -117,11 +120,11 @@ public class ThumbPanel extends JPanel implements TwiddlerSubPanel, TwidorConsta
 	private void filler (GridBagLayout gridbag, boolean is_end, GridBagConstraints constraints) {
 		JPanel panel = new JPanel();
 		panel.setBackground(twiddlerBackground);
-                if ( is_end ) {
-                    constraints.gridwidth = GridBagConstraints.REMAINDER;
-                } else {
-                    constraints.gridwidth = 1;
-                }
+		if ( is_end ) {
+			constraints.gridwidth = GridBagConstraints.REMAINDER;
+		} else {
+			constraints.gridwidth = 1;
+		}
 		gridbag.setConstraints(panel, constraints);
 		add(panel);
 	}// end filler (GridBagLayout, GridBagConstraints)
@@ -132,19 +135,19 @@ public class ThumbPanel extends JPanel implements TwiddlerSubPanel, TwidorConsta
 	 * @param GridBagLayout the layout we use
 	 * @param GridBagConstraints the constraints we're under
 	 */
-        private void label (String label, GridBagLayout gridbag, boolean is_end, GridBagConstraints constraints) {
+	private void label (String label, GridBagLayout gridbag, boolean is_end, GridBagConstraints constraints) {
 		JPanel panel = new JPanel();
 		JLabel jlabel = new JLabel(label, JLabel.CENTER);
 		jlabel.setFont(FONT_DIALOG);
 		jlabel.setForeground(Color.BLACK);
-                jlabel.setBorder(noBorder);
+		jlabel.setBorder(noBorder);
 		panel.setBackground(twiddlerBackground);
 		panel.add(jlabel);
-                if ( is_end ) {
-                    constraints.gridwidth = GridBagConstraints.REMAINDER;
-                } else {
-                    constraints.gridwidth = 1;
-                }
+		if ( is_end ) {
+			constraints.gridwidth = GridBagConstraints.REMAINDER;
+		} else {
+			constraints.gridwidth = 1;
+		}
 		gridbag.setConstraints(panel, constraints);
 		add(panel);
 	}// end label (String, GridBagLayout, GridBagConstraints)
@@ -155,23 +158,23 @@ public class ThumbPanel extends JPanel implements TwiddlerSubPanel, TwidorConsta
 	 * @param GridBagLayout the layout we're using
 	 * @param GridBagConstraints the constraints we use
 	 */
-        private void button (int number, GridBagLayout gridbag, boolean is_end, GridBagConstraints constraints, String label) {
+	private void button (int number, GridBagLayout gridbag, boolean is_end, GridBagConstraints constraints, String label) {
 		JPanel panel = new JPanel();
-                if( label != null ) {
-                    JLabel jlabel = new JLabel(label, JLabel.CENTER);
-                    jlabel.setFont(FONT_KEYPAD);
-                    jlabel.setForeground(Color.BLACK);
-                    panel.add(jlabel);
-                }
+		if( label != null ) {
+			JLabel jlabel = new JLabel(label, JLabel.CENTER);
+			jlabel.setFont(FONT_KEYPAD);
+			jlabel.setForeground(Color.BLACK);
+			panel.add(jlabel);
+		}
                 
 		panel.setBackground(buttonBackground);
 		panel.setBorder(buttonBorder);
 		getButtons().setElementAt(panel, number);
-                if ( is_end ) {
-                    constraints.gridwidth = GridBagConstraints.REMAINDER;
-                } else {
-                    constraints.gridwidth = 1;
-                }
+		if ( is_end ) {
+			constraints.gridwidth = GridBagConstraints.REMAINDER;
+		} else {
+			constraints.gridwidth = 1;
+		}
 		gridbag.setConstraints(panel, constraints);
 		add(panel);
 	}// end button (int, GridBagLayout, GridBagConstraints)
