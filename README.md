@@ -45,9 +45,9 @@ To generate a keymap suitable for input, one may:
 
 ## Limitations
 
-* Up/Down/Right/left Arrows key labels are not shown (current lessons do not use them).
-* Mouse keys are not shown, and mapping them to letters is untested. 
-* Macro key labels are truncated to the first three lettes.
+* Macro key labels are limited to the first three lettes.
+* Up/down/right/left arrows key labels are not shown (current lessons do not use them).
+* Mouse buttons are not shown, and mapping them to letters is untested. 
 
 ## How to Build
 
@@ -114,8 +114,8 @@ is the original author of Twidor.
 the source code available on github.
 
 [Rich Murphey](https://github.com/rich-murphey) modified Twidor
-to parse [Twiddler v3 keyboard layouts](https://twiddler.tekgear.com/tuner/edit.xhtml),
-released a simplified windows installer, added build files
-and documentation, revised keypad display, added options such as
-thumbpad orientation and thumbpad labels visibility, and added the ability
-to load TWidler Tuner keymap files from the filesystem.
+to load [Twiddler v3 keyboard layouts](https://twiddler.tekgear.com/tuner/edit.xhtml),
+released a simplified windows installer, added build files and
+documentation, rewrote keypad display, rewrote layout to support
+macros and alternate keymaps, and added options such as thumbpad
+orientation and thumbpad labels visibility.
