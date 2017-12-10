@@ -1,4 +1,4 @@
-/*
+/*  -*- indent-tabs-mode: t; tab-width: 4; c-basic-offset: 4 -*-
 Twidor: the twiddler typing tutor.
 Copyright (C) 2005	James Fusia
 
@@ -56,13 +56,19 @@ public class FingerPanel extends JPanel implements TwiddlerSubPanel, TwidorConst
 	 * add a label to a key in the keyboard display
          * string must be three chara for top middle and bottom of label.
 	 */
-        private void add_label ( JPanel panel, Color color, String text ) {
-            JLabel label;
-            label = new JLabel(text);
-            label.setFont(FONT_KEYPAD);
-            label.setForeground(color);
-            label.setHorizontalAlignment(JLabel.CENTER);
-            panel.add(label);
+        private void add_label ( JPanel panel, Color foreground, Font font, String text ) {
+		if( font == null )
+			font = FONT_KEYPAD;
+		if( foreground == null )
+			foreground = TEXT_DEFAULT;
+		JLabel label;
+		label = new JLabel(text);
+		label.setFont(font);
+		label.setForeground(foreground);
+		label.setBackground(Color.WHITE);
+		label.setHorizontalAlignment(JLabel.CENTER);
+		label.setBorder(noBorder);
+		panel.add(label);
 	}// end add_label ()
 
 	/**
@@ -71,196 +77,155 @@ public class FingerPanel extends JPanel implements TwiddlerSubPanel, TwidorConst
 	 */
         private void add_long_label ( JPanel panel, String text ) {
             for (int i = 0; i < 3; i++) {
-                add_label( panel, TEXT_DEFAULT, text.substring(i, i+1));
+		    add_label( panel, TEXT_DEFAULT, FONT_KEYPAD, text.substring(i, i+1));
             }
 	}// end add_long_label ()
 
-
 	/**
-	 * default constructor
+	 * add one row of buttons for specified <finger>
 	 * @param int the which finger we are (0-3; index-pinky)
 	 * @param boolean the orientation
 	 * @param KeyMap the KeyMap to write on it
 	 */
-	public FingerPanel (int finger, boolean orient, KeyMap keys, boolean visibleKeys) {
-		GridBagLayout gridbag = new GridBagLayout();
-		GridBagConstraints constraints = new GridBagConstraints();
-		JPanel panel;
-		Vector lookup;
-
+	public FingerPanel (boolean orient, KeyMap keys, boolean visibleKeys) {
 		if (bDEBUG) System.out.println("FingerPanel: creating panel");
-		// setPreferredSize(new Dimension(twiddlerX, (int)(windowY / 5)));
 		initButtons();
-
-		/* How to arrange the keys) */
-		if (orient) {
-			setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
-		}
-		else {
-			setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
-		}
-
-		setLayout(gridbag); /* 6w x 4h grid */
 		setBackground(twiddlerBackground);
+		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
-		constraints.fill = GridBagConstraints.BOTH;
+		/* horizontal direction to arrange the keys */
+		ComponentOrientation keyOrient = ComponentOrientation.RIGHT_TO_LEFT;
+		if (orient) {
+			keyOrient = ComponentOrientation.LEFT_TO_RIGHT;
+		}
 
-		constraints.gridwidth = 1;
-		constraints.gridheight = GridBagConstraints.RELATIVE;
-		constraints.weightx = 1;
-		constraints.weighty = 1;
-
-		/* Row 1: Labels or Nothing */
-		for (int i = 0; i < 6; i++) {
-			panel = new JPanel();
+		{ // Above finger 0: add key for chording: green, blue, red boxes
+			JPanel panel = new JPanel();
+			panel.setComponentOrientation( keyOrient );
+			panel.setLayout(new GridLayout(0, 6, 1, 3));
 			panel.setBackground(twiddlerBackground);
-			if (finger == 0) {
-                            Color color = twiddlerBackground;
-                            if (i == 0) {
-                                color = lightRed;
-                            }
-                            else if (i == 2) {
-                                color = lightBlue;
-                            }
-                            else if (i == 4) {
-                                color = lightGreen;
-                            }
-                            JLabel label = new JLabel("xx");
-                            label.setFont(FONT_DIALOG);
-                            label.setForeground(color);
-                            label.setBackground(color);
-                            label.setHorizontalAlignment(JLabel.CENTER);
-                            label.setOpaque(true);
-                            panel.add(label);
-			}
-			if (i == 5) {
-				constraints.gridwidth = GridBagConstraints.REMAINDER;
-			}
+			for (int col = 0; col < 6; col++) {
+				JPanel subPanel = new JPanel();
+				subPanel.setBackground(twiddlerBackground);
+				Color color = twiddlerBackground;
+				if (col == 0) {
+					color = lightRed;
+				}
+				else if (col == 2) {
+					color = lightBlue;
+				}
+				else if (col == 4) {
+					color = lightGreen;
+				}
 
-			gridbag.setConstraints(panel, constraints);
+				JLabel label = new JLabel("xx");
+				label.setFont(FONT_DIALOG);
+				label.setForeground(color);
+				label.setBackground(color);
+				label.setBorder(noBorder);
+				label.setHorizontalAlignment(JLabel.CENTER);
+				label.setOpaque(true);
+				subPanel.add(label);
+				panel.add(subPanel);
+			}
 			add(panel);
 		}
+		{
+			JPanel panel = new JPanel();
+			panel.setComponentOrientation( keyOrient );
+			panel.setLayout(new GridLayout(0, 6, 1, 3));
+			panel.setBackground(twiddlerBackground);
 
-		constraints.gridwidth = 1;
-		constraints.gridheight = GridBagConstraints.REMAINDER;
-		constraints.weightx = 1;
-		constraints.weighty = 3;
-
-		for (int i = 0; i < 6; i++) {
-			Vector buttons = new Vector(16,0);
-			for (int x = 0; x < 16; x++) {
-				buttons.add(x, new KeyStatus());
-			}
-			((KeyStatus)buttons.elementAt(finger * FINGER_OFFSET +
-							      (int)(i / 2))).setStatus(true);
-			panel = new JPanel();
-			if (i % 2 == 1) {
-				/* Labels */
-				panel.setBackground(twiddlerBackground);
-				panel.setLayout(new GridLayout(3, 1));
-				if (i == 5) {
-					constraints.gridwidth = GridBagConstraints.REMAINDER;
-				}
-				if (finger != 0 && visibleKeys) {
-					for (int j = 0; j < 3; j++) {
-						((KeyStatus)buttons.elementAt(INDEX_OFFSET + j)).setStatus(true);
-						KeyElement myButton = keys.getKey(buttons);
-						if (myButton != null) {
-							JLabel label = new JLabel();
-							label.setFont(FONT_KEYPAD);
-							label.setHorizontalAlignment(JLabel.CENTER);
-
-							/* set the text, and the color */
-							if (myButton.displayLetter().length() > 1) {
-								label.setText("y");
-								label.setForeground(twiddlerBackground);
+			for (int finger = 0; finger < 4; finger++) { // four rows, one per finger
+				for (int col = 0; col < 6; col++) {			 // three button columns, and three chord columns
+					Vector buttons = new Vector(16,0);
+					for (int x = 0; x < 16; x++) {
+						buttons.add(x, new KeyStatus());
+					}
+					((KeyStatus)buttons.elementAt(finger * FINGER_OFFSET + (int)(col / 2))).setStatus(true);
+					JPanel subPanel = new JPanel();
+					if (col % 2 == 1) { // chord column
+						subPanel.setBackground(twiddlerBackground);
+						subPanel.setLayout(new GridLayout(3, 1));
+						if (finger != 0 && visibleKeys) {
+							for (int buttonRow = 0; buttonRow < 3; buttonRow++) {
+								((KeyStatus)buttons.elementAt(INDEX_OFFSET + buttonRow)).setStatus(true);
+								KeyElement myButton = keys.getKey(buttons);
+								if (myButton != null) {
+									Color color = Color.YELLOW;
+									if (buttonRow == 0) {
+										color = lightRed;
+									}
+									else if (buttonRow == 1) {
+										color  = lightBlue;
+									}
+									else if (buttonRow == 2) {
+										color  = lightGreen;
+									}
+									JLabel label = new JLabel();
+									label.setFont(FONT_KEYPAD);
+									label.setHorizontalAlignment(JLabel.CENTER);
+									label.setBorder(noBorder);
+									label.setForeground( color );
+									String displayLetter = myButton.displayLetter();
+									if( displayLetter.length() == 1 ) {
+										label.setText(myButton.displayLetter().toUpperCase());
+									} else if (displayLetter.length() <= 3) {
+										label.setFont(FONT_MACRO);
+										label.setText(displayLetter);
+									} else {
+										label.setFont(FONT_MACRO);
+										label.setText(displayLetter.substring(0,2));
+									}
+									subPanel.add(label);
+								} else {
+									add_label( subPanel, twiddlerBackground, FONT_KEYPAD, "");
+								}
+								((KeyStatus)buttons.elementAt(INDEX_OFFSET + buttonRow)).setStatus(false);
 							}
-							else {
-                                                            Color color = Color.YELLOW;
-                                                            if (j == 0) {
-                                                                color = lightRed;
-                                                            }
-                                                            else if (j == 1) {
-                                                                color  = lightBlue;
-                                                            }
-                                                            else if (j == 2) {
-                                                                color  = lightGreen;
-                                                            }
-                                                            label.setForeground( color );
-                                                            String displayLetter = myButton.displayLetter().toUpperCase();
-                                                            if( displayLetter.length() == 1 ) {
-                                                                    label.setText(myButton.displayLetter().toUpperCase());
-                                                                } else {
-                                                                    label.setText("+");
-                                                                    label.setForeground(twiddlerBackground);
-                                                                }
-
-							}
-
-							panel.add(label);
 						} else {
-                                                    add_label( panel, twiddlerBackground, "n");
-                                                }
-						((KeyStatus)buttons.elementAt(INDEX_OFFSET +
-								j)).setStatus(false);
+							add_label( subPanel, twiddlerBackground,  FONT_KEYPAD, "z");
+						}
+					} else {		// button column
+						subPanel.setBackground(buttonBackground);
+						subPanel.setLayout(new GridLayout(3, 1));
+						subPanel.setBorder(buttonBorder);
+						subPanel.add(new JLabel()); // empty top row (label is in middle)
+						KeyElement myButton = keys.getKey(buttons);
+						if (myButton != null && visibleKeys) {
+							String displayLetter = myButton.displayLetter();
+							if ((myButton.getNumber() == KEY_SPACE) || (myButton.getLetter().equals(" "))) {
+								displayLetter = "SP";
+							} else if ((myButton.getNumber() == KEY_BACKSPACE) || (myButton.getLetter().equals("\b"))) {
+								displayLetter = "BS";
+							} else if ((myButton.getNumber() == KEY_DELETE) || (myButton.getLetter().equals("\177"))) {
+								displayLetter = "DEL";
+							} else if ((myButton.getNumber() == KEY_ENTER) || (myButton.getLetter().equals("\r"))) {
+								displayLetter = "ENT";
+							} else if ((myButton.getNumber() == KEY_EOL) || (myButton.getLetter().equals("\n"))) {
+								displayLetter = "NL";
+							} else if ((myButton.getNumber() == KEY_TAB) || (myButton.getLetter().equals("\t"))) {
+								displayLetter = "TAB";
+							} else {
+								displayLetter = displayLetter.toUpperCase();
+							}
+							if (displayLetter.length() > 1) {
+								add_label( subPanel, TEXT_DEFAULT,  FONT_MACRO, displayLetter);
+							} else {
+								add_label( subPanel, TEXT_DEFAULT,  FONT_KEYPAD, displayLetter);
+							}
+						}
+						else {
+							subPanel.add(new JLabel());
+						}
+						/* We want to keep the "Buttons" around to 'highlight' */
+						getButtons().add(subPanel);
 					}
+					panel.add(subPanel);
 				}
-				else {
-					JLabel label = new JLabel("z");
-					label.setFont(FONT_KEYPAD);
-					label.setHorizontalAlignment(JLabel.CENTER);
-					label.setForeground(twiddlerBackground);
-					panel.add(label);
-				}
-			}
-			else {
-				/* Button */
-				//panel.setPreferredSize(new Dimension(buttonX, buttonY));
-				panel.setBackground(buttonBackground);
-				panel.setLayout(new GridLayout(3, 1));
-				panel.setBorder(buttonBorder);
-				KeyElement myButton = keys.getKey(buttons);
-				if (myButton != null && visibleKeys) {
-					if ((myButton.getNumber() == KEY_SPACE) ||
-                                            (myButton.getLetter().equals(" "))) {
-                                            add_long_label( panel, "SP ");
-					}
-					else if ((myButton.getNumber() == KEY_BACKSPACE) ||
-                                                 (myButton.getLetter().equals("\b"))) {
-                                            add_long_label( panel, "BS ");
-					}
-					else if ((myButton.getNumber() == KEY_DELETE) ||
-                                                 (myButton.getLetter().equals("\177"))) {
-                                            add_long_label( panel, "DEL");
-					}
-					else if ((myButton.getNumber() == KEY_ENTER) ||
-                                                 (myButton.getLetter().equals("\r"))) {
-                                            add_long_label( panel, "ENT");
-					}
-					else if ((myButton.getNumber() == KEY_EOL) ||
-                                                 (myButton.getLetter().equals("\n"))) {
-                                            add_long_label( panel, "NL ");
-					}
-					else if ((myButton.getNumber() == KEY_TAB) ||
-                                                 (myButton.getLetter().equals("\t"))) {
-                                            add_long_label( panel, "TAB");
-					}
-					else {
-                                            add_long_label( panel, " " + myButton.displayLetter().toUpperCase() + " "); // letter
-					}
-				}
-				else {
-					panel.add(new JLabel());
-				}
-			}
-			gridbag.setConstraints(panel, constraints);
-			if (i % 2 == 0) {
-				/* We want to keep the "Buttons" around to 'highlight' */
-				getButtons().add(panel);
 			}
 			add(panel);
 		}
-
 		if (bDEBUG) System.out.println("FingerPanel: panel created");
 	}// end FingerPanel (boolean, KeyMap)
 

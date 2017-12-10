@@ -197,7 +197,7 @@ public class TypingPanel extends JPanel implements TwidorConstants {
 			setCurrent(getCurrent() - 1);
 			JLabel label = (JLabel)Sentence.elementAt(getCurrent());
 			label.setForeground(TEXT_DEFAULT);
-			label.setText(CURSOR);
+			label.setText("");
 			return;
 		}
 		setVisible(false);

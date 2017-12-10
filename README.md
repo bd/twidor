@@ -43,6 +43,12 @@ To generate a keymap suitable for input, one may:
 * download the CSV file.
 * In Twidor, select File > Load Keymap, and select the CSV file.
 
+## Limitations
+
+* Up/Down/Right/left Arrows key labels are not shown (current lessons do not use them).
+* Mouse keys are not shown, and mapping them to letters is untested. 
+* Macro key labels are truncated to the first three lettes.
+
 ## How to Build
 
 To compile and build Twidor.jar, one may use:

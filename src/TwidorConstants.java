@@ -74,8 +74,9 @@ public interface TwidorConstants {
 	 * fonts
 	 */
 	public static final Font FONT_DIALOG = new Font("RobotoCondensed", Font.BOLD, 12);
+	public static final Font FONT_MACRO = new Font("RobotoCondensed", Font.BOLD, 12);
 	public static final Font FONT_KEYPAD = new Font("RobotoCondensed", Font.BOLD, 15);
-	public static final Font FONT_TEXT = new Font("RobotoMono", Font.BOLD, 20);
+	public static final Font FONT_TEXT = new Font("Roboto", Font.PLAIN, 20);
 	public static final Font FONT_LABEL = new Font("Roboto", Font.PLAIN, 20);
 
 	/**
@@ -86,8 +87,6 @@ public interface TwidorConstants {
 	public static final Color TEXT_GOOD = Color.getHSBColor(0.f, 0.f, .7f);
 	public static final Color TEXT_BLINK = Color.BLUE;
 	public static final Color TEXT_BACKGROUND = Color.WHITE;
-	public static final Color TEXT_CURSOR = Color.BLUE;
-	public static final String CURSOR = "_";
 
 	public static Border noBorder = BorderFactory.createEmptyBorder(0,0,0,0);
 	public static Border margin = BorderFactory.createEmptyBorder(0,3,3,3);

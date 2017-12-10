@@ -267,16 +267,17 @@ public class TwiddlerPanel extends JPanel implements TwidorConstants {
 		if (bDEBUG) System.out.println("TwiddlerPanel: rearranging twiddler layout");
 		setVisible(false);
 		removeAll();
-		// setMinimumSize(new Dimension(twiddlerX, windowY));
+		setBackground(twiddlerBackground);
+		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+
+		setMinimumSize(new Dimension(twiddlerX, windowY));
 		getPanels().clear();
                 if (getThumbBoardVisible()) {
                     getPanels().addElement(new ThumbPanel(getThumbOrientation(), getKeyMap(),
                                                           getThumbKeysVisible()));
                 }
-		for (int i = 0; i < 4; i++) {
-			getPanels().addElement(new FingerPanel(i, getFingerOrientation(),
-						getKeyMap(), getFingerKeysVisible()));
-		}
+                getPanels().addElement(new FingerPanel(getFingerOrientation(), getKeyMap(), getFingerKeysVisible()));
+
 		for (int i = 0; i < getPanels().size(); i++) {
 			add((JPanel)getPanels().elementAt(i));
 		}
