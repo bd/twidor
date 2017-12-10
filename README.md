@@ -41,7 +41,7 @@ finger, same as the top level button boxes.  For example, all
 two-button chords using the <kbd>I</kbd> key are:
 
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_chord_map.png "
-width="50%" align="right">
+width="20em">
 
 Where:
 * <kbd>I + BS</kbd> produces "3".
