@@ -73,7 +73,7 @@ To load a custom keymap, users may:
 
 * Labels for macro keys are shortened to the first three
   letters. This is currently not an issue because current
-  keymaps have only 2-letter macros for up to 2-button chords.
+  keymaps have no more than 2-letter macros in 2-button chords.
 * Up/down/right/left arrows key labels are not shown.  current lessons do not use them.
 * For Typemax, while the keybaords does not show mouse buttons,
   mapped mouse buttons do work for training purposes.
