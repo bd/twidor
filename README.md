@@ -30,7 +30,7 @@ welcome [here](https://github.com/rich-murphey/twidor/issues).
 
 ## Usage
 
-Hit <ENTER> at the end of a line to go to the next sentence.
+Hit <kbd>ENTER<kbd> at the end of a line to go to the next sentence.
 
 By default, Twidor loads the the
 [Backspice keymap](https://raw.githubusercontent.com/AlexBravo/Twiddler/master/Backspice2%20cheat%20sheet.txt).
