@@ -44,7 +44,7 @@ Where:
 * <kbd>I + S</kbd> sends "is".
 * <kbd>I + N</kbd> sends "in".
 * <kbd>I + SP</kbd> sends "C".
-* <kbd>I + A</kbd> sends "G".
+* <kbd>I + H</kbd> sends "Y".
 
 By default, Twidor loads the the
 [Backspice keymap](https://raw.githubusercontent.com/AlexBravo/Twiddler/master/Backspice2%20cheat%20sheet.txt).
