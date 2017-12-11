@@ -31,12 +31,12 @@ welcome [here](https://github.com/rich-murphey/twidor/issues).
 ## The Chording Keymap
 
 The 3x4 array of colored boxes contain labels for the letters sent by single-button keystrokes.
+It is copmosed of four horizontal rows, one for each finger, and three vertical columns of red-blue-green labels corresponding to color keys on the Twiddler. 
 
-The smaller 3x4 array of labels to the right of each button show the letters sent by two-button chords. This 3x4 array is oriented
-the same as single-button colored boxes: four rows, one for each finger, and three vertical columns of red-blue-green labels corresponding to the red-blue-green button columns.  
+The smaller 3x4 array of labels, to the right of each colored box, shows the letters sent when a second button is pressed simultaneously (a two-button chord). This smaller 3x4 array is oriented the same as the larger 3x4 array of single-button colored boxes.  Each label in the small array maps the 2nd button of the chord to the corresponding button on the Twiddler.
 
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_chord_map.png"
-width="30%" align="right"> Here are all two-button chords that use the <kbd>I</kbd> key.
+width="30%" align="right"> For example, here are all two-button chords that use the <kbd>I</kbd> key.
 
 They include:
 * <kbd>I + S</kbd> sends "is".
