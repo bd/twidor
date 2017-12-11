@@ -1,6 +1,6 @@
 [//]: # (Copyright C 2017  Carey Richard Murphey. This file is released under the terms of the GNU General Public License version 2.)
 
-## Twidor - a typing tutor for the Twiddler mobile keyboard
+## Twidor - a typing tutor for the Twiddler chording keyboard
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_screenshot.png"
 width="50%" align="right">
 Twidor is a typing tutor for the [Twiddler one-handed chording keyboard](https://twiddler.tekgear.com/).  A "chord" is a keystroke using two, three or four buttons pressed simultaneously. 
