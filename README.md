@@ -16,6 +16,10 @@ Each 4x3 array is composed of four horizontal rows, one for each finger, and gre
 
 Each large button shows the letter sent by a single-button keystroke.
 
+## Chord - several keys pressed together
+
+A chord is formed by pressing several keys together, like playing a "chord" on a piano.
+
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_chord_map.png"
 width="30%" align="right"> Each small 4x3 array shows the letters sent by a chord (two buttons pressed simultaneously).  The orientation mirrors that of the larger 4x3 array: one row for each finger, and green/blue/red for left, middle and right columns.
 
