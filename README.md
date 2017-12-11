@@ -74,7 +74,7 @@ To load a custom keymap, users may:
 * Labels for macro keys are shortened to the first three
   letters. This is currently not an issue because current
   keymaps have no more than 2-letter macros in 2-button chords.
-* Up/down/right/left arrows key labels are not shown.  current lessons do not use them.
+* Up/down/right/left arrows key labels are not shown, since current lessons do not use them.
 * For Typemax, while the keyboards does not show mouse buttons,
   mapped mouse buttons do work for training purposes.
 
@@ -101,6 +101,14 @@ written in Java.
 The [Backspice keymap](https://github.com/AlexBravo/Twiddler) by [Alex Bravo](https://plus.google.com/+AlexBravo).
 
 The [TabSpace 3 layout](http://ivanwfr.github.io/Twiddler3-Layout/) discusses a range of layout issues, including ngram occurrence frequency and ranking the dexterity required for various multi-key chords.
+
+The [Typemax layout](https://github.com/lancegatlin/typemax)
+maximizes typing speed by emphasizing efficent single character
+chord transitions (stride). The Typemax github repo has discussions of
+[Basic Layout Design](https://github.com/lancegatlin/typemax/blob/master/basic_layout_design.md),
+including issues of stride and ngram clustering, stutter,
+separation of vowels and consonants on separate fingers, using
+mouse buttons as letter keys, and many other desing issues.
 
 The [Twiddler 3 Google Group](https://groups.google.com/forum/?hl=en#!forum/twiddler-3) has links to various resources.
 
