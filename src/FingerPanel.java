@@ -37,6 +37,7 @@ USA.
  */
 import java.awt.*;
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.util.Vector;
 import java.net.URL;
 public class FingerPanel extends JPanel implements TwiddlerSubPanel, TwidorConstants {
@@ -122,37 +123,37 @@ public class FingerPanel extends JPanel implements TwiddlerSubPanel, TwidorConst
 			keyOrient = ComponentOrientation.LEFT_TO_RIGHT;
 		}
 
-		{ // Above finger 0: add key for chording: green, blue, red boxes
-			JPanel panel = new JPanel();
-			panel.setComponentOrientation( keyOrient );
-			panel.setLayout(new GridLayout(0, 12, 1, 3));
-			panel.setBackground(twiddlerBackground);
-			for (int col = 0; col < 12; col++) {
-				JPanel subPanel = new JPanel();
-				subPanel.setBackground(twiddlerBackground);
-				Color color = twiddlerBackground;
-				if (col == 3) {
-					color = lightRed;
-				}
-				else if (col == 7) {
-					color = lightBlue;
-				}
-				else if (col == 11) {
-					color = lightGreen;
-				}
+		// { // Above finger 0: add key for chording: green, blue, red boxes
+		// 	JPanel panel = new JPanel();
+		// 	panel.setComponentOrientation( keyOrient );
+		// 	panel.setLayout(new GridLayout(0, 12, 1, 3));
+		// 	panel.setBackground(twiddlerBackground);
+		// 	for (int col = 0; col < 12; col++) {
+		// 		JPanel subPanel = new JPanel();
+		// 		subPanel.setBackground(twiddlerBackground);
+		// 		Color color = twiddlerBackground;
+		// 		if (col == 3) {
+		// 			color = keyRed;
+		// 		}
+		// 		else if (col == 7) {
+		// 			color = keyBlue;
+		// 		}
+		// 		else if (col == 11) {
+		// 			color = keyGreen;
+		// 		}
 
-				JLabel label = new JLabel("xx");
-				label.setFont(FONT_DIALOG);
-				label.setForeground(color);
-				label.setBackground(color);
-				label.setBorder(noBorder);
-				label.setHorizontalAlignment(JLabel.CENTER);
-				label.setOpaque(true);
-				subPanel.add(label);
-				panel.add(subPanel);
-			}
-			add(panel);
-		}
+		// 		JLabel label = new JLabel("xx");
+		// 		label.setFont(FONT_DIALOG);
+		// 		label.setForeground(color);
+		// 		label.setBackground(color);
+		// 		label.setBorder(noBorder);
+		// 		label.setHorizontalAlignment(JLabel.CENTER);
+		// 		label.setOpaque(true);
+		// 		subPanel.add(label);
+		// 		panel.add(subPanel);
+		// 	}
+		// 	add(panel);
+		// }
 		{
 			JPanel panel = new JPanel();
 			panel.setComponentOrientation( keyOrient );
@@ -180,13 +181,13 @@ public class FingerPanel extends JPanel implements TwiddlerSubPanel, TwidorConst
 									if (myButton != null) {
 										Color color = Color.YELLOW;
 										if (chordCol == 0) {
-											color = lightRed;
+											color = keyRed;
 										}
 										else if (chordCol == 1) {
-											color  = lightBlue;
+											color  = keyBlue;
 										}
 										else if (chordCol == 2) {
-											color  = lightGreen;
+											color  = keyGreen;
 										}
 										JLabel label = new JLabel();
 										label.setFont(FONT_KEYPAD);
@@ -221,11 +222,18 @@ public class FingerPanel extends JPanel implements TwiddlerSubPanel, TwidorConst
 							buttons.add(x, new KeyStatus());
 						}
 						((KeyStatus)buttons.elementAt(finger * FINGER_OFFSET + fingerCol)).setStatus(true);
-
 						JPanel subPanel = new JPanel();
 						subPanel.setBackground(buttonBackground);
 						subPanel.setLayout(new GridLayout(3, 1));
-						subPanel.setBorder(buttonBorder);
+						Border border = lineBorder;
+						if (fingerCol == 0) {
+							border = redBorder;
+						} else if (fingerCol == 1) {
+							border = blueBorder;
+						} else if (fingerCol == 2) {
+							border = greenBorder;
+						}
+						subPanel.setBorder(border);
 						subPanel.add(new JLabel()); // empty top row (label is in middle)
 						KeyElement myButton = keys.getKey(buttons);
 						if (myButton != null && visibleKeys) {

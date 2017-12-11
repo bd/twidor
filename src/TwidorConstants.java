@@ -67,9 +67,12 @@ public interface TwidorConstants {
 	public static final Color mccHighlight = Color.getHSBColor(0.8333f, 1.0f, 1.0f); // light yellow
 	public static final Color twiddlerBackground = Color.getHSBColor(0.f, 0.f, 1.f); // dark grey
 
-	public static final Color lightRed    = Color.getHSBColor(0.0000f, 1.f, .7f);
-	public static final Color lightBlue   = Color.getHSBColor(0.6000f, 1.f, 1.f);
-	public static final Color lightGreen  = Color.getHSBColor(0.3333f, 1.f, .7f);
+	public static final Color keyRed    = Color.getHSBColor(0.0000f, 1.f, .7f);
+	public static final Color keyBlue   = Color.getHSBColor(0.6000f, 1.f, 1.f);
+	public static final Color keyGreen  = Color.getHSBColor(0.3333f, 1.f, .7f);
+	public static Border redBorder = BorderFactory.createLineBorder(keyRed, 2, true);
+	public static Border blueBorder = BorderFactory.createLineBorder(keyBlue, 2, true);
+	public static Border greenBorder = BorderFactory.createLineBorder(keyGreen, 2, true);
 
 	/**
 	 * fonts

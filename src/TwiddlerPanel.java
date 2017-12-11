@@ -282,10 +282,11 @@ public class TwiddlerPanel extends JPanel implements TwidorConstants {
 
 		// FIXME just keep refereces to the two panels. get rid of the vector.
 		fingerPanel = new FingerPanel(getFingerOrientation(), getKeyMap(), getFingerKeysVisible());
+		getPanels().addElement(Box.createRigidArea(new Dimension(0,5)));
 		getPanels().addElement(fingerPanel);
 
 		for (int i = 0; i < getPanels().size(); i++) {
-			add((JPanel)getPanels().elementAt(i));
+			add((Component)getPanels().elementAt(i));
 		}
 		if (getTwiddlerVisible()) {
 			setVisible(true);
