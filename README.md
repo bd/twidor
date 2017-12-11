@@ -1,4 +1,4 @@
-[//]: # (Copyright (C) 2017  Carey Richard Murphey. This file is released under the terms of the GNU General Public License version 2.)
+[//]: # (Copyright C 2017  Carey Richard Murphey. This file is released under the terms of the GNU General Public License version 2.)
 
 ## Twidor - a typing tutor for the Twiddler mobile keyboard
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_screenshot.png"
