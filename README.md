@@ -148,7 +148,7 @@ ISWC 2005. Osaka, Japan. November 2005.
 [James Gibson Fusia](http://wearables.cc.gatech.edu/people/james/)
 is the original author of Twidor.
 
-[Evan Dower](https://github.com/evantd) collaborated and made
+[Evan Dower](https://github.com/evantd) made
 the source code available on github.
 
 [Rich Murphey](https://github.com/rich-murphey) modified Twidor
