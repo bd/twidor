@@ -18,7 +18,10 @@
 
   <target name="compile" depends="init" description="compile the source">
     <!-- Compile the java code from ${src} into ${build} -->
-    <javac srcdir="${src}" destdir="${build}" includeantruntime="false"/>
+    <javac srcdir="${src}" destdir="${build}" includeantruntime="false">
+      <!-- <compilerarg value="-Xlint"/> -->
+      <compilerarg value="-Xlint:unchecked"/>
+    </javac>
     <copy todir="${build}">
       <fileset dir="${src}" excludes="**/*.java **/*~"/>
     </copy>

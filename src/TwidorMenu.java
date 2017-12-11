@@ -43,9 +43,9 @@ public class TwidorMenu extends JMenuBar implements TwidorConstants {
 	 */
 	EventHandler myEventHandler;
 	Twidor myTutor;
-	Vector Tutor, Twiddler;
+	Vector <JMenuItem> Tutor, Twiddler;
 	ButtonGroup Lesson;
-	Vector lessonButtons;
+	Vector <JRadioButtonMenuItem> lessonButtons;
 
 	/**
 	 * default constructor
@@ -76,7 +76,7 @@ public class TwidorMenu extends JMenuBar implements TwidorConstants {
 		menu.add(jmItem);
 		add(menu);
 
-		Twiddler = new Vector();
+		Twiddler = new Vector<>();
 		menu = new JMenu("Keyboard");
 		jmItem = jcheckItem(TWIDDLER_SHOW_TEXT, TWIDDLER_SHOW);
 		Twiddler.add(jmItem);
@@ -95,7 +95,7 @@ public class TwidorMenu extends JMenuBar implements TwidorConstants {
 		menu.add(jmItem);
 		add(menu);
 
-		Tutor = new Vector();
+		Tutor = new Vector<>();
 		menu = new JMenu("Hints");
 		jmItem = jcheckItem(HIGHLIGHT_HINT_TEXT, HIGHLIGHT_HINT);
 		Tutor.add(jmItem);
@@ -109,7 +109,7 @@ public class TwidorMenu extends JMenuBar implements TwidorConstants {
 		add(menu);
 
 		Lesson = new ButtonGroup();
-		lessonButtons = new Vector();
+		lessonButtons = new Vector<>();
 		menu = new JMenu("Lessons");
 		rbItem = jradioItem("Lesson 1", true);
 		Lesson.add(rbItem);
