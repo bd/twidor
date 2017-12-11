@@ -28,17 +28,18 @@ example, on Debian or Ubuntu, one may use:
 Feedback and reports of issues are
 welcome [here](https://github.com/rich-murphey/twidor/issues).
 
-## The Chording Keymap
+## The Visual Key Map
 
-The 3x4 array of colored boxes contain labels for the letters sent by single-button keystrokes.
-It is composed of four horizontal rows, one for each finger, and three vertical columns of red-blue-green labels corresponding to right, middle and left columns of keys on the Twiddler. 
+Each 3x4 array is composed of four horizontal rows, one for each finger, and three vertical columns of red-blue-green labels corresponding to right, middle and left columns of keys on the Twiddler. 
 
-The smaller 3x4 array of labels, to the right of each large box, shows the letters sent when a second button is pressed simultaneously (a two-button chord).  Each position in the small array shows the position of 2nd button of the chord, and the label shows the letters sent by the chord.  This smaller 3x4 array is oriented the same as the larger 3x4 array of single-button keystrokes: one row for each finger, and red-blue-green for right, middle and left columns.
+The 3x4 array of larger colored boxes shows the letters sent by single-button keystrokes.
 
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_chord_map.png"
-width="30%" align="right"> For example, here are all two-button chords that use the <kbd>I</kbd> key.
+width="30%" align="right"> The 3x4 array of smaller boxes, to the right of each large box, shows the letters sent when a second button is pressed simultaneously (a two-button chord).  
 
-They include:
+Each position in the small array shows the position of 2nd button of the chord. The label shows the letters sent by the chord.  They oriented the same as the larger 3x4 array: one row for each finger, and red-blue-green for right, middle and left columns.
+
+Here are some two-button chords that use the <kbd>I</kbd> key:
 * <kbd>I + S</kbd> sends "is".
 * <kbd>I + N</kbd> sends "in".
 * <kbd>I + SP</kbd> sends "C".
