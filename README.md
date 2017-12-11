@@ -25,7 +25,7 @@ width="30%" align="right"> Each small 4x3 array shows letters sent by two-button
 
 The first button of the chord is the large button to the immediate left.  
 
-The second button of the chord is one of the small buttons which shows the letters sent by the chord.
+The second button of the chord is one of the small buttons which show the letters sent by the chord.
 
 Here are some two-button chords whose first button is the <kbd>I</kbd> key:
 * <kbd>I + S</kbd> sends "is".
