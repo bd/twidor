@@ -5,7 +5,7 @@ Twidor is a typing tutor for the [Twiddler one-handed chording keyboard](https:/
 
 Twidor was originally written by researchers studying
 [Twiddler learning rates and performance](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.4.3606&rep=rep1&type=pdf). Their
-research suggests that learners may achive faster typing speeds on single-handed chording keyboards than two-handed QWERTY keyboards given equal amount of practice.  In article [2] below, Lyons states, "faster typists would reach
+research suggests that learners may achieve faster typing speeds on single-handed chording keyboards than two-handed QWERTY keyboards given equal amount of practice.  In article [2] below, Lyons states, "faster typists would reach
 60 WPM, the rate of our expert, after 10,000 phrases
 (approximately 80 sessions or 27 hours) while the slower typists
 could achieve 45 WPM."
@@ -31,7 +31,7 @@ welcome [here](https://github.com/rich-murphey/twidor/issues).
 ## The Chording Keymap
 
 The 3x4 array of colored boxes contain labels for the letters sent by single-button keystrokes.
-It is copmosed of four horizontal rows, one for each finger, and three vertical columns of red-blue-green labels corresponding to color keys on the Twiddler. 
+It is composed of four horizontal rows, one for each finger, and three vertical columns of red-blue-green labels corresponding to color keys on the Twiddler. 
 
 The smaller 3x4 array of labels, to the right of each colored box, shows the letters sent when a second button is pressed simultaneously (a two-button chord). This smaller 3x4 array is oriented the same as the larger 3x4 array of single-button colored boxes.  Each label in the small array maps the 2nd button of the chord to the corresponding button on the Twiddler.
 
@@ -50,7 +50,7 @@ Hit <kbd>ENTER</kbd> at the end of a line to go to the next sentence.
 
 Menu options include:
 * <kbd>File | Load Keymap</kbd> imports a CSV keymap exported by the Twiddler Tuner.
-* <kbd>File | Load Lesson</kbd> imports a arbitrary ascii text file, displayed one line at a time.
+* <kbd>File | Load Lesson</kbd> imports a arbitrary ASCII text file, displayed one line at a time.
 * <kbd>Keyboard | Show..</kbd> to show/hide key labels or flip right-to-left orientation.
 * <kbd>Hints | Highlight...</kbd> to show/hide buttons for the next letter of the lesson.
 * <kbd>Keymaps</kbd> to load Backspice, Default_V5, TabSpace, or Typemax.
@@ -63,7 +63,7 @@ the [official Twiddler layout editor](https://twiddler.tekgear.com/tuner/edit.xh
 To load a custom keymap, users may:
 
 * open https://twiddler.tekgear.com/tuner/edit.xhtml,
-* load the kemmap.cfg if not alreay present there.
+* load the keymap.cfg if not already present there.
 * select 'Edit Configuration' for a given configuration file,
 * with the configuration file open, select Export, and then CSV.
 * download the CSV file.
@@ -75,7 +75,7 @@ To load a custom keymap, users may:
   letters. This is currently not an issue because current
   keymaps have no more than 2-letter macros in 2-button chords.
 * Up/down/right/left arrows key labels are not shown.  current lessons do not use them.
-* For Typemax, while the keybaords does not show mouse buttons,
+* For Typemax, while the keyboards does not show mouse buttons,
   mapped mouse buttons do work for training purposes.
 
 ## How to Build
@@ -100,7 +100,7 @@ written in Java.
 
 The [Backspice keymap](https://github.com/AlexBravo/Twiddler) by [Alex Bravo](https://plus.google.com/+AlexBravo).
 
-The [Tabspace 3 layout](http://ivanwfr.github.io/Twiddler3-Layout/) discusses a range of layout issues, including ngram occurrence frequency and ranking the dexterity required for various multi-key chords.
+The [TabSpace 3 layout](http://ivanwfr.github.io/Twiddler3-Layout/) discusses a range of layout issues, including ngram occurrence frequency and ranking the dexterity required for various multi-key chords.
 
 The [Twiddler 3 Google Group](https://groups.google.com/forum/?hl=en#!forum/twiddler-3) has links to various resources.
 
