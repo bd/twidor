@@ -10,24 +10,6 @@ research suggests that learners may achieve faster typing speeds on single-hande
 (approximately 80 sessions or 27 hours) while the slower typists
 could achieve 45 WPM."
 
-## How to Install
-
-Download the releases from here:
-
-[https://github.com/rich-murphey/twidor/releases](https://github.com/rich-murphey/twidor/releases)
-
-On windows, download and run the Twidor-setup.exe installer.
-
-On Linux and others, download Twidor.jar from the above link,
-install Java, and invoke the application using javaw. For
-example, on Debian or Ubuntu, one may use:
-
-    sudo apt install openjdk-8-jre
-    javaw -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -jar Twidor.jar Twidor
-
-Feedback and reports of issues are
-welcome [here](https://github.com/rich-murphey/twidor/issues).
-
 ## The Visual Key Map
 
 Each 3x4 array is composed of four horizontal rows, one for each finger, and three vertical columns of red-blue-green labels corresponding to right, middle and left columns of keys on the Twiddler. 
@@ -69,6 +51,24 @@ To load a custom keymap, users may:
 * with the configuration file open, select Export, and then CSV.
 * download the CSV file.
 * In Twidor, select <kbd>File | Load Keymap</kbd> and select the CSV file.
+
+## How to Install
+
+Download the releases from here:
+
+[https://github.com/rich-murphey/twidor/releases](https://github.com/rich-murphey/twidor/releases)
+
+On windows, download and run the Twidor-setup.exe installer.
+
+On Linux and others, download Twidor.jar from the above link,
+install Java, and invoke the application using javaw. For
+example, on Debian or Ubuntu, one may use:
+
+    sudo apt install openjdk-8-jre
+    javaw -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -jar Twidor.jar Twidor
+
+Feedback and reports of issues are
+welcome [here](https://github.com/rich-murphey/twidor/issues).
 
 ## Limitations
 
