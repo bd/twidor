@@ -21,13 +21,13 @@ Each large button shows the letter sent by a single-button keystroke.
 A chord is formed by pressing several keys together, like playing a "chord" on a piano.
 
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_chord_map.png"
-width="30%" align="right"> Each small 4x3 array shows the letters sent by a chord (two buttons pressed simultaneously).  The orientation mirrors that of the larger 4x3 array: one row for each finger, and green/blue/red for left, middle and right columns.
+width="30%" align="right"> Each small 4x3 array shows the letters sent by a two-buttons chord.  The orientation mirrors that of the larger 4x3 array: one row for each finger, and green/blue/red for left, middle and right columns.
 
 The first button of the chord is the large button to the immediate left.  
 
-The second button of a chord is a button, which shows the letters sent by the chord.
+The second button of the chord is one of the small buttons, which shows the letters sent by the chord.
 
-Here are some two-button chords that use the <kbd>I</kbd> key:
+Here are some two-button chords whose first button is the <kbd>I</kbd> key:
 * <kbd>I + S</kbd> sends "is".
 * <kbd>I + N</kbd> sends "in".
 * <kbd>I + SP</kbd> sends "C".
