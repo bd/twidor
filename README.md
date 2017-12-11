@@ -14,12 +14,14 @@ could achieve 45 WPM."
 
 Each 4x3 array is composed of four horizontal rows, one for each finger, and green/blue/red columns corresponding to left, middle and right keys on the Twiddler. 
 
-In the larger 4x3 array, each larger button shows the letters sent by single-button keystrokes.
+Each large button shows the letter sent by a single-button keystroke.
 
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_chord_map.png"
-width="30%" align="right"> The smaller 4x3 array, to the right of each large box, shows the letters sent when a second button is pressed simultaneously (a two-button chord). The orientation mirrors that of the larger 4x3 array: one row for each finger, and green/blue/red for left, middle and right columns.
+width="30%" align="right"> Each small 4x3 array shows the letters sent by a chord (two buttons pressed simultaneously).  The orientation mirrors that of the larger 4x3 array: one row for each finger, and green/blue/red for left, middle and right columns.
 
-In the smaller 4x3 array, each small button is the 2nd button of a chord. The label shows the letters sent by the chord.  
+The first button of the chord is the large button to the immediate left.  
+
+The second button of a chord is the small button, which shows the letters sent by the chord.
 
 Here are some two-button chords that use the <kbd>I</kbd> key:
 * <kbd>I + S</kbd> sends "is".
