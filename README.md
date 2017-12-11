@@ -32,12 +32,10 @@ welcome [here](https://github.com/rich-murphey/twidor/issues).
 
 Hit <kbd>ENTER</kbd> at the end of a line to go to the next sentence.
 
-Labels within the boxes on the keyboard show the letters
-sent by single-button keystrokes.
+The 3x4 array of colored boxes contain labels for the letters sent by single-button keystrokes.
 
-To the right of each button, are labels for two-button chords. Each two-button chord keymap is oriented
-the same as the single-button boxes: one horizonal row for each finger, index to pinky
-, and three vertical columns of red-blue-green labels corresponding to the red-blue-green button columns.  
+To the right of each button is a 3x4 array of labels for two-button chords. This 3x4 array is oriented
+the same as single-button colored boxes: four rows, one for each finger, and three vertical columns of red-blue-green labels corresponding to the red-blue-green button columns.  
 
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_chord_map.png"
 width="30%" align="right"> Here are all two-button chords that use the <kbd>I</kbd> key.
