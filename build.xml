@@ -25,6 +25,7 @@
     <copy todir="${build}">
       <fileset dir="${src}" excludes="**/*.java **/*~"/>
     </copy>
+    <copy todir="${build}" file="LICENSE"/>
     <!-- <copy todir="${build}" file="fonts/Roboto_Mono/RobotoMono-Bold.ttf"/> -->
   </target>
 
