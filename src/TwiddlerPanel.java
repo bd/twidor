@@ -37,7 +37,7 @@ USA.
 import java.awt.*;
 import javax.swing.*;
 import java.util.Vector;
-public class TwiddlerPanel extends JPanel implements TwidorConstants {
+public class TwiddlerPanel extends TwiddlerSubPanel implements TwidorConstants {
 	/**
 	 * internal variables
 	 */
@@ -48,7 +48,7 @@ public class TwiddlerPanel extends JPanel implements TwidorConstants {
     	private boolean showThumbBoard;
 	private boolean showFingerMap;
 	private boolean showTwiddler;
-	private Vector panelList;
+	private Vector <TwiddlerSubPanel> panelList;
     private FingerPanel fingerPanel;
 	/**
 	 * default constructor
@@ -134,7 +134,7 @@ public class TwiddlerPanel extends JPanel implements TwidorConstants {
 	 * accessor for the JPanels we contain
 	 * @return Vector the vector of panels we contain
 	 */
-	public Vector getPanels () {
+	public Vector <TwiddlerSubPanel> getPanels () {
 		return panelList;
 	}// end getPanels ()
 
@@ -198,7 +198,7 @@ public class TwiddlerPanel extends JPanel implements TwidorConstants {
 	 * initializer for the panel list
 	 */
 	private void initPanels () {
-		panelList = new Vector();
+		panelList = new Vector <TwiddlerSubPanel> ();
 	}// end initPanels ()
 
 	/**
@@ -244,7 +244,7 @@ public class TwiddlerPanel extends JPanel implements TwidorConstants {
 			}
 			for (int thumb = 0; thumb < 4; thumb++) {
 				if (key.getButton(thumb + THUMB_OFFSET)) {
-					((TwiddlerSubPanel)getPanels().elementAt(0)).highlight(thumb,
+					(getPanels().elementAt(0)).highlight(thumb,
 							hColor);
 				}
 			}
@@ -259,7 +259,7 @@ public class TwiddlerPanel extends JPanel implements TwidorConstants {
 	 */
 	public void clear () {
 		for (int i = 0; i < getPanels().size(); i++) {
-			((TwiddlerSubPanel)getPanels().elementAt(i)).clear();
+			(getPanels().elementAt(i)).clear();
 		}
 	}// end clear ()
 
@@ -282,11 +282,11 @@ public class TwiddlerPanel extends JPanel implements TwidorConstants {
 
 		// FIXME just keep refereces to the two panels. get rid of the vector.
 		fingerPanel = new FingerPanel(getFingerOrientation(), getKeyMap(), getFingerKeysVisible());
-		getPanels().addElement(Box.createRigidArea(new Dimension(0,5)));
+		// xxx getPanels().addElement(Box.createRigidArea(new Dimension(0,5)));
 		getPanels().addElement(fingerPanel);
 
 		for (int i = 0; i < getPanels().size(); i++) {
-			add((Component)getPanels().elementAt(i));
+			this.add(getPanels().elementAt(i));
 		}
 		if (getTwiddlerVisible()) {
 			setVisible(true);

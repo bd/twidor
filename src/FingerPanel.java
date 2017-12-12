@@ -40,13 +40,13 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import java.util.Vector;
 import java.net.URL;
-public class FingerPanel extends JPanel implements TwiddlerSubPanel, TwidorConstants {
+public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
 
 	/**
 	 * The Array of JPanels that make up the buttons on our 'face'.
 	 * For changing the background to highlighted color blah.
 	 */
-	private Vector myButtons;
+	private Vector <JPanel> myButtons;
 
 	/**
 	 * default constructor
@@ -163,7 +163,7 @@ public class FingerPanel extends JPanel implements TwiddlerSubPanel, TwidorConst
 			for (int finger = 0; finger < 4; finger++) { // four rows, one per finger
 				for (int fingerCol = 0; fingerCol < 3; fingerCol++) {			 // three button columns, and three chord columns
 					{			// chord map
-						Vector buttons = new Vector(16,0);
+						Vector <KeyStatus> buttons = new Vector <KeyStatus> (16,0);
 						for (int x = 0; x < 16; x++) {
 							buttons.add(x, new KeyStatus());
 						}
@@ -217,7 +217,7 @@ public class FingerPanel extends JPanel implements TwiddlerSubPanel, TwidorConst
 						}
 					}
 					{			// single button keymap
-						Vector buttons = new Vector(16,0);
+						Vector <KeyStatus> buttons = new Vector <KeyStatus> (16,0);
 						for (int x = 0; x < 16; x++) {
 							buttons.add(x, new KeyStatus());
 						}
@@ -268,7 +268,7 @@ public class FingerPanel extends JPanel implements TwiddlerSubPanel, TwidorConst
 	 * Quick internal accessor since I was confusing myself by accessing it directly
 	 * @return Vector my button
 	 */
-	public Vector getButtons () {
+	public Vector <JPanel> getButtons () {
 		return myButtons;
 	}// end getMyButton ()
 
@@ -276,7 +276,7 @@ public class FingerPanel extends JPanel implements TwiddlerSubPanel, TwidorConst
 	 * Quick internal accessor to initialize my buttons
 	 */
 	private void initButtons () {
-		myButtons = new Vector();
+		myButtons = new Vector <JPanel> ();
 	}// end setButtons ()
 
 
@@ -289,7 +289,7 @@ public class FingerPanel extends JPanel implements TwiddlerSubPanel, TwidorConst
 	public void highlight (int which, Color hColor) {
 		if (bDEBUG) System.out.println("FingerPanel: highlight button " + which);
 		try {
-			((JPanel)getButtons().elementAt(which)).setBackground(hColor);
+			(getButtons().elementAt(which)).setBackground(hColor);
 		}
 		catch (ArrayIndexOutOfBoundsException e) {
 			if (bDEBUG) System.out.println("FingerPanel: array oob");
@@ -302,7 +302,7 @@ public class FingerPanel extends JPanel implements TwiddlerSubPanel, TwidorConst
 	 */
 	public void clear () {
 		for (int i = 0; i < getButtons().size(); i++) {
-			((JPanel)getButtons().elementAt(i)).setBackground(buttonBackground);
+			(getButtons().elementAt(i)).setBackground(buttonBackground);
 		}
 	}// end clear ()
 

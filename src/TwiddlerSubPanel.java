@@ -1,4 +1,4 @@
-/*
+/*  -*- indent-tabs-mode: t; tab-width: 4; c-basic-offset: 4 -*-
 Twidor: the twiddler typing tutor.
 Copyright (C) 2005	James Fusia
 Copyright (C) 2017	Carey Richard Murphey
@@ -33,18 +33,18 @@ USA.
  * @author <a href="mailto:visyz@cc.gatech.edu">James Fusia</a>
  * @version Version 0.5; 17 July 2003
  */
-public interface TwiddlerSubPanel {
+public class TwiddlerSubPanel extends javax.swing.JPanel {
 
 	/**
 	 * a function for clearing all of the buttons
 	 */
-	public void clear ();
+    public void clear () {};
 
 	/**
 	 * a function for highlighting only a certain button
 	 * @param int the button to highlight
 	 * @param Color the color to hightlight it to
 	 */
-	public void highlight (int which, java.awt.Color hColor);
+	public void highlight (int which, java.awt.Color hColor) {};
 
 }// end interface TwiddlerSubPanel

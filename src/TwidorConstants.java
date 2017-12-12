@@ -100,10 +100,17 @@ public interface TwidorConstants {
 	public static Border lineBorder = BorderFactory.createLineBorder(Color.BLACK);
 	public static Border buttonBorder = BorderFactory.createLineBorder(Color.BLACK, 1, true);
 
+	// Kemap menu items. Filename is <name>.csv.
+	public static final String[] KEYMAPS = new String[]{
+		"Backspice",
+		"Default_V5",
+		"TabSpace",
+		"Typemax"};
+
 	/**
 	 * Files that are searched for by the program when none are specified
 	 */
-	public static final String DEFAULT_KEYMAP = "keymap.txt";
+	public static final String DEFAULT_KEYMAP = KEYMAPS[0] + ".csv";
 	public static final String DEFAULT_LESSON = "lessons.txt";
 	public static final boolean DEFAULT_THUMB_ORIENTATION = true;
 	public static final boolean DEFAULT_FINGER_ORIENTATION = true;
@@ -135,12 +142,6 @@ public interface TwidorConstants {
 	public boolean TWIDDLER_SHOW_THUMB = true;
 	public static final String TWIDDLER_MIRROR_THUMB_TEXT = "Horizontal Reverse Thumb Buttons";
 	public boolean TWIDDLER_MIRROR_THUMB = false;
-
-	// Kemap menu items. Filename is <name>.csv.
-	public static final String KEYMAP_Backspice = "Backspice";
-	public static final String KEYMAP_Default_V5 = "Default_V5";
-	public static final String KEYMAP_TabSpace = "TabSpace";
-	public static final String KEYMAP_Typemax = "Typemax";
 
 	public static final String MACRO_REGEXP = "\"\\w*\"";
 

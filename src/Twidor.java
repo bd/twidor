@@ -86,8 +86,8 @@ public class Twidor extends JFrame implements TwidorConstants {
 		setResizable(windowResizable);
 
 		/* Root Panel Settings */
-		Container root = getContentPane();
-		root.setLayout(new BorderLayout());
+		Container contentPane = getContentPane();
+		contentPane.setLayout(new BorderLayout());
 
 		setEventHandler();
 		setKeyMap(DEFAULT_KEYMAP);
@@ -99,23 +99,23 @@ public class Twidor extends JFrame implements TwidorConstants {
 		setInfoPanel();
 		setTwidorIcon();
 
-		root.add(getTwiddlerPanel(), BorderLayout.WEST);
+		contentPane.add(getTwiddlerPanel(), BorderLayout.WEST);
 
 		JPanel CenterPane = new JPanel();
-		CenterPane.setLayout(new GridLayout(3, 1));
+		CenterPane.setLayout(new GridLayout(0, 1));
 		CenterPane.add(getInfoPanel());
 		CenterPane.add(getTypingPanel());
 		CenterPane.add(getStatsPanel());
 		CenterPane.setBackground(TEXT_BACKGROUND);
 		CenterPane.setVisible(true);
 
-		root.add(CenterPane, BorderLayout.CENTER);
+		contentPane.add(CenterPane, BorderLayout.CENTER);
                 pack();
 		/* Show it all */
 		setVisible(true);
 		setLesson("Lesson 1");
 		ignoreInput(false);
-		fc = new JFileChooser(".");
+		fc = new JFileChooser("."); // this retains user's choice of directory across 'Load' menu invocations
 	}// end Twidor
 
 // EventHandler stuff
@@ -529,17 +529,16 @@ public class Twidor extends JFrame implements TwidorConstants {
 				}
 			}
                 }
-		else if ( (option.equals(KEYMAP_Backspice)) ||
-			  (option.equals(KEYMAP_Default_V5)) ||
-			  (option.equals(KEYMAP_TabSpace)) ||
-			  (option.equals(KEYMAP_Typemax)) )
-			{
+		else if (option.startsWith("Lesson")) {
+			setLesson(option);
+		}
+
+		for (int i = 0; i < KEYMAPS.length; i++) {
+			if (option.equals(KEYMAPS[i])) {
 				setKeyMap(option + ".csv");
 				getTwiddlerPanel().setKeyMap(getKeyMap());
 				getTwiddlerPanel().reOrient();
 			}
-		else if (option.startsWith("Lesson")) {
-			setLesson(option);
 		}
 	}// end menuOption (String)
 

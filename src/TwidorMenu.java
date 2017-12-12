@@ -124,14 +124,10 @@ public class TwidorMenu extends JMenuBar implements TwidorConstants {
 		add(menu);
 
 		menu = new JMenu("Keymaps");
-		jmItem = jmenuItem(KEYMAP_Backspice);
-		menu.add(jmItem);
-		jmItem = jmenuItem(KEYMAP_Default_V5);
-		menu.add(jmItem);
-		jmItem = jmenuItem(KEYMAP_TabSpace);
-		menu.add(jmItem);
-		jmItem = jmenuItem(KEYMAP_Typemax);
-		menu.add(jmItem);
+		for (int i = 0; i < KEYMAPS.length; i++) {
+			jmItem = jmenuItem(KEYMAPS[i]);
+			menu.add(jmItem);
+		}
 		add(menu);
 
 		if (bDEBUG) System.out.println("TwidorMenu: Finished Creating");

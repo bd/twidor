@@ -34,7 +34,7 @@ USA.
 import java.awt.*;
 import javax.swing.*;
 import java.lang.String;
-public class InfoPanel extends JPanel implements TwidorConstants {
+public class InfoPanel extends TwiddlerSubPanel implements TwidorConstants {
 
 	private JLabel myTitle;
 

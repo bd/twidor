@@ -40,12 +40,12 @@ import javax.swing.*;
 import java.util.Vector;
 import java.util.Calendar;
 import java.lang.Math;
-public class StatsPanel extends JPanel implements TwidorConstants {
+public class StatsPanel extends TwiddlerSubPanel implements TwidorConstants {
 
 	/**
 	 * internal variables
 	 */
-	private Vector myStats;
+	private Vector <Stats> myStats;
 	private JLabel[] AER; /* Average Error Ragte */
 	private JLabel[] WPM; /* Words Per Minute */
 	private boolean saveStats;
@@ -54,7 +54,7 @@ public class StatsPanel extends JPanel implements TwidorConstants {
 	 * default constructor
 	 */
 	public StatsPanel () {
-		myStats = new Vector();
+		myStats = new Vector <Stats> ();
 		AER = new JLabel[2];
 		WPM = new JLabel[2];
 		setBackground(TEXT_BACKGROUND);
@@ -176,7 +176,7 @@ public class StatsPanel extends JPanel implements TwidorConstants {
 	 * Accessor for the Stats variable
 	 * @return Stats the current Stat
 	 */
-	public Vector getStats () {
+	public Vector <Stats> getStats () {
 		return myStats;
 	}// end getStats ()
 

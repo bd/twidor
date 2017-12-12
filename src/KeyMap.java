@@ -42,7 +42,7 @@ public class KeyMap implements TwidorConstants {
 	/**
 	 * the keymap, as we see it. a Vector of KeyElements (buttons + map)
 	 */
-	private Vector keylist;
+	private Vector <KeyElement> keylist;
 
 	/**
 	 *  a map from html tag key names in input file to ASCII caracter values.
@@ -54,7 +54,7 @@ public class KeyMap implements TwidorConstants {
 	 * default constructor
 	 */
 	private KeyMap () {
-		keylist = new Vector();
+		keylist = new Vector <KeyElement> ();
 
                 keyTags = new HashMap<String, Integer>();
 		keyTags.put("<Backspace>",	8);
@@ -96,9 +96,9 @@ public class KeyMap implements TwidorConstants {
 		int i = getKeylist().indexOf(new KeyElement(key));
 
 		if (i >= 0) {
-			toReturn = (KeyElement) getKeylist().elementAt(i);
+			toReturn = getKeylist().elementAt(i);
 		} else {
-                        toReturn = (KeyElement) getKeyByLetter( key );
+                        toReturn = getKeyByLetter( key );
                 }
 		return toReturn;
 	}// end getKey (String)
@@ -108,7 +108,7 @@ public class KeyMap implements TwidorConstants {
 	 * @param Vector of KeyStatus to match against
 	 * @return KeyElement the requested KeyElement
 	 */
-	public KeyElement getKey (Vector buttons) {
+	public KeyElement getKey (Vector <KeyStatus> buttons) {
 		KeyElement toReturn = null;
 		int i = getKeylist().indexOf(new KeyElement(buttons));
 
@@ -133,7 +133,7 @@ public class KeyMap implements TwidorConstants {
 	 * gets the internal keylist
 	 * @return Vector the known keymap
 	 */
-	private Vector getKeylist () {
+	private Vector <KeyElement> getKeylist () {
 		return keylist;
 	}// end getKeylist ()
 
@@ -183,7 +183,7 @@ public class KeyMap implements TwidorConstants {
         private void setupLetterMap () {
 		int i;
 		for (i = 0; i < getKeylist().size(); i++) {
-			KeyElement key = (KeyElement)(getKeylist().elementAt(i));
+			KeyElement key = getKeylist().elementAt(i);
 			// try {
                             if ( ( key.getLetter() != null ) &&
                                  ( key.getLetter().length() > 0) ) {
@@ -205,7 +205,7 @@ public class KeyMap implements TwidorConstants {
                 if ( keyIndex == null ) {
 			return null;
 		}
-		return (KeyElement) getKeylist().elementAt( keyIndex );
+		return getKeylist().elementAt( keyIndex );
 	}// end addKey (KeyElement)
 
 	/**
@@ -434,7 +434,7 @@ public class KeyMap implements TwidorConstants {
 		}
 		System.out.println(check.toString());
 
-		Vector temp = new Vector();
+		Vector <KeyStatus> temp = new Vector <KeyStatus> ();
 		for (int i = 0; i < 16; i++) {
 			if (check.getButton(i)) {
 				temp.add(new KeyStatus(true));

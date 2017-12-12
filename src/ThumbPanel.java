@@ -38,7 +38,7 @@ USA.
 import java.awt.*;
 import javax.swing.*;
 import java.util.Vector;
-public class ThumbPanel extends JPanel implements TwiddlerSubPanel, TwidorConstants {
+public class ThumbPanel extends TwiddlerSubPanel implements  TwidorConstants {
 
 	/**
 	 * internal variables

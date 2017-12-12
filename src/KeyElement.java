@@ -43,13 +43,13 @@ public class KeyElement extends java.lang.Object implements TwidorConstants {
 	 */
 	private String letter;
 	private int number;
-	private Vector buttons;
+	private Vector <KeyStatus> buttons;
 
 	/**
 	 * default constructor
 	 */
 	public KeyElement () {
-		buttons = new Vector();
+		buttons = new Vector <KeyStatus> ();
 		for (int i = 0; i < 16; i++) {
 			buttons.add(i, new KeyStatus());
 		}
@@ -78,7 +78,7 @@ public class KeyElement extends java.lang.Object implements TwidorConstants {
 	 * default constructor
 	 * @param Vector the button list
 	 */
-	public KeyElement (Vector buttonlist) {
+	public KeyElement (Vector <KeyStatus> buttonlist) {
 		setLetter(null);
 		buttons = buttonlist;
 	} // end KeyElement (Vector)
@@ -143,14 +143,14 @@ public class KeyElement extends java.lang.Object implements TwidorConstants {
 	 * @return boolean the status of the button
 	 */
 	public boolean getButton (int button) {
-		return ((KeyStatus)getButtons().elementAt(button)).getStatus();
+		return (getButtons().elementAt(button)).getStatus();
 	}// end getButton (int)
 
 	/**
 	 * get a whole bunch of buttons
 	 * @return Vector the list of buttons
 	 */
-	public Vector getButtons () {
+	public Vector <KeyStatus> getButtons () {
 		return buttons;
 	}// end getButtons ()
 

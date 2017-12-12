@@ -42,7 +42,7 @@ import java.lang.String;
  * @author rich
  *
  */
-public class TypingPanel extends JPanel implements TwidorConstants {
+public class TypingPanel extends TwiddlerSubPanel implements TwidorConstants {
 
 	/**
 	 * internal variables
