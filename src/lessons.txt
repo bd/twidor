@@ -13,3 +13,5 @@ lesson4.txt	10	y	y
 lesson5.txt	10	y	y
 lesson6.txt	10	y	y
 lesson7.txt	10	y	y
+lesson8.txt	555	y	y
+lesson9.txt	1176	y	y

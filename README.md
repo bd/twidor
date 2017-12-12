@@ -86,6 +86,8 @@ welcome [here](https://github.com/rich-murphey/twidor/issues).
 * Up/down/right/left arrows key labels are not shown, since current lessons do not use them.
 * For Typemax, while the keyboards does not show mouse buttons,
   mapped mouse buttons do work for training purposes.
+* Twidor silently ignores input of upper-case letters, since the
+  original design was for training on lower case only.
 
 ## How to Build
 

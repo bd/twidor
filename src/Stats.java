@@ -44,8 +44,8 @@ public class Stats implements TwidorConstants {
 	 */
 	private String sentence;
 	private String typed;
-	private Vector statArray; 
-	private Vector transcribedInput;
+	private Vector <StatsElement> statArray; 
+	private Vector <StatsElement> transcribedInput;
 
 	/**
 	 * default constructor
@@ -53,8 +53,8 @@ public class Stats implements TwidorConstants {
 	private Stats () {
 		sentence = "";
 		typed = "";
-		statArray = new Vector();
-		transcribedInput = new Vector();
+		statArray = new Vector <StatsElement> ();
+		transcribedInput = new Vector <StatsElement> ();
 	}// end Stats
 
 	/**
@@ -86,7 +86,7 @@ public class Stats implements TwidorConstants {
 	 * Accessor to get the vector of keypresses
 	 * @return Vector of StatsElement
 	 */
-	public Vector getKeyPresses () {
+	public Vector <StatsElement> getKeyPresses () {
 		return statArray;
 	}// end getKeyPresses ()
 
@@ -94,7 +94,7 @@ public class Stats implements TwidorConstants {
 	 * Accessor for the Transcribed Input
 	 * @return Vector of StatsElements
 	 */
-	public Vector getTranscribedInput () {
+	public Vector <StatsElement> getTranscribedInput () {
 		return transcribedInput;
 	}// end getTranscribedInput ()
 
@@ -110,7 +110,7 @@ public class Stats implements TwidorConstants {
 	 * Modifier to set the KeyPress vector
 	 * @param Vector the new vector to set
 	 */
-	public void setKeyPresses (Vector poke) {
+	public void setKeyPresses (Vector <StatsElement> poke) {
 		statArray = poke;
 	}// end setKeyPresses (Vector)
 
@@ -139,9 +139,9 @@ public class Stats implements TwidorConstants {
 		StatsElement temp1, temp2;
 		if (transcribedInput.isEmpty())
 			return 0;
-		temp1 = (StatsElement)transcribedInput.elementAt(0);
+		temp1 = transcribedInput.elementAt(0);
 		for (int i = 1; i < transcribedInput.size() - 1; i++) {
-			temp2 = (StatsElement)transcribedInput.elementAt(i);
+			temp2 = transcribedInput.elementAt(i);
 			totalTime += (temp2.getTime() - temp1.getTime());
 			temp1 = temp2;
 		}

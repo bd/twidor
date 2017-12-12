@@ -43,7 +43,7 @@ public class ThumbPanel extends TwiddlerSubPanel implements  TwidorConstants {
 	/**
 	 * internal variables
 	 */
-	private Vector myButtons;
+	private Vector <JPanel> myButtons;
 
 	/**
 	 * default constructor
@@ -98,7 +98,7 @@ public class ThumbPanel extends TwiddlerSubPanel implements  TwidorConstants {
 	 * Quick function to make it easier to use the myButtons variable
 	 */
 	private void initButtons () {
-		myButtons = new Vector(4, 0);
+		myButtons = new Vector <JPanel> (4, 0);
 		for (int i = 0; i < 4; i++) {
 			myButtons.add(null);
 		}
@@ -108,7 +108,7 @@ public class ThumbPanel extends TwiddlerSubPanel implements  TwidorConstants {
 	 * Quick function to return the button vector
 	 * @return Vector the buttons this panel holds
 	 */
-	public Vector getButtons () {
+	public Vector <JPanel> getButtons () {
 		return myButtons;
 	}// end getButtons ()
 
@@ -188,7 +188,7 @@ public class ThumbPanel extends TwiddlerSubPanel implements  TwidorConstants {
 	public void highlight (int which, Color color) {
 		if (bDEBUG) System.out.println("ThumbPanel: highlighting button " + which);
 		try {
-			((JPanel)getButtons().elementAt(which)).setBackground(color);
+			(getButtons().elementAt(which)).setBackground(color);
 		}
 		catch (ArrayIndexOutOfBoundsException e) {
 			if (bDEBUG) System.out.println("ThumbPanel: array oob");
@@ -202,7 +202,7 @@ public class ThumbPanel extends TwiddlerSubPanel implements  TwidorConstants {
 	public void clear () {
 		if (bDEBUG) System.out.println("ThumbPanel: clearing buttons");
 		for (int i = 0; i < getButtons().size(); i++) {
-			((JPanel)getButtons().elementAt(i)).setBackground(buttonBackground);
+			(getButtons().elementAt(i)).setBackground(buttonBackground);
 		}
 	}// end clear ()
 

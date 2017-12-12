@@ -1,0 +1,555 @@
+# GNU Typist - improved typing tutor program for UNIX systems
+# Copyright (C) 1998  Simon Baldwin (simonb@sco.com)
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+#------------------------------------------------------------------------------
+# Lesson M1
+#------------------------------------------------------------------------------
+if you can do so, will you kindly let us know by return mail.
+my totals were:  $2,309, $5,687, $3,498, $2,408, and $3,697.
+a student may type 1 word per minute faster for each added
+year of age: i.e., 13 to 14, to 15, to 16, to 17, to 18.
+often 25% of first-year students never do 25 words a minute.
+many second-year students can type about 45 words a minute.
+more than 50% do not equal the practical rate of 50 words.
+why do we all thrill over sports?  maybe it is the tireless
+skill of the winner that we feel.  ask the players.  they
+may agree (rice,* famous as a sports writer, said the cham-
+pions all agreed) that skill is only part (50%) of it.
+"when you step on the first tee," says the four-time gold
+champion, bobby jones, "you know you can't afford to make
+one careless slip."  a tired bobby jones (this was the way
+bobby told it to rice) has stood on the 16th tee, leading
+smith by 18 strokes.
+"up to this point," says bobby, "i had played 33 holes in 11
+under par.  i believe it was the best golf i ever played in
+my life.  but after easing up on the mental side i played
+the last three holes in 5 over par."
+in 1919 babe ruth shot into the records with 29 home runs.
+yet few know that the babe worked five years in big games
+before this start that led past home run #600.  you may
+have cheered jimmy foxx and many another.  yet you can still
+picture the babe after two strikes, smashing to the very
+spot he had "called" a famous home run.
+it is the effort against odds that thrills.  we feel these
+drives that never let down.  we feel (this was the way rice
+put it) the champion forces himself into the winning frame of
+mind.  can the fast typist afford to do less?  a typist has
+to face such days of "mental torture" too.  some days he has
+to force himself along.  he need not punish his machine.  he
+must pull himself together (100%) to type his steady, smooth
+way over all upsets.
+men are bound to believe that business is bad in winter
+months.  maybe mr. smith remembers that most building became
+better in september but both november and december seemed to
+be much behind.  monday morning my mail box became blocked
+by urgent requests of many families that small-sized homes
+be built.  some jobs may begin to come now from the chamber
+of commerce members.
+i said, "never promise to take much money to such places."
+_m_e_m1
+#------------------------------------------------------------------------------
+# lesson m2
+#------------------------------------------------------------------------------
+how do i lose if i read a book that doesn't have much in it?
+non ana dis dia cle pan ard pur ern eer off age suf ame amb
+ess ean ist ian cel apo col ary tra neo sur ity sub ele mis
+dear dan,
+yes, i came out of the corn, back to the city, both to
+draw and to do copy on the new cars.  to date i am able to
+put cash in the bank and bear a bill or two.  the new deed
+has done it.
+the city has been busy but cold for two days.  dear baby
+has been to see her best aunt.  a band came by the door.
+baby let the bird cage drop down with a blow.  the bird died.
+boys put its dead body deep in a dark card case.  baby also
+has a ball and blue book to drop.  i put the boat away.  its
+deck did burn, but i care not as it does not cost a cent.
+come, call on me at the club.
+yours sincerely,
+dear bea,
+i am glad you feel so for the farm in the east.  even
+as a girl of four or five i was ever so glad to find the
+farm.  in my eyes it was all as good as gold.  even my feet
+felt good.  a girl can gain and grow fast on farm food and
+the fine free air.  why else did face and form grow full
+and fair so fast?
+on each foot of my farm i felt free from fear.  it
+gave me my fill of fun.  i felt no fear of any fire in the
+fall.  now the fire is a fact and my farm is gone.  give me
+my full life, etc.  the game goes on.
+yours sincerely,
+dear hal,
+just a line to say i am lost if i cannot fly.  i
+have to keep on here.  i knew it was but a hope last may.
+it was just my last idea in june.  yet i held my head high
+and did not lose hope.
+why not fly up in the air a half hour or less and
+look at my lake and our home on the hill?  i left it late
+last july with one item on my list.  bill gave me half an
+hour of help.  like the lady of the lake i met the king.
+bill was a kind king, too.
+to lead off into the air and see all our lake so
+long and lots of land so low, was to live a high hour.  i
+kept my hand at my ear so as to help hear.  in the air my
+hair was a loss.  it did not kill me.  i have to fly to know
+life can be less hard.  i like to hold on and help bill.  i
+love to fly.
+yours sincerely,
+_m_e_m2
+#------------------------------------------------------------------------------
+# lesson m3
+#------------------------------------------------------------------------------
+he says he hasn't been very blue once in his two weeks here.
+sus ase sis uni suc epi cor ory tri acy fic ify dom isk ism
+ante than ance ling para less plea lent leas post rece cata
+dear "pie,"
+i open most of my mail and meet the news.  i note that
+you say mrs. page is a mere name but you met the miss page.
+you must need the car.  once the pass is open i can move
+the car over to you.  do you mind if i make it part of a nice
+plan to meet miss page, too?  mrs. page was only a mile past
+us.  her son was my age and i made the mile at noon to play a
+bit.  she paid us for milk.  she did not mean much to me, but
+her son did.
+next we had more fun up the pass near the poor old no.
+nine mine.  i can mark many a mile we once ran.  i must mail
+this note or i may miss the post.
+yours sincerely,
+dear ross,
+it is a real rain.  the road is so soft my car can but
+roll, stop, and roll on.  are you on the ship?  if i get as
+far as the ship, can we sail in such a rain?  if we try to
+sail, the ship is sure to rock or ride on one side.  if i get
+sick, it is up to you to stay by and show us how to save the
+ship.  ann has some sort of song to sing in the rain.  she
+said she sent it to you.
+did you read of our sale?  we set out a big sign.  now
+any sort of suit and any size seem to sell.  we are not rich
+but we can soon step out or be sold out, if any such rate is
+to rule.
+ann has not seen the ship as yet.  rain or no rain, ann
+says to send her out.  all the rest of us say the same.  can
+you ring me in my room at the shop?
+yours sincerely,
+the public is quite unfair about airing quibbles over
+house furniture and fruit juices for the university crew.
+the alumni inquiry into the failure of equipment figures in
+the issue.  the alumni attitude is useful but continues to
+put a premium on a victorious crew.  only genius can guide
+this outfit uphill and build a suitable crew that won't quit.
+students should be assisted in studying seated at their
+desks; cross-questioned as to their needs and desires; ad-
+vised to use up-to-date leads based on studies of standards.
+by-products of student days, well-bred friends, kindness,
+self-help, with good grades and degrees, are listed as far-
+sighted aids.  in dad's old-fashioned address to his co-
+workers, he said sadly that ideas are missed less than first-
+class friends and good-natured wishers.
+_m_e_m3
+#------------------------------------------------------------------------------
+# lesson m4
+#------------------------------------------------------------------------------
+get any piece, since i can't guess the color he always used.
+anti thin atic fast hypo ness your ther fore ship cial ible
+ette hter here mber ough over eive with ived just ever mono
+dear tris,
+it is so very warm at this time of year, i told my wife
+that you and i wish to go west for a week or two.  did i
+tell you what a wind we had?  i went to town to vote for the
+one man whom i want.  i took a well-used tire.  when it went
+down on a bad turn, in the woods, i had to walk.  then the
+wind more than set in, and i had to wait by a wall.  it got
+our old tree.
+i saw two men and set them to work on the car, till
+they told me it was no use.  if i were to turn it in, is it
+true that you can take your car?  i want a wide view and i
+want to talk with you.  thus i wait upon your word.  wire
+yes if you will take this trip.
+yours sincerely,
+dear "cab,"
+could you apply to the court to allow my claim as agent
+for mr. blank?  i could bring in his books and see about his
+bills.  if asked, he can cover the costs by checks on a bank
+that did not break.
+will you allow your child to come alone to see me?  he
+can have every apple he can carry.  by the way, being clean
+and above board, you must be above bad cases, but you began
+to bring in off-color cases after april.
+i agree you do not cross the law, but why let men win
+in a black cause on any basis?  why not build up your cases
+from among men of our own class?  close the awful cases you
+now carry along to court, and begin again.
+sincerely yours,
+in our motor party on the return trip an attractive
+quartet first tried to tell thirty or forty short travel
+stories.  by turns they transferred to the theater, to art
+matters, to court trial stories.  in the latter a certain
+doctor is hurt by a first truck, another truck is struck,
+and three contractors are thrown to the street.  the girl's
+strong brother has been hurt.  further, there are arrests
+and the sort of extra details that enter into true stories.
+_m_e_m4
+#------------------------------------------------------------------------------
+# lesson m5
+#------------------------------------------------------------------------------
+some women who could write her won't raise a hand to help.
+teen arch acle ward ence ency ease ster tele trix wise some
+atte tter tion fold ount ancy auto ttle cule mony cion come
+dear fred,
+i have dared to ask you for an extra favor on the first.
+if you are not dated, i am to draft you to drive me by horse
+or car up the grade to the field house at eight.  i guess you
+have not heard fully about the great dance to be given by the
+girls on the floor of the field house.
+my hands have put fresh green goods on the walls.  every
+girl has a green dress, on its front a funny glass heart that
+she gives as a favor.  the old folks can drive up early, eat
+and drink and enjoy it all.  we will delay the dance till the
+girls enter in a dozen files.  it would crush me to death if
+an error were found in the plans.  happy hours on earth are
+never heavy.  can you doubt that you are going?
+sincerely yours,
+dear madam,
+i have your two later notes of march 1.  maybe it is a
+large order for you to leave for the north in the month of
+march.
+our place is miles away, but the real issue is that mu-
+sic means much to us.  a night of music, even one piece of
+music, has often meant more to me than my local paper and all
+the power i have known.  if i can plant a love of music in all
+parts of this place so that all who hear you sing can learn to
+love it, it will mean more to me than money.
+i never laugh at money, but isn't it plain in these
+lines that price ought to be the least of all the items?  the
+point is that our plans for your party are more important.  if
+you read our other offer in the light of our love for music,
+we might not seem so far away.
+yours sincerely,
+if truly quoted, you and guy, mere youths, fly a con-
+tinuous journey of thousands of miles yearly in your study
+of numerous flying routes.  you say you were south in july
+in the dry country conspicuous for yucca, but now you are
+busy buying a quota of various useful items to supply your
+outfit for the famous yukon.  yet i am suspicious when you
+say this unusual survey is monotonous rather than glorious.
+you should hurry surely to vancouver for some delicious
+yuletide fare.  it seems only yesterday that i was conscious
+of being young and vigorous enough to fly my buoyant plane.
+if you lucky boys are victorious over any unusually furious,
+dangerous, or anxious double duty on this survey, write a
+quotable account yourself for the journal.
+#------------------------------------------------------------------------------
+# lesson m6
+#------------------------------------------------------------------------------
+they were often too tired to be certain they heard the hour.
+hood ight sion full ould able like ment ical tial ambi semi
+hand part king itio hing tory ding enti ting thou ving very
+dear alice,
+i shall start my river story since you have shown you like
+my style.
+the scene is a state in the south.  a sweet girl speaks of
+the sound and sight of the river.  seven men without shame raise
+the stock sales and the boy tries to spend too much at the store.
+in order to make a quiet and quick slide down the river, the men
+seize the boat while the others, who are quite ready to serve the
+girl, sleep.
+it seems the girl has sense, for on a sheet of paper she
+writes that her stock of gold is within reach from a round stone
+under the small shade tree.  she does not quote the boy, but does
+refer to the sorry end of his short study, and in her reply to his
+folks she will state how the gold may still be spent in the right
+way, which will stamp the story as real.
+yours sincerely,
+dear mrs. white,
+i wish to thank you for the words you wrote three weeks ago,
+and i trust you will write again on the wrong and waste of war.
+as i watch the wheels of events today, i think you value a
+thing it has taken me a third of my years to see.  in its total
+trade the world is one whole, and each part in touch with the
+other at most times.
+the usual farm woman won't see a trade table or understand
+its terms, for she is tired with her efforts to train and teach
+her young.  she has tried to throw her value into her home, which
+to her is worth so much.  war can not be put under until these
+women see there is but one world, which truly is their world.
+where will you be while the thick wheat is harvested?  if
+not across the water, would you visit us, using your voice to
+teach us these things?
+yours sincerely,
+important dinner company in our small apartment was
+not common, and november ninth mamma was solemn in manner.
+the moment nine american gentlemen were announced, fun and
+argument began.  i remember one ancient gentleman, manager
+of much more income than mine, who was not solemn as imag-
+ined, but funny and human, even if normal demand, planned
+movements of modern machines to canada, long term payments,
+and columns of numbers meant much more to him than to me.
+#------------------------------------------------------------------------------
+# lesson m7
+#------------------------------------------------------------------------------
+though i don't seem to hear the doctor, i know he is early.
+stat each ning ieve ring side nder emen turn embe llow ours
+dear mr. and mrs. blank,
+your son has not called on me.  if he is to become almost an
+annual charge upon the county, the church will answer with action.
+yet, i am afraid his arrest can not assure his coming around and
+asking us for advice.  of course he has to appear before august.
+he bought on credit, got behind in cash, and the amount became too
+big.  i shall pay it.
+you are an old couple, and i advise you to accept this.  any-
+way, he is not a common boy and must have a chance.  he always does
+appear to anyone as fit.  i run across copies of his art.  i can
+advise your son, attend to his credit, and try to help him arrive
+at a change for the better.
+sincerely yours,
+dear dick
+i have a dollar.  i expect you to follow me and take dinner.
+friday i didn't have cash, but a friend of the family had enough
+for both of us.
+father is having all the lot, except the garden, filled in
+during the week.  giving in to his desire, i intend to work the
+ground.  doctor says that my health is hardly an excuse, so i had
+better decide to make an effort.  indeed, i am driven either to
+finish the work in the near future or pay to have it done.
+i am hoping you will happen upon some kindly fellow to whom
+a flower garden itself is fun, and inform me.  i shall direct him,
+as the entire effect will lie in the way we handle the ground
+plan.  don't forget.
+yours sincerely,
+i quit the quiz when i saw the quantity of queer hazy
+questions.  to seize lesser prizes required answers to a
+dozen queries.  only a quarter of the quotas qualified with
+zest.  many had zero when the quiz asked:  in what zones are
+brazil, switzerland, arizona, or texas?  zebras in our zoos
+grow to what sizes?  analyze and quote one great citizen's
+query as to zeppelins.  criticize the quality of jazz music.
+#------------------------------------------------------------------------------
+# lesson m8
+#------------------------------------------------------------------------------
+at the last minute he wrote that he knew it was done again.
+trans ition there lease craft hyper etter esque ceive where
+dear rollin,
+i did notice a number of the pretty places i passed in
+the air nearly two months ago, and i can at length locate
+the best.  if prices remain rather low, i will not return
+for any person or be prompt at orders.  i can play a record
+or two, and not regret there is no report to be looked at.
+i want to be myself and regard nature, not people.
+to obtain this latter result is the proper reason for
+making this quiet trip.  so far from the public, matter in
+the papers will be old and market policy of little moment.
+it will please me to have you with us longer than the others.
+i was really living for the period when i would be placed with
+you both.  your mother has a lovely manner.  i am glad to
+oblige so recent a member of our office, too.
+this letter is being mailed monday, and in two days we
+shall go.
+yours sincerely,
+dear sylvia,
+i wonder if my sister talked to you on sunday of the
+thirty things we wanted to do this summer?  we were trying
+all the spring season at school to secure a supply of sim-
+ple but strong materials for a camp in the valley.
+it struck me as we were taking a walk down the street
+that we would surely be unable to do as we stated unless you
+took a sudden notion to help.  it seemed to me on second
+thought we should give thanks to you for giving tongue to our
+wishes last winter, for you turned the folks in our favor.
+my sister was saying that girls from twenty states had
+signed our pledge, so we are united.  though this is off the
+subject, i saw a pretty yellow and silver dress within a win-
+dow on main street toward our corner.  would you think it
+suitable for the writer?
+sincerely yours,
+#
+i acquired a bequest from a quizzical quaker.  how
+to apply it was a quandary.  as a quasi artist, i began in
+albuquerque to make a quantity of plaques of chance indian
+acquaintances.  my masquerade as an artist of quality in
+that quaint land of quite spanish art and adobe was adequate
+and equally unique.  squeezed in quiet, antiquated adobe
+quarters, i began quickly and without qualms to qualify as
+an artist.  after quarrels and questions over my queer tech-
+niques, i acquired my quota of opaque plaques.
+#------------------------------------------------------------------------------
+# lesson m9
+#------------------------------------------------------------------------------
+instead of having us tonight he is making ready for tuesday.
+stead ation retro geous contr ourse ultra super ntion under
+dear annabel,
+my brother and his college friends in the factory decided to arrange an
+evening exactly as in the old days.  after calling us, they arrived and we
+carried out the idea.  we used an old college catalog and each girl had an
+old college dress.
+further to advance the evening, my brother advised us of an old address
+near the freight yard where certain college boys brought this or that article
+and were allowed a few dollars.  as we went in, an old man came a step farther,
+fell forward and against me.  brother charged him.  will you believe this care-
+ful account i enclose?  between brother and me lay this old man who did seem
+dead.  i can't express my feeling.  his head was covered with marks of blows.
+already we were anxious to go.  yet his safe was open, as if to furnish us
+the old books with the many expense charges against the college boys.  when i
+looked to see who of our company were in them, i read one balance after another
+paid from the old country to my dearest son.  you are correct if you guess we
+now ran, because we did.  what follows?  today's paper doesn't have a line.
+yours sincerely,
+dear mrs. white,
+i have been holding on, but this january i am getting out.
+my wife herself may have told you of our opening.  however, i go
+at ten o'clock this morning, and your husband is still out.  he is
+to do my general work himself, and may not imagine there is any
+measure of justice in that.  we married men are obliged to do as
+ordered.
+i am leaving a hundred matters.  he has my opinion on each.
+tell him the minutes of the last meeting of the members are on my
+table.  tell him i haven't an invoice, but have instead an october
+bill, for our new machine parts.  he may mention this item to the
+manager, as he has neither its history nor my letters of inquiry.
+i find nothing else to include.  we shall miss you greatly,
+and we shall be looking for you at our new home.
+yours sincerely,
+dear patrick,
+i realize that this letter i am sending may subject you to some trouble.
+i am writing tonight without waiting to go through various reports on our
+present program.  if i had thought that you would be willing to give me an
+extra day, perhaps i would have come myself.
+as soon as this letter has reached you, and you have finished reading the
+several items about which i have written, i hope you can give extra working
+time to my request for special records. these items will suggest a new plan as
+i picture it.  i shall add them to this note.
+it is my purpose to prepare a fast station-to-station service that should
+be in running order soon.  i suppose it could be started next month.  let me
+ask, also, whether we could receipt each payment, as we receive it, on a
+regular form similar to those in the package shipped you tuesday.  i am pleased
+with your showing.  you have been like a soldier on duty in any and all
+weather.  success is your teacher.
+with my best regards,
+#------------------------------------------------------------------------------
+# lesson m10
+#------------------------------------------------------------------------------
+he would separate the whole business and buy out their half.
+inter itude circu gious right cious after extra micro sible
+dear thomas,
+first, i consider of definite interest anything from
+the business of as good a customer as you.  as director of
+our division, i am to continue handling building material.
+my judgment on all the evidence, which i send herewith
+enclosed in a second envelope, is one of complete approval.
+let me have a contract covering the earliest delivery date.
+are you advising me what increase in your discount is to be
+expected?
+second, this forenoon i saw your son and he told me of
+his marriage in february.  although you had not entirely
+finished the addition to your lake house by last december,
+couldn't you exchange it, as it is, for my mountain home?
+your son said that his young wife wants to live on this
+mountain to which all your children seem so attached.
+sincerely yours,
+#
+dear nathan,
+my last shipment has probably been received, for the purchase was made
+thursday.  tomorrow is saturday, a pleasant day, for i go on my vacation.
+do you remember an original idea you proposed last november relative
+to planning for some shipping from my property?  my neighbor recently
+called it a plan in a thousand, and we must get together so that i can
+thank you properly.  this is a national as well as personal question,
+and i am trusting that you will be thinking that it is possible for you to
+help put it into practice.
+if you can possibly separate yourself from teachers and your
+teaching position sometime soon, plan to get a standard car and
+whatever else is required for the trip.  the car would also be a
+pleasure after you return to new york.  may i persuade you in re-
+plying to state that you are planning to come promptly?  we will
+make you one of the officers of the shipping business.
+yours sincerely,
+dear son,
+i am beginning this afternoon to give my immediate attention
+to a christmas that should be beautiful.  i have addressed, to be
+forwarded and delivered in good condition, some new equipment
+according to your wish.  i note, too, that your committee met.
+what these gentlemen said is important and may be a sort of in-
+surance that your plan does not fail.  i certainly would not want
+to duplicate for you the kind of education given me.
+be different by following more than one new idea, including
+some of your own.  if you can carefully take fair advantage of
+every available condition, everybody should accept you cordially,
+as answering to the character of a gentleman.  mother is enclosing
+a few lines.
+yours sincerely,
+#------------------------------------------------------------------------------
+# lesson m11
+#------------------------------------------------------------------------------
+my country friend is beginning to believe trouble is coming.
+thing pleas ought quest ember count ditio state recei ction
+dear gertrude,
+this letter has no reference to shipments which you have
+so kindly purchased from me in the past.  rather, as you are
+returning to this territory by september, our president has re-
+quested me as secretary to ask that you make a statement before
+our club the first wednesday.
+let me say something of the questions we have been receiving
+for the year.  recently i read that the old principle today still
+applies.  it is wonderful what our new knowledge has surprised us
+into regarding as necessary for ourselves--sometimes things not
+even mentioned yesterday.
+will you therefore represent this new deal and present the
+situation to us in principle, sincerely, as you see it?  other-
+wise, if you cannot make this provision now, i shall be glad to
+call upon you later.
+yours sincerely,
+dear alex,
+we are especially interested in the settlement run by a
+new department at the university.  we appreciate the importance
+of its additional study to understand impossible conditions in
+the poor parts of our city, and its use for adjustment of some
+particular boy or girl.  have you read our memorandum in this
+connection?
+our city is absolutely too big.  with the automobile we can
+distribute every person to his home along a line, our wide road,
+run far out from the city.  the difference between country and
+city grows less and less, in accordance with such use of the auto-
+mobile.
+concerning our collection of any remittance from you, this
+would serve to form a conference which would develop everything
+that can make city governments bring full and rich experience
+to all.
+sincerely yours,
+dear sir,
+i wish to acknowledge the recent interesting correspondence
+from your office on the very considerable requirements of the new
+law that have to do with any unfortunate advertising that might
+appear in my papers.
+our association also has appreciated both your instructions
+and the opportunity for prompt examination and understanding of
+the new arrangement, particularly its application to all informa-
+tion given the public about merchandise for sale.  this has been
+a real convenience in our consideration of the entire proposition.
+i want to assure you that our co-operation under the new law
+will be satisfactory in every way.
+yours respectfully,
+the journal learned that the relatives on their arrival in
+april had already referred the trouble to lawyers.  their early re-
+turn surprises me.  as to the children themselves, the older girls
+are personally agreeable, slender, and certainly full of zest.  they
+travel yearly and already are familiar with the world.  their father
+was a quizzical old man who fairly idolized them.  his will leaves
+them very nearly a half-million dollars.  only the earlier, first
+will is very irregular.  i've already quizzed them about the real
+hazards of quarrels over legal prizes of similar size.  from their
+replies i've realized slowly that the girls are all right.  it
+really amazes me that even persons like ourselves promptly seize
+upon some hostile relative's version of an earlier will, which
+should be recognized easily as false.

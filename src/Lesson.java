@@ -41,8 +41,8 @@ public class Lesson implements TwidorConstants {
 	private boolean highlightChord; // show highlighting?
 	private boolean highlightMCC; // show MCC highlighting?
 
-	private Vector lessonSentences; // array of sentences to show
-	private Vector trash;
+	private Vector <String> lessonSentences; // array of sentences to show
+	private Vector <String> trash;
 	private int currentSentence; // index sentences shown
 	private int totalSentences; // number of sentences to show
 
@@ -52,8 +52,8 @@ public class Lesson implements TwidorConstants {
 	private Lesson () {
 		fileName = "";
 		lessonNumber = -1;
-		lessonSentences = new Vector();
-		trash = new Vector();
+		lessonSentences = new Vector <String> ();
+		trash = new Vector <String> ();
 		highlightChord = false;
 		highlightMCC = false;
 		currentSentence = 0;
@@ -100,7 +100,7 @@ public class Lesson implements TwidorConstants {
 			trash.clear();
 		}
 		int victim = (int)(Math.random() * (double)lessonSentences.size());
-		String sentence = (String)lessonSentences.elementAt(victim);
+		String sentence = lessonSentences.elementAt(victim);
 		lessonSentences.removeElementAt(victim);
 		trash.add(sentence);
 		currentSentence++;
@@ -159,6 +159,10 @@ public class Lesson implements TwidorConstants {
 		}
 		try {
 			while (bReader.ready()) {
+				String line = bReader.readLine();
+				if (line.startsWith("#")) {
+                                    continue; /* comment. ignore it. */
+				}
 				lessonSentences.addElement(bReader.readLine());
 			}
 		} catch (IOException e) {

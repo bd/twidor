@@ -38,10 +38,10 @@ public class LessonParser implements TwidorConstants {
 	/**
 	 * internal variables
 	 */
-	private Vector lessons;
+	private Vector <Lesson> lessons;
 
 	private LessonParser () {
-		lessons = new Vector();
+		lessons = new Vector <Lesson> ();
 	}
 
 	/**
@@ -129,7 +129,7 @@ public class LessonParser implements TwidorConstants {
 	}
 
 	public Lesson getLesson (int number) {
-		return (Lesson)lessons.elementAt(number);
+		return lessons.elementAt(number);
 	}
 
 }

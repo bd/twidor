@@ -47,7 +47,7 @@ public class TypingPanel extends TwiddlerSubPanel implements TwidorConstants {
 	/**
 	 * internal variables
 	 */
-	Vector Sentence;
+	Vector <JLabel> sentenceLabels;
 	String sentenceText;
 
 	Vector Typed;           // characters typed by user
@@ -60,7 +60,7 @@ public class TypingPanel extends TwiddlerSubPanel implements TwidorConstants {
 	 * default constructor
 	 */
 	public TypingPanel () {
-		Sentence = new Vector();
+		sentenceLabels = new Vector <JLabel> ();
 		String sentenceText = "";
 		Typed = new Vector();
 		setCurrent(0);
@@ -152,7 +152,7 @@ public class TypingPanel extends TwiddlerSubPanel implements TwidorConstants {
 	public void displaySentence (String sentence) {
 		setVisible(false);
 		setSentenceText(sentence);
-		Sentence.clear();
+		sentenceLabels.clear();
 		Typed.clear();
 		setCurrent(0);
 		setEntered(false);
@@ -182,7 +182,7 @@ public class TypingPanel extends TwiddlerSubPanel implements TwidorConstants {
 			jlabel.setFont(FONT_TEXT);
 			jlabel.setBackground(TEXT_BACKGROUND);
 			subPanel.add( jlabel );
-			Sentence.add( jlabel );
+			sentenceLabels.add( jlabel );
 			sentence_panel.add( subPanel );
 		}
 		add(sentence_panel);
@@ -196,7 +196,7 @@ public class TypingPanel extends TwiddlerSubPanel implements TwidorConstants {
 		}
 		if (typed.getNumber() == KEY_BACKSPACE || typed.getNumber() == KEY_DELETE) {
 			setCurrent(getCurrent() - 1);
-			JLabel label = (JLabel)Sentence.elementAt(getCurrent());
+			JLabel label = sentenceLabels.elementAt(getCurrent());
 			label.setForeground(TEXT_DEFAULT);
 			label.setText("");
 			return;
@@ -210,7 +210,7 @@ public class TypingPanel extends TwiddlerSubPanel implements TwidorConstants {
 		} else {
 			if (getCurrent() < getSentenceText().length()) {
 				/* Treat it like a normal character */
-				JLabel label = (JLabel)Sentence.elementAt(getCurrent());
+				JLabel label = sentenceLabels.elementAt(getCurrent());
 				label.setForeground(TEXT_DEFAULT);
 				label.setText(typed.displayLetter());
 				String toMatch = sentenceText.substring(getCurrent());
