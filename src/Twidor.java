@@ -1,4 +1,4 @@
-/*  -*- indent-tabs-mode: t; tab-width: 8; c-basic-offset: 8 -*-
+/*  -*- indent-tabs-mode: t; tab-width: 4; c-basic-offset: 4 -*-
 Twidor: the twiddler typing tutor.
 Copyright (C) 2005	James Fusia
 Copyright (C) 2017	Carey Richard Murphey
@@ -405,6 +405,17 @@ public class Twidor extends JFrame implements TwidorConstants {
 		return showStats;
 	}// end showingStats ()
 
+	public static void openWebpage(String uri) {
+		java.awt.Desktop desktop = java.awt.Desktop.isDesktopSupported() ? java.awt.Desktop.getDesktop() : null;
+		if (desktop != null && desktop.isSupported(java.awt.Desktop.Action.BROWSE)) {
+			try {
+				desktop.browse(java.net.URI.create(uri));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
 	/**
 	 * Accessor for the EventHandler to inform the Tutor a key has been
 	 * pressed.
@@ -531,6 +542,10 @@ public class Twidor extends JFrame implements TwidorConstants {
                 }
 		else if (option.startsWith("Lesson")) {
 			setLesson(option);
+		}
+		else if (option.equals("About")) {
+			openWebpage("https://github.com/rich-murphey/twidor");
+			return;
 		}
 
 		for (int i = 0; i < KEYMAPS.length; i++) {

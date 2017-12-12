@@ -130,6 +130,11 @@ public class TwidorMenu extends JMenuBar implements TwidorConstants {
 		}
 		add(menu);
 
+		menu = new JMenu("Help");
+		jmItem = jmenuItem("About");
+		menu.add(jmItem);
+		add(menu);
+
 		if (bDEBUG) System.out.println("TwidorMenu: Finished Creating");
 	}// end TwidorMenu (Twidor, EventHandler)
 
