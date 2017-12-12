@@ -3,7 +3,7 @@
 ## Twidor - a typing tutor for the Twiddler chording keyboard
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_screenshot.png"
 width="50%" align="right">
-Twidor is a typing tutor for the [Twiddler one-handed chording keyboard](https://twiddler.tekgear.com/).  A "chord" is a keystroke using two, three or four buttons pressed simultaneously. 
+Twidor is a typing tutor for the [Twiddler one-handed chording keyboard](https://twiddler.tekgear.com/).  A "chord" is a keystroke using two, three or four keys pressed simultaneously. 
 
 Twidor was originally written by researchers studying
 [Twiddler learning rates and performance](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.4.3606&rep=rep1&type=pdf). Their
@@ -21,20 +21,20 @@ the [official Twiddler layout editor](https://twiddler.tekgear.com/tuner/edit.xh
 
 Each 4x3 array is composed of four horizontal rows, one for each finger, and green/blue/red columns corresponding to left, middle and right keys on the Twiddler. 
 
-Each large button shows the letter sent by a single-button keystroke.
+Each large key shows the letter sent by a single-key keystroke.
 
 ## A Chord - several keys pressed together
 
 A chord is formed by pressing several keys together, like playing a "chord" on a piano.
 
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_chord_map.png"
-width="30%" align="right"> Each small 4x3 array shows letters sent by two-buttons chords.  The orientation mirrors that of the larger 4x3 array: one row for each finger, and green/blue/red for left, middle and right columns.
+width="30%" align="right"> Each small 4x3 array shows letters sent by two-key chords.  The orientation mirrors that of the larger 4x3 array: one row for each finger, and green/blue/red for left, middle and right columns.
 
-The first button of the chord is the large button to the immediate left.  
+The first key of the chord is the large key to the immediate left.  
 
-The second button of the chord is one of the small buttons which show the letters sent by the chord.
+The second key of the chord is one of the small keys which show the letters sent by the chord.
 
-Here are some two-button chords whose first button is the <kbd>I</kbd> key:
+Here are some two-key chords whose first key is <kbd>I</kbd>:
 * <kbd>I + S</kbd> sends "is".
 * <kbd>I + N</kbd> sends "in".
 * <kbd>I + SP</kbd> sends "C".
@@ -48,7 +48,7 @@ Menu options include:
 * <kbd>File | Load Keymap</kbd> imports a CSV keymap exported by the [Twiddler Tuner](https://twiddler.tekgear.com/tuner/).
 * <kbd>File | Load Lesson</kbd> imports training text from a file.
 * <kbd>Keyboard | Show..</kbd> toggles show/hide key labels and flips right-to-left orientation.
-* <kbd>Hints | Highlight...</kbd> toggles show/hide buttons that show the chord for the next letter of the lesson.
+* <kbd>Hints | Highlight...</kbd> toggles show/hide which keys to press to send the next chord of the lesson.
 * <kbd>Keymaps</kbd> loads certain keymaps: Backspice, Default_V5, TabSpace, or Typemax.
 
 To load a custom keymap, users may:
