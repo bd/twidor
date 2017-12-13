@@ -23,7 +23,7 @@ Each 4x3 array is composed of four horizontal rows, one for each finger, and gre
 
 Each large key shows the letter sent by a single-key keystroke.
 
-## A Chord - several keys pressed together
+## Chording
 
 A chord is formed by pressing several keys together, like playing a "chord" on a piano.
 
