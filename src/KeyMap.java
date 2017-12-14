@@ -404,11 +404,9 @@ public class KeyMap implements TwidorConstants {
 		        newKey.setLetter(macro);
                 }
                 if (newKey.displayLetter() != null) {
-                    if ( ! addKey(newKey)) {
+                    if ( ! addKey(newKey) && bDEBUG ) {
 						System.out.println("duplicate key:" + chord + "\t" + macro);
-                    } else {
-						System.out.println("add key:      " + chord + "\t" + macro);
-					}
+                    }
                 }
 	    }
 	    catch (Exception e) {
