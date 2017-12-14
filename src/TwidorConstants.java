@@ -119,7 +119,7 @@ public interface TwidorConstants {
 	 * In-program settings
 	 */
 	/* Menu stuff: Twidor */
-	public static final String LOAD_KEYMAP_TEXT = "Load Keymap";
+	public static final String LOAD_KEYMAP_TEXT = "Load CSV Keymap";
 	public static final String LOAD_LESSON_TEXT = "Load Lesson";
 	public static final String QUIT_TEXT = "Quit";
 

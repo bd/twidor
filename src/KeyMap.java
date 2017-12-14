@@ -1,4 +1,4 @@
-/*
+/*  -*- indent-tabs-mode: t; tab-width: 4; c-basic-offset: 4 -*-
 Twidor: the twiddler typing tutor.
 Copyright (C) 2005	James Fusia
 Copyright (C) 2017	Carey Richard Murphey
@@ -170,11 +170,7 @@ public class KeyMap implements TwidorConstants {
 	 * @return boolean the success or failure of the add
 	 */
 	public boolean addKey (KeyElement key) {
-		if (keylist.indexOf(key) >= 0) {
-			return false;
-		}
-		keylist.addElement(key);
-		return true;
+		return keylist.add(key);
 	}// end addKey (KeyElement)
 
 	/**
@@ -206,7 +202,7 @@ public class KeyMap implements TwidorConstants {
 			return null;
 		}
 		return getKeylist().elementAt( keyIndex );
-	}// end addKey (KeyElement)
+	}// end getKeyByLetter (String)
 
 	/**
 	 * sets the new keymap
@@ -320,20 +316,23 @@ public class KeyMap implements TwidorConstants {
 	    
 	    try {
 		String column[] = line.split("\",\"", 2);
-		if ( (line.charAt(0) != '"') ||
-		     (line.charAt(line.length() - 1) != '"') ||
-		     (column.length != 2) ) {
-		    if (bDEBUG) {
-			System.out.println("Not a valid entry");
-		    }
-		    return;
-		}
+		if ( (column.length != 2) ||
+			 (column[0].charAt(0) != '"')
+			 (column[1].indexOf('"') == -1)
+		     (column.length != 2) )
+			{
+				if (bDEBUG) {
+					System.out.println("Not a valid entry");
+				}
+				return;
+			}
+		
 		// line: "  NA RMOO","<Right Alt><Shift><UpArrow></Shift></Right Alt>"
 		// chord:  NA RMOO
 		String chord = column[0].substring(1, column[0].length());
 		// keystrokes: <Right Alt><Shift><UpArrow></Shift></Right Alt>
-		String keystrokes = column[1].substring(0, column[1].length() - 1);
-		
+		// Note: this ignores anything after the trailing double quote.
+		String keystrokes = column[1].substring(0, column[1].lastIndexOf('"') - 1);
 		if( chord.compareTo("Chord") == 0 ) {
 		    return;
 		}
@@ -405,7 +404,11 @@ public class KeyMap implements TwidorConstants {
 		        newKey.setLetter(macro);
                 }
                 if (newKey.displayLetter() != null) {
-                    addKey(newKey);
+                    if ( ! addKey(newKey)) {
+						System.out.println("duplicate key:" + chord + "\t" + macro);
+                    } else {
+						System.out.println("add key:      " + chord + "\t" + macro);
+					}
                 }
 	    }
 	    catch (Exception e) {
