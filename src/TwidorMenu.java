@@ -72,6 +72,8 @@ public class TwidorMenu extends JMenuBar implements TwidorConstants {
 		menu.add(jmItem);
 		jmItem = jmenuItem(LOAD_LESSON_TEXT);
 		menu.add(jmItem);
+		jmItem = jmenuItem(SAVE_KEYLOG_TEXT);
+		menu.add(jmItem);
 		jmItem = jmenuItem(QUIT_TEXT);
 		menu.add(jmItem);
 		add(menu);

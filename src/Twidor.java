@@ -37,8 +37,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.net.URL;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.awt.Font;
 
 public class Twidor extends JFrame implements TwidorConstants {
@@ -59,6 +58,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 	private Lesson currentLesson;
 	private String currentSentence;
 	private JFileChooser fc;
+	private java.io.PrintWriter keylog;
 
 	/**
 	 * Default Constructor.
@@ -139,10 +139,10 @@ public class Twidor extends JFrame implements TwidorConstants {
 // KeyMap stuff
 	/**
 	 * Sets the Keymap for the system
-	 * @param String the source of the keymap
+	 * @param String the path of the keymap file
 	 */
-	private void setKeyMap (String source) {
-		myKeyMap = new KeyMap(source);
+	private void setKeyMap (String path) {
+		myKeyMap = new KeyMap(path);
 		if (myKeyMap.appearsValid()) {
 			if (bDEBUG) System.out.println("Keymap Loaded");
 		}
@@ -150,6 +150,14 @@ public class Twidor extends JFrame implements TwidorConstants {
 			if (bDEBUG) System.out.println("Keymap Loading Failed");
 		}
 	}// end setKeymap (String)
+
+	private void setKeylog (File file) {
+		try {
+			keylog = new java.io.PrintWriter(new java.io.FileOutputStream( file, true /* append = true */)); 
+		} catch (FileNotFoundException e) {
+			System.out.println("Could not save keylog. " + file + " not found.");
+		}
+	}
 
 	/**
 	 * Accessor for the KeyMap
@@ -366,10 +374,10 @@ public class Twidor extends JFrame implements TwidorConstants {
 	 */
 	public void doHighlighting () {
 		getTwiddlerPanel().clear();
-		KeyElement match = getKeyMap().getKey(String.valueOf((char)KEY_ENTER));
-		int index = getTypingPanel().getCurrent();
-		if (index < getSentence().length()) {
-			String remainder = getSentence().substring(getTypingPanel().getCurrent());
+		KeyElement match = getKeyMap().getKey(UNICODE_RETURN); // highlight ENTER when at end of line.
+		int begin = getTypingPanel().getCurrent();
+		if (begin < getSentence().length()) {
+			String remainder = getSentence().substring(begin);
 			match = getKeyMap().matchLargestChunk(remainder);
 		}
 		getTwiddlerPanel().highlight(match);
@@ -422,15 +430,10 @@ public class Twidor extends JFrame implements TwidorConstants {
 	 * @param char the key pressed
 	 * @param long the system time when it was pressed
 	 */
-	public void charTyped (String key, long time) {
+	public void charTyped (String macro, long time) {
 		/* FIXME */
 		String sentence = getSentence();
-		KeyElement typed = getKeyMap().getKey(key);
-
-		//if (ignoreInput()) {
-			//if (bDEBUG) System.out.println("Ignoring input for now...");
-			//return;
-		//}
+		KeyElement typed = getKeyMap().getKey(macro);
 
 		if (typed == null) {
 			if (bDEBUG) System.out.println("Really big problem with character typed.");
@@ -519,7 +522,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 			twidorQuit();
 		}
 		else if (option.equals(LOAD_KEYMAP_TEXT)) {
-			int choice = fc.showOpenDialog(this);
+			int choice = fc.showDialog(this, LOAD_KEYMAP_TEXT);
 			if (choice == JFileChooser.APPROVE_OPTION) {
 				try {
 					setKeyMap(fc.getSelectedFile().getCanonicalPath());
@@ -529,9 +532,9 @@ public class Twidor extends JFrame implements TwidorConstants {
 				getTwiddlerPanel().setKeyMap(getKeyMap());
 				getTwiddlerPanel().reOrient();
 			}
-                }
+		}
 		else if (option.equals(LOAD_LESSON_TEXT)) {
-			int choice = fc.showOpenDialog(this);
+			int choice = fc.showDialog(this, LOAD_LESSON_TEXT);
 			if (choice == JFileChooser.APPROVE_OPTION) {
 				try {
 					loadSingleLesson(fc.getSelectedFile().getCanonicalPath());
@@ -539,7 +542,13 @@ public class Twidor extends JFrame implements TwidorConstants {
 					e.printStackTrace();
 				}
 			}
-                }
+		}
+		else if (option.equals(SAVE_KEYLOG_TEXT)) {
+			int choice = fc.showDialog(this, SAVE_KEYLOG_TEXT);
+			if (choice == JFileChooser.APPROVE_OPTION) {
+				setKeylog(fc.getSelectedFile());
+			}
+		}
 		else if (option.startsWith("Lesson")) {
 			setLesson(option);
 		}

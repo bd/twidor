@@ -1,4 +1,4 @@
-/*
+/*  -*- indent-tabs-mode: t; tab-width: 4; c-basic-offset: 4 -*-
 Twidor: the twiddler typing tutor.
 Copyright (C) 2005	James Fusia
 Copyright (C) 2017	Carey Richard Murphey
@@ -130,61 +130,59 @@ public class Lesson implements TwidorConstants {
 		highlightMCC = status;
 	}
 
+	private void readFile (String path) {
+		BufferedReader bReader;
+		File file = new File(path);
+
+		if ( file.exists() ) {
+			readFile( file );
+		} else {
+			InputStream iStream = this.getClass().getResourceAsStream(path);
+			if (iStream != null) {
+				readFile (new BufferedReader(new InputStreamReader(iStream)));
+			} else {
+				System.out.println("Could not load " + getLessonName() + ". (" + path + " not found)");
+			}
+		}
+	}
+
+	// return True on error
+	private boolean readFile (File file) {
+		try {
+			readFile (new BufferedReader(new FileReader(file)));
+		} catch (FileNotFoundException e) {
+			System.out.println("Could not load " + getLessonName() + ". (" + file + " not found)");
+			return true;
+		}
+		return false;
+	}
 	/**
 	 * Function for reading a file of Sentences and parsing them all into
 	 * an array.
 	 * @param String the name of the file to read
 	 */
-	private void readFile (String source) {
-		FileReader fReader = null;
-		InputStream iStream = null;
-		InputStreamReader isReader = null;
-		BufferedReader bReader = null;
-
-		if (bDEBUG) System.out.println("Lesson: reading file " + source);
-
-		try {
-			fReader = new FileReader(source);
-			bReader = new BufferedReader(fReader);
-		} catch (FileNotFoundException e) {
-			iStream = this.getClass().getResourceAsStream(source);
-			if (iStream != null) {
-				isReader = new InputStreamReader(iStream);
-				bReader = new BufferedReader(isReader);
-			} else {
-				System.out.println("Could not load " + getLessonName() + ". (" + source + " not found)");
-				System.exit(1);
-			}
-		} catch (Exception e) {
-		}
+	private void readFile (BufferedReader bReader) {
 		try {
 			while (bReader.ready()) {
 				String line = bReader.readLine();
 				if (line.startsWith("#")) {
-                                    continue; /* comment. ignore it. */
+					continue; /* ignore comments. */
 				}
 				lessonSentences.addElement(bReader.readLine());
 			}
 		} catch (IOException e) {
 			if (bDEBUG) System.out.println("Lesson: IO Error");
-		} catch (Exception e) {
 		}
-
 		try {
 			bReader.close();
-			if (iStream == null) {
-				fReader.close();
-			} else {
-				isReader.close();
-				iStream.close();
-			}
-		} catch (Exception e) {
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
-                setLessonTotal( lessonSentences.size() );
+		setLessonTotal( lessonSentences.size() );
 
 		if (bDEBUG)
 			System.out.println("Lesson: " + lessonSentences.size()
-					+ " sentences read");
+							   + " sentences read");
 	}
 
 	public void reloadSentences () {

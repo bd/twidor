@@ -83,28 +83,6 @@ public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
             }
 	}// end add_long_label ()
 
-	public String getLabel(KeyElement keyElement) {
-		if (keyElement == null)
-			return "";
-		String keyLabel = keyElement.displayLetter();
-		if (keyElement.match(KEY_SPACE, " ")) {
-			keyLabel = "SP";
-		} else if (keyElement.match(KEY_BACKSPACE, "\b")) {
-			keyLabel = "BS";
-		} else if (keyElement.match(KEY_DELETE, "\177")) {
-			keyLabel = "DEL";
-		} else if (keyElement.match(KEY_ENTER, "\r")) {
-			keyLabel = "ENT";
-		} else if (keyElement.match(KEY_EOL, "\n")) {
-			keyLabel = "NL";
-		} else if (keyElement.match(KEY_TAB, "\t")) {
-			keyLabel = "TAB";
-		} else {
-			keyLabel = keyLabel.toUpperCase();
-		}
-		return keyLabel;
-	}		
-
 	/**
 	 * add one row of buttons for specified <finger>
 	 * @param int the which finger we are (0-3; index-pinky)
@@ -163,12 +141,6 @@ public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
 			for (int finger = 0; finger < 4; finger++) { // four rows, one per finger
 				for (int fingerCol = 0; fingerCol < 3; fingerCol++) {			 // three button columns, and three chord columns
 					{			// chord map
-						Vector <KeyStatus> buttons = new Vector <KeyStatus> (16,0);
-						for (int x = 0; x < 16; x++) {
-							buttons.add(x, new KeyStatus());
-						}
-						((KeyStatus)buttons.elementAt(finger * FINGER_OFFSET + fingerCol)).setStatus(true);
-
 						for (int chordCol = 0; chordCol < 3; chordCol++) {
 							JPanel subPanel = new JPanel();
 							subPanel.setComponentOrientation( keyOrient );
@@ -176,8 +148,9 @@ public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
 							subPanel.setBackground(twiddlerBackground);
 							for (int chordFinger = 0; chordFinger < 4; chordFinger++) { // anchor finger
 								if (finger != chordFinger && visibleKeys) {
-									((KeyStatus)buttons.elementAt(chordFinger * FINGER_OFFSET + chordCol)).setStatus(true);
-									KeyElement myButton = keys.getKey(buttons);
+									int buttons = KeyElement.createButtons(finger * FINGER_OFFSET + fingerCol);
+									buttons |= KeyElement.createButtons(chordFinger * FINGER_OFFSET + chordCol);
+									KeyElement keyElement = keys.getKeyByButtons(buttons);
 									Color color = keyRed;
 									Border border = redBorder;
 									if (chordCol == 1) {
@@ -193,22 +166,25 @@ public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
 									label.setHorizontalAlignment(JLabel.CENTER);
 									label.setBorder(border);
 									label.setForeground( color );
-									if (myButton != null) {
-										String displayLetter = myButton.displayLetter();
-										if( displayLetter.length() == 1 ) {
-											label.setText(myButton.displayLetter().toUpperCase());
-										} else if (displayLetter.length() <= 3) {
+									if (keyElement != null) {
+										String shortLabel = keyElement.shortLabel();
+										if( shortLabel.length() == 1 ) {
+											label.setFont(FONT_LABEL);
+											label.setText(keyElement.shortLabel());
+										} else if (shortLabel.length() == 2) {
+											label.setFont(FONT_LABEL2);
+											label.setText(shortLabel);
+										} else if (shortLabel.length() <= 3) {
 											label.setFont(FONT_MACRO);
-											label.setText(displayLetter);
+											label.setText(shortLabel);
 										} else {
 											label.setFont(FONT_MACRO);
-											label.setText(displayLetter.substring(0,2));
+											label.setText(shortLabel.substring(0,2));
 										}
 										subPanel.add(label);
 									} else {
 										add_label( subPanel, twiddlerBackground, FONT_KEYPAD, "");
 									}
-									((KeyStatus)buttons.elementAt(chordFinger * FINGER_OFFSET + chordCol)).setStatus(false);
 								} else {
 									add_label( subPanel, twiddlerBackground,  FONT_KEYPAD, "z");
 								}
@@ -217,11 +193,7 @@ public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
 						}
 					}
 					{			// single button keymap
-						Vector <KeyStatus> buttons = new Vector <KeyStatus> (16,0);
-						for (int x = 0; x < 16; x++) {
-							buttons.add(x, new KeyStatus());
-						}
-						((KeyStatus)buttons.elementAt(finger * FINGER_OFFSET + fingerCol)).setStatus(true);
+						int buttons = KeyElement.createButtons(finger * FINGER_OFFSET + fingerCol);
 						JPanel subPanel = new JPanel();
 						subPanel.setBackground(buttonBackground);
 						subPanel.setLayout(new GridLayout(3, 1));
@@ -236,14 +208,16 @@ public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
 						}
 						subPanel.setBorder(border);
 						subPanel.add(new JLabel()); // empty top row (label is in middle)
-						KeyElement myButton = keys.getKey(buttons);
-						if (myButton != null && visibleKeys) {
-							String keyLabel = getLabel(myButton);
-							if (keyLabel.length() > 1) {
-								add_label( subPanel, color,  FONT_MACRO, keyLabel);
-							} else {
-								add_label( subPanel, color,  FONT_KEYPAD, keyLabel);
+						KeyElement keyElement = keys.getKeyByButtons(buttons);
+						if (keyElement != null && visibleKeys) {
+							String keyLabel = keyElement.shortLabel();
+							Font font = FONT_MACRO;
+							if (keyLabel.length() == 1) {
+								font = FONT_LABEL;
+							} else if (keyLabel.length() == 2) {
+								font = FONT_LABEL2;
 							}
+							add_label( subPanel, color,  font, keyLabel);
 						} else {
 							subPanel.add(new JLabel());
 						}

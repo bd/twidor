@@ -203,7 +203,7 @@ public class StatsPanel extends TwiddlerSubPanel implements TwidorConstants {
 	 * @param long the amount of time it took
 	 */
 	public void charTyped (KeyElement typed, long time) {
-		if (typed.getNumber() == KEY_ENTER || typed.getNumber() == KEY_EOL || typed.getLetter().equals("\n"))
+		if (typed.getKeycode() == KEYCODE_ENTER || typed.getMacro().equals("\n"))
 			return;
 
 		Stats current = (Stats)getStats().lastElement();

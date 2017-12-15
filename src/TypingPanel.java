@@ -1,5 +1,4 @@
-/*  -*- indent-tabs-mode: t; tab-width: 8; c-basic-offset: 8 -*-
-/*
+/*  -*- indent-tabs-mode: t; tab-width: 4; c-basic-offset: 4 -*-
 Twidor: the twiddler typing tutor.
 Copyright (C) 2005	James Fusia
 Copyright (C) 2017	Carey Richard Murphey
@@ -194,7 +193,9 @@ public class TypingPanel extends TwiddlerSubPanel implements TwidorConstants {
 		if (getCurrent() < 0) {
 			setCurrent(0);
 		}
-		if (typed.getNumber() == KEY_BACKSPACE || typed.getNumber() == KEY_DELETE) {
+		if (typed.match(KEYCODE_BACKSPACE, UNICODE_BACKSPACE) ||
+			typed.match(KEYCODE_DELETE, UNICODE_DELETE)
+			) {
 			setCurrent(getCurrent() - 1);
 			JLabel label = sentenceLabels.elementAt(getCurrent());
 			label.setForeground(TEXT_DEFAULT);
@@ -202,25 +203,26 @@ public class TypingPanel extends TwiddlerSubPanel implements TwidorConstants {
 			return;
 		}
 		setVisible(false);
-		if (typed.getNumber() == KEY_EOL || typed.getNumber() == KEY_ENTER || typed.getLetter().equals("\n")) {
+		if (typed.match(KEYCODE_ENTER, "\n") ||
+			typed.match(KEYCODE_ENTER, "\r")
+			) {
 			/* Enter only matters if we're allowing errors and the sentence is finished */
 			if (getCurrent() >= getSentenceText().length()) {
 				setEntered(true);
 			}
-		} else {
-			if (getCurrent() < getSentenceText().length()) {
-				/* Treat it like a normal character */
-				JLabel label = sentenceLabels.elementAt(getCurrent());
-				label.setForeground(TEXT_DEFAULT);
-				label.setText(typed.displayLetter());
-				String toMatch = sentenceText.substring(getCurrent());
-				if (toMatch.startsWith(typed.displayLetter())) {
-					label.setForeground(TEXT_GOOD);
-				} else {
-					label.setForeground(TEXT_ERROR);
-				}
-				setCurrent(getCurrent() + 1);
+		} 
+		else if (getCurrent() < getSentenceText().length()) {
+			/* Treat it like a normal character */
+			JLabel label = sentenceLabels.elementAt(getCurrent());
+			label.setForeground(TEXT_DEFAULT);
+			label.setText(typed.getMacro());
+			String toMatch = sentenceText.substring(getCurrent());
+			if (toMatch.startsWith(typed.getMacro())) {
+				label.setForeground(TEXT_GOOD);
+			} else {
+				label.setForeground(TEXT_ERROR);
 			}
+			setCurrent(getCurrent() + 1);
 		}
 		setVisible(true);
 	}

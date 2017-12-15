@@ -149,10 +149,11 @@ public class EventHandler implements ActionListener, ItemListener, KeyListener, 
 	 * @param KeyEvent to be interpreted
 	 */
 	public void keyTyped (KeyEvent e) {
-		if (bDEBUG) System.out.println("EventHandler: Key Pressed (" +
-				(int)e.getKeyChar() + ") " + e.getKeyChar());
-		myTutor().charTyped(String.valueOf(e.getKeyChar()),
-				System.currentTimeMillis());
+            if (bDEBUG) System.out.println("EventHandler: " + e);
+            char c = e.getKeyChar(); //  a unicode character
+            if ( c != KeyEvent.CHAR_UNDEFINED  ) {
+		myTutor().charTyped(String.valueOf( c), System.currentTimeMillis());
+            }
 	}// end keyTyped
 
 // ItemListener Dependencies

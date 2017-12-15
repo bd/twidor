@@ -92,7 +92,9 @@ public class StatsCalc implements TwidorConstants {
 		KeyElement temp;
 		for (int i = 0; i < keyPresses.size(); i++) {
 			temp = ((StatsElement)keyPresses.elementAt(i)).getTyped();
-			if (temp.getNumber() == KEY_BACKSPACE || temp.getNumber() == KEY_DELETE) {
+			if (temp.match(KEYCODE_BACKSPACE, UNICODE_BACKSPACE) ||
+                            temp.match(KEYCODE_DELETE, UNICODE_DELETE)
+                            ) {
 				ret++;
 			}
 		}

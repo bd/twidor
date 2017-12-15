@@ -121,16 +121,15 @@ public class Stats implements TwidorConstants {
 	 */
 	public void addPressed (KeyElement pressed, long time) {
 		getKeyPresses().add(new StatsElement(pressed, time));
-		if ( pressed.getNumber() == KEY_BACKSPACE ||
-                     pressed.getNumber() == KEY_DELETE ||
-                     pressed.getLetter().equals("\b") ||
-                     pressed.getLetter().equals("\177") ) {
+		if ( pressed.match(KEYCODE_BACKSPACE, UNICODE_BACKSPACE) ||
+                     pressed.match(KEYCODE_DELETE, UNICODE_DELETE)
+                     ) {
 			int last = transcribedInput.size() - 1;
 			transcribedInput.removeElementAt(last);
 			typed = typed.substring(0, typed.length() - 1);
 		} else {
 			transcribedInput.add(new StatsElement(pressed, time));
-			typed += (char)pressed.getNumber();
+			typed += (char)pressed.getKeycode();
 		}
 	}// end addKey (KeyElement, KeyElement, long)
 

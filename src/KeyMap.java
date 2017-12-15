@@ -44,37 +44,91 @@ public class KeyMap implements TwidorConstants {
 	 */
 	private Vector <KeyElement> keylist;
 
-	/**
-	 *  a map from html tag key names in input file to ASCII caracter values.
-	 */
-	private HashMap<String, Integer> keyTags;
-	private HashMap<String, Integer> letterToKeyIndex;
+	private static final HashMap<String, Character> unicodeByTag;
+	static {
+		unicodeByTag = new HashMap<String, Character>();
+		unicodeByTag.put("<Backspace>",		UNICODE_BACKSPACE);
+		unicodeByTag.put("<Tab>",			UNICODE_TAB);
+		unicodeByTag.put("<Return>",		UNICODE_RETURN);
+		unicodeByTag.put("<Enter>",			UNICODE_ENTER);
+		unicodeByTag.put("<Delete>",		UNICODE_DELETE);
+		unicodeByTag.put("<Escape>",		UNICODE_ESCAPE);
+	}
+
+	private static final HashMap<Character, String> labelByUnicode;
+	static {
+		labelByUnicode = new HashMap<Character, String>();
+		labelByUnicode.put(UNICODE_BACKSPACE,	"BS");
+		labelByUnicode.put(UNICODE_TAB,			"TAB");
+		labelByUnicode.put(UNICODE_RETURN,		"RET");
+		labelByUnicode.put(UNICODE_ENTER,		"ENT");
+		labelByUnicode.put(UNICODE_DELETE,		"DEL");
+		labelByUnicode.put(UNICODE_ESCAPE,		"ESC");
+	}
+
+	private static final HashMap<String, Integer> keycodeByTag;
+	static {
+		keycodeByTag = new HashMap<String, Integer>();
+		keycodeByTag.put("<LeftArrow>",		KEYCODE_LEFT); // ←
+		keycodeByTag.put("<DownArrow>",		KEYCODE_DOWN); // ↓
+		keycodeByTag.put("<RightArrow>",	KEYCODE_RIGHT); // →
+		keycodeByTag.put("<UpArrow>",		KEYCODE_UP); // ↑
+		keycodeByTag.put("<PageDown>",		KEYCODE_PAGEDOWN);
+		keycodeByTag.put("<PageUp>",		KEYCODE_PAGEUP);
+		keycodeByTag.put("<End>",			KEYCODE_END);
+		keycodeByTag.put("<Home>",			KEYCODE_HOME);
+		keycodeByTag.put("<Insert>",		KEYCODE_INSERT);
+		keycodeByTag.put("<NumLock>",		KEYCODE_NUMLOCK);
+		keycodeByTag.put("<CapsLock>",		KEYCODE_CAPSLOCK);
+		keycodeByTag.put("<ScrollLock>",	KEYCODE_SCROLLLOCK);
+		keycodeByTag.put("<F1>",			KEYCODE_F1);
+		keycodeByTag.put("<F2>",			KEYCODE_F2);
+		keycodeByTag.put("<F3>",			KEYCODE_F3);
+		keycodeByTag.put("<F4>",			KEYCODE_F4);
+		keycodeByTag.put("<F5>",			KEYCODE_F5);
+		keycodeByTag.put("<F6>",			KEYCODE_F6);
+		keycodeByTag.put("<F7>",			KEYCODE_F7);
+		keycodeByTag.put("<F8>",			KEYCODE_F8);
+		keycodeByTag.put("<F9>",			KEYCODE_F9);
+		keycodeByTag.put("<F10>",			KEYCODE_F10);
+		keycodeByTag.put("<F11>",			KEYCODE_F11);
+		keycodeByTag.put("<F12>",			KEYCODE_F12);
+	}
+
+	private static final HashMap<Integer, String> labelByKeycode;
+	static {
+		labelByKeycode = new HashMap<Integer, String>();
+		labelByKeycode.put(KEYCODE_LEFT,		"←");
+		labelByKeycode.put(KEYCODE_DOWN,		"↓");
+		labelByKeycode.put(KEYCODE_RIGHT,		"→");
+		labelByKeycode.put(KEYCODE_UP,			"↑");
+		labelByKeycode.put(KEYCODE_PAGEDOWN,	"PDN");
+		labelByKeycode.put(KEYCODE_PAGEUP,		"PUP");
+		labelByKeycode.put(KEYCODE_END,			"END");
+		labelByKeycode.put(KEYCODE_HOME,		"HOM");
+		labelByKeycode.put(KEYCODE_INSERT,		"INS");
+		labelByKeycode.put(KEYCODE_NUMLOCK,		"NLK");
+		labelByKeycode.put(KEYCODE_CAPSLOCK,	"CLK");
+		labelByKeycode.put(KEYCODE_F12,			"SLK");
+		labelByKeycode.put(KEYCODE_F1,			"F1");
+		labelByKeycode.put(KEYCODE_F2,			"F2");
+		labelByKeycode.put(KEYCODE_F3,			"F3");
+		labelByKeycode.put(KEYCODE_F4,			"F4");
+		labelByKeycode.put(KEYCODE_F5,			"F5");
+		labelByKeycode.put(KEYCODE_F6,			"F6");
+		labelByKeycode.put(KEYCODE_F7,			"F7");
+		labelByKeycode.put(KEYCODE_F8,			"F8");
+		labelByKeycode.put(KEYCODE_F9,			"F9");
+		labelByKeycode.put(KEYCODE_F10,			"F10");
+		labelByKeycode.put(KEYCODE_F11,			"F11");
+		labelByKeycode.put(KEYCODE_F12,			"F12");
+	}
 
 	/**
 	 * default constructor
 	 */
 	private KeyMap () {
 		keylist = new Vector <KeyElement> ();
-
-                keyTags = new HashMap<String, Integer>();
-		keyTags.put("<Backspace>",	8);
-		keyTags.put("<Delete>",		127);
-		keyTags.put("<Return>",		10); // note: should be 13, but keyboard emit 10?
-		keyTags.put("<Tab>",		9);
-		keyTags.put("<Escape>",		27);
-		// "<LeftArrow>",		0,
-		// "<DownArrow>",		0,
-		// "<RightArrow>",		0,
-		// "<UpArrow>",			0,
-		// "<PageDown>",		0,
-		// "<PageUp>",			0,
-		// "<End>",			0,
-		// "<Home>",			0,
-		// "<Insert>",			0,
-		// "<NumLock>",			0
-		// <F1>..<F12>
-
-                letterToKeyIndex = new HashMap<String, Integer>();
 	}// end KeyMap
 
 	/**
@@ -87,35 +141,52 @@ public class KeyMap implements TwidorConstants {
 	}// end KeyMap (String)
 
 	/**
-	 * Gets the Keys matching the requested letter
-	 * @param String the letter to match
-	 * @return KeyElement the Key that matches the desired String
+	 * returns the index in the keymap of a given letter
+	 * @param letter the keyboard letter of the given key
+	 * @return the index of the letter in the keymap
 	 */
-	public KeyElement getKey (String key) {
-		KeyElement toReturn = null;
-		int i = getKeylist().indexOf(new KeyElement(key));
+	public KeyElement getKey (String macro) {
+		for (int i = 0; i < getKeylist().size(); i++) {
+			KeyElement key = getKeylist().elementAt(i);
+			if ( key.match(0, macro) ) {
+				return key;
+			}
+		}
+		return null;
+	}// end setupLetterMap ()
 
-		if (i >= 0) {
-			toReturn = getKeylist().elementAt(i);
-		} else {
-                        toReturn = getKeyByLetter( key );
-                }
-		return toReturn;
-	}// end getKey (String)
+	public KeyElement getKey (char c) {
+		return getKey(String.valueOf(c));
+	}
+
+	/**
+	 * returns the index in the keymap of a given letter
+	 * @param letter the keyboard letter of the given key
+	 * @return the index of the letter in the keymap
+	 */
+	public KeyElement getKey (int keycode) {
+		for (int i = 0; i < getKeylist().size(); i++) {
+			KeyElement key = getKeylist().elementAt(i);
+			if ( key.getKeycode() == keycode ) {
+				return key;
+			}
+		}
+		return null;
+	}// end setupLetterMap ()
 
 	/**
 	 * Gets the Key matching the KeyElement button vector set
 	 * @param Vector of KeyStatus to match against
 	 * @return KeyElement the requested KeyElement
 	 */
-	public KeyElement getKey (Vector <KeyStatus> buttons) {
-		KeyElement toReturn = null;
-		int i = getKeylist().indexOf(new KeyElement(buttons));
-
-		if (i >= 0) {
-			toReturn = (KeyElement) getKeylist().elementAt(i);
+	public KeyElement getKeyByButtons (int buttons) {
+		for (int i = 0; i < getKeylist().size(); i++) {
+			KeyElement key = getKeylist().elementAt(i);
+			if ( key.getButtons() == buttons ) {
+				return key;
+			}
 		}
-		return toReturn;
+		return null;
 	}// end getKey (Vector)
 
 	/**
@@ -144,21 +215,16 @@ public class KeyMap implements TwidorConstants {
 	 * @return String the key that matches the most
 	 */
 	public KeyElement matchLargestChunk (String sentence) {
-		KeyElement temp;
 		KeyElement match = null;
-		int i;
-		for (i = 0; i < getKeylist().size(); i++) {
-			temp = (KeyElement)(getKeylist().elementAt(i));
-			try {
-			if (sentence.regionMatches(0, temp.getLetter(), 0, temp.getLetter().length())) {
+		for (int i = 0; i < getKeylist().size(); i++) {
+			KeyElement key = getKeylist().elementAt(i);
+			String macro = key.getMacro();
+			if ( (macro != null) && sentence.regionMatches(0, macro, 0, macro.length())) {
 				if (match == null) {
-					match = temp;
-				} else if (temp.getLetter().length() > match.getLetter().length()) {
-					match = temp;
+					match = key;
+				} else if (key.getMacro().length() > match.getMacro().length()) {
+					match = key;
 				}
-			}
-			} catch (Exception e) {
-				System.out.println("Error with KeyElement " + i + " " + temp.getLetter());
 			}
 		}
 		return match;
@@ -167,42 +233,11 @@ public class KeyMap implements TwidorConstants {
 	/**
 	 * Adds the KeyElement to the KeyMap
 	 * @param KeyElement the desired key to add
-	 * @return boolean the success or failure of the add
+	 * @return boolean true if add succeded, false if add failed.
 	 */
 	public boolean addKey (KeyElement key) {
 		return keylist.add(key);
 	}// end addKey (KeyElement)
-
-	/**
-	 * Set up a hashmap of letter to key index.
-	 */
-        private void setupLetterMap () {
-		int i;
-		for (i = 0; i < getKeylist().size(); i++) {
-			KeyElement key = getKeylist().elementAt(i);
-			// try {
-                            if ( ( key.getLetter() != null ) &&
-                                 ( key.getLetter().length() > 0) ) {
-                                letterToKeyIndex.put(key.getLetter(), i);
-                            }
-			// } catch (Exception e) {
-			// 	System.out.println("Error in setupLetterMap " + i + " " + key.getLetter());
-			// }
-		}
-	}// end setupLetterMap ()
-
-	/**
-	 * returns the index in the keymap of a given letter
-	 * @param letter the keyboard letter of the given key
-	 * @return the index of the letter in the keymap
-	 */
-        public KeyElement getKeyByLetter (String letter) {
-                Integer keyIndex = letterToKeyIndex.get( letter );
-                if ( keyIndex == null ) {
-			return null;
-		}
-		return getKeylist().elementAt( keyIndex );
-	}// end getKeyByLetter (String)
 
 	/**
 	 * sets the new keymap
@@ -266,10 +301,15 @@ public class KeyMap implements TwidorConstants {
 				iStream.close();
 			}
 		} catch (Exception e) {
+			e.printStackTrace();
 		}
-                setupLetterMap();
-		if (bDEBUG) System.out.println("KeyMap: file read");
-	}// end setKeyMap (String)
+		if (bDEBUG) {
+			for (int i = 0; i < getKeylist().size(); i++) {
+				System.out.println("map[" + i + "] = " + getKeylist().elementAt(i));
+			}
+			
+		}
+	}// end readKeyMap (String)
 
 	/**
 	 * function to remove comments
@@ -293,14 +333,14 @@ public class KeyMap implements TwidorConstants {
 	 */
 	private int finger_button (char toCompare) {
 		switch (toCompare) {
-			case 'L':	case 'l':
-				return B_LEFT;
-			case 'M':	case 'm':
-				return B_MIDDLE;
-			case 'R':	case 'r':
-				return B_RIGHT;
-			default:
-				return -1;
+		case 'L':	case 'l':
+			return B_LEFT;
+		case 'M':	case 'm':
+			return B_MIDDLE;
+		case 'R':	case 'r':
+			return B_RIGHT;
+		default:
+			return -1;
 		}
 	}// end finger_button (char)
 
@@ -312,14 +352,14 @@ public class KeyMap implements TwidorConstants {
 	private void parseLine(String line) {
 	    String token;
 	    int pos1, pos2;
-	    KeyElement newKey = new KeyElement();
+	    KeyElement keyElement = new KeyElement();
 	    
-	    try {
+
 		String column[] = line.split("\",\"", 2);
 		if ( (column.length != 2) ||
-			 (column[0].charAt(0) != '"')
-			 (column[1].indexOf('"') == -1)
-		     (column.length != 2) )
+			 (column[0].charAt(0) != '"') ||
+			 (column[1].indexOf('"') == -1) ||
+			 (column.length != 2) )
 			{
 				if (bDEBUG) {
 					System.out.println("Not a valid entry");
@@ -332,9 +372,9 @@ public class KeyMap implements TwidorConstants {
 		String chord = column[0].substring(1, column[0].length());
 		// keystrokes: <Right Alt><Shift><UpArrow></Shift></Right Alt>
 		// Note: this ignores anything after the trailing double quote.
-		String keystrokes = column[1].substring(0, column[1].lastIndexOf('"') - 1);
+		String keystrokes = column[1].substring(0, column[1].lastIndexOf('"'));
 		if( chord.compareTo("Chord") == 0 ) {
-		    return;
+			return;
 		}
 
 		// modifiers:  NA
@@ -343,76 +383,86 @@ public class KeyMap implements TwidorConstants {
 		String keys = chord.substring(5, 9);
 
 		if (modifiers.indexOf('N') > 0) {
-		    newKey.setButton(THUMB_OFFSET + B_NUM, true);
+			keyElement.setButton(THUMB_OFFSET + B_NUM);
 		}
 		if (modifiers.indexOf('A') > 0) {
-		    newKey.setButton(THUMB_OFFSET + B_ALT, true);
+			keyElement.setButton(THUMB_OFFSET + B_ALT);
 		}
 		if (modifiers.indexOf('C') > 0) {
-		    newKey.setButton(THUMB_OFFSET + B_CTRL, true);
+			keyElement.setButton(THUMB_OFFSET + B_CTRL);
 		}
 		if (modifiers.indexOf('S') > 0) {
-		    newKey.setButton(THUMB_OFFSET + B_SHIFT, true);
+			keyElement.setButton(THUMB_OFFSET + B_SHIFT);
 		}
 
 		/* Finger Modifiers */
 		for (int finger = 0; finger < 4; finger++) {
-		    int ftemp = finger_button(keys.charAt(finger));
-		    if (ftemp != -1) {
-			newKey.setButton(finger * FINGER_OFFSET + ftemp, true);
-		    }
+			int ftemp = finger_button(keys.charAt(finger));
+			if (ftemp != -1) {
+				keyElement.setButton(finger * FINGER_OFFSET + ftemp);
+			}
 		}
 
 		/* And what the chord produces */
 		String macro = ""; // keystrokes after converting tags to ASCII characters
+		int keycode = -1;
 		int begin = 0;
-		while( ( begin < keystrokes.length() ) &&
-		       (! keystrokes.startsWith("</", begin) )) {
-
-		    if( keystrokes.startsWith("<Left Ctrl>", begin)) {
-			newKey.setButton(THUMB_OFFSET + B_CTRL, true);
-			begin += "<Left Ctrl>".length();
-		    }
-		    if( keystrokes.startsWith("<Shift>", begin)) {
-			newKey.setButton(THUMB_OFFSET + B_CTRL, true);
-			begin += "<Shift>".length();
-		    }
-		    // todo:
-		    // note: these are not contained in current Twidor lessons.
-		    // <Left Ctrl>
-		    // <Left GUI>
-		    // <CapsLock>
-		    // <Right Alt>
-		    int end = keystrokes.indexOf('>', begin);
-		    if( ( keystrokes.charAt(begin) == '<' ) &&
-			( (keystrokes.length() - begin) > 3 ) &&
-			( end > begin ) ) {
-			String keyName = keystrokes.substring(begin, end + 1);
-			if( keyTags.containsKey( keyName ) ) {
-			    macro += (char)(int)(keyTags.get(keyName));
+		while( begin < keystrokes.length() ) {
+			String rest = keystrokes.substring(begin);
+			if( keystrokes.startsWith("</", begin)) {
+				begin = keystrokes.indexOf( ">", begin ) + 1; // skip over closing tangs
+				continue;
+			} else if( keystrokes.startsWith("<Left Ctrl>", begin)) {
+				keyElement.setButton(THUMB_OFFSET + B_CTRL);
+				begin += "<Left Ctrl>".length();
+				continue;
+			} else if( keystrokes.startsWith("<Shift>", begin)) {
+				keyElement.setButton(THUMB_OFFSET + B_SHIFT);
+				begin += "<Shift>".length();
+				continue;
+			} else if( keystrokes.startsWith("<Left Shift>", begin)) {
+				keyElement.setButton(THUMB_OFFSET + B_SHIFT);
+				begin += "<Left Shift>".length();
+				continue;
+			} else if( keystrokes.startsWith("<Left Alt>", begin)) {
+				keyElement.setButton(THUMB_OFFSET + B_ALT);
+				begin += "<Left Alt>".length();
+				continue;
+			} else if( keystrokes.startsWith("<Left GUI>", begin)) {
+				// Note: there is no GUI key on the thumboard
+				begin += "<Left GUI>".length();
+				continue;
 			}
-			begin = end + 1;
-		    } else {
-			macro += keystrokes.charAt(begin);
-			begin += 1;
-		    }
-                }
-		if( ( macro.length() == 1 ) &&
-                    ( (int)macro.charAt(0) <= 177 ) ) {
-                        newKey.setNumberAndLetter((int)macro.charAt(0), macro);
-                } else {
-		        newKey.setLetter(macro);
-                }
-                if (newKey.displayLetter() != null) {
-                    if ( ! addKey(newKey) && bDEBUG ) {
-						System.out.println("duplicate key:" + chord + "\t" + macro);
-                    }
-                }
-	    }
-	    catch (Exception e) {
-		//	if (bDEBUG) System.out.println("KeyMap: " + e.toString());
-	    }
 
+			int tagEnd = keystrokes.indexOf('>', begin);
+			int tagNext = keystrokes.indexOf('<', begin + 1);
+			if( keystrokes.startsWith("<", begin) &&
+				( tagEnd > begin ) &&
+				( (tagNext < 0 ) || ( tagNext > tagEnd ) )
+				) {
+				String tag = keystrokes.substring(begin, tagEnd + 1);
+				if( unicodeByTag.containsKey( tag ) ) {
+					macro += unicodeByTag.get( tag );
+				}
+				else if ( keycodeByTag.containsKey( tag ) ) {
+					keycode = keycodeByTag.get( tag );
+				}
+				begin = tagEnd + 1;
+			} else {
+				macro += keystrokes.charAt(begin);
+				begin += 1;
+			}
+		}
+		if( macro.length() > 0 ) {
+			keyElement.setMacro(macro);
+		} else if ( keycode != -1 ) {
+			keyElement.setKeycode(keycode);
+		} else {
+			if (bDEBUG) System.out.println("invalid key: " + chord + "\t" + keystrokes);
+		}
+		if ( ! addKey(keyElement) && bDEBUG ) {
+			System.out.println("duplicate key:" + chord + "\t" + keystrokes);
+		}
 	}// end parseLine (String)
 
 	/**
@@ -421,33 +471,23 @@ public class KeyMap implements TwidorConstants {
 	 */
 	public static void main (String[] argv) {
 		KeyMap test = new KeyMap(DEFAULT_KEYMAP);
-                System.out.println(test.getKeylist().size());
+		System.out.println(test.getKeylist().size());
 		for (int i = 0; i < test.getKeylist().size(); i++) {
-			System.out.println(((KeyElement)test.getKeylist().elementAt(i)).toString());
+			System.out.println(test.getKeylist().elementAt(i).toString());
 		}
 
 		System.out.println("getKey test");
 
-		KeyElement check = test.getKey(new String("a"));
+		KeyElement check = test.getKey("a");
 		if (check == null) {
-			System.out.println("Go fix the getKey software");
+			System.out.println("ERROR: key not found by macro: a");
 			return;
 		}
 		System.out.println(check.toString());
 
-		Vector <KeyStatus> temp = new Vector <KeyStatus> ();
-		for (int i = 0; i < 16; i++) {
-			if (check.getButton(i)) {
-				temp.add(new KeyStatus(true));
-			}
-			else {
-				temp.add(new KeyStatus(false));
-			}
-		}
-
-		KeyElement doublecheck = test.getKey(temp);
+		KeyElement doublecheck = test.getKey(check.getButtons());
 		if (doublecheck == null) {
-			System.out.println("Go fix the getKey software");
+			System.out.println("ERROR: key not found by buttons: " + test);
 			return;
 		}
 		System.out.println(doublecheck.toString());

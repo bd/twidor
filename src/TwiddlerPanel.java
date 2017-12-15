@@ -230,7 +230,7 @@ public class TwiddlerPanel extends TwiddlerSubPanel implements TwidorConstants {
 			return;
 		}
 		try {
-			if (key.getLetter().length() > 1) {
+			if (key.getMacro().length() > 1) {
 				hColor = mccHighlight;
 			} else {
 				hColor = buttonHighlight;

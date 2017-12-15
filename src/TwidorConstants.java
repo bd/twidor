@@ -45,7 +45,7 @@ public interface TwidorConstants {
 	/**
 	 * Debug Variable
 	 */
-	public static final boolean bDEBUG = false;
+	public static final boolean bDEBUG = true;
 
 	/**
 	 * Window Attributes
@@ -83,8 +83,9 @@ public interface TwidorConstants {
 	public static final Font FONT_DIALOG = new Font("RobotoCondensed", Font.BOLD, 12);
 	public static final Font FONT_MACRO = new Font("RobotoCondensed", Font.BOLD, 12);
 	public static final Font FONT_KEYPAD = new Font("RobotoCondensed", Font.BOLD, 15);
+	public static final Font FONT_LABEL2 = new Font("RobotoCondensed", Font.BOLD, 17);
 	public static final Font FONT_TEXT = new Font("Roboto", Font.PLAIN, 20);
-	public static final Font FONT_LABEL = new Font("Roboto", Font.PLAIN, 20);
+	public static final Font FONT_LABEL = new Font("Roboto", Font.PLAIN, 22);
 
 	/**
 	 * character colors
@@ -121,6 +122,7 @@ public interface TwidorConstants {
 	/* Menu stuff: Twidor */
 	public static final String LOAD_KEYMAP_TEXT = "Load CSV Keymap";
 	public static final String LOAD_LESSON_TEXT = "Load Lesson";
+	public static final String SAVE_KEYLOG_TEXT = "Save Keylog File";
 	public static final String QUIT_TEXT = "Quit";
 
 	/* Tutor */
@@ -148,12 +150,14 @@ public interface TwidorConstants {
 	/**
 	 * For consistency when accessing the KeyElement button Vector.
 	 */
+	public static final int BUTTONS_MAX = 19;
 	public static final int FINGER_OFFSET = 3;
 	public static final int INDEX_OFFSET = 0;
 	public static final int MIDDLE_OFFSET =  3;
 	public static final int RING_OFFSET = 6;
 	public static final int PINKY_OFFSET = 9;
 	public static final int THUMB_OFFSET = 12;
+	public static final int MOUSE_OFFSET = 16;
 
 	public static final int B_NUM = 0;
 	public static final int B_ALT = 1;
@@ -164,17 +168,124 @@ public interface TwidorConstants {
 	public static final int B_MIDDLE = 1;
 	public static final int B_RIGHT = 2;
 
+	// certain unicode characters
+	public static final char UNICODE_BACKSPACE	= 8;
+	public static final char UNICODE_TAB		= 9;
+	public static final char UNICODE_RETURN		= 10;
+	public static final char UNICODE_ENTER		= 13;
+	public static final char UNICODE_SPACE		= 32;
+	public static final char UNICODE_ESCAPE		= 27;
+	public static final char UNICODE_DELETE		= 127;
+	
 	/**
-	 * And because they might change...
+	 * USB HID Keyboard scan codes
+	 * See https://gist.github.com/MightyPork/6da26e382a7ad91b5496ee55fdc73db2
 	 */
-	public static final int KEY_BACKSPACE = 8;
-	public static final int KEY_TAB = 9;
-	public static final int KEY_ENTER = 13;
-	public static final int KEY_SPACE = 32;
-	public static final int KEY_DELETE = 127;
-	/* Note: keyboards emit 10 for enter key. */
-	public static final int KEY_EOL = 10;
 
+	public static final int KEYCODE_ENTER		= 0x28; // Keyboard Return (ENTER)
+	public static final int KEYCODE_ESC			= 0x29; // Keyboard ESCAPE
+	public static final int KEYCODE_BACKSPACE	= 0x2a; // Keyboard DELETE (Backspace)
+	public static final int KEYCODE_TAB			= 0x2b; // Keyboard Tab
+	public static final int KEYCODE_SPACE		= 0x2c; // Keyboard Spacebar
+	public static final int KEYCODE_MINUS		= 0x2d; // Keyboard - and _
+	public static final int KEYCODE_EQUAL		= 0x2e; // Keyboard = and +
+	public static final int KEYCODE_LEFTBRACE	= 0x2f; // Keyboard [ and {
+	public static final int KEYCODE_RIGHTBRACE	= 0x30; // Keyboard ] and }
+	public static final int KEYCODE_BACKSLASH	= 0x31; // Keyboard \ and |
+	public static final int KEYCODE_HASHTILDE	= 0x32; // Keyboard Non-US # and ~
+	public static final int KEYCODE_SEMICOLON	= 0x33; // Keyboard ; and :
+	public static final int KEYCODE_APOSTROPHE	= 0x34; // Keyboard ' and "
+	public static final int KEYCODE_GRAVE		= 0x35; // Keyboard ` and ~
+	public static final int KEYCODE_COMMA		= 0x36; // Keyboard , and <
+	public static final int KEYCODE_DOT			= 0x37; // Keyboard . and >
+	public static final int KEYCODE_SLASH		= 0x38; // Keyboard / and ?
+	public static final int KEYCODE_CAPSLOCK	= 0x39; // Keyboard Caps Lock
+	public static final int KEYCODE_SCROLLLOCK	= 0x47; // Keyboard Scroll Lock
+	public static final int KEYCODE_PAUSE		= 0x48; // Keyboard Pause
+	public static final int KEYCODE_INSERT		= 0x49; // Keyboard Insert
+	public static final int KEYCODE_HOME		= 0x4a; // Keyboard Home
+	public static final int KEYCODE_PAGEUP		= 0x4b; // Keyboard Page Up
+	public static final int KEYCODE_DELETE		= 0x4c; // Keyboard Delete Forward
+	public static final int KEYCODE_END			= 0x4d; // Keyboard End
+	public static final int KEYCODE_PAGEDOWN	= 0x4e; // Keyboard Page Down
+	public static final int KEYCODE_RIGHT		= 0x4f; // Keyboard Right Arrow
+	public static final int KEYCODE_LEFT		= 0x50; // Keyboard Left Arrow
+	public static final int KEYCODE_DOWN		= 0x51; // Keyboard Down Arrow
+	public static final int KEYCODE_UP			= 0x52; // Keyboard Up Arrow
+	public static final int KEYCODE_NUMLOCK		= 0x53; // Keyboard Num Lock and Clear
+	public static final int KEYCODE_KPSLASH		= 0x54; // Keypad /
+	public static final int KEYCODE_KPASTERISK	= 0x55; // Keypad *
+	public static final int KEYCODE_KPMINUS		= 0x56; // Keypad -
+	public static final int KEYCODE_KPPLUS		= 0x57; // Keypad +
+	public static final int KEYCODE_KPENTER		= 0x58; // Keypad ENTER
+	public static final int KEYCODE_KP1			= 0x59; // Keypad 1 and End
+	public static final int KEYCODE_KP2			= 0x5a; // Keypad 2 and Down Arrow
+	public static final int KEYCODE_KP3			= 0x5b; // Keypad 3 and PageDn
+	public static final int KEYCODE_KP4			= 0x5c; // Keypad 4 and Left Arrow
+	public static final int KEYCODE_KP5			= 0x5d; // Keypad 5
+	public static final int KEYCODE_KP6			= 0x5e; // Keypad 6 and Right Arrow
+	public static final int KEYCODE_KP7			= 0x5f; // Keypad 7 and Home
+	public static final int KEYCODE_KP8			= 0x60; // Keypad 8 and Up Arrow
+	public static final int KEYCODE_KP9			= 0x61; // Keypad 9 and Page Up
+	public static final int KEYCODE_KP0			= 0x62; // Keypad 0 and Insert
+	public static final int KEYCODE_KPDOT		= 0x63; // Keypad . and Delete
+	public static final int KEYCODE_F1			= 0x3a; // Keyboard F1
+	public static final int KEYCODE_F2			= 0x3b; // Keyboard F2
+	public static final int KEYCODE_F3			= 0x3c; // Keyboard F3
+	public static final int KEYCODE_F4			= 0x3d; // Keyboard F4
+	public static final int KEYCODE_F5			= 0x3e; // Keyboard F5
+	public static final int KEYCODE_F6			= 0x3f; // Keyboard F6
+	public static final int KEYCODE_F7			= 0x40; // Keyboard F7
+	public static final int KEYCODE_F8			= 0x41; // Keyboard F8
+	public static final int KEYCODE_F9			= 0x42; // Keyboard F9
+	public static final int KEYCODE_F10			= 0x43; // Keyboard F10
+	public static final int KEYCODE_F11			= 0x44; // Keyboard F11
+	public static final int KEYCODE_F12			= 0x45; // Keyboard F12
+	public static final int KEYCODE_F13			= 0x68; // Keyboard F13
+	public static final int KEYCODE_F14			= 0x69; // Keyboard F14
+	public static final int KEYCODE_F15			= 0x6a; // Keyboard F15
+	public static final int KEYCODE_F16			= 0x6b; // Keyboard F16
+	public static final int KEYCODE_F17			= 0x6c; // Keyboard F17
+	public static final int KEYCODE_F18			= 0x6d; // Keyboard F18
+	public static final int KEYCODE_F19			= 0x6e; // Keyboard F19
+	public static final int KEYCODE_F20			= 0x6f; // Keyboard F20
+	public static final int KEYCODE_F21			= 0x70; // Keyboard F21
+	public static final int KEYCODE_F22			= 0x71; // Keyboard F22
+	public static final int KEYCODE_F23			= 0x72; // Keyboard F23
+	public static final int KEYCODE_F24			= 0x73; // Keyboard F24
+	public static final int KEYCODE_OPEN		= 0x74; // Keyboard Execute
+	public static final int KEYCODE_HELP		= 0x75; // Keyboard Help
+	public static final int KEYCODE_PROPS		= 0x76; // Keyboard Menu
+	public static final int KEYCODE_FRONT		= 0x77; // Keyboard Select
+	public static final int KEYCODE_STOP		= 0x78; // Keyboard Stop
+	public static final int KEYCODE_AGAIN		= 0x79; // Keyboard Again
+	public static final int KEYCODE_UNDO		= 0x7a; // Keyboard Undo
+	public static final int KEYCODE_CUT			= 0x7b; // Keyboard Cut
+	public static final int KEYCODE_COPY		= 0x7c; // Keyboard Copy
+	public static final int KEYCODE_PASTE		= 0x7d; // Keyboard Paste
+	public static final int KEYCODE_FIND		= 0x7e; // Keyboard Find
+	public static final int KEYCODE_MUTE		= 0x7f; // Keyboard Mute
+	public static final int KEYCODE_VOLUMEUP	= 0x80; // Keyboard Volume Up
+	public static final int KEYCODE_VOLUMEDOWN	= 0x81; // Keyboard Volume Down
+	public static final int KEYCODE_LEFTCTRL	= 0xe0; // Keyboard Left Control
+	public static final int KEYCODE_LEFTSHIFT	= 0xe1; // Keyboard Left Shift
+	public static final int KEYCODE_LEFTALT		= 0xe2; // Keyboard Left Alt
+	public static final int KEYCODE_LEFTMETA	= 0xe3; // Keyboard Left GUI
+	public static final int KEYCODE_RIGHTCTRL	= 0xe4; // Keyboard Right Control
+	public static final int KEYCODE_RIGHTSHIFT	= 0xe5; // Keyboard Right Shift
+	public static final int KEYCODE_RIGHTALT	= 0xe6; // Keyboard Right Alt
+	public static final int KEYCODE_RIGHTMETA	= 0xe7; // Keyboard Right GUI
+
+	public static final int KEYMOD_LCTRL		= 0x01;
+	public static final int KEYMOD_LSHIFT		= 0x02;
+	public static final int KEYMOD_LALT			= 0x04;
+	public static final int KEYMOD_LMETA		= 0x08; // GUI
+	public static final int KEYMOD_RCTRL		= 0x10;
+	public static final int KEYMOD_RSHIFT		= 0x20;
+	public static final int KEYMOD_RALT			= 0x40;
+	public static final int KEYMOD_RMETA		= 0x80;
+
+	// etc
 	public static final int C = 0;
 	public static final int F = 1;
 	public static final int IF = 2;
