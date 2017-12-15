@@ -45,7 +45,7 @@ public interface TwidorConstants {
 	/**
 	 * Debug Variable
 	 */
-	public static final boolean bDEBUG = true;
+	public static final boolean bDEBUG = false;
 
 	/**
 	 * Window Attributes
