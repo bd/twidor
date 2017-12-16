@@ -3,7 +3,7 @@
 ## Twidor - a typing tutor for the Twiddler chording keyboard
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_screenshot.png"
 width="50%" align="right">
-Twidor is a typing tutor for the [Twiddler one-handed chording keyboard](https://twiddler.tekgear.com/).  A "chord" is a keystroke using two, three or four keys pressed simultaneously. 
+Twidor is a typing tutor for the [Twiddler one-handed chording keyboard](https://twiddler.tekgear.com/).  A "chord" is a keystroke using two, three or four keys pressed simultaneously. The [download page](https://github.com/rich-murphey/twidor/releases) has a windows setup.exe and a Java jar file for Linux and OSX. 
 
 Twidor was originally written by researchers studying
 [Twiddler learning rates and performance](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.4.3606&rep=rep1&type=pdf). Their
