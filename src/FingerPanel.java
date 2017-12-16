@@ -40,6 +40,8 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import java.util.Vector;
 import java.net.URL;
+import java.lang.Math;
+
 public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
 
 	/**
@@ -148,8 +150,8 @@ public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
 							subPanel.setBackground(twiddlerBackground);
 							for (int chordFinger = 0; chordFinger < 4; chordFinger++) { // anchor finger
 								if (finger != chordFinger && visibleKeys) {
-									int buttons = KeyElement.createButtons(finger * FINGER_OFFSET + fingerCol);
-									buttons |= KeyElement.createButtons(chordFinger * FINGER_OFFSET + chordCol);
+									int buttons = KeyElement.buttonMask(finger, fingerCol);
+									buttons |= KeyElement.buttonMask(chordFinger, chordCol);
 									KeyElement keyElement = keys.getKeyByButtons(buttons);
 									Color color = keyRed;
 									Border border = redBorder;
@@ -167,20 +169,16 @@ public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
 									label.setBorder(border);
 									label.setForeground( color );
 									if (keyElement != null) {
-										String shortLabel = keyElement.shortLabel();
-										if( shortLabel.length() == 1 ) {
-											label.setFont(FONT_LABEL);
-											label.setText(keyElement.shortLabel());
-										} else if (shortLabel.length() == 2) {
-											label.setFont(FONT_LABEL2);
-											label.setText(shortLabel);
-										} else if (shortLabel.length() <= 3) {
-											label.setFont(FONT_MACRO);
-											label.setText(shortLabel);
-										} else {
-											label.setFont(FONT_MACRO);
-											label.setText(shortLabel.substring(0,2));
+										String keyLabel = keyElement.getLabel();
+										keyLabel = keyLabel.substring(0,Math.min(3,keyLabel.length()));
+										Font font = FONT_LABEL; // length = 1
+										if (keyLabel.length() == 2) {
+											font = FONT_LABEL2;
+										} else if (keyLabel.length() > 2) {
+											font = FONT_MACRO;
 										}
+										label.setFont(font);
+										label.setText(keyLabel);
 										subPanel.add(label);
 									} else {
 										add_label( subPanel, twiddlerBackground, FONT_KEYPAD, "");
@@ -193,7 +191,7 @@ public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
 						}
 					}
 					{			// single button keymap
-						int buttons = KeyElement.createButtons(finger * FINGER_OFFSET + fingerCol);
+						int buttons = KeyElement.buttonMask(finger, fingerCol);
 						JPanel subPanel = new JPanel();
 						subPanel.setBackground(buttonBackground);
 						subPanel.setLayout(new GridLayout(3, 1));
@@ -210,7 +208,7 @@ public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
 						subPanel.add(new JLabel()); // empty top row (label is in middle)
 						KeyElement keyElement = keys.getKeyByButtons(buttons);
 						if (keyElement != null && visibleKeys) {
-							String keyLabel = keyElement.shortLabel();
+							String keyLabel = keyElement.getLabel();
 							Font font = FONT_MACRO;
 							if (keyLabel.length() == 1) {
 								font = FONT_LABEL;

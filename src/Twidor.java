@@ -374,11 +374,22 @@ public class Twidor extends JFrame implements TwidorConstants {
 	 */
 	public void doHighlighting () {
 		getTwiddlerPanel().clear();
-		KeyElement match = getKeyMap().getKey(UNICODE_RETURN); // highlight ENTER when at end of line.
 		int begin = getTypingPanel().getCurrent();
+		KeyElement match = null;
 		if (begin < getSentence().length()) {
 			String remainder = getSentence().substring(begin);
 			match = getKeyMap().matchLargestChunk(remainder);
+			if ( match == null ) { // try single capital character
+				if(Character.isUpperCase(remainder.charAt(0))) {
+					match = getKeyMap().getKey(remainder.substring(0,1).toLowerCase());
+					if ( match != null ) {
+						match = new KeyElement(match); // copy before modifying it
+						match.setThumb(B_SHIFT);
+					}
+				}
+			}
+		} else {
+			match = getKeyMap().getKey(UNICODE_RETURN); // highlight ENTER when at end of line.
 		}
 		getTwiddlerPanel().highlight(match);
 	}// end doHighlighting ()
@@ -433,8 +444,16 @@ public class Twidor extends JFrame implements TwidorConstants {
 	public void charTyped (String macro, long time) {
 		/* FIXME */
 		String sentence = getSentence();
-		KeyElement typed = getKeyMap().getKey(macro);
-
+		KeyElement typed = getKeyMap().getKey(macro); // FIXME: need to distinguish capital Z from ctrl Z
+		if ( (typed == null) &&
+			 (Character.isUpperCase(macro.charAt(0)))
+			 ) {
+			typed = getKeyMap().getKey(macro.toLowerCase());
+			if ( typed != null ) {
+				typed = new KeyElement(typed); // copy before modifying it
+				typed.setThumb(B_SHIFT);
+			}
+		}
 		if (typed == null) {
 			if (bDEBUG) System.out.println("Really big problem with character typed.");
 			return;

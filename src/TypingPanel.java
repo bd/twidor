@@ -215,7 +215,10 @@ public class TypingPanel extends TwiddlerSubPanel implements TwidorConstants {
 			/* Treat it like a normal character */
 			JLabel label = sentenceLabels.elementAt(getCurrent());
 			label.setForeground(TEXT_DEFAULT);
-			label.setText(typed.getMacro());
+			String text = typed.getMacro();
+			if( typed.getThumb(B_SHIFT) && Character.isLowerCase(text.charAt(0)))
+				text = text.toUpperCase();
+			label.setText(text);
 			String toMatch = sentenceText.substring(getCurrent());
 			if (toMatch.startsWith(typed.getMacro())) {
 				label.setForeground(TEXT_GOOD);

@@ -69,10 +69,10 @@ public class KeyMap implements TwidorConstants {
 	private static final HashMap<String, Integer> keycodeByTag;
 	static {
 		keycodeByTag = new HashMap<String, Integer>();
-		keycodeByTag.put("<LeftArrow>",		KEYCODE_LEFT); // ←
-		keycodeByTag.put("<DownArrow>",		KEYCODE_DOWN); // ↓
-		keycodeByTag.put("<RightArrow>",	KEYCODE_RIGHT); // →
-		keycodeByTag.put("<UpArrow>",		KEYCODE_UP); // ↑
+		keycodeByTag.put("<LeftArrow>",		KEYCODE_LEFT);
+		keycodeByTag.put("<DownArrow>",		KEYCODE_DOWN);
+		keycodeByTag.put("<RightArrow>",	KEYCODE_RIGHT);
+		keycodeByTag.put("<UpArrow>",		KEYCODE_UP);
 		keycodeByTag.put("<PageDown>",		KEYCODE_PAGEDOWN);
 		keycodeByTag.put("<PageUp>",		KEYCODE_PAGEUP);
 		keycodeByTag.put("<End>",			KEYCODE_END);
@@ -95,34 +95,25 @@ public class KeyMap implements TwidorConstants {
 		keycodeByTag.put("<F12>",			KEYCODE_F12);
 	}
 
-	private static final HashMap<Integer, String> labelByKeycode;
+	// USB HID modifier masks
+
+	private static final HashMap<String, Integer> modifierByTag;
 	static {
-		labelByKeycode = new HashMap<Integer, String>();
-		labelByKeycode.put(KEYCODE_LEFT,		"←");
-		labelByKeycode.put(KEYCODE_DOWN,		"↓");
-		labelByKeycode.put(KEYCODE_RIGHT,		"→");
-		labelByKeycode.put(KEYCODE_UP,			"↑");
-		labelByKeycode.put(KEYCODE_PAGEDOWN,	"PDN");
-		labelByKeycode.put(KEYCODE_PAGEUP,		"PUP");
-		labelByKeycode.put(KEYCODE_END,			"END");
-		labelByKeycode.put(KEYCODE_HOME,		"HOM");
-		labelByKeycode.put(KEYCODE_INSERT,		"INS");
-		labelByKeycode.put(KEYCODE_NUMLOCK,		"NLK");
-		labelByKeycode.put(KEYCODE_CAPSLOCK,	"CLK");
-		labelByKeycode.put(KEYCODE_F12,			"SLK");
-		labelByKeycode.put(KEYCODE_F1,			"F1");
-		labelByKeycode.put(KEYCODE_F2,			"F2");
-		labelByKeycode.put(KEYCODE_F3,			"F3");
-		labelByKeycode.put(KEYCODE_F4,			"F4");
-		labelByKeycode.put(KEYCODE_F5,			"F5");
-		labelByKeycode.put(KEYCODE_F6,			"F6");
-		labelByKeycode.put(KEYCODE_F7,			"F7");
-		labelByKeycode.put(KEYCODE_F8,			"F8");
-		labelByKeycode.put(KEYCODE_F9,			"F9");
-		labelByKeycode.put(KEYCODE_F10,			"F10");
-		labelByKeycode.put(KEYCODE_F11,			"F11");
-		labelByKeycode.put(KEYCODE_F12,			"F12");
+		modifierByTag = new HashMap<String, Integer>();
+		modifierByTag.put("<Left Ctrl>",		KEYMOD_LCTRL);
+		modifierByTag.put("<Left Shift>",		KEYMOD_LSHIFT);
+		modifierByTag.put("<Left Alt>",			KEYMOD_LALT);
+		modifierByTag.put("<Left GUI>",			KEYMOD_LMETA);
+		modifierByTag.put("<Ctrl>",				KEYMOD_LCTRL);
+		modifierByTag.put("<Shift>",			KEYMOD_LSHIFT);
+		modifierByTag.put("<Alt>",				KEYMOD_LALT);
+		modifierByTag.put("<GUI>",				KEYMOD_LMETA);
+		modifierByTag.put("<Right Ctrl>",		KEYMOD_RCTRL);
+		modifierByTag.put("<Right Shift>",		KEYMOD_RSHIFT);
+		modifierByTag.put("<Right Alt>",		KEYMOD_RALT);
+		modifierByTag.put("<Right GUI>",		KEYMOD_RMETA);
 	}
+	
 
 	/**
 	 * default constructor
@@ -146,8 +137,7 @@ public class KeyMap implements TwidorConstants {
 	 * @return the index of the letter in the keymap
 	 */
 	public KeyElement getKey (String macro) {
-		for (int i = 0; i < getKeylist().size(); i++) {
-			KeyElement key = getKeylist().elementAt(i);
+		for (KeyElement key : getKeylist()) {
 			if ( key.match(0, macro) ) {
 				return key;
 			}
@@ -156,7 +146,16 @@ public class KeyMap implements TwidorConstants {
 	}// end setupLetterMap ()
 
 	public KeyElement getKey (char c) {
-		return getKey(String.valueOf(c));
+		return getKey(String.valueOf(c)); // FIXME: ignores CTRL/ALT/SHIFT modifiers
+	}
+
+	public KeyElement getKey (int keycode, String macro, int mod) {
+		for (KeyElement key : getKeylist()) {
+			if ( key.match(keycode, macro, mod) ) {
+				return key;
+			}
+		}
+		return null;
 	}
 
 	/**
@@ -165,8 +164,7 @@ public class KeyMap implements TwidorConstants {
 	 * @return the index of the letter in the keymap
 	 */
 	public KeyElement getKey (int keycode) {
-		for (int i = 0; i < getKeylist().size(); i++) {
-			KeyElement key = getKeylist().elementAt(i);
+		for (KeyElement key : getKeylist()) {
 			if ( key.getKeycode() == keycode ) {
 				return key;
 			}
@@ -180,8 +178,7 @@ public class KeyMap implements TwidorConstants {
 	 * @return KeyElement the requested KeyElement
 	 */
 	public KeyElement getKeyByButtons (int buttons) {
-		for (int i = 0; i < getKeylist().size(); i++) {
-			KeyElement key = getKeylist().elementAt(i);
+		for (KeyElement key : getKeylist()) {
 			if ( key.getButtons() == buttons ) {
 				return key;
 			}
@@ -216,8 +213,7 @@ public class KeyMap implements TwidorConstants {
 	 */
 	public KeyElement matchLargestChunk (String sentence) {
 		KeyElement match = null;
-		for (int i = 0; i < getKeylist().size(); i++) {
-			KeyElement key = getKeylist().elementAt(i);
+		for (KeyElement key : getKeylist()) {
 			String macro = key.getMacro();
 			if ( (macro != null) && sentence.regionMatches(0, macro, 0, macro.length())) {
 				if (match == null) {
@@ -230,6 +226,15 @@ public class KeyMap implements TwidorConstants {
 		return match;
 	}// end matchLargestChunk (String)
 
+	public KeyElement find (int k, String m, int mod) {
+		for (KeyElement key : getKeylist()) {
+			if(  key.match ( k, m, mod ) ) {
+				return key;
+			}
+		}
+		return null;
+	}
+	
 	/**
 	 * Adds the KeyElement to the KeyMap
 	 * @param KeyElement the desired key to add
@@ -304,10 +309,9 @@ public class KeyMap implements TwidorConstants {
 			e.printStackTrace();
 		}
 		if (bDEBUG) {
-			for (int i = 0; i < getKeylist().size(); i++) {
-				System.out.println("map[" + i + "] = " + getKeylist().elementAt(i));
+			for (KeyElement key : getKeylist()) {
+				System.out.println("map: " + key);
 			}
-			
 		}
 	}// end readKeyMap (String)
 
@@ -331,8 +335,8 @@ public class KeyMap implements TwidorConstants {
 	 * @param char the character to look at
 	 * @return int the value of this character
 	 */
-	private int finger_button (char toCompare) {
-		switch (toCompare) {
+	private int finger_button (char columnCode) {
+		switch (columnCode) {
 		case 'L':	case 'l':
 			return B_LEFT;
 		case 'M':	case 'm':
@@ -355,11 +359,11 @@ public class KeyMap implements TwidorConstants {
 	    KeyElement keyElement = new KeyElement();
 	    
 
-		String column[] = line.split("\",\"", 2);
-		if ( (column.length != 2) ||
-			 (column[0].charAt(0) != '"') ||
-			 (column[1].indexOf('"') == -1) ||
-			 (column.length != 2) )
+		String fields[] = line.split("\",\"", 2);
+		if ( (fields.length != 2) ||
+			 (fields[0].charAt(0) != '"') ||
+			 (fields[1].indexOf('"') == -1) ||
+			 (fields.length != 2) )
 			{
 				if (bDEBUG) {
 					System.out.println("Not a valid entry");
@@ -369,10 +373,10 @@ public class KeyMap implements TwidorConstants {
 		
 		// line: "  NA RMOO","<Right Alt><Shift><UpArrow></Shift></Right Alt>"
 		// chord:  NA RMOO
-		String chord = column[0].substring(1, column[0].length());
+		String chord = fields[0].substring(1, fields[0].length());
 		// keystrokes: <Right Alt><Shift><UpArrow></Shift></Right Alt>
 		// Note: this ignores anything after the trailing double quote.
-		String keystrokes = column[1].substring(0, column[1].lastIndexOf('"'));
+		String keystrokes = fields[1].substring(0, fields[1].lastIndexOf('"'));
 		if( chord.compareTo("Chord") == 0 ) {
 			return;
 		}
@@ -383,23 +387,23 @@ public class KeyMap implements TwidorConstants {
 		String keys = chord.substring(5, 9);
 
 		if (modifiers.indexOf('N') > 0) {
-			keyElement.setButton(THUMB_OFFSET + B_NUM);
+			keyElement.setThumb(B_NUM);
 		}
 		if (modifiers.indexOf('A') > 0) {
-			keyElement.setButton(THUMB_OFFSET + B_ALT);
+			keyElement.setThumb(B_ALT);
 		}
 		if (modifiers.indexOf('C') > 0) {
-			keyElement.setButton(THUMB_OFFSET + B_CTRL);
+			keyElement.setThumb(B_CTRL);
 		}
 		if (modifiers.indexOf('S') > 0) {
-			keyElement.setButton(THUMB_OFFSET + B_SHIFT);
+			keyElement.setThumb(B_SHIFT);
 		}
 
 		/* Finger Modifiers */
 		for (int finger = 0; finger < 4; finger++) {
-			int ftemp = finger_button(keys.charAt(finger));
-			if (ftemp != -1) {
-				keyElement.setButton(finger * FINGER_OFFSET + ftemp);
+			int column = finger_button(keys.charAt(finger));
+			if (column != -1) {
+				keyElement.setFinger(finger, column);
 			}
 		}
 
@@ -409,30 +413,6 @@ public class KeyMap implements TwidorConstants {
 		int begin = 0;
 		while( begin < keystrokes.length() ) {
 			String rest = keystrokes.substring(begin);
-			if( keystrokes.startsWith("</", begin)) {
-				begin = keystrokes.indexOf( ">", begin ) + 1; // skip over closing tangs
-				continue;
-			} else if( keystrokes.startsWith("<Left Ctrl>", begin)) {
-				keyElement.setButton(THUMB_OFFSET + B_CTRL);
-				begin += "<Left Ctrl>".length();
-				continue;
-			} else if( keystrokes.startsWith("<Shift>", begin)) {
-				keyElement.setButton(THUMB_OFFSET + B_SHIFT);
-				begin += "<Shift>".length();
-				continue;
-			} else if( keystrokes.startsWith("<Left Shift>", begin)) {
-				keyElement.setButton(THUMB_OFFSET + B_SHIFT);
-				begin += "<Left Shift>".length();
-				continue;
-			} else if( keystrokes.startsWith("<Left Alt>", begin)) {
-				keyElement.setButton(THUMB_OFFSET + B_ALT);
-				begin += "<Left Alt>".length();
-				continue;
-			} else if( keystrokes.startsWith("<Left GUI>", begin)) {
-				// Note: there is no GUI key on the thumboard
-				begin += "<Left GUI>".length();
-				continue;
-			}
 
 			int tagEnd = keystrokes.indexOf('>', begin);
 			int tagNext = keystrokes.indexOf('<', begin + 1);
@@ -441,17 +421,36 @@ public class KeyMap implements TwidorConstants {
 				( (tagNext < 0 ) || ( tagNext > tagEnd ) )
 				) {
 				String tag = keystrokes.substring(begin, tagEnd + 1);
-				if( unicodeByTag.containsKey( tag ) ) {
+				
+				if( modifierByTag.containsKey( tag ) ) {
+					keyElement.setModifier( modifierByTag.get( tag ));
+				}
+				else if( unicodeByTag.containsKey( tag ) ) {
 					macro += unicodeByTag.get( tag );
 				}
 				else if ( keycodeByTag.containsKey( tag ) ) {
 					keycode = keycodeByTag.get( tag );
 				}
 				begin = tagEnd + 1;
-			} else {
-				macro += keystrokes.charAt(begin);
-				begin += 1;
+				continue;
 			}
+
+			// c = keystrokes.charAt(begin);
+			// if( Character.isAlphabetic( c ) ) {
+			// if( (keyElement.getButtons() & B_CTRL) != 0) {
+			// 	if( c >= 'a' && c <= 'z' ) {
+			// 		c = c - 'a' + 1;
+			// 	}
+			// 	else if( c >= 'A' && c <= 'Z' ) {
+			// 		c = c - 'A' + 1;
+			// 	}
+			// }
+			// else if( (keyElement.getButtons() & (B_ALT | B_GUI)) != 0) {
+			// 	c |= 0x80;	// set the high bit
+			// }
+
+			macro += keystrokes.charAt(begin);
+			begin += 1;
 		}
 		if( macro.length() > 0 ) {
 			keyElement.setMacro(macro);
@@ -472,8 +471,8 @@ public class KeyMap implements TwidorConstants {
 	public static void main (String[] argv) {
 		KeyMap test = new KeyMap(DEFAULT_KEYMAP);
 		System.out.println(test.getKeylist().size());
-		for (int i = 0; i < test.getKeylist().size(); i++) {
-			System.out.println(test.getKeylist().elementAt(i).toString());
+		for (KeyElement key : test.getKeylist()) {
+			System.out.println(key.toString());
 		}
 
 		System.out.println("getKey test");

@@ -159,10 +159,11 @@ public interface TwidorConstants {
 	public static final int THUMB_OFFSET = 12;
 	public static final int MOUSE_OFFSET = 16;
 
-	public static final int B_NUM = 0;
-	public static final int B_ALT = 1;
-	public static final int B_CTRL = 2;
-	public static final int B_SHIFT = 3;
+	// thumb buttons
+	public static final int B_NUM	= 0;
+	public static final int B_ALT	= 1;
+	public static final int B_CTRL	= 2;
+	public static final int B_SHIFT	= 3;
 
 	public static final int B_LEFT = 0;
 	public static final int B_MIDDLE = 1;

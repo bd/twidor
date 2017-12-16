@@ -236,16 +236,15 @@ public class TwiddlerPanel extends TwiddlerSubPanel implements TwidorConstants {
 				hColor = buttonHighlight;
 			}
 			for (int finger = 0; finger < 4; finger++) {
-				for (int button = 0; button < 3; button++) {
-					if (key.getButton(finger * FINGER_OFFSET + button)) {
-						fingerPanel.highlight(finger * FINGER_OFFSET + button, hColor);
+				for (int column = 0; column < 3; column++) {
+					if (key.getFinger(finger, column)) {
+						fingerPanel.highlight(finger * FINGER_OFFSET + column, hColor);
 					}
 				}
 			}
 			for (int thumb = 0; thumb < 4; thumb++) {
-				if (key.getButton(thumb + THUMB_OFFSET)) {
-					(getPanels().elementAt(0)).highlight(thumb,
-							hColor);
+				if (key.getThumb(thumb)) {
+					(getPanels().elementAt(0)).highlight(thumb, hColor);
 				}
 			}
 		}

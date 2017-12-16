@@ -44,9 +44,16 @@ public class KeyElement extends java.lang.Object implements TwidorConstants {
 	/**
 	 * the button map and the letter we represent
 	 */
-	private String macro;		// unicode characters
+	private String macro;		// unicode characters that the device sends
+	private int modifiers;		// modifiers sent with the macro or keycode
 	private int keycode;		// a USB HID Keyboard scan code
-	private int buttons; // boolean keyboard and thumboard button status
+	private int buttons;		// bit map of buttons and modifier keys
+	private String desc;		   // text description
+
+	// Note: both <modifiers> and <buttons> are needed because
+	// Thumbpad Alt/Shift/etc <buttons> do not map to <modifiers>
+	// unless the mapping explicitly specifies it.
+	// Alt/Shift/etc <modifiers> are sent in the USB HID Header.
 
 	private static final Map<Integer,String> labelByKeycode;
 	static {
@@ -122,7 +129,7 @@ public class KeyElement extends java.lang.Object implements TwidorConstants {
 	public KeyElement () {
 		buttons = 0;
 		setKeycode(-1);
-	}// end KeyElement
+	}
 
 	/**
 	 * default constructor
@@ -131,7 +138,7 @@ public class KeyElement extends java.lang.Object implements TwidorConstants {
 	public KeyElement (String macro) {
 		this();
 		setMacro(macro);
-	}// end KeyElement (String)
+	}
 
 	/**
 	 * default constructor
@@ -140,8 +147,15 @@ public class KeyElement extends java.lang.Object implements TwidorConstants {
 	public KeyElement (int keycode) {
 		this();
 		setKeycode(keycode);
-	}// end KeyElement (int)
+	}
 
+
+	public KeyElement (KeyElement k) {
+		this();
+		macro = k.macro;
+		keycode = k.keycode;
+		buttons = k.buttons;
+	}
 
 	/**
 	 * set the letter or macro of this KeyElement.
@@ -150,7 +164,8 @@ public class KeyElement extends java.lang.Object implements TwidorConstants {
 	public void setMacro (String m) {
 		macro = m;
 		keycode = -1;
-	}// end setMacro (string)
+		desc = this.toString();
+	}
 
 	/**
 	 * set the letter or macro of this KeyElement.
@@ -158,7 +173,7 @@ public class KeyElement extends java.lang.Object implements TwidorConstants {
 	 */
 	public String getMacro() {
 		return  macro;
-	}// end setMacro (string)
+	}
 
 	/**
 	 * modifier for the numeric value of this key
@@ -167,7 +182,8 @@ public class KeyElement extends java.lang.Object implements TwidorConstants {
 	public void setKeycode (int k) {
 		keycode = k;
 		macro = null;
-	}// end setKeycode (int)
+		desc = this.toString();
+	}
 
 	/**
 	 * accessor for the numeric value of this key
@@ -175,13 +191,13 @@ public class KeyElement extends java.lang.Object implements TwidorConstants {
 	 */
 	public int getKeycode () {
 		return keycode;
-	}// end getKeycode ()
+	}
 
 	/**
 	 * accessor for the value of this key
 	 * @return char the character this keycode matches
 	 */
-	public String shortLabel () {
+	public String getLabel () {
 		if ( keycode != -1 ) {
 			if ( labelByKeycode.containsKey( keycode ) )
 				return labelByKeycode.get( keycode );
@@ -193,24 +209,27 @@ public class KeyElement extends java.lang.Object implements TwidorConstants {
 			return macro;
 		}
 		return "ERROR";
-	}// end getChar ()
+	}
+
+	public boolean getFinger (int finger, int column) {
+		return ((buttons & (1<<((finger * FINGER_OFFSET)  + column))) != 0);
+	}
+
+	public boolean getThumb (int column) {
+		return ((buttons & (1<<((THUMB_OFFSET)  + column))) != 0);
+	}
 
 	/**
 	 * get a specific button
 	 * @param int the button to request
-	 * @return boolean the status of the button
 	 */
-	public boolean getButton (int button_index) {
-		return ((buttons & (1<<button_index)) != 0);
-	}// end getButton (int)
+	public void setFinger (int finger, int column) {
+		buttons |= (1<<((finger * FINGER_OFFSET)  + column));
+	}
 
-	/**
-	 * get a specific button
-	 * @param int the button to request
-	 */
-	public void setButton (int button_index) {
-		buttons |= (1<<button_index);
-	}// end getButton (int)
+	public void setThumb (int column) {
+		buttons |= (1<<((THUMB_OFFSET)  + column));
+	}
 
 	/**
 	 * get a specific button
@@ -218,51 +237,81 @@ public class KeyElement extends java.lang.Object implements TwidorConstants {
 	 */
 	public int getButtons () {
 		return buttons;
-	}// end getButtons ()
+	}
 
-	public static int createButtons (int button_index) {
-		return (1<<button_index);
-	}// end createButtons (int)
+	public static int buttonMask (int finger, int column) {
+		return (1<<(finger * FINGER_OFFSET + column));
+	}
 
-	public static String buttonsToString (int buttons) {
+	public String buttonsToString () {
 		String ret = "";
-		if( (buttons & (1<<(THUMB_OFFSET + B_NUM))) != 0)
+		if( getThumb(B_NUM))
 			ret += "N";
 		else
 			ret += " ";
-		if( (buttons & (1<<(THUMB_OFFSET + B_ALT))) != 0) 
+		if( getThumb(B_ALT)) 
 			ret += "A";
 		else
 			ret += " ";
-		if( (buttons & (1<<(THUMB_OFFSET + B_CTRL))) != 0)
+		if( getThumb(B_CTRL))
 			ret += "C";
 		else
 			ret += " ";
-		if( (buttons & (1<<(THUMB_OFFSET + B_SHIFT))) != 0)
+		if( getThumb(B_SHIFT))
 			ret += "S";
 		else
 			ret += " ";
 		ret += " ";
 
 		for (int finger = 0; finger < 4; finger++) {
-			if( (buttons & (1<<((finger * FINGER_OFFSET) + B_LEFT))) != 0) {
+			if( getFinger(finger, B_LEFT)) {
 				ret += "L";					
-			} else if( (buttons & (1<<((finger * FINGER_OFFSET) + B_MIDDLE))) != 0) {
+			} else if( getFinger(finger, B_MIDDLE)) {
 				ret += "M";					
-			} else if( (buttons & (1<<((finger * FINGER_OFFSET) + B_RIGHT))) != 0) {
+			} else if( getFinger(finger, B_RIGHT)) {
 				ret += "R";
 			} else {
 				ret += "O";
 			}
 		}
 		return ret;
-	}// end createButtons (int)
-
-	public boolean match (int k, char m) {
-		return match(k, String.valueOf(m));
 	}
-	public boolean match (int k, String m) {
-		return ((keycode == k) || ((macro != null) && macro.equals(m)));
+
+	/**
+	 * get a specific button
+	 * @param int the button to request
+	 * @return boolean the status of the button
+	 */
+	public boolean getModifier ( int mod_mask ) {
+		return ((modifiers & mod_mask) != 0);
+	}
+
+	/**
+	 * get a specific button
+	 * @param int the button to request
+	 */
+	public void setModifier (int mod_mask) {
+		modifiers |= mod_mask;
+	}
+
+	public boolean match (char m) {
+		return match(-1, String.valueOf(m), 0);
+	}
+	public boolean match (int k, char m) {
+		return match(k, String.valueOf(m), 0);
+	}
+	public boolean match (int k, String m, int mod) {
+		if ( ( (( k >= 0 ) && (keycode == k)) ||
+			   ((macro != null) && macro.equals(m)) ) &&
+			 ( ( mod < 0 ) ||
+			   ( modifiers == mod ) ) ) {
+			return true;
+		}
+		return false;
+	}
+
+	public boolean match(int k, String m) {
+		return match( k, m, 0 );
 	}
 
 	/**
@@ -270,7 +319,7 @@ public class KeyElement extends java.lang.Object implements TwidorConstants {
 	 * @return String the text version of this KeyElement
 	 */
 	public String toString () {
-		String ret = buttonsToString( buttons );
+		String ret = buttonsToString();
 		ret += " ";
 		ret += String.format("%4x", buttons );
 		if (getKeycode() != -1) {
@@ -290,6 +339,6 @@ public class KeyElement extends java.lang.Object implements TwidorConstants {
 			}
 		}
 		return ret;
-	}// end toString ()
+	}
 
-}// end class KeyElement
+}
