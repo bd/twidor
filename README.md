@@ -45,7 +45,7 @@ Here are some two-key chords whose first key is <kbd>I</kbd>:
 
 ## Usage
 
-Hit <kbd>ENTER</kbd> at the end of a line to go to the next sentence. This also updates the display of words per minute (WPM) and average error rate (AER).
+Hit <kbd>ENTER</kbd> at the end of a line to go to the next sentence. When a sentence loads, statistics for the seession are displayed: words per minute (WPM) and average error rate (AER).
 
 Menu options include:
 * <kbd>File | Load Keymap</kbd> imports a CSV keymap exported by the [Twiddler Tuner](https://twiddler.tekgear.com/tuner/).
