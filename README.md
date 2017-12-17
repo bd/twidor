@@ -15,7 +15,7 @@ could achieve 45 WPM."
 ## The Visual Key Map
 
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_screenshot.png"
-width="40%" align="right">Twidor shows a visual keymap beside a lesson sentence. Below the lesson sentence, each letter entered is shown in grey or red for for correct or incorrect letters, respectively. 
+width="40%" align="right">Twidor shows a visual keymap beside a lesson sentence. Below the lesson sentence, each letter entered is shown in grey or red for correct or incorrect letters, respectively. 
 
 The keymap shows the letters sent by each key.  The yellow box shows the next letter of the lesson.
 
