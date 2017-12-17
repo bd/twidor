@@ -2,7 +2,7 @@
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/twiddler.jpg"
 width="25%" align="right">
 
-## Twidor - a typing tutor for the Twiddler chording keyboard
+## Twidor - a typing tutor for the Twiddler keyboard
 Twidor is a typing tutor for the [Twiddler one-handed chording keyboard](https://twiddler.tekgear.com/).   A "chord" is a keystroke using two, three or four keys pressed simultaneously. There are [downloads for Windows, Linux and OSX](https://github.com/rich-murphey/twidor/releases).  
 
 Twidor was originally written by researchers studying
@@ -28,10 +28,10 @@ Each large key shows the letter sent by a single-key keystroke.
 
 A chord is formed by pressing several keys together, like playing a "chord" on a piano.
 
-<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_chord_map.png"
-width="30%" align="right"> Each small 4x3 array shows letters sent by two-key chords.  The orientation mirrors that of the larger 4x3 array: one row for each finger, and green/blue/red for left, middle and right columns.
+Each small 4x3 array shows letters sent by two-key chords.  The orientation mirrors that of the larger 4x3 array: one row for each finger, and green/blue/red for left, middle and right columns.
 
-The first key of the chord is the large key to the immediate left.  
+<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_chord_map.png"
+width="30%" align="right"> The first key of the chord is the large key to the immediate left.  
 
 The second key of the chord is one of the small keys which show the letters sent by the chord.
 
