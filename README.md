@@ -86,13 +86,8 @@ welcome [here](https://github.com/rich-murphey/twidor/issues).
 ## Limitations
 
 * Labels for macro keys are shortened to the first three
-  letters. This is currently not an issue because current
-  keymaps have no more than 2-letter macros in 2-button chords.
-* Up/down/right/left arrows key labels are not shown, since current lessons do not use them.
-* For Typemax, while the keyboards does not show mouse buttons,
-  mapped mouse buttons do work for training purposes.
-* Twidor silently ignores input of upper-case letters, since the
-  original design was for training on lower case only.
+  letters. This is not an issue any of the popular keymaps, since they have no more than 2-letter macros in 2-button chords.
+* The visual keymap does not show the mouse buttons.
 
 ## How to Build
 
