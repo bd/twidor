@@ -46,7 +46,7 @@ public class KeyStatus {
 	 */
 	public KeyStatus () {
 		this(false);
-	}// end KeyStatus ()
+	}
 
 	/**
 	 * default constructor
@@ -54,7 +54,7 @@ public class KeyStatus {
 	 */
 	public KeyStatus (boolean stat) {
 		status = stat;
-	}// end KeyStatus (boolean)
+	}
 
 	/**
 	 * default accessor
@@ -62,7 +62,7 @@ public class KeyStatus {
 	 */
 	public boolean getStatus () {
 		return status;
-	}// end getStatus ()
+	}
 
 	/**
 	 * default modifier
@@ -70,7 +70,7 @@ public class KeyStatus {
 	 */
 	public void setStatus (boolean stat) {
 		status = stat;
-	}// end setStatus (boolean)
+	}
 
 	/**
 	 * default comparator
@@ -82,6 +82,6 @@ public class KeyStatus {
 			return (((KeyStatus)o).getStatus() == getStatus());
 		}
 		return false;
-	}// end equal (Object)
+	}
 
-}// end class KeyStatus
+}

@@ -70,7 +70,7 @@ public class TypingPanel extends TwiddlerSubPanel implements TwidorConstants {
 		setBorder(margin);
 		setVisible(true);
 		if (bDEBUG) System.out.println("TypingPanel: Created New Panel");
-	}// end TypingPanel ()
+	}
 
 	/**
 	 * Modifier for whether or not we highlight on error
@@ -78,7 +78,7 @@ public class TypingPanel extends TwiddlerSubPanel implements TwidorConstants {
 	 */
 	public void setHighlightErrors (boolean status) {
 		highlightErrors = status;
-	}// end setHighlightErrors (boolean)
+	}
 
 	/**
 	 * Modifier for the current JLabel in the typing panel
@@ -91,7 +91,7 @@ public class TypingPanel extends TwiddlerSubPanel implements TwidorConstants {
 		else {
 			current = thing;
 		}
-	}// end setCurrent (int)
+	}
 
 	/**
 	 * Private function to determine some whacky stupid things
@@ -99,7 +99,7 @@ public class TypingPanel extends TwiddlerSubPanel implements TwidorConstants {
 	 */
 	private void setEntered (boolean value) {
 		finished = value;
-	}// end setEntered (boolean)
+	}
 
 	/**
 	 * Accessor for whether or not we highlight on error
@@ -107,7 +107,7 @@ public class TypingPanel extends TwiddlerSubPanel implements TwidorConstants {
 	 */
 	public boolean getHighlightErrors () {
 		return highlightErrors;
-	}// end getHighlightErrors ()
+	}
 
 	/**
 	 * Accessor for the current JLabel in the typing panel
@@ -115,7 +115,7 @@ public class TypingPanel extends TwiddlerSubPanel implements TwidorConstants {
 	 */
 	public int getCurrent () {
 		return current;
-	}// end getCurrent ()
+	}
 
 	/**
 	 * Accessor for the finished variable
@@ -123,7 +123,7 @@ public class TypingPanel extends TwiddlerSubPanel implements TwidorConstants {
 	 */
 	private boolean getEntered () {
 		return finished;
-	}// end getEntered ()
+	}
 
 	public String getSentenceText() {
 		return sentenceText;
@@ -187,7 +187,7 @@ public class TypingPanel extends TwiddlerSubPanel implements TwidorConstants {
 		add(sentence_panel);
                 validate();
 		setVisible(true);
-	}// end displaySentence ()
+	}
 
 	public void charTyped (KeyElement typed) {
 		if (getCurrent() < 0) {
@@ -236,6 +236,6 @@ public class TypingPanel extends TwiddlerSubPanel implements TwidorConstants {
 	public boolean sentenceComplete () {
 		return getEntered();
 		// return (getCurrent() >= getSentenceText().length());
-	}// end sentenceComplete ()
+	}
 
-}// end class TypingPanel
+}

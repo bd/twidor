@@ -47,4 +47,4 @@ public class TwiddlerSubPanel extends javax.swing.JPanel {
 	 */
 	public void highlight (int which, java.awt.Color hColor) {};
 
-}// end interface TwiddlerSubPanel
+}

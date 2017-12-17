@@ -46,12 +46,12 @@ public class InfoPanel extends TwiddlerSubPanel implements TwidorConstants {
 		add(myTitle);
 		setVisible(true);
 		if (bDEBUG) System.out.println("InfoPanel: Created");
-	}// end InfoPanel ()
+	}
 
 	public InfoPanel (String title) {
 		this();
 		setTitle(title);
-	}// end InfoPanel (String)
+	}
 
 	/**
 	 * gets the title that this panel is displaying
@@ -59,7 +59,7 @@ public class InfoPanel extends TwiddlerSubPanel implements TwidorConstants {
 	 */
 	public String getTitle () {
 		return myTitle.getText();
-	}// end getTitle ()
+	}
 
 	/**
 	 * sets the title that this panel displays
@@ -67,6 +67,6 @@ public class InfoPanel extends TwiddlerSubPanel implements TwidorConstants {
 	 */
 	public void setTitle (String title) {
 		myTitle.setText(title);
-	}// end setTitle (String)
+	}
 
-}// end class InfoPanel
+}

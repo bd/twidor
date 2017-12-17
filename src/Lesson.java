@@ -58,7 +58,7 @@ public class Lesson implements TwidorConstants {
 		highlightMCC = false;
 		currentSentence = 0;
 		totalSentences = 0;
-	}// end Lesson ()
+	}
 
 	/**
 	 * default constructor

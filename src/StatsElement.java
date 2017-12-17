@@ -45,7 +45,7 @@ public class StatsElement implements TwidorConstants {
 	 */
 	private StatsElement () {
 		this(null, -1);
-	}// end StatsElement ()
+	}
 
 	/**
 	 * default constructor
@@ -56,7 +56,7 @@ public class StatsElement implements TwidorConstants {
 		if (bDEBUG) System.out.println("StatsElement: creating");
 		setTyped(typed);
 		setTime(time);
-	}// end StatsElement (KeyElement, KeyElement, long)
+	}
 
 	/**
 	 * Accessor to find what key this was
@@ -64,7 +64,7 @@ public class StatsElement implements TwidorConstants {
 	 */
 	public KeyElement getTyped () {
 		return myKey;
-	}// end getTyped ()
+	}
 
 	/**
 	 * Acessor to find the amount of time this took
@@ -72,7 +72,7 @@ public class StatsElement implements TwidorConstants {
 	 */
 	public long getTime () {
 		return time;
-	}// end getTime ()
+	}
 
 	/**
 	 * Modifier to change the Typed Key
@@ -80,7 +80,7 @@ public class StatsElement implements TwidorConstants {
 	 */
 	public void setTyped (KeyElement typed) {
 		myKey = typed;
-	}// end setTyped (KeyElement)
+	}
 
 	/**
 	 * Modifier to change the time it took to press the key
@@ -88,7 +88,7 @@ public class StatsElement implements TwidorConstants {
 	 */
 	public void setTime (long amount) {
 		time = amount;
-	}// end setTime (long)
+	}
 
 	/**
 	 * Function for returning a string form of this element
@@ -99,6 +99,6 @@ public class StatsElement implements TwidorConstants {
 		toReturn += (getTime() + "\t");
 		toReturn += getTyped().toString();
 		return toReturn;
-	}// end toString ()
+	}
 
-}// end class StatsElement
+}

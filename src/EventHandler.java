@@ -1,4 +1,4 @@
-/*
+/*  -*- indent-tabs-mode: t; tab-width: 4; c-basic-offset: 4 -*-
 Twidor: the twiddler typing tutor.
 Copyright (C) 2005	James Fusia
 Copyright (C) 2017	Carey Richard Murphey
@@ -46,7 +46,7 @@ public class EventHandler implements ActionListener, ItemListener, KeyListener, 
 	 * Private. Don't want anybody to use it.
 	 */
 	private EventHandler () {
-	}// end EventHandler
+	}
 
 	/**
 	 * Default Constructor.
@@ -54,7 +54,7 @@ public class EventHandler implements ActionListener, ItemListener, KeyListener, 
 	 */
 	public EventHandler (Twidor tutor) {
 		theTutor = tutor;
-	}// end EventHandler
+	}
 
 	/**
 	 * Default accessor for internal variable
@@ -62,7 +62,7 @@ public class EventHandler implements ActionListener, ItemListener, KeyListener, 
 	 */
 	public Twidor myTutor () {
 		return theTutor;
-	}// end myTutor ()
+	}
 
 // ActionListener Dependencies
 
@@ -73,7 +73,7 @@ public class EventHandler implements ActionListener, ItemListener, KeyListener, 
 	public void actionPerformed (ActionEvent e) {
 		if (bDEBUG) System.out.println("EventHandler: Action Performed.");
 		myTutor().menuOption(e.getActionCommand());
-	}// end actionPerformed
+	}
 
 // WindowListener Dependencies
 
@@ -82,7 +82,7 @@ public class EventHandler implements ActionListener, ItemListener, KeyListener, 
 	 * @param WindowEvent to be interpreted
 	 */
 	public void windowActivated (WindowEvent e) {
-	}// end windowActivated
+	}
 
 	/**
 	 * Invoked when dispose is called on a window.
@@ -90,7 +90,7 @@ public class EventHandler implements ActionListener, ItemListener, KeyListener, 
 	 */
 	public void windowClosed (WindowEvent e) {
 		myTutor().twidorQuit();
-	}// end windowClosed
+	}
 
 	/**
 	 * Invoked when the window is closed from the menu.
@@ -98,35 +98,35 @@ public class EventHandler implements ActionListener, ItemListener, KeyListener, 
 	 */
 	public void windowClosing (WindowEvent e) {
 		myTutor().twidorQuit();
-	}// end windowClosing
+	}
 
 	/**
 	 * Invoked when a window is unselected.
 	 * @param WindowEvent to be interpreted
 	 */
 	public void windowDeactivated (WindowEvent e) {
-	}// end windowDeactivated
+	}
 
 	/**
 	 * Invoked when a window is un-minimized.
 	 * @param WindowEvent to be interpreted
 	 */
 	public void windowDeiconified (WindowEvent e) {
-	}// end windowDeiconified
+	}
 
 	/**
 	 * Invoked when a window is minimized.
 	 * @param WindowEvent to be interpreted
 	 */
 	public void windowIconified (WindowEvent e) {
-	}// end windowIconified
+	}
 
 	/**
 	 * Invoked when a window is first made visible.
 	 * @param WindowEvent to be interpreted
 	 */
 	public void windowOpened (WindowEvent e) {
-	}// end windowOpened
+	}
 
 // KeyListener Dependencies
 
@@ -135,14 +135,14 @@ public class EventHandler implements ActionListener, ItemListener, KeyListener, 
 	 * @param KeyEvent to be interpreted
 	 */
 	public void keyPressed (KeyEvent e) {
-	}// end keyPressed
+	}
 
 	/**
 	 * Invoked when a key has been released.
 	 * @param KeyEvent to be interpreted
 	 */
 	public void keyReleased (KeyEvent e) {
-	}// end keyReleased
+	}
 
 	/**
 	 * Invoked when a key has been typed.
@@ -154,9 +154,9 @@ public class EventHandler implements ActionListener, ItemListener, KeyListener, 
             if ( c != KeyEvent.CHAR_UNDEFINED  ) {
 		myTutor().charTyped(String.valueOf( c), System.currentTimeMillis());
             }
-	}// end keyTyped
+	}
 
-// ItemListener Dependencies
+	// ItemListener Dependencies
 	
 	/**
 	 * Invoked when an item has been selected or deselected
@@ -166,11 +166,11 @@ public class EventHandler implements ActionListener, ItemListener, KeyListener, 
 		if (bDEBUG) System.out.println("EventHandler: Menu Item changed state");
 		if (e.getItem() instanceof JCheckBoxMenuItem) {
 			myTutor().booleanOption(((JCheckBoxMenuItem)e.getItem()).getText(),
-					((JCheckBoxMenuItem)e.getItem()).getState());
+									((JCheckBoxMenuItem)e.getItem()).getState());
 		}
 		else {
 			if (bDEBUG) System.out.println("EventHandler: Menu " + e.paramString());
 		}
-	}// end itemStateChanged
+	}
 
-}// end class EventHandler
+}

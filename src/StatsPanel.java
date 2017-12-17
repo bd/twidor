@@ -64,7 +64,7 @@ public class StatsPanel extends TwiddlerSubPanel implements TwidorConstants {
 		//}
 		//setSave(LOG_ENABLE);
 		setSave(false);
-	}// end StatsPanel ()
+	}
 
 	public void reset () {
 		setVisible(false);
@@ -74,7 +74,7 @@ public class StatsPanel extends TwiddlerSubPanel implements TwidorConstants {
 		WPM[1].setText("0");
 		AER[1].setText("0%");
 		setVisible(true);
-	}// end reset ()
+	}
 
 	/**
 	 * set up the internals of this panel
@@ -127,7 +127,7 @@ public class StatsPanel extends TwiddlerSubPanel implements TwidorConstants {
 		add(center);
 		add(Box.createVerticalGlue());
 		setVisible(true);
-	}// end initPanel ()
+	}
 
 	/**
 	 * Show the end-of-lesson statistics
@@ -148,7 +148,7 @@ public class StatsPanel extends TwiddlerSubPanel implements TwidorConstants {
 		removeAll();
 		setBackground(TEXT_BACKGROUND);
 		setVisible(true);
-	}// end hidePanel ()
+	}
 
 	/**
 	 * Quicky helper function for repetitive tasks
@@ -160,7 +160,7 @@ public class StatsPanel extends TwiddlerSubPanel implements TwidorConstants {
 		temp.setBackground(TEXT_BACKGROUND);
 		temp.setHorizontalAlignment(SwingConstants.TRAILING);
 		return temp;
-	}// end quickLabel ()
+	}
 
 	/**
 	 * Called when a new Sentence is being displayed
@@ -170,7 +170,7 @@ public class StatsPanel extends TwiddlerSubPanel implements TwidorConstants {
 		if (isVisible()) {
 			reLabel();
 		}
-	}// end nextSentence (String)
+	}
 
 	/**
 	 * Accessor for the Stats variable
@@ -178,7 +178,7 @@ public class StatsPanel extends TwiddlerSubPanel implements TwidorConstants {
 	 */
 	public Vector <Stats> getStats () {
 		return myStats;
-	}// end getStats ()
+	}
 
 	/**
 	 * Accessor for the Saving variable
@@ -186,7 +186,7 @@ public class StatsPanel extends TwiddlerSubPanel implements TwidorConstants {
 	 */
 	public boolean getSave () {
 		return saveStats;
-	}// end getSave ()
+	}
 
 	/**
 	 * Modifier for the Saving variable
@@ -194,7 +194,7 @@ public class StatsPanel extends TwiddlerSubPanel implements TwidorConstants {
 	 */
 	public void setSave (boolean newvalue) {
 		saveStats = newvalue;
-	}// end saveStats (boolean)
+	}
 
 	/**
 	 * Informs the StatsPanel that a character was typed.
@@ -208,7 +208,7 @@ public class StatsPanel extends TwiddlerSubPanel implements TwidorConstants {
 
 		Stats current = (Stats)getStats().lastElement();
 		current.addPressed(typed, time);
-	}// end charTyped (KeyElement, KeyElement, long)
+	}
 
 	public void showStats () {
 		getStats().add(new Stats(""));
@@ -245,7 +245,7 @@ public class StatsPanel extends TwiddlerSubPanel implements TwidorConstants {
 		AER[0].setText(String.valueOf(lastAER) + "%");
 		WPM[1].setText(String.valueOf(Math.floor(newCPS * 12)));
 		AER[1].setText(String.valueOf(newAER) + "%");
-	}// end reLabel ()
+	}
 
 	/**
 	 * Function for dumping all data collected to disk
@@ -263,6 +263,6 @@ public class StatsPanel extends TwiddlerSubPanel implements TwidorConstants {
 				now.get(Calendar.HOUR) + "." + now.get(Calendar.MINUTE) + "-" +
 				i + ".log");
 		}
-	}// end save ()
+	}
 
-}// end class StatsPanel
+}

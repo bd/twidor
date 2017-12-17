@@ -120,7 +120,7 @@ public class KeyMap implements TwidorConstants {
 	 */
 	private KeyMap () {
 		keylist = new Vector <KeyElement> ();
-	}// end KeyMap
+	}
 
 	/**
 	 * default constructor
@@ -129,7 +129,7 @@ public class KeyMap implements TwidorConstants {
 	public KeyMap (String source) {
 		this();
 		readKeyMap(source);
-	}// end KeyMap (String)
+	}
 
 	/**
 	 * returns the index in the keymap of a given letter
@@ -143,7 +143,7 @@ public class KeyMap implements TwidorConstants {
 			}
 		}
 		return null;
-	}// end setupLetterMap ()
+	}
 
 	public KeyElement getKey (char c) {
 		return getKey(String.valueOf(c)); // FIXME: ignores CTRL/ALT/SHIFT modifiers
@@ -170,7 +170,7 @@ public class KeyMap implements TwidorConstants {
 			}
 		}
 		return null;
-	}// end setupLetterMap ()
+	}
 
 	/**
 	 * Gets the Key matching the KeyElement button vector set
@@ -184,7 +184,7 @@ public class KeyMap implements TwidorConstants {
 			}
 		}
 		return null;
-	}// end getKey (Vector)
+	}
 
 	/**
 	 * Function for testing whether or not the KeyMap appears valid
@@ -195,7 +195,7 @@ public class KeyMap implements TwidorConstants {
 			return true;
 		}
 		return false;
-	}// end appearsValid ()
+	}
 
 	/**
 	 * gets the internal keylist
@@ -203,7 +203,7 @@ public class KeyMap implements TwidorConstants {
 	 */
 	private Vector <KeyElement> getKeylist () {
 		return keylist;
-	}// end getKeylist ()
+	}
 
 	/**
 	 * matches the largest chunk out of the given string to a keyelement
@@ -224,7 +224,7 @@ public class KeyMap implements TwidorConstants {
 			}
 		}
 		return match;
-	}// end matchLargestChunk (String)
+	}
 
 	public KeyElement find (int k, String m, int mod) {
 		for (KeyElement key : getKeylist()) {
@@ -242,7 +242,7 @@ public class KeyMap implements TwidorConstants {
 	 */
 	public boolean addKey (KeyElement key) {
 		return keylist.add(key);
-	}// end addKey (KeyElement)
+	}
 
 	/**
 	 * sets the new keymap
@@ -313,7 +313,7 @@ public class KeyMap implements TwidorConstants {
 				System.out.println("map: " + key);
 			}
 		}
-	}// end readKeyMap (String)
+	}
 
 	/**
 	 * function to remove comments
@@ -328,7 +328,7 @@ public class KeyMap implements TwidorConstants {
 			return toParse.substring(0,test);
 		}
 		return toParse;
-	}// end remove_comment (String, String)
+	}
 
 	/**
 	 * function to quickly convert letters to their appropriate button
@@ -346,7 +346,7 @@ public class KeyMap implements TwidorConstants {
 		default:
 			return -1;
 		}
-	}// end finger_button (char)
+	}
 
 	/**
 	 * parses a keymap line and attempts to make a button/letter
@@ -462,7 +462,7 @@ public class KeyMap implements TwidorConstants {
 		if ( ! addKey(keyElement) && bDEBUG ) {
 			System.out.println("duplicate key:" + chord + "\t" + keystrokes);
 		}
-	}// end parseLine (String)
+	}
 
 	/**
 	 * debugging main
@@ -490,6 +490,6 @@ public class KeyMap implements TwidorConstants {
 			return;
 		}
 		System.out.println(doublecheck.toString());
-	}// end main
+	}
 
-}// end class KeyMap
+}

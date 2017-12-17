@@ -52,7 +52,7 @@ public class TwidorMenu extends JMenuBar implements TwidorConstants {
 	 */
 	private TwidorMenu () {
 		if (bDEBUG) System.out.println("TwidorMenu: New MenuBar Created");
-	}// end TwidorMenu ()
+	}
 
 	/**
 	 * default constructor
@@ -65,7 +65,7 @@ public class TwidorMenu extends JMenuBar implements TwidorConstants {
 		JCheckBoxMenuItem cbItem;
 		JRadioButtonMenuItem rbItem;
 		Tutor(tutor);
-		Events(events);
+		myEventHandler = events;
 
 		menu = new JMenu("File");
 		jmItem = jmenuItem(LOAD_KEYMAP_TEXT);
@@ -81,6 +81,14 @@ public class TwidorMenu extends JMenuBar implements TwidorConstants {
 		Twiddler = new Vector<>();
 		menu = new JMenu("Keyboard");
 		jmItem = jcheckItem(TWIDDLER_SHOW_TEXT, TWIDDLER_SHOW);
+		Twiddler.add(jmItem);
+		menu.add(jmItem);
+		jmItem = jcheckItem(TWIDDLER_SHOW_2KEY_TEXT, TWIDDLER_SHOW_2KEY);
+		// jmItem.addActionListener(new ActionListner() {
+		// 		public void actionPerformed(ActionEvent event) {
+		// 			boolean selected = ((AbstractButton) event.getSource()).getModel().isSelected();
+		// 		}
+		// 	});
 		Twiddler.add(jmItem);
 		menu.add(jmItem);
 		jmItem = jcheckItem(TWIDDLER_MIRROR_TEXT, TWIDDLER_MIRROR);
@@ -138,7 +146,7 @@ public class TwidorMenu extends JMenuBar implements TwidorConstants {
 		add(menu);
 
 		if (bDEBUG) System.out.println("TwidorMenu: Finished Creating");
-	}// end TwidorMenu (Twidor, EventHandler)
+	}
 
 	/**
 	 * helper function for creating menu items.
@@ -147,9 +155,9 @@ public class TwidorMenu extends JMenuBar implements TwidorConstants {
 	 */
 	private JMenuItem jmenuItem (String text) {
 		JMenuItem toReturn = new JMenuItem(text);
-		toReturn.addActionListener(Events());
+		toReturn.addActionListener(myEventHandler);
 		return toReturn;
-	}// end jmenuItem (String)
+	}
 
 	/**
 	 * helper function for creating menu items.
@@ -159,9 +167,9 @@ public class TwidorMenu extends JMenuBar implements TwidorConstants {
 	 */
 	private JCheckBoxMenuItem jcheckItem (String text, boolean status) {
 		JCheckBoxMenuItem toReturn = new JCheckBoxMenuItem(text, status);
-		toReturn.addItemListener(Events());
+		toReturn.addItemListener(myEventHandler);
 		return toReturn;
-	}// end jcheckItem (String, boolean)
+	}
 
 	/**
 	 * helper function for creating radio menu items
@@ -173,9 +181,9 @@ public class TwidorMenu extends JMenuBar implements TwidorConstants {
 		JRadioButtonMenuItem toReturn = new JRadioButtonMenuItem(text, status);
 		toReturn.setActionCommand(text);
 		toReturn.setSelected(status);
-		toReturn.addActionListener(Events());
+		toReturn.addActionListener(myEventHandler);
 		return toReturn;
-	}// end jradioItem (String, boolean)
+	}
 
 	/**
 	 * Used for ensuring certain elements of the menu can't overlap each other.
@@ -186,14 +194,14 @@ public class TwidorMenu extends JMenuBar implements TwidorConstants {
 		if (bDEBUG) System.out.println("TwidorMenu: " + item + " selected " + state);
 		if (item.equals(TWIDDLER_SHOW_TEXT)) {
 			if (state) {
-				((JMenuItem)Twiddler.elementAt(1)).setEnabled(true);
 				((JMenuItem)Twiddler.elementAt(2)).setEnabled(true);
+				((JMenuItem)Twiddler.elementAt(3)).setEnabled(true);
 			} else {
-				((JMenuItem)Twiddler.elementAt(1)).setEnabled(false);
 				((JMenuItem)Twiddler.elementAt(2)).setEnabled(false);
+				((JMenuItem)Twiddler.elementAt(3)).setEnabled(false);
 			}
 		}
-	}// end itemSelected (String, boolean)
+	}
 
 	public void makeSelectedLesson (String lesson) {
 		JRadioButtonMenuItem temp;
@@ -212,7 +220,7 @@ public class TwidorMenu extends JMenuBar implements TwidorConstants {
 	 */
 	private void Tutor (Twidor tutor) {
 		myTutor = tutor;
-	}// end Tutor (Twidor)
+	}
 
 	/**
 	 * Accessor
@@ -220,22 +228,6 @@ public class TwidorMenu extends JMenuBar implements TwidorConstants {
 	 */
 	public Twidor Tutor () {
 		return myTutor;
-	}// end Tutor ()
+	}
 
-	/**
-	 * Modifier
-	 * @param EventHandler
-	 */
-	private void Events (EventHandler events) {
-		myEventHandler = events;
-	}// end Events (EventHandler)
-
-	/**
-	 * Accessor
-	 * @return EventHandler
-	 */
-	public EventHandler Events () {
-		return myEventHandler;
-	}// end Events ()
-
-}// end class TwidorMenu
+}

@@ -55,7 +55,7 @@ public class Stats implements TwidorConstants {
 		typed = "";
 		statArray = new Vector <StatsElement> ();
 		transcribedInput = new Vector <StatsElement> ();
-	}// end Stats
+	}
 
 	/**
 	 * default constructor
@@ -64,7 +64,7 @@ public class Stats implements TwidorConstants {
 		this();
 		if (bDEBUG) System.out.println("Stats created");
 		setSentence(newSentence);
-	}// end Stats (String)
+	}
 
 	/**
 	 * Accessor to get the sentence for this stat
@@ -72,7 +72,7 @@ public class Stats implements TwidorConstants {
 	 */
 	public String getSentence () {
 		return sentence;
-	}// end getSentence ()
+	}
 
 	/**
 	 * Accessor to get the typed sentence for this stat
@@ -80,7 +80,7 @@ public class Stats implements TwidorConstants {
 	 */
 	public String getTyped () {
 		return typed;
-	}// end getTyped ()
+	}
 
 	/**
 	 * Accessor to get the vector of keypresses
@@ -88,7 +88,7 @@ public class Stats implements TwidorConstants {
 	 */
 	public Vector <StatsElement> getKeyPresses () {
 		return statArray;
-	}// end getKeyPresses ()
+	}
 
 	/**
 	 * Accessor for the Transcribed Input
@@ -96,7 +96,7 @@ public class Stats implements TwidorConstants {
 	 */
 	public Vector <StatsElement> getTranscribedInput () {
 		return transcribedInput;
-	}// end getTranscribedInput ()
+	}
 
 	/**
 	 * Modifier to set the current sentence
@@ -104,7 +104,7 @@ public class Stats implements TwidorConstants {
 	 */
 	public void setSentence (String line) {
 		sentence = line;
-	}// end setSentece (String)
+	}
 
 	/**
 	 * Modifier to set the KeyPress vector
@@ -112,7 +112,7 @@ public class Stats implements TwidorConstants {
 	 */
 	public void setKeyPresses (Vector <StatsElement> poke) {
 		statArray = poke;
-	}// end setKeyPresses (Vector)
+	}
 
 	/**
 	 * Accessor to add a new StatsElement to the Stats
@@ -131,7 +131,7 @@ public class Stats implements TwidorConstants {
 			transcribedInput.add(new StatsElement(pressed, time));
 			typed += (char)pressed.getKeycode();
 		}
-	}// end addKey (KeyElement, KeyElement, long)
+	}
 
 	public double getCPS () {
 		long totalTime = 0;
@@ -145,7 +145,7 @@ public class Stats implements TwidorConstants {
 			temp1 = temp2;
 		}
 		return (double)((transcribedInput.size() - 2) * 1000) / (double)totalTime;
-	}// end getCPS
+	}
 
 	public double getAER () {
 		double err;
@@ -154,7 +154,7 @@ public class Stats implements TwidorConstants {
 		err = (double)(stats[INF] + stats[IF]) / (double)(stats[C] + stats[INF] + stats[IF]);
 		err = Math.floor(err * 1000) / 10;
 		return err;
-	}// end getAER
+	}
 
 	/**
 	 * Function for writing all stats to a file.
@@ -185,6 +185,6 @@ public class Stats implements TwidorConstants {
 		catch (Exception e) {
 			if (bDEBUG) System.out.println("Stats: Error writing to file " + dest);
 		}
-	}// end writeStats (String)
+	}
 
-}// end class Stats
+}

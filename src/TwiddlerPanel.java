@@ -45,8 +45,9 @@ public class TwiddlerPanel extends TwiddlerSubPanel implements TwidorConstants {
 	private boolean thumbOrientation;
 	private boolean fingerOrientation;
 	private boolean showThumbMap;
-    	private boolean showThumbBoard;
+	private boolean showThumbBoard;
 	private boolean showFingerMap;
+	private boolean show2KeyChords = true;
 	private boolean showTwiddler;
 	private Vector <TwiddlerSubPanel> panelList;
     private FingerPanel fingerPanel;
@@ -72,7 +73,7 @@ public class TwiddlerPanel extends TwiddlerSubPanel implements TwidorConstants {
 		reOrient();
 
 		if (bDEBUG) System.out.println("TwiddlerPanel: panel created");
-	}// end TwiddlerPanel ()
+	}
 
 	/**
 	 * accessor for thumb orientation
@@ -80,7 +81,7 @@ public class TwiddlerPanel extends TwiddlerSubPanel implements TwidorConstants {
 	 */
 	public boolean getThumbOrientation () {
 		return thumbOrientation;
-	}// end getThumbOrientation ()
+	}
 
 	/**
 	 * accessor for finger orientation
@@ -88,7 +89,7 @@ public class TwiddlerPanel extends TwiddlerSubPanel implements TwidorConstants {
 	 */
 	public boolean getFingerOrientation () {
 		return fingerOrientation;
-	}// end setFingerOrientation ()
+	}
 
 	/**
 	 * accessor for thumb keys
@@ -96,7 +97,7 @@ public class TwiddlerPanel extends TwiddlerSubPanel implements TwidorConstants {
 	 */
 	public boolean getThumbKeysVisible () {
 		return showThumbMap;
-	}// end getThumbKeysVisible ()
+	}
 
 	/**
 	 * accessor for thumb board visibility
@@ -104,7 +105,7 @@ public class TwiddlerPanel extends TwiddlerSubPanel implements TwidorConstants {
 	 */
 	public boolean getThumbBoardVisible () {
 		return showThumbBoard;
-	}// end getThumbBoardVisible ()
+	}
 
 	/**
 	 * accessor for finger keys
@@ -112,7 +113,7 @@ public class TwiddlerPanel extends TwiddlerSubPanel implements TwidorConstants {
 	 */
 	public boolean getFingerKeysVisible () {
 		return showFingerMap;
-	}// end getFingerKeysVisible ()
+	}
 
 	/**
 	 * accessor for the Twiddler itself
@@ -120,7 +121,7 @@ public class TwiddlerPanel extends TwiddlerSubPanel implements TwidorConstants {
 	 */
 	public boolean getTwiddlerVisible () {
 		return showTwiddler;
-	}// end getVisible ()
+	}
 
 	/**
 	 * accessor for the current keymap
@@ -128,7 +129,7 @@ public class TwiddlerPanel extends TwiddlerSubPanel implements TwidorConstants {
 	 */
 	public KeyMap getKeyMap () {
 		return myKeyMap;
-	}// end getKeyMap ()
+	}
 
 	/**
 	 * accessor for the JPanels we contain
@@ -136,7 +137,7 @@ public class TwiddlerPanel extends TwiddlerSubPanel implements TwidorConstants {
 	 */
 	public Vector <TwiddlerSubPanel> getPanels () {
 		return panelList;
-	}// end getPanels ()
+	}
 
 	/**
 	 * modifier for thumb orientation
@@ -144,7 +145,7 @@ public class TwiddlerPanel extends TwiddlerSubPanel implements TwidorConstants {
 	 */
 	public void setThumbOrientation (boolean newOrientation) {
 		thumbOrientation = newOrientation;
-	}// end setThumbOrientation (boolean)
+	}
 
 	/**
 	 * modifier for finger orientation
@@ -152,7 +153,7 @@ public class TwiddlerPanel extends TwiddlerSubPanel implements TwidorConstants {
 	 */
 	public void setFingerOrientation (boolean newOrientation) {
 		fingerOrientation = newOrientation;
-	}// end setFingerOrientation (boolean)
+	}
 
 	/**
 	 * modifier for thumb key visibility
@@ -160,7 +161,7 @@ public class TwiddlerPanel extends TwiddlerSubPanel implements TwidorConstants {
 	 */
 	public void setThumbKeysVisible (boolean status) {
 		showThumbMap = status;
-	}// end setThumbKeysVisible (boolean)
+	}
 
 	/**
 	 * modifier for thumb board visibility
@@ -168,7 +169,7 @@ public class TwiddlerPanel extends TwiddlerSubPanel implements TwidorConstants {
 	 */
 	public void setThumbBoardVisible (boolean status) {
 		showThumbBoard = status;
-	}// end setThumbBoardVisible (boolean)
+	}
 
 	/**
 	 * modifier for finger key visiblity
@@ -176,7 +177,7 @@ public class TwiddlerPanel extends TwiddlerSubPanel implements TwidorConstants {
 	 */
 	public void setFingerKeysVisible (boolean status) {
 		showFingerMap = status;
-	}// end setFingerKeysVisible (boolean)
+	}
 
 	/**
 	 * modifier for twiddler visibility
@@ -184,7 +185,15 @@ public class TwiddlerPanel extends TwiddlerSubPanel implements TwidorConstants {
 	 */
 	public void setTwiddlerVisible (boolean status) {
 		showTwiddler = status;
-	}// end setVisible (boolean)
+	}
+
+	/**
+	 * modifier for display of 2-key chords
+	 * @param boolean the new status
+	 */
+	public void set2keyChordsVisible (boolean status) {
+		show2KeyChords = status;
+	}
 
 	/**
 	 * modifier for the current keymap
@@ -192,14 +201,14 @@ public class TwiddlerPanel extends TwiddlerSubPanel implements TwidorConstants {
 	 */
 	public void setKeyMap (KeyMap newMap) {
 		myKeyMap = newMap;
-	}// end setKeyMap (KeyMap)
+	}
 
 	/**
 	 * initializer for the panel list
 	 */
 	private void initPanels () {
 		panelList = new Vector <TwiddlerSubPanel> ();
-	}// end initPanels ()
+	}
 
 	/**
 	 * highlights the keys for a given character
@@ -213,7 +222,7 @@ public class TwiddlerPanel extends TwiddlerSubPanel implements TwidorConstants {
 		else {
 			if (bDEBUG) System.out.println("TwiddlerPanel: Can't highlight " + key);
 		}
-	}// end highlight (String)
+	}
 
 	/**
 	 * highlights the keys for the given KeyElement
@@ -251,7 +260,7 @@ public class TwiddlerPanel extends TwiddlerSubPanel implements TwidorConstants {
 		catch (ArrayIndexOutOfBoundsException e) {
 			if (bDEBUG) System.out.println("TwiddlerPanel: array oob");
 		}
-	}// end highlight (KeyElement)
+	}
 
 	/**
 	 * clears all possibly highlighted keys
@@ -260,7 +269,7 @@ public class TwiddlerPanel extends TwiddlerSubPanel implements TwidorConstants {
 		for (int i = 0; i < getPanels().size(); i++) {
 			(getPanels().elementAt(i)).clear();
 		}
-	}// end clear ()
+	}
 
 	/**
 	 * called whenever you want to do a redraw of the Twiddler display;
@@ -280,7 +289,7 @@ public class TwiddlerPanel extends TwiddlerSubPanel implements TwidorConstants {
 		}
 
 		// FIXME just keep refereces to the two panels. get rid of the vector.
-		fingerPanel = new FingerPanel(getFingerOrientation(), getKeyMap(), getFingerKeysVisible());
+		fingerPanel = new FingerPanel(getFingerOrientation(), getKeyMap(), getFingerKeysVisible(), show2KeyChords);
 		// xxx getPanels().addElement(Box.createRigidArea(new Dimension(0,5)));
 		getPanels().addElement(fingerPanel);
 
@@ -291,6 +300,6 @@ public class TwiddlerPanel extends TwiddlerSubPanel implements TwidorConstants {
 			setVisible(true);
 		}
 		if (bDEBUG) System.out.println("TwiddlerPanel: rearrangement complete");
-	}// end reOrient ()
+	}
 
-}// end class TwiddlerPanel
+}

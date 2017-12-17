@@ -116,7 +116,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 		setLesson("Lesson 1");
 		ignoreInput(false);
 		fc = new JFileChooser("."); // this retains user's choice of directory across 'Load' menu invocations
-	}// end Twidor
+	}
 
 // EventHandler stuff
 	/**
@@ -126,7 +126,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 		myEventHandler = new EventHandler(this);
 		addWindowListener(myEventHandler);
 		addKeyListener(myEventHandler);
-	}// end setEventHandler ()
+	}
 
 	/**
 	 * Accessor for the EventHandler
@@ -134,7 +134,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 	 */
 	private EventHandler getEventHandler () {
 		return myEventHandler;
-	}// end getEventHandler ()
+	}
 
 // KeyMap stuff
 	/**
@@ -149,7 +149,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 		else {
 			if (bDEBUG) System.out.println("Keymap Loading Failed");
 		}
-	}// end setKeymap (String)
+	}
 
 	private void setKeylog (File file) {
 		try {
@@ -165,7 +165,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 	 */
 	private KeyMap getKeyMap () {
 		return myKeyMap;
-	}// end getKeymap ()
+	}
 
 // TwidorMenu stuff
 	/**
@@ -174,7 +174,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 	private void setTwidorMenu () {
 		myMenuBar = new TwidorMenu(this, getEventHandler(), getLessonPlan().getLessonCount());
 		setJMenuBar(myMenuBar);
-	}// end setTwidorMenu ()
+	}
 
 	/**
 	 * Accessor for the TwidorMenu
@@ -182,7 +182,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 	 */
 	private TwidorMenu getTwidorMenu () {
 		return myMenuBar;
-	}// end getTwidorMenu ()
+	}
 
 // TwiddlerPanel stuff
 	/**
@@ -193,7 +193,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 	private void setTwiddlerPanel (boolean thumb, boolean finger) {
 		if (bDEBUG) System.out.println("Adding TwiddlerPanel");
 		myTwiddler = new TwiddlerPanel(getKeyMap(), thumb, finger);
-	}// end setTwiddlerPanel (boolean, boolean)
+	}
 
 	/**
 	 * Accessor for the TwiddlerPanel
@@ -201,7 +201,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 	 */
 	private TwiddlerPanel getTwiddlerPanel () {
 		return myTwiddler;
-	}// end void getTwiddlerPanel ()
+	}
 
 // TypingPanel stuff
 	/**
@@ -210,7 +210,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 	private void setTypingPanel () {
 		if (bDEBUG) System.out.println("Adding TypingPanel");
 		myTypingPanel = new TypingPanel();
-	}// end setTypingPanel ()
+	}
 
 	/**
 	 * Accessor for the TypingPanel
@@ -218,7 +218,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 	 */
 	private TypingPanel getTypingPanel () {
 		return myTypingPanel;
-	}// end getTypingPanel ()
+	}
 
 // StatsPanel stuff
 	/**
@@ -227,7 +227,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 	private void setStatsPanel () {
 		if (bDEBUG) System.out.println("Adding StatsPanel");
 		myStatsPanel = new StatsPanel();
-	}// end setStatsPanel ()
+	}
 
 	/**
 	 * Accessor for the StatsPanel
@@ -235,7 +235,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 	 */
 	private StatsPanel getStatsPanel () {
 		return myStatsPanel;
-	}// end getStatsPanel ()
+	}
 
 // InfoPanel stuff
 	/**
@@ -244,7 +244,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 	private void setInfoPanel () {
 		if (bDEBUG) System.out.println("Adding InfoPanel");
 		myInfoPanel = new InfoPanel();
-	}// end setInfoPanel
+	}
 
 	/**
 	 * Accessor for the InfoPanel
@@ -252,7 +252,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 	 */
 	private InfoPanel getInfoPanel () {
 		return myInfoPanel;
-	}// end getInfoPanel ()
+	}
 
 // Twidor Icon stuff
 	/**
@@ -262,7 +262,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 		URL location = this.getClass().getResource("icon.gif");
 		ImageIcon temp = new ImageIcon(location);
 		setIconImage(temp.getImage());
-	}// end setTwidorIcon ()
+	}
 
 // LessonParser stuff
 	/**
@@ -279,7 +279,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 	 */
 	private LessonParser getLessonPlan () {
 		return myLessonPlan;
-	}// end getLessons ()
+	}
 
 // Lesson stuff
 	/**
@@ -300,7 +300,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 			}
 		}
 		if (bDEBUG) System.out.println("Twidor: Unmatched lesson name: " + lesson);
-	}// end setLesson (String)
+	}
 
 	/**
 	 * Sets the current lesson from the set of lessons
@@ -314,7 +314,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 		getStatsPanel().reset();
 		nextSentence();
 		return;
-	}// end setLesson (String)
+	}
 
 	/**
 	 * gets the current lesson
@@ -322,7 +322,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 	 */
 	private Lesson getLesson () {
 		return currentLesson;
-	}// end getLesson ()
+	}
 
 // Misc stuff
 
@@ -332,7 +332,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 	 */
 	public String getSentence () {
 		return currentSentence;
-	}// end getSentence ()
+	}
 
 	/**
 	 * updates the current sentence, also checks if we need to
@@ -347,7 +347,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 		getInfoPanel().setTitle(getLesson().getLessonName() + ": Sentence " +
 			getLesson().getSentenceNumber());
                 pack();
-	}// end nextSentence ()
+	}
 
 	/**
 	 * updates the current lesson
@@ -392,7 +392,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 			match = getKeyMap().getKey(UNICODE_RETURN); // highlight ENTER when at end of line.
 		}
 		getTwiddlerPanel().highlight(match);
-	}// end doHighlighting ()
+	}
 
 	/**
 	 * sets the Input flag (whether we are recording or not)
@@ -400,7 +400,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 	 */
 	private void ignoreInput (boolean input) {
 		acceptInput = input;
-	}// end ignoreInput (boolean)
+	}
 
 	/**
 	 * gets the Input flag
@@ -408,21 +408,21 @@ public class Twidor extends JFrame implements TwidorConstants {
 	 */
 	private boolean ignoreInput () {
 		return acceptInput;
-	}// end ignoreInput ()
+	}
 
 	/**
 	 * @param boolean the new status
 	 */
 	private void showingStats (boolean input) {
 		showStats = input;
-	}// end showingStats (boolean)
+	}
 
 	/**
 	 * @return boolean whether or not we go to the next lesson
 	 */
 	private boolean showingStats () {
 		return showStats;
-	}// end showingStats ()
+	}
 
 	public static void openWebpage(String uri) {
 		java.awt.Desktop desktop = java.awt.Desktop.isDesktopSupported() ? java.awt.Desktop.getDesktop() : null;
@@ -480,7 +480,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 			}
 		}
 		doHighlighting();
-	}// end charTyped (char, long)
+	}
 
 	/**
 	 * function for effecting menubar based changes
@@ -488,47 +488,41 @@ public class Twidor extends JFrame implements TwidorConstants {
 	 * @param boolean its new status
 	 */
 	public void booleanOption (String option, boolean status) {
-		/* FIXME */
 		if (bDEBUG) System.out.println("Changing " + option + ":" + status);
-		getTwidorMenu().itemSelected(option, status);
+		// getTwidorMenu().itemSelected(option, status);
+
 		if (option.equals(TWIDDLER_SHOW_TEXT)) {
 			getTwiddlerPanel().setTwiddlerVisible(status);
-			getTwiddlerPanel().reOrient();
-			return;
 		}
-		if (option.equals(TWIDDLER_SHOW_LETTERS_TEXT)) {
+		else if (option.equals(TWIDDLER_SHOW_2KEY_TEXT)) {
+			getTwiddlerPanel().set2keyChordsVisible(status);
+		}
+		else if (option.equals(TWIDDLER_SHOW_LETTERS_TEXT)) {
 			getTwiddlerPanel().setThumbKeysVisible(status);
 			getTwiddlerPanel().setFingerKeysVisible(status);
-			getTwiddlerPanel().reOrient();
-			return;
 		}
-		if (option.equals(TWIDDLER_MIRROR_TEXT)) {
+		else if (option.equals(TWIDDLER_MIRROR_TEXT)) {
 			getTwiddlerPanel().setFingerOrientation(status);
-			getTwiddlerPanel().reOrient();
-			return;
 		}
-		if (option.equals(TWIDDLER_SHOW_THUMB_TEXT)) {
+		else if (option.equals(TWIDDLER_SHOW_THUMB_TEXT)) {
 			getTwiddlerPanel().setThumbBoardVisible(status);
-			getTwiddlerPanel().reOrient();
-			return;
 		}
-		if (option.equals(TWIDDLER_MIRROR_THUMB_TEXT)) {
+		else if (option.equals(TWIDDLER_MIRROR_THUMB_TEXT)) {
 			getTwiddlerPanel().setThumbOrientation(status);
-			getTwiddlerPanel().reOrient();
-			return;
 		}
-		if (option.equals(HIGHLIGHT_ERRORS_TEXT)) {
+		else if (option.equals(HIGHLIGHT_ERRORS_TEXT)) {
 			getTypingPanel().setHighlightErrors(status);
-			return;
 		}
-		if (option.equals(HIGHLIGHT_HINT_TEXT)) {
-			return;
+		else if (option.equals(HIGHLIGHT_HINT_TEXT)) {
+			// FIXME implement this
 		}
-		if (option.equals(HIGHLIGHT_KEYPRESS_TEXT)) {
-			return;
+		else if (option.equals(HIGHLIGHT_KEYPRESS_TEXT)) {
+			// FIXME implement this
 		}
-		if (bDEBUG) System.out.println("Unhandled option");
-	}// end booleanOption (String, boolean)
+		else if (bDEBUG) System.out.println("Unhandled option");
+
+		getTwiddlerPanel().reOrient();
+	}
 
 	/**
 	 * function for effecting menubar based changes
@@ -536,7 +530,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 	 */
 	public void menuOption (String option) {
 		if (bDEBUG) System.out.println("Option " + option);
-		getTwidorMenu().itemSelected(option, true);
+		// getTwidorMenu().itemSelected(option, true);
 		if (option.equals(QUIT_TEXT)) {
 			twidorQuit();
 		}
@@ -583,7 +577,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 				getTwiddlerPanel().reOrient();
 			}
 		}
-	}// end menuOption (String)
+	}
 
 	/**
 	 * function for cleaning up and closing and stuff
@@ -595,13 +589,13 @@ public class Twidor extends JFrame implements TwidorConstants {
 		getStatsPanel().save();
 		dispose();
 		System.exit(0);
-	}// end twidorQuit ()
+	}
 
 	/**
 	 * Good god. The Main.
 	 */
 	public static void main (String[] argv) {
 		Twidor tutor = new Twidor();
-	}// end main
+	}
 
-}// end class Twidor
+}

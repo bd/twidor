@@ -136,6 +136,8 @@ public interface TwidorConstants {
 	/* Twiddler */
 	public static final String TWIDDLER_SHOW_TEXT = "Show Keyboard";
 	public boolean TWIDDLER_SHOW = true;
+	public static final String TWIDDLER_SHOW_2KEY_TEXT = "Show 2-key chords";
+	public boolean TWIDDLER_SHOW_2KEY = true;
 	public static final String TWIDDLER_MIRROR_TEXT = "Horizontal Reverse Keyboard";
 	public boolean TWIDDLER_MIRROR = false;
 	public static final String TWIDDLER_SHOW_LETTERS_TEXT = "Show Labels on Keyboard";
@@ -292,4 +294,4 @@ public interface TwidorConstants {
 	public static final int IF = 2;
 	public static final int INF = 3;
 
-}// end interface TwidorConstants
+}

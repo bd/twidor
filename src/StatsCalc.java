@@ -85,7 +85,7 @@ public class StatsCalc implements TwidorConstants {
 		ret[0] = msd[a.length() - 1][b.length() - 1];
 		ret[1] = mfa[a.length() - 1][b.length() - 1];
 		return ret;
-	}// end statsMSD (String,String)
+	}
 
 	public static int statsF (Vector keyPresses) {
 		int ret = 0;
@@ -99,23 +99,23 @@ public class StatsCalc implements TwidorConstants {
 			}
 		}
 		return ret;
-	}// end statsF (Vector)
+	}
 
 	public static int statsIF (String sentence, String typed, Vector keyPresses) {
 		//return (keyPresses.size() - typed.length()) - statsF(keyPresses);
 		return statsF(keyPresses) - (typed.length() - sentence.length());
-	}// end statsIF (String,String,Vector)
+	}
 
 	public static int statsC (String sentence, String typed) {
 		int[] msd = statsMSD(sentence, typed);
 		int length = Math.min(typed.length(), sentence.length());
 
 		return length - (msd[0] - msd[1]);
-	}// end statsC (String,String)
+	}
 
 	public static int statsINF (String sentence, String typed) {
 		return statsMSD(sentence, typed)[0];
-	}// end statsINF (String,String)
+	}
 
 	/**
 	 * return value is {C, F, IF, INF}
@@ -143,6 +143,6 @@ public class StatsCalc implements TwidorConstants {
 
 		System.out.println(c + " " + inf + " " + f + " " + ifix);
 		System.out.println(((double)(inf + ifix)) / ((double)(c + inf + ifix)));
-	}// end main (String)
+	}
 
-}// end class StatsCalc
+}

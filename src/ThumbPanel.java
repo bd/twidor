@@ -49,7 +49,7 @@ public class ThumbPanel extends TwiddlerSubPanel implements  TwidorConstants {
 	 * default constructor
 	 */
 	private ThumbPanel () {
-	}// end ThumbPanel ()
+	}
 
 	/**
 	 * default constructor
@@ -92,7 +92,7 @@ public class ThumbPanel extends TwiddlerSubPanel implements  TwidorConstants {
 		filler(   gridbag, true, constraints);
 
 		if (bDEBUG) System.out.println("ThumbPanel: panel created");
-	}// end ThumbPanel (boolean)
+	}
 
 	/**
 	 * Quick function to make it easier to use the myButtons variable
@@ -102,7 +102,7 @@ public class ThumbPanel extends TwiddlerSubPanel implements  TwidorConstants {
 		for (int i = 0; i < 4; i++) {
 			myButtons.add(null);
 		}
-	}// end initButtons ()
+	}
 
 	/**
 	 * Quick function to return the button vector
@@ -110,7 +110,7 @@ public class ThumbPanel extends TwiddlerSubPanel implements  TwidorConstants {
 	 */
 	public Vector <JPanel> getButtons () {
 		return myButtons;
-	}// end getButtons ()
+	}
 
 	/**
 	 * quick helper function to add filler boxes
@@ -127,7 +127,7 @@ public class ThumbPanel extends TwiddlerSubPanel implements  TwidorConstants {
 		}
 		gridbag.setConstraints(panel, constraints);
 		add(panel);
-	}// end filler (GridBagLayout, GridBagConstraints)
+	}
 
 	/**
 	 * quick helper function to add labels
@@ -150,7 +150,7 @@ public class ThumbPanel extends TwiddlerSubPanel implements  TwidorConstants {
 		}
 		gridbag.setConstraints(panel, constraints);
 		add(panel);
-	}// end label (String, GridBagLayout, GridBagConstraints)
+	}
 
 	/**
 	 * quick helper function to add buttons
@@ -177,7 +177,7 @@ public class ThumbPanel extends TwiddlerSubPanel implements  TwidorConstants {
 		}
 		gridbag.setConstraints(panel, constraints);
 		add(panel);
-	}// end button (int, GridBagLayout, GridBagConstraints)
+	}
 
 	/* --==<( TwiddlerSubPanel Requirement )>==-- */
 	/**
@@ -193,7 +193,7 @@ public class ThumbPanel extends TwiddlerSubPanel implements  TwidorConstants {
 		catch (ArrayIndexOutOfBoundsException e) {
 			if (bDEBUG) System.out.println("ThumbPanel: array oob");
 		}
-	}// end highlight (int, Color)
+	}
 	
 	/* --==<( TwiddlerSubPanel Requirement )>==-- */
 	/**
@@ -204,6 +204,6 @@ public class ThumbPanel extends TwiddlerSubPanel implements  TwidorConstants {
 		for (int i = 0; i < getButtons().size(); i++) {
 			(getButtons().elementAt(i)).setBackground(buttonBackground);
 		}
-	}// end clear ()
+	}
 
-}// end class THumbPanel
+}

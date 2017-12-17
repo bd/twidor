@@ -54,7 +54,7 @@ public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
 	 * default constructor
 	 */
 	private FingerPanel () {
-	}// end FingerPanel ()
+	}
 
 	/**
 	 * add a label to a key in the keyboard display
@@ -73,7 +73,7 @@ public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
 		label.setHorizontalAlignment(JLabel.CENTER);
 		label.setBorder(noBorder);
 		panel.add(label);
-	}// end add_label ()
+	}
 
 	/**
 	 * add a label to a key in the keyboard display
@@ -83,7 +83,7 @@ public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
             for (int i = 0; i < 3; i++) {
 		    add_label( panel, TEXT_DEFAULT, FONT_KEYPAD, text.substring(i, i+1));
             }
-	}// end add_long_label ()
+	}
 
 	/**
 	 * add one row of buttons for specified <finger>
@@ -91,7 +91,7 @@ public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
 	 * @param boolean the orientation
 	 * @param KeyMap the KeyMap to write on it
 	 */
-	public FingerPanel (boolean orient, KeyMap keys, boolean visibleKeys) {
+	public FingerPanel (boolean orient, KeyMap keys, boolean visibleKeys, boolean show2KeyChords) {
 		if (bDEBUG) System.out.println("FingerPanel: creating panel");
 		initButtons();
 		setBackground(twiddlerBackground);
@@ -137,57 +137,60 @@ public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
 		{
 			JPanel panel = new JPanel();
 			panel.setComponentOrientation( keyOrient );
-			panel.setLayout(new GridLayout(0, 12, 1, 4));
+			panel.setLayout(new GridLayout(0, show2KeyChords ? 12 : 3, 1, 4));
 			panel.setBackground(twiddlerBackground);
 
 			for (int finger = 0; finger < 4; finger++) { // four rows, one per finger
 				for (int fingerCol = 0; fingerCol < 3; fingerCol++) {			 // three button columns, and three chord columns
-					{			// chord map
-						for (int chordCol = 0; chordCol < 3; chordCol++) {
-							JPanel subPanel = new JPanel();
-							subPanel.setComponentOrientation( keyOrient );
-							subPanel.setLayout(new GridLayout(4, 1, 1, 1));
-							subPanel.setBackground(twiddlerBackground);
-							for (int chordFinger = 0; chordFinger < 4; chordFinger++) { // anchor finger
-								if (finger != chordFinger && visibleKeys) {
-									int buttons = KeyElement.buttonMask(finger, fingerCol);
-									buttons |= KeyElement.buttonMask(chordFinger, chordCol);
-									KeyElement keyElement = keys.getKeyByButtons(buttons);
-									Color color = keyRed;
-									Border border = redBorder;
-									if (chordCol == 1) {
-										color  = keyBlue;
-										border = blueBorder;
-									}
-									else if (chordCol == 2) {
-										color  = keyGreen;
-										border = greenBorder;
-									}
-									JLabel label = new JLabel();
-									label.setFont(FONT_KEYPAD);
-									label.setHorizontalAlignment(JLabel.CENTER);
-									label.setBorder(border);
-									label.setForeground( color );
-									if (keyElement != null) {
-										String keyLabel = keyElement.getLabel();
-										keyLabel = keyLabel.substring(0,Math.min(3,keyLabel.length()));
-										Font font = FONT_LABEL; // length = 1
-										if (keyLabel.length() == 2) {
-											font = FONT_LABEL2;
-										} else if (keyLabel.length() > 2) {
-											font = FONT_MACRO;
+					{
+						if ( show2KeyChords ) {
+							// chord map
+							for (int chordCol = 0; chordCol < 3; chordCol++) {
+								JPanel subPanel = new JPanel();
+								subPanel.setComponentOrientation( keyOrient );
+								subPanel.setLayout(new GridLayout(4, 1, 1, 1));
+								subPanel.setBackground(twiddlerBackground);
+								for (int chordFinger = 0; chordFinger < 4; chordFinger++) { // anchor finger
+									if (finger != chordFinger && visibleKeys) {
+										int buttons = KeyElement.buttonMask(finger, fingerCol);
+										buttons |= KeyElement.buttonMask(chordFinger, chordCol);
+										KeyElement keyElement = keys.getKeyByButtons(buttons);
+										Color color = keyRed;
+										Border border = redBorder;
+										if (chordCol == 1) {
+											color  = keyBlue;
+											border = blueBorder;
 										}
-										label.setFont(font);
-										label.setText(keyLabel);
-										subPanel.add(label);
+										else if (chordCol == 2) {
+											color  = keyGreen;
+											border = greenBorder;
+										}
+										JLabel label = new JLabel();
+										label.setFont(FONT_KEYPAD);
+										label.setHorizontalAlignment(JLabel.CENTER);
+										label.setBorder(border);
+										label.setForeground( color );
+										if (keyElement != null) {
+											String keyLabel = keyElement.getLabel();
+											keyLabel = keyLabel.substring(0,Math.min(3,keyLabel.length()));
+											Font font = FONT_LABEL; // length = 1
+											if (keyLabel.length() == 2) {
+												font = FONT_LABEL2;
+											} else if (keyLabel.length() > 2) {
+												font = FONT_MACRO;
+											}
+											label.setFont(font);
+											label.setText(keyLabel);
+											subPanel.add(label);
+										} else {
+											add_label( subPanel, twiddlerBackground, FONT_KEYPAD, "");
+										}
 									} else {
-										add_label( subPanel, twiddlerBackground, FONT_KEYPAD, "");
+										add_label( subPanel, twiddlerBackground,  FONT_KEYPAD, "z");
 									}
-								} else {
-									add_label( subPanel, twiddlerBackground,  FONT_KEYPAD, "z");
 								}
+								panel.add(subPanel);
 							}
-							panel.add(subPanel);
 						}
 					}
 					{			// single button keymap
@@ -228,13 +231,13 @@ public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
 			add(panel);
 		}
 		if (bDEBUG) System.out.println("FingerPanel: panel created");
-	}// end FingerPanel (boolean, KeyMap)
+	}
 
 	private ImageIcon loadIcon (String file) {
 		URL location;
 		location = this.getClass().getResource(file);
 		return new ImageIcon(location);
-	}// end loadIcon (String)
+	}
 
 	/**
 	 * Quick internal accessor since I was confusing myself by accessing it directly
@@ -242,14 +245,14 @@ public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
 	 */
 	public Vector <JPanel> getButtons () {
 		return myButtons;
-	}// end getMyButton ()
+	}
 
 	/**
 	 * Quick internal accessor to initialize my buttons
 	 */
 	private void initButtons () {
 		myButtons = new Vector <JPanel> ();
-	}// end setButtons ()
+	}
 
 
 	/* --==<( TwiddlerSubPanel Requirement )>==-- */
@@ -266,7 +269,7 @@ public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
 		catch (ArrayIndexOutOfBoundsException e) {
 			if (bDEBUG) System.out.println("FingerPanel: array oob");
 		}
-	}// end highlight (Color)
+	}
 
 	/* --==<( TwiddlerSubPanel Requirement )>==-- */
 	/**
@@ -276,6 +279,6 @@ public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
 		for (int i = 0; i < getButtons().size(); i++) {
 			(getButtons().elementAt(i)).setBackground(buttonBackground);
 		}
-	}// end clear ()
+	}
 
-}// end class FingerPanel
+}
