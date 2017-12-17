@@ -35,9 +35,9 @@ A chord is formed by pressing several keys together, like playing a "chord" on a
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_chord_map.png"
 width="30%" align="right"> Each small 4x3 array shows letters sent by two keys pressed simultaneously.  The orientation mirrors that of the larger 4x3 array: one row for each finger, and green/blue/red for left, middle and right columns.
 
-The first key of the chord is the large key to the immediate left.  The location of the first key is shown lreative to the larger 4x3 array.
+The first key of the chord is the large box.  The location of the first key is reative to the larger 4x3 array.
 
-The second key of the chord is one of the small keys which show the letters sent by the chord.  The position of the 2nd key is shown relative to the smaller 4x3 array.
+The second key of the chord is a small box.  The position of the 2nd key is relative to the smaller 4x3 array.
 
 Here are some two-key chords whose first key is <kbd>I</kbd>:
 * <kbd>I + S</kbd> sends "is".
