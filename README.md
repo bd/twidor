@@ -1,8 +1,9 @@
 [//]: # (Copyright C 2017  Carey Richard Murphey. This file is released under the terms of the GNU General Public License version 2.)
+<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/twiddler.jpg"
+width="25%" align="right">
 
 ## Twidor - a typing tutor for the Twiddler chording keyboard
-<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/twiddler.jpg"
-width="25%" align="right">Twidor is a typing tutor for the [Twiddler one-handed chording keyboard](https://twiddler.tekgear.com/).   A "chord" is a keystroke using two, three or four keys pressed simultaneously. There are [downloads for Windows, Linux and OSX](https://github.com/rich-murphey/twidor/releases).  
+Twidor is a typing tutor for the [Twiddler one-handed chording keyboard](https://twiddler.tekgear.com/).   A "chord" is a keystroke using two, three or four keys pressed simultaneously. There are [downloads for Windows, Linux and OSX](https://github.com/rich-murphey/twidor/releases).  
 
 Twidor was originally written by researchers studying
 [Twiddler learning rates and performance](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.4.3606&rep=rep1&type=pdf). Their
