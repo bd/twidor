@@ -442,9 +442,8 @@ public class Twidor extends JFrame implements TwidorConstants {
 	 * @param long the system time when it was pressed
 	 */
 	public void charTyped (String macro, long time) {
-		/* FIXME */
 		String sentence = getSentence();
-		KeyElement typed = getKeyMap().getKey(macro); // FIXME: need to distinguish capital Z from ctrl Z
+		KeyElement typed = getKeyMap().getKey(macro);
 		if ( (typed == null) &&
 			 (Character.isUpperCase(macro.charAt(0)))
 			 ) {
@@ -482,6 +481,11 @@ public class Twidor extends JFrame implements TwidorConstants {
 		doHighlighting();
 	}
 
+	public void reOrient () {
+		getTwiddlerPanel().reOrient();
+		doHighlighting();
+	}
+
 	/**
 	 * function for effecting menubar based changes
 	 * @param String the MenuItem that was selected
@@ -489,7 +493,6 @@ public class Twidor extends JFrame implements TwidorConstants {
 	 */
 	public void booleanOption (String option, boolean status) {
 		if (bDEBUG) System.out.println("Changing " + option + ":" + status);
-		// getTwidorMenu().itemSelected(option, status);
 
 		if (option.equals(TWIDDLER_SHOW_TEXT)) {
 			getTwiddlerPanel().setTwiddlerVisible(status);
@@ -521,7 +524,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 		}
 		else if (bDEBUG) System.out.println("Unhandled option");
 
-		getTwiddlerPanel().reOrient();
+		reOrient();
 	}
 
 	/**
@@ -530,7 +533,6 @@ public class Twidor extends JFrame implements TwidorConstants {
 	 */
 	public void menuOption (String option) {
 		if (bDEBUG) System.out.println("Option " + option);
-		// getTwidorMenu().itemSelected(option, true);
 		if (option.equals(QUIT_TEXT)) {
 			twidorQuit();
 		}
@@ -543,7 +545,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 					e.printStackTrace();
 				}
 				getTwiddlerPanel().setKeyMap(getKeyMap());
-				getTwiddlerPanel().reOrient();
+				reOrient();
 			}
 		}
 		else if (option.equals(LOAD_LESSON_TEXT)) {
@@ -574,7 +576,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 			if (option.equals(KEYMAPS[i])) {
 				setKeyMap(option + ".csv");
 				getTwiddlerPanel().setKeyMap(getKeyMap());
-				getTwiddlerPanel().reOrient();
+				reOrient();
 			}
 		}
 	}
@@ -597,5 +599,4 @@ public class Twidor extends JFrame implements TwidorConstants {
 	public static void main (String[] argv) {
 		Twidor tutor = new Twidor();
 	}
-
 }
