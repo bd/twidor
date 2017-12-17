@@ -6,7 +6,7 @@ width="25%" align="right">
 Twidor is a typing tutor for the [Twiddler chording keyboard](https://twiddler.tekgear.com/).   A "chord" is a keystroke using two or more keys pressed simultaneously. There are [downloads for Windows, Linux and OSX](https://github.com/rich-murphey/twidor/releases).  
 
 Twidor was originally written by researchers studying
-[Twiddler learning rates and performance](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.4.3606&rep=rep1&type=pdf). Their
+[chording keyboard learning and performance](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.4.3606&rep=rep1&type=pdf). Their
 research suggests that learners may achieve faster typing speeds on single-handed chording keyboards than two-handed QWERTY keyboards given equal amount of practice.  In article [2] below, Lyons states, "faster typists would reach
 60 WPM, the rate of our expert, after 10,000 phrases
 (approximately 80 sessions or 27 hours) while the slower typists
