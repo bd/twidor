@@ -17,7 +17,7 @@ could achieve 45 WPM."
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_screenshot.png"
 width="40%" align="right">Twidor's visual keymap shows the letters sent by each key.  Some letters require only a single key press, show by the large boxes.  Other letters reqire two keys pressed simultaneously, called a "chord".  The small boxes show two-key chords. 
 
-The next letter of the lesson sentence is shown by the box highlighed yellow.
+The key of the next letter of the lesson is shown by the box highlighed yellow.
 
 By default, Twidor loads the the
 [Backspice keymap](https://raw.githubusercontent.com/AlexBravo/Twiddler/master/Backspice2%20cheat%20sheet.txt).
