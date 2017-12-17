@@ -146,7 +146,7 @@ public class KeyMap implements TwidorConstants {
 	}
 
 	public KeyElement getKey (char c) {
-		return getKey(String.valueOf(c)); // FIXME: ignores CTRL/ALT/SHIFT modifiers
+		return getKey(String.valueOf(c));
 	}
 
 	public KeyElement getKey (int keycode, String macro, int mod) {

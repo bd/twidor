@@ -444,7 +444,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 	public void charTyped (String macro, long time) {
 		String sentence = getSentence();
 		KeyElement typed = getKeyMap().getKey(macro);
-		if ( (typed == null) &&
+                                                                                                                                   		if ( (typed == null) &&
 			 (Character.isUpperCase(macro.charAt(0)))
 			 ) {
 			typed = getKeyMap().getKey(macro.toLowerCase());

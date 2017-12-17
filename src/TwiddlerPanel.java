@@ -288,9 +288,7 @@ public class TwiddlerPanel extends TwiddlerSubPanel implements TwidorConstants {
 			getPanels().addElement(new ThumbPanel(getThumbOrientation(), getKeyMap(), getThumbKeysVisible()));
 		}
 
-		// FIXME just keep refereces to the two panels. get rid of the vector.
 		fingerPanel = new FingerPanel(getFingerOrientation(), getKeyMap(), getFingerKeysVisible(), show2KeyChords);
-		// xxx getPanels().addElement(Box.createRigidArea(new Dimension(0,5)));
 		getPanels().addElement(fingerPanel);
 
 		for (int i = 0; i < getPanels().size(); i++) {
