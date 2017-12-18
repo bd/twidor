@@ -84,16 +84,6 @@ public class LessonParser implements TwidorConstants {
 					if (parts.length == 4) {
 						Lesson nLesson = new Lesson(parts[0]);
 						nLesson.setLessonTotal(Integer.parseInt(parts[1]));
-						if (parts[2].equalsIgnoreCase("y")) {
-							nLesson.setHighlight(true);
-						} else {
-							nLesson.setHighlight(false);
-						}
-						if (parts[3].equalsIgnoreCase("y")) {
-							nLesson.setHighlightMCC(true);
-						} else {
-							nLesson.setHighlightMCC(false);
-						}
 						nLesson.setLessonNumber(count++);
 						addLesson(nLesson);
 					}
