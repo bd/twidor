@@ -110,7 +110,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 		CenterPane.setVisible(true);
 
 		contentPane.add(CenterPane, BorderLayout.CENTER);
-                pack();
+		pack();
 		/* Show it all */
 		setVisible(true);
 		setLesson("Lesson 1");
@@ -567,16 +567,21 @@ public class Twidor extends JFrame implements TwidorConstants {
 		else if (option.startsWith("Lesson")) {
 			setLesson(option);
 		}
-		else if (option.equals("About")) {
+		else if (option.equals("Documentation")) {
 			openWebpage("https://github.com/rich-murphey/twidor");
 			return;
 		}
-
-		for (int i = 0; i < KEYMAPS.length; i++) {
-			if (option.equals(KEYMAPS[i])) {
-				setKeyMap(option + ".csv");
-				getTwiddlerPanel().setKeyMap(getKeyMap());
-				reOrient();
+		else if (option.equals("About")) {
+			About a = new About();
+			a.setVisible(true);
+		}
+		else {
+			for (int i = 0; i < KEYMAPS.length; i++) {
+				if (option.equals(KEYMAPS[i])) {
+					setKeyMap(option + ".csv");
+					getTwiddlerPanel().setKeyMap(getKeyMap());
+					reOrient();
+				}
 			}
 		}
 	}

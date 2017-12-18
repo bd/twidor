@@ -141,6 +141,8 @@ public class TwidorMenu extends JMenuBar implements TwidorConstants {
 		add(menu);
 
 		menu = new JMenu("Help");
+		jmItem = jmenuItem("Documentation");
+		menu.add(jmItem);
 		jmItem = jmenuItem("About");
 		menu.add(jmItem);
 		add(menu);
@@ -183,24 +185,6 @@ public class TwidorMenu extends JMenuBar implements TwidorConstants {
 		toReturn.setSelected(status);
 		toReturn.addActionListener(myEventHandler);
 		return toReturn;
-	}
-
-	/**
-	 * Used for ensuring certain elements of the menu can't overlap each other.
-	 * @param String the element that just got fiddled with
-	 * @param boolean the state it got changed to
-	 */
-	public void itemSelected (String item, boolean state) {
-		if (bDEBUG) System.out.println("TwidorMenu: " + item + " selected " + state);
-		if (item.equals(TWIDDLER_SHOW_TEXT)) {
-			if (state) {
-				((JMenuItem)Twiddler.elementAt(2)).setEnabled(true);
-				((JMenuItem)Twiddler.elementAt(3)).setEnabled(true);
-			} else {
-				((JMenuItem)Twiddler.elementAt(2)).setEnabled(false);
-				((JMenuItem)Twiddler.elementAt(3)).setEnabled(false);
-			}
-		}
 	}
 
 	public void makeSelectedLesson (String lesson) {
