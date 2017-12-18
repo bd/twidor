@@ -65,7 +65,12 @@ welcome [here](https://github.com/rich-murphey/twidor/issues).
 
 ## Usage
 
-Hit <kbd>ENTER</kbd> at the end of a line to go to the next sentence. This also updates statistics for the seession including words per minute (WPM) and average error rate (AER).
+The keymap shows the buttons that form the chord for the next letter(s) of the lesson, and highlightes those letters in green in the lesson text.  By default, the longest macro that matches the lesson text is highlighted.  Given the text, "the", Twidor will prompt for the macro that sends "the", rather than "th" or "t".
+
+If you wish to focus on learning keys for single letters, select the option: <kbd>View | Single character chords only</kbd>.
+If you wish to learn only single and double letter chords, select the option: <kbd>View | Two character chords maximum</kbd>
+
+Hit <kbd>ENTER</kbd> at the end of a line to go to the next sentence. This also updates statistics for the session, including words per minute (WPM) and average error rate (AER).
 
 Menu options include:
 * <kbd>File | Load Keymap</kbd> imports a CSV keymap exported by the [Twiddler Tuner](https://twiddler.tekgear.com/tuner/).
