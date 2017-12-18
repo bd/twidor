@@ -86,8 +86,8 @@ public class Twidor extends JFrame implements TwidorConstants {
 		setTitle(windowTitle);
 		setBackground(windowBackground);
 		setResizable(windowResizable);
-		chord_1key_limit = false;
-		chord_2key_limit = false;
+		chord_1key_limit = TWIDDLER_LIMIT_1KEY;
+		chord_2key_limit = TWIDDLER_LIMIT_2KEY;
 
 		/* Root Panel Settings */
 		Container contentPane = getContentPane();
