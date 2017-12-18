@@ -3,7 +3,7 @@
 width="25%" align="right">
 
 ## Twidor - a typing tutor for the Twiddler keyboard
-Twidor is a typing tutor for the [Twiddler chording keyboard](https://twiddler.tekgear.com/).   A "chord" is a keystroke using two or more keys pressed simultaneously. There are [downloads for Windows, Linux and OSX](https://github.com/rich-murphey/twidor/releases).  
+Twidor is a typing tutor for the [Twiddler chording keyboard](https://twiddler.tekgear.com/).   A chord is formed by pressing several keys together, like playing a "chord" on a piano. There are [downloads for Windows, Linux and OSX](https://github.com/rich-murphey/twidor/releases).  
 
 Twidor was originally written by researchers studying
 [chording keyboard learning and performance](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.4.3606&rep=rep1&type=pdf). Their
@@ -30,7 +30,7 @@ The large 4x3 array is composed of horizontal rows, for index finger on top, the
 
 ## 2-Key Chords
 
-A chord is formed by pressing several keys together, like playing a "chord" on a piano.
+A "chord" is a keystroke using two or more keys pressed simultaneously. 
 
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_chord_map.png"
 width="30%" align="right"> Each small 4x3 array shows letters sent by two keys pressed simultaneously.  Button layout is the same: one row for each finger, and green/blue/red for left/middle/right columns.
