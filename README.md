@@ -65,7 +65,7 @@ welcome [here](https://github.com/rich-murphey/twidor/issues).
 
 ## Usage
 
-The keymap shows the buttons that form the chord for the next letter(s) of the lesson, and highlightes those letters in green in the lesson text.  By default, the longest macro that matches the lesson text is highlighted.  Given the text, "the", Twidor will prompt for the macro that sends "the", rather than "th" or "t".
+The keymap shows the buttons that form the chord for the next letter(s) of the lesson.  It highlightes the letters sent by the chord in green in the lesson text.  By default, it chooses the longest matching chord.  Given the text, "the", Twidor will prompt for the macro that sends "the", rather than "th" or "t".
 
 If you wish to focus on learning keys for single letters, select the option: <kbd>View | Single character chords only</kbd>.
 If you wish to learn only single and double letter chords, select the option: <kbd>View | Two character chords maximum</kbd>
