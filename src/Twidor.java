@@ -345,8 +345,8 @@ public class Twidor extends JFrame implements TwidorConstants {
 		getStatsPanel().nextSentence(getSentence());
 		doHighlighting();
 		getInfoPanel().setTitle(getLesson().getLessonName() + ": Sentence " +
-			getLesson().getSentenceNumber());
-                pack();
+								getLesson().getSentenceNumber());
+		pack();
 	}
 
 	/**
@@ -358,7 +358,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 			next--;
 		getTwidorMenu().makeSelectedLesson("Lesson " + next);
 		//setLesson("Lesson " + next);
-	}// nextLesson ()
+	}
 
 	/**
 	 * show the statistics. woo!
@@ -367,7 +367,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 		getTypingPanel().displayMessage("Press any key to continue");
 		getStatsPanel().showStats();
 		getInfoPanel().setTitle(getLesson().getLessonName() + ": Complete");
-	}// showStats ()
+	}
 
 	/**
 	 * Does the highlighting.
@@ -512,15 +512,6 @@ public class Twidor extends JFrame implements TwidorConstants {
 		}
 		else if (option.equals(TWIDDLER_MIRROR_THUMB_TEXT)) {
 			getTwiddlerPanel().setThumbOrientation(status);
-		}
-		else if (option.equals(HIGHLIGHT_ERRORS_TEXT)) {
-			getTypingPanel().setHighlightErrors(status);
-		}
-		else if (option.equals(HIGHLIGHT_HINT_TEXT)) {
-			// FIXME implement this
-		}
-		else if (option.equals(HIGHLIGHT_KEYPRESS_TEXT)) {
-			// FIXME implement this
 		}
 		else if (bDEBUG) System.out.println("Unhandled option");
 

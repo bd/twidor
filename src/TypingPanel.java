@@ -51,7 +51,6 @@ public class TypingPanel extends TwiddlerSubPanel implements TwidorConstants {
 
 	Vector Typed;           // characters typed by user
 	int current;            // cursor on typed text
-	boolean highlightErrors;
 	boolean finished;
 	int min_display_length = 40;
 	JTable table;
@@ -64,20 +63,11 @@ public class TypingPanel extends TwiddlerSubPanel implements TwidorConstants {
 		Typed = new Vector();
 		setCurrent(0);
 		setEntered(false);
-		setHighlightErrors(HIGHLIGHT_ERRORS);
 		setBackground(TEXT_BACKGROUND);
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		setBorder(margin);
 		setVisible(true);
 		if (bDEBUG) System.out.println("TypingPanel: Created New Panel");
-	}
-
-	/**
-	 * Modifier for whether or not we highlight on error
-	 * @param boolean the new status of highlighting
-	 */
-	public void setHighlightErrors (boolean status) {
-		highlightErrors = status;
 	}
 
 	/**
@@ -99,14 +89,6 @@ public class TypingPanel extends TwiddlerSubPanel implements TwidorConstants {
 	 */
 	private void setEntered (boolean value) {
 		finished = value;
-	}
-
-	/**
-	 * Accessor for whether or not we highlight on error
-	 * @return boolean the status of highlighting
-	 */
-	public boolean getHighlightErrors () {
-		return highlightErrors;
 	}
 
 	/**

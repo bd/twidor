@@ -125,14 +125,6 @@ public interface TwidorConstants {
 	public static final String SAVE_KEYLOG_TEXT = "Save Keylog File";
 	public static final String QUIT_TEXT = "Quit";
 
-	/* Tutor */
-	public static final String HIGHLIGHT_HINT_TEXT = "Highlight Hint";
-	public boolean HIGHLIGHT_HINT = true;
-	public static final String HIGHLIGHT_KEYPRESS_TEXT = "Highlight Keypress";
-	public boolean HIGHLIGHT_KEYPRESS = true;
-	public static final String HIGHLIGHT_ERRORS_TEXT = "Highlight Errors";
-	public boolean HIGHLIGHT_ERRORS = true;
-
 	/* Twiddler */
 	public static final String TWIDDLER_SHOW_TEXT = "Show Keyboard";
 	public boolean TWIDDLER_SHOW = true;

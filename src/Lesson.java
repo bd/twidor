@@ -38,8 +38,6 @@ public class Lesson implements TwidorConstants {
 	 */
 	private String fileName; // where we read our sentences from
 	private int lessonNumber; // our lesson number, in order
-	private boolean highlightChord; // show highlighting?
-	private boolean highlightMCC; // show MCC highlighting?
 
 	private Vector <String> lessonSentences; // array of sentences to show
 	private Vector <String> trash;
@@ -54,8 +52,6 @@ public class Lesson implements TwidorConstants {
 		lessonNumber = -1;
 		lessonSentences = new Vector <String> ();
 		trash = new Vector <String> ();
-		highlightChord = false;
-		highlightMCC = false;
 		currentSentence = 0;
 		totalSentences = 0;
 	}
@@ -86,14 +82,6 @@ public class Lesson implements TwidorConstants {
 		return false;
 	}
 
-	public boolean getHighlight () {
-		return highlightChord;
-	}
-
-	public boolean getHighlightMCC () {
-		return highlightMCC;
-	}
-
 	public String getSentence () {
 		if (lessonSentences.isEmpty()) {
 			lessonSentences.addAll(trash);
@@ -120,14 +108,6 @@ public class Lesson implements TwidorConstants {
 
 	public void setLessonTotal (int count) {
 		totalSentences = count;
-	}
-
-	public void setHighlight (boolean status) {
-		highlightChord = status;
-	}
-
-	public void setHighlightMCC (boolean status) {
-		highlightMCC = status;
 	}
 
 	private void readFile (String path) {

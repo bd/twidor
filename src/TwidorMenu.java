@@ -79,16 +79,11 @@ public class TwidorMenu extends JMenuBar implements TwidorConstants {
 		add(menu);
 
 		Twiddler = new Vector<>();
-		menu = new JMenu("Keyboard");
+		menu = new JMenu("View");
 		jmItem = jcheckItem(TWIDDLER_SHOW_TEXT, TWIDDLER_SHOW);
 		Twiddler.add(jmItem);
 		menu.add(jmItem);
 		jmItem = jcheckItem(TWIDDLER_SHOW_2KEY_TEXT, TWIDDLER_SHOW_2KEY);
-		// jmItem.addActionListener(new ActionListner() {
-		// 		public void actionPerformed(ActionEvent event) {
-		// 			boolean selected = ((AbstractButton) event.getSource()).getModel().isSelected();
-		// 		}
-		// 	});
 		Twiddler.add(jmItem);
 		menu.add(jmItem);
 		jmItem = jcheckItem(TWIDDLER_MIRROR_TEXT, TWIDDLER_MIRROR);
@@ -102,19 +97,6 @@ public class TwidorMenu extends JMenuBar implements TwidorConstants {
 		menu.add(jmItem);
 		jmItem = jcheckItem(TWIDDLER_MIRROR_THUMB_TEXT, TWIDDLER_MIRROR_THUMB);
 		Twiddler.add(jmItem);
-		menu.add(jmItem);
-		add(menu);
-
-		Tutor = new Vector<>();
-		menu = new JMenu("Hints");
-		jmItem = jcheckItem(HIGHLIGHT_HINT_TEXT, HIGHLIGHT_HINT);
-		Tutor.add(jmItem);
-		menu.add(jmItem);
-		jmItem = jcheckItem(HIGHLIGHT_KEYPRESS_TEXT, HIGHLIGHT_KEYPRESS);
-		Tutor.add(jmItem);
-		menu.add(jmItem);
-		jmItem = jcheckItem(HIGHLIGHT_ERRORS_TEXT, HIGHLIGHT_ERRORS);
-		Tutor.add(jmItem);
 		menu.add(jmItem);
 		add(menu);
 
