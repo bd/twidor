@@ -67,39 +67,40 @@ public interface TwidorConstants {
 	public static final Color mccHighlight = Color.getHSBColor(0.8333f, 1.0f, 1.0f); // light yellow
 	public static final Color twiddlerBackground = Color.getHSBColor(0.f, 0.f, 1.f); // dark grey
 
-	public static final Color keyRed    = Color.getHSBColor(0.0000f, 1.f, .7f);
-	public static final Color keyBlue   = Color.getHSBColor(0.6000f, 1.f, 1.f);
-	public static final Color keyGreen  = Color.getHSBColor(0.3333f, 1.f, .7f);
-	public static Border thickRedBorder = BorderFactory.createLineBorder(keyRed, 2, true);
-	public static Border thickBlueBorder = BorderFactory.createLineBorder(keyBlue, 2, true);
-	public static Border thickGreenBorder = BorderFactory.createLineBorder(keyGreen, 2, true);
-	public static Border redBorder = BorderFactory.createLineBorder(keyRed, 1, true);
-	public static Border blueBorder = BorderFactory.createLineBorder(keyBlue, 1, true);
-	public static Border greenBorder = BorderFactory.createLineBorder(keyGreen, 1, true);
+	public static final Color keyRed    	= Color.getHSBColor(0.0000f, 1.f, .7f);
+	public static final Color keyBlue   	= Color.getHSBColor(0.6000f, 1.f, 1.f);
+	public static final Color keyGreen  	= Color.getHSBColor(0.3333f, 1.f, .7f);
+	public static Border thickRedBorder 	= BorderFactory.createLineBorder(keyRed, 2, true);
+	public static Border thickBlueBorder 	= BorderFactory.createLineBorder(keyBlue, 2, true);
+	public static Border thickGreenBorder 	= BorderFactory.createLineBorder(keyGreen, 2, true);
+	public static Border redBorder	 	= BorderFactory.createLineBorder(keyRed, 1, true);
+	public static Border blueBorder 	= BorderFactory.createLineBorder(keyBlue, 1, true);
+	public static Border greenBorder 	= BorderFactory.createLineBorder(keyGreen, 1, true);
 
 	/**
 	 * fonts
 	 */
-	public static final Font FONT_DIALOG = new Font("RobotoCondensed", Font.BOLD, 12);
-	public static final Font FONT_MACRO = new Font("RobotoCondensed", Font.BOLD, 12);
-	public static final Font FONT_KEYPAD = new Font("RobotoCondensed", Font.BOLD, 15);
-	public static final Font FONT_LABEL2 = new Font("RobotoCondensed", Font.BOLD, 17);
-	public static final Font FONT_TEXT = new Font("Roboto", Font.PLAIN, 20);
-	public static final Font FONT_LABEL = new Font("Roboto", Font.PLAIN, 22);
+	public static final Font FONT_DIALOG 	= new Font("RobotoCondensed", Font.BOLD, 12);
+	public static final Font FONT_MACRO 	= new Font("RobotoCondensed", Font.BOLD, 12);
+	public static final Font FONT_KEYPAD 	= new Font("RobotoCondensed", Font.BOLD, 15);
+	public static final Font FONT_LABEL2 	= new Font("RobotoCondensed", Font.BOLD, 17);
+	public static final Font FONT_TEXT	 	= new Font("Roboto", Font.PLAIN, 20);
+	public static final Font FONT_LABEL 	= new Font("Roboto", Font.PLAIN, 22);
 
 	/**
 	 * character colors
 	 */
-	public static final Color TEXT_DEFAULT = Color.BLACK;
-	public static final Color TEXT_ERROR = Color.getHSBColor(0.f, 1.f, .7f);
-	public static final Color TEXT_GOOD = Color.getHSBColor(0.f, 0.f, .7f);
-	public static final Color TEXT_BLINK = Color.BLUE;
-	public static final Color TEXT_BACKGROUND = Color.WHITE;
+	public static final Color TEXT_DEFAULT 		= Color.BLACK;
+	public static final Color TEXT_ERROR 		= Color.getHSBColor(0.f, 1.f, .7f);
+	public static final Color TEXT_GOOD 		= Color.getHSBColor(0.f, 0.f, .7f);
+	public static final Color TEXT_HIGHLIGHT	= Color.getHSBColor(0.3333f, 1.f, .7f);
+	public static final Color TEXT_BLINK 		= Color.BLUE;
+	public static final Color TEXT_BACKGROUND 	= Color.WHITE;
 
-	public static Border noBorder = BorderFactory.createEmptyBorder(0,0,0,0);
-	public static Border margin = BorderFactory.createEmptyBorder(0,3,3,3);
-	public static Border lineBorder = BorderFactory.createLineBorder(Color.BLACK);
-	public static Border buttonBorder = BorderFactory.createLineBorder(Color.BLACK, 1, true);
+	public static Border noBorder	 	= BorderFactory.createEmptyBorder(0,0,0,0);
+	public static Border margin 		= BorderFactory.createEmptyBorder(0,3,3,3);
+	public static Border lineBorder 	= BorderFactory.createLineBorder(Color.BLACK);
+	public static Border buttonBorder 	= BorderFactory.createLineBorder(Color.BLACK, 1, true);
 
 	// Kemap menu items. Filename is <name>.csv.
 	public static final String[] KEYMAPS = new String[]{
@@ -126,10 +127,15 @@ public interface TwidorConstants {
 	public static final String QUIT_TEXT = "Quit";
 
 	/* Twiddler */
-	public static final String TWIDDLER_SHOW_TEXT = "Show Keyboard";
+	public static final String TWIDDLER_SHOW_TEXT = "Show Key Map";
 	public boolean TWIDDLER_SHOW = true;
-	public static final String TWIDDLER_SHOW_2KEY_TEXT = "Show 2-key chords";
+	public static final String TWIDDLER_SHOW_2KEY_TEXT = "Show 2-key chords in Map";
 	public boolean TWIDDLER_SHOW_2KEY = true;
+	public static final String TWIDDLER_LIMIT_1KEY_TEXT = "Limit highlight to single key chords";
+	public boolean TWIDDLER_LIMIT_1KEY = false;
+	public static final String TWIDDLER_LIMIT_2KEY_TEXT = "Limit highlight to 2-key chords";
+	public boolean TWIDDLER_LIMIT_2KEY = false;
+
 	public static final String TWIDDLER_MIRROR_TEXT = "Horizontal Reverse Keyboard";
 	public boolean TWIDDLER_MIRROR = false;
 	public static final String TWIDDLER_SHOW_LETTERS_TEXT = "Show Labels on Keyboard";

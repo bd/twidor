@@ -256,6 +256,7 @@ public class TwiddlerPanel extends TwiddlerSubPanel implements TwidorConstants {
 					(getPanels().elementAt(0)).highlight(thumb, hColor);
 				}
 			}
+
 		}
 		catch (ArrayIndexOutOfBoundsException e) {
 			if (bDEBUG) System.out.println("TwiddlerPanel: array oob");

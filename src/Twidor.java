@@ -59,6 +59,8 @@ public class Twidor extends JFrame implements TwidorConstants {
 	private String currentSentence;
 	private JFileChooser fc;
 	private java.io.PrintWriter keylog;
+	private boolean chord_1key_limit;
+	private boolean chord_2key_limit;
 
 	/**
 	 * Default Constructor.
@@ -84,6 +86,8 @@ public class Twidor extends JFrame implements TwidorConstants {
 		setTitle(windowTitle);
 		setBackground(windowBackground);
 		setResizable(windowResizable);
+		chord_1key_limit = false;
+		chord_2key_limit = false;
 
 		/* Root Panel Settings */
 		Container contentPane = getContentPane();
@@ -378,7 +382,11 @@ public class Twidor extends JFrame implements TwidorConstants {
 		KeyElement match = null;
 		if (begin < getSentence().length()) {
 			String remainder = getSentence().substring(begin);
-			match = getKeyMap().matchLargestChunk(remainder);
+
+			int limit = 0;
+			if ( chord_2key_limit ) limit = 2;
+			if ( chord_1key_limit ) limit = 1;
+			match = getKeyMap().matchLargestChunk(remainder, limit);
 			if ( match == null ) { // try single capital character
 				if(Character.isUpperCase(remainder.charAt(0))) {
 					match = getKeyMap().getKey(remainder.substring(0,1).toLowerCase());
@@ -392,6 +400,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 			match = getKeyMap().getKey(UNICODE_RETURN); // highlight ENTER when at end of line.
 		}
 		getTwiddlerPanel().highlight(match);
+		getTypingPanel().highlight(match);
 	}
 
 	/**
@@ -510,8 +519,11 @@ public class Twidor extends JFrame implements TwidorConstants {
 		else if (option.equals(TWIDDLER_SHOW_THUMB_TEXT)) {
 			getTwiddlerPanel().setThumbBoardVisible(status);
 		}
-		else if (option.equals(TWIDDLER_MIRROR_THUMB_TEXT)) {
-			getTwiddlerPanel().setThumbOrientation(status);
+		else if (option.equals(TWIDDLER_LIMIT_1KEY_TEXT)) {
+			chord_1key_limit = status;
+		}
+		else if (option.equals(TWIDDLER_LIMIT_2KEY_TEXT)) {
+			chord_2key_limit = status;
 		}
 		else if (bDEBUG) System.out.println("Unhandled option");
 

@@ -211,11 +211,14 @@ public class KeyMap implements TwidorConstants {
 	 * @param String sentence/phrase to match
 	 * @return String the key that matches the most
 	 */
-	public KeyElement matchLargestChunk (String sentence) {
+	public KeyElement matchLargestChunk (String sentence, int max_length) {
 		KeyElement match = null;
 		for (KeyElement key : getKeylist()) {
 			String macro = key.getMacro();
-			if ( (macro != null) && sentence.regionMatches(0, macro, 0, macro.length())) {
+			if ( (macro != null) && 
+				 sentence.regionMatches(0, macro, 0, macro.length()) &&
+				 ( ( max_length == 0 ) || ( macro.length() <= max_length ) )
+				 ) {
 				if (match == null) {
 					match = key;
 				} else if (key.getMacro().length() > match.getMacro().length()) {

@@ -37,6 +37,7 @@ import java.awt.*;
 import javax.swing.*;
 import java.util.Vector;
 import java.lang.String;
+import java.lang.Math;
 /**
  * @author rich
  *
@@ -46,11 +47,13 @@ public class TypingPanel extends TwiddlerSubPanel implements TwidorConstants {
 	/**
 	 * internal variables
 	 */
-	Vector <JLabel> sentenceLabels;
+	Vector <JLabel> lessonTextLabels;
+	Vector <JLabel> enteredTextLabels;
 	String sentenceText;
 
 	Vector Typed;           // characters typed by user
 	int current;            // cursor on typed text
+	int highlight_len;		// length of highlighted text
 	boolean finished;
 	int min_display_length = 40;
 	JTable table;
@@ -58,7 +61,8 @@ public class TypingPanel extends TwiddlerSubPanel implements TwidorConstants {
 	 * default constructor
 	 */
 	public TypingPanel () {
-		sentenceLabels = new Vector <JLabel> ();
+		enteredTextLabels = new Vector <JLabel> ();
+		lessonTextLabels = new Vector <JLabel> ();
 		String sentenceText = "";
 		Typed = new Vector();
 		setCurrent(0);
@@ -133,7 +137,7 @@ public class TypingPanel extends TwiddlerSubPanel implements TwidorConstants {
 	public void displaySentence (String sentence) {
 		setVisible(false);
 		setSentenceText(sentence);
-		sentenceLabels.clear();
+		enteredTextLabels.clear();
 		Typed.clear();
 		setCurrent(0);
 		setEntered(false);
@@ -142,6 +146,7 @@ public class TypingPanel extends TwiddlerSubPanel implements TwidorConstants {
 			return;
 		}
 
+		lessonTextLabels.clear();
 		JPanel sentence_panel = new JPanel();
 		sentence_panel.setAlignmentY(CENTER_ALIGNMENT);
 		sentence_panel.setFont(FONT_TEXT);
@@ -158,28 +163,49 @@ public class TypingPanel extends TwiddlerSubPanel implements TwidorConstants {
 			jlabel.setBorder(noBorder);
 			jlabel.setFont(FONT_TEXT);
 			jlabel.setBackground(TEXT_BACKGROUND);
+			lessonTextLabels.add( jlabel );
 			subPanel.add( jlabel );
 			jlabel = new JLabel("", javax.swing.SwingConstants.CENTER);
 			jlabel.setFont(FONT_TEXT);
 			jlabel.setBackground(TEXT_BACKGROUND);
 			subPanel.add( jlabel );
-			sentenceLabels.add( jlabel );
+			enteredTextLabels.add( jlabel );
 			sentence_panel.add( subPanel );
 		}
 		add(sentence_panel);
                 validate();
 		setVisible(true);
 	}
+	public void highlight (KeyElement key) {
+		if (getCurrent() < 0) {
+			setCurrent(0);
+		}
+		highlight_len = key.getMacro().length();
+		for( int i = getCurrent(); i < Math.min(lessonTextLabels.size(), getCurrent() + highlight_len); i++ ) {
+			JLabel label = lessonTextLabels.elementAt(i);
+			label.setForeground(TEXT_HIGHLIGHT);
+		}
+	}
+	public void remove_highlight () {
+		if (getCurrent() < 0) {
+			setCurrent(0);
+		}
+		for( int i = getCurrent(); i < Math.min(lessonTextLabels.size(), getCurrent() + highlight_len); i++ ) {
+			JLabel label = lessonTextLabels.elementAt(i);
+			label.setForeground(TEXT_DEFAULT);
+		}
+	}
 
 	public void charTyped (KeyElement typed) {
 		if (getCurrent() < 0) {
 			setCurrent(0);
 		}
+		remove_highlight();
 		if (typed.match(KEYCODE_BACKSPACE, UNICODE_BACKSPACE) ||
 			typed.match(KEYCODE_DELETE, UNICODE_DELETE)
 			) {
 			setCurrent(getCurrent() - 1);
-			JLabel label = sentenceLabels.elementAt(getCurrent());
+			JLabel label = enteredTextLabels.elementAt(getCurrent());
 			label.setForeground(TEXT_DEFAULT);
 			label.setText("");
 			return;
@@ -195,7 +221,7 @@ public class TypingPanel extends TwiddlerSubPanel implements TwidorConstants {
 		} 
 		else if (getCurrent() < getSentenceText().length()) {
 			/* Treat it like a normal character */
-			JLabel label = sentenceLabels.elementAt(getCurrent());
+			JLabel label = enteredTextLabels.elementAt(getCurrent());
 			label.setForeground(TEXT_DEFAULT);
 			String text = typed.getMacro();
 			if( typed.getThumb(B_SHIFT) && Character.isLowerCase(text.charAt(0)))
