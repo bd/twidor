@@ -45,29 +45,11 @@ Here are some two-key chords whose first key is <kbd>I</kbd>:
 * <kbd>I + SP</kbd> sends "C".
 * <kbd>I + H</kbd> sends "Y".
 
-## How to Install
-
-Download the releases from here:
-
-[https://github.com/rich-murphey/twidor/releases](https://github.com/rich-murphey/twidor/releases)
-
-On windows, download and run the Twidor-setup.exe installer.
-
-On Linux and others, download Twidor.jar from the above link,
-install Java, and invoke the application using javaw. For
-example, on Debian or Ubuntu, one may use:
-
-    sudo apt install openjdk-8-jre
-    javaw -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -jar Twidor.jar Twidor
-
-Feedback and reports of issues are
-welcome [here](https://github.com/rich-murphey/twidor/issues).
-
 ## Usage
 
-The keymap shows the buttons that form the chord for the next letter(s) of the lesson.  It highlightes the letters sent by the chord in green in the lesson text.  By default, it chooses the longest matching chord.  Given the text, "the", Twidor will prompt for the macro that sends "the", rather than "th" or "t".
+The keymap highlightes buttons in yellow that form the chord for the next letter(s) of the lesson.  It highlightes in green the letters sent by the chord in the lesson text.  By default, it chooses the longest matching chord.  Given the text, "the", Twidor will prompt for a macro that sends "the", rather than "th" or "t".
 
-If you wish to focus on learning keys for single letters, select the option: <kbd>View | Single character chords only</kbd>.
+If you wish to focus on learning chords for single letters, select the option: <kbd>View | Single character chords only</kbd>.
 If you wish to learn only single and double letter chords, select the option: <kbd>View | Two character chords maximum</kbd>
 
 Hit <kbd>ENTER</kbd> at the end of a line to go to the next sentence. This also updates statistics for the session, including words per minute (WPM) and average error rate (AER).
@@ -87,6 +69,24 @@ To load a custom keymap, users may:
 * with the configuration file open, select Export, and then CSV.
 * download the CSV file.
 * In Twidor, select <kbd>File | Load Keymap</kbd> and select the CSV file.
+
+## How to Install
+
+Download the releases from here:
+
+[https://github.com/rich-murphey/twidor/releases](https://github.com/rich-murphey/twidor/releases)
+
+On windows, download and run the Twidor-setup.exe installer.
+
+On Linux and others, download Twidor.jar from the above link,
+install Java, and invoke the application using javaw. For
+example, on Debian or Ubuntu, one may use:
+
+    sudo apt install openjdk-8-jre
+    javaw -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -jar Twidor.jar Twidor
+
+Feedback and reports of issues are
+welcome [here](https://github.com/rich-murphey/twidor/issues).
 
 ## Limitations
 
