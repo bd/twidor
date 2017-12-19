@@ -63,8 +63,8 @@ public interface TwidorConstants {
 	public static final int buttonX = (twiddlerX - 30) / 6;
 	public static final int buttonY = windowY * 2 / 15; // 2/3 of 1/4 of 4/5 of windowY
 	public static final Color buttonBackground = Color.getHSBColor(0.f, 0.f, 0.95f); // light gray
-	public static final Color buttonHighlight = Color.getHSBColor(0.16f, 1.0f, 1.0f); // light yellow
-	public static final Color mccHighlight = Color.getHSBColor(0.16f, 1.0f, 1.0f); // light yellow
+	public static final Color buttonHighlight = Color.getHSBColor(0.3333f, .3f, 1.0f); // light yellow
+	public static final Color mccHighlight = Color.getHSBColor(0.3333f, .3f, 1.0f); // light yellow
 	public static final Color twiddlerBackground = Color.getHSBColor(0.f, 0.f, 1.f); // dark grey
 
 	public static final Color keyRed    	= Color.getHSBColor(0.0000f, 1.f, .7f);
