@@ -36,10 +36,10 @@ A "chord" is a keystroke using two or more keys pressed simultaneously.  The <kb
 
 Each 4x3 sub-array shows letters sent by two keys pressed simultaneously.  Button layout of the sub-arrray is the same: one row for each finger, and green/blue/red for left/middle/right columns.
 
-<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_chord_map.png"
-width="25%" align="right">The first key of the chord is the large box.  The location of the first key is relative to the larger 4x3 array.
+The first key of the chord is the large box.  The location of the first key is relative to the larger 4x3 array.
 
-The second key of the chord is a small box.  The position of the 2nd key is relative to the smaller 4x3 array.
+<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_chord_map.png"
+width="25%" align="right">The second key of the chord is a small box.  The position of the 2nd key is relative to the smaller 4x3 array.
 
 Here are some two-key chords whose first key is <kbd>I</kbd>:
 * <kbd>I + S</kbd> sends "is".
