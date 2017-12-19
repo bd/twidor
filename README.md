@@ -46,17 +46,15 @@ width="25%" align="right"> Here are some two-key chords whose first key is <kbd>
 * <kbd>I + SP</kbd> sends "C".
 * <kbd>I + H</kbd> sends "Y".
 
-## Usage
+## Double and Longer letters
 
-The next letter of the lesson, and the buttons that send that letter, are highlighted in green.  
+By default, Twidor limits training to chords that send a single letter.  This is controlled by the option <kbd>View | Single letters only</kbd>.
 
-By default, Twidor limits training to chords that send a single letter.  This is controlled by the option <kbd>View | Single letter chords only</kbd>.
+If you wish to learn both single and double letter chords, select only the option: <kbd>View | Double letters only</kbd>.
 
-If you wish to learn both single and double letter chords, select only the option: <kbd>View | Two letter chords maximum</kbd>.
+If you wish to learn all available chords, disable both <kbd>Single letters only</kbd> and <kbd>Double letters only</kbd>, in which case, Twidor will chooses the longest text that matches a chord.  Given the text, "the", Twidor will prompt for a macro that sends "the", rather than "th" or "t".
 
-If you wish to learn all available chords, disable both <kbd>Single letter chords only</kbd> and <kbd>Two letter chords maximum</kbd>, in which case, Twidor will chooses the longest text that matches a chord.  Given the text, "the", Twidor will prompt for a macro that sends "the", rather than "th" or "t".
-
-To display the expanded key map, select <kbd>View | Show 2-key chords in Map</kbd>.
+To display the expanded key map, select <kbd>View | Show chords</kbd>.
 
 Hit <kbd>ENTER</kbd> at the end of a line to go to the next sentence. This also updates statistics for the session, including words per minute (WPM) and average error rate (AER).
 
