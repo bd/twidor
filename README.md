@@ -14,8 +14,8 @@ could achieve 45 WPM."
 
 ## The Visual Key Map
 
-<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_screenshot.png"
-width="40%" align="right">Twidor shows a visual keymap beside a lesson sentence. Below the lesson sentence, each letter entered is shown in grey or red for correct or incorrect letters, respectively. 
+<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_SCC.png"
+width="40%" align="right">Twidor shows a visual keymap beside a lesson sentence. Below the lesson sentence, each letter entered is shown in grey or red for correct or incorrect letters, respectively.
 
 The keymap shows the letters sent by each key.  The yellow box shows the next letter of the lesson.
 
@@ -30,10 +30,11 @@ The large 4x3 array is composed of horizontal rows, for index finger on top, the
 
 ## 2-Key Chords
 
-A "chord" is a keystroke using two or more keys pressed simultaneously. 
+<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_screenshot.png"
+width="33%" align="right">A "chord" is a keystroke using two or more keys pressed simultaneously.  The <kbd>View</kbd> menu has options to display chords, depicted as smaller 4x3 sub-arrays for the second key of a 2-key chord. 
 
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_chord_map.png"
-width="30%" align="right"> Each small 4x3 array shows letters sent by two keys pressed simultaneously.  Button layout is the same: one row for each finger, and green/blue/red for left/middle/right columns.
+width="25%" align="right"> Each small 4x3 array shows letters sent by two keys pressed simultaneously.  Button layout is the same: one row for each finger, and green/blue/red for left/middle/right columns.
 
 The first key of the chord is the large box.  The location of the first key is reative to the larger 4x3 array.
 
