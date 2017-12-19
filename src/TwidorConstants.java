@@ -129,11 +129,11 @@ public interface TwidorConstants {
 	/* Twiddler */
 	public static final String TWIDDLER_SHOW_TEXT = "Show Key Map";
 	public boolean TWIDDLER_SHOW = true;
-	public static final String TWIDDLER_SHOW_2KEY_TEXT = "Show 2-key chords in Map";
+	public static final String TWIDDLER_SHOW_2KEY_TEXT = "Show chords";
 	public boolean TWIDDLER_SHOW_2KEY = false;
-	public static final String TWIDDLER_LIMIT_1KEY_TEXT = "Single character chords only";
+	public static final String TWIDDLER_LIMIT_1KEY_TEXT = "Single letters only";
 	public boolean TWIDDLER_LIMIT_1KEY = true;
-	public static final String TWIDDLER_LIMIT_2KEY_TEXT = "Two character chords maximum";
+	public static final String TWIDDLER_LIMIT_2KEY_TEXT = "Double letters only";
 	public boolean TWIDDLER_LIMIT_2KEY = false;
 
 	public static final String TWIDDLER_MIRROR_TEXT = "Horizontal Reverse Keyboard";
