@@ -31,7 +31,7 @@ The large 4x3 array is composed of horizontal rows, for index finger on top, the
 ## 2-Key Chords
 
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_screenshot.png"
-width="33%" align="right">A "chord" is a keystroke using two or more keys pressed simultaneously.  The <kbd>View</kbd> menu has options to display chords, depicted as smaller 4x3 sub-arrays for the second key of a 2-key chord. 
+width="33%" align="right">A "chord" is a keystroke using two or more keys pressed simultaneously.  The <kbd>View</kbd> menu has options to display chords, depicted as smaller 4x3 sub-arrays that identify the second key of a 2-key chord. 
 
 Each small 4x3 array shows letters sent by two keys pressed simultaneously.  Button layout is the same: one row for each finger, and green/blue/red for left/middle/right columns.
 
