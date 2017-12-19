@@ -48,9 +48,10 @@ width="25%" align="right"> Here are some two-key chords whose first key is <kbd>
 
 ## Usage
 
-The keymap highlightes buttons in yellow that form the chord for the next letter(s) of the lesson.  It highlightes in green the letters sent by the chord in the lesson text.  By default, it chooses the longest matching chord.  Given the text, "the", Twidor will prompt for a macro that sends "the", rather than "th" or "t".
+The next character of the lesson, and the buttons that send that character, are highlighted in green.  By default, it chooses the longest matching chord.  Given the text, "the", Twidor will prompt for a macro that sends "the", rather than "th" or "t".
 
 If you wish to focus on learning chords for single letters, select the option: <kbd>View | Single character chords only</kbd>.
+
 If you wish to learn only single and double letter chords, select the option: <kbd>View | Two character chords maximum</kbd>
 
 Hit <kbd>ENTER</kbd> at the end of a line to go to the next sentence. This also updates statistics for the session, including words per minute (WPM) and average error rate (AER).
