@@ -32,7 +32,7 @@ The keymap shows the letters sent by each button.  Some letters require only a s
 width="40%" align="right">
 ## 2-Button Chords
 
-A "chord" is a keystroke using two or more buttons pressed simultaneously.  The <kbd>View</kbd> menu has options to show chord labels.
+A "chord" is a keystroke using two or more buttons pressed simultaneously.  To display labels for chords, shown on the right, select <kbd>View | Show chords</kbd>.
 
 Each 4x3 sub-array shows letters sent by two buttons pressed simultaneously.  Button layout of the sub-arrray is the same: one row for each finger, and green/blue/red for left/middle/right columns.
 
