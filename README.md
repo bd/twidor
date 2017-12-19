@@ -47,7 +47,7 @@ width="25%" align="right">Here are some two-button chords whose first button is 
 * <kbd>I + SP</kbd> sends "C".
 * <kbd>I + H</kbd> sends "Y".
 
-## Double and Longer letters
+## Double Letters and Longer
 
 By default, Twidor limits training to chords that send a single letter.  This is controlled by the option <kbd>View | Single letters only</kbd>.
 
