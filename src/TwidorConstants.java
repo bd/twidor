@@ -64,7 +64,7 @@ public interface TwidorConstants {
 	public static final int buttonY = windowY * 2 / 15; // 2/3 of 1/4 of 4/5 of windowY
 	public static final Color buttonBackground = Color.getHSBColor(0.f, 0.f, 0.95f); // light gray
 	public static final Color buttonHighlight = Color.getHSBColor(0.16f, 1.0f, 1.0f); // light yellow
-	public static final Color mccHighlight = Color.getHSBColor(0.8333f, 1.0f, 1.0f); // light yellow
+	public static final Color mccHighlight = Color.getHSBColor(0.16f, 1.0f, 1.0f); // light yellow
 	public static final Color twiddlerBackground = Color.getHSBColor(0.f, 0.f, 1.f); // dark grey
 
 	public static final Color keyRed    	= Color.getHSBColor(0.0000f, 1.f, .7f);
@@ -131,9 +131,9 @@ public interface TwidorConstants {
 	public boolean TWIDDLER_SHOW = true;
 	public static final String TWIDDLER_SHOW_2KEY_TEXT = "Show 2-key chords in Map";
 	public boolean TWIDDLER_SHOW_2KEY = true;
-	public static final String TWIDDLER_LIMIT_1KEY_TEXT = "Limit highlight to single key chords";
+	public static final String TWIDDLER_LIMIT_1KEY_TEXT = "Single character chords only";
 	public boolean TWIDDLER_LIMIT_1KEY = false;
-	public static final String TWIDDLER_LIMIT_2KEY_TEXT = "Limit highlight to 2-key chords";
+	public static final String TWIDDLER_LIMIT_2KEY_TEXT = "Two character chords maximum";
 	public boolean TWIDDLER_LIMIT_2KEY = false;
 
 	public static final String TWIDDLER_MIRROR_TEXT = "Horizontal Reverse Keyboard";
