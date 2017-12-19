@@ -31,7 +31,7 @@ The keymap shows the letters sent by each key.  Some letters require only a sing
 ## 2-Key Chords
 
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_screenshot.png"
-width="33%" align="right">A "chord" is a keystroke using two or more keys pressed simultaneously.  The <kbd>View</kbd> menu has options to display chords.
+width="40%" align="right">A "chord" is a keystroke using two or more keys pressed simultaneously.  The <kbd>View</kbd> menu has options to display chords.
 
 Each 4x3 sub-array shows letters sent by two keys pressed simultaneously.  Button layout of the sub-arrray is the same: one row for each finger, and green/blue/red for left/middle/right columns.
 
