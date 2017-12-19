@@ -45,6 +45,31 @@ Here are some two-key chords whose first key is <kbd>I</kbd>:
 * <kbd>I + SP</kbd> sends "C".
 * <kbd>I + H</kbd> sends "Y".
 
+## Usage
+
+The keymap highlightes buttons in yellow that form the chord for the next letter(s) of the lesson.  It highlightes in green the letters sent by the chord in the lesson text.  By default, it chooses the longest matching chord.  Given the text, "the", Twidor will prompt for a macro that sends "the", rather than "th" or "t".
+
+If you wish to focus on learning chords for single letters, select the option: <kbd>View | Single character chords only</kbd>.
+If you wish to learn only single and double letter chords, select the option: <kbd>View | Two character chords maximum</kbd>
+
+Hit <kbd>ENTER</kbd> at the end of a line to go to the next sentence. This also updates statistics for the session, including words per minute (WPM) and average error rate (AER).
+
+Menu options include:
+* <kbd>File | Load Keymap</kbd> imports a CSV keymap exported by the [Twiddler Tuner](https://twiddler.tekgear.com/tuner/).
+* <kbd>File | Load Lesson</kbd> imports training text from a file.
+* <kbd>Keyboard | Show..</kbd> toggles show/hide key labels and flips right-to-left orientation.
+* <kbd>Hints | Highlight...</kbd> toggles show/hide which keys to press to send the next chord of the lesson.
+* <kbd>Keymaps</kbd> loads certain keymaps: Backspice, Default_V5, TabSpace, or Typemax.
+
+To load a custom keymap, users may:
+
+* open https://twiddler.tekgear.com/tuner/edit.xhtml,
+* import a keymap.cfg if not already present there.
+* select 'Edit Configuration' for a given configuration file,
+* with the configuration file open, select Export, and then CSV.
+* download the CSV file.
+* In Twidor, select <kbd>File | Load Keymap</kbd> and select the CSV file.
+
 ## How to Install
 
 Download the releases from here:
@@ -62,26 +87,6 @@ example, on Debian or Ubuntu, one may use:
 
 Feedback and reports of issues are
 welcome [here](https://github.com/rich-murphey/twidor/issues).
-
-## Usage
-
-Hit <kbd>ENTER</kbd> at the end of a line to go to the next sentence. This also updates statistics for the seession including words per minute (WPM) and average error rate (AER).
-
-Menu options include:
-* <kbd>File | Load Keymap</kbd> imports a CSV keymap exported by the [Twiddler Tuner](https://twiddler.tekgear.com/tuner/).
-* <kbd>File | Load Lesson</kbd> imports training text from a file.
-* <kbd>Keyboard | Show..</kbd> toggles show/hide key labels and flips right-to-left orientation.
-* <kbd>Hints | Highlight...</kbd> toggles show/hide which keys to press to send the next chord of the lesson.
-* <kbd>Keymaps</kbd> loads certain keymaps: Backspice, Default_V5, TabSpace, or Typemax.
-
-To load a custom keymap, users may:
-
-* open https://twiddler.tekgear.com/tuner/edit.xhtml,
-* import a keymap.cfg if not already present there.
-* select 'Edit Configuration' for a given configuration file,
-* with the configuration file open, select Export, and then CSV.
-* download the CSV file.
-* In Twidor, select <kbd>File | Load Keymap</kbd> and select the CSV file.
 
 ## Limitations
 
