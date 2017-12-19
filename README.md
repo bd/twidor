@@ -53,7 +53,7 @@ By default, Twidor limits training to chords that send a single letter.  This is
 
 If you wish to learn both single and double letter chords, select only the option: <kbd>View | Double letters only</kbd>.
 
-If you wish to learn all available chords, disable both <kbd>Single letters only</kbd> and <kbd>Double letters only</kbd>, in which case, Twidor will chooses the longest text that matches a chord.  Given the text, "the", Twidor will prompt for a macro that sends "the", rather than "th" or "t".
+If you wish to learn all available chords, un-check the boxes for both <kbd>Single letters only</kbd> and <kbd>Double letters only</kbd>, in which case, Twidor will chooses the longest text that matches a chord.  Given the text, "the", Twidor will prompt for a macro that sends "the", rather than "th" or "t".
 
 To display the expanded keymap, select <kbd>View | Show chords</kbd>.
 
