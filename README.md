@@ -38,10 +38,10 @@ Each 4x3 sub-array shows letters sent by two keys pressed simultaneously.  Butto
 
 The first key of the chord is the large box.  The location of the first key is relative to the larger 4x3 array.
 
-<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_chord_map.png"
-width="25%" align="right">The second key of the chord is a small box.  The position of the 2nd key is relative to the smaller 4x3 array.
+The second key of the chord is a small box.  The position of the 2nd key is relative to the smaller 4x3 array.
 
-Here are some two-key chords whose first key is <kbd>I</kbd>:
+<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_chord_map.png"
+width="25%" align="right">Here are some two-key chords whose first key is <kbd>I</kbd>:
 * <kbd>I + S</kbd> sends "is".
 * <kbd>I + N</kbd> sends "in".
 * <kbd>I + SP</kbd> sends "C".
