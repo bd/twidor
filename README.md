@@ -15,11 +15,9 @@ could achieve 45 WPM."
 ## The Visual Key Map
 
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_SCC.png"
-width="40%" align="right">Twidor shows a visual keymap beside a lesson sentence. Below the lesson sentence, each letter entered is shown in grey or red for correct or incorrect letters, respectively.
+width="40%" align="right">Twidor shows a visual keymap and lesson text. Text entered by the user is shown below, in grey or red for correct or incorrect text, respectively.
 
-The keymap shows the letters sent by each key.  The yellow box shows the next letter of the lesson.
-
-Some letters require only a single key press, show by the large boxes.  Other letters reqire two keys pressed simultaneously, shown by the small boxes (see below).
+The next letter of the lesson text and the buttons that send that character are highlighted in green.
 
 By default, Twidor loads the the
 [Backspice keymap](https://raw.githubusercontent.com/AlexBravo/Twiddler/master/Backspice2%20cheat%20sheet.txt).
@@ -27,6 +25,8 @@ Users may select the Default, TabSpace, or Typemax layouts in the <kbd>Keymaps</
 the [Twiddler Tuner](https://twiddler.tekgear.com/tuner/edit.xhtml).
 
 The large 4x3 array is composed of horizontal rows, for index finger on top, then middle, ring and pinky finger. Green, blue and red columns correspond to left, middle and right keys on the Twiddler.  Each large box shows the letter sent by a single key press.
+
+The keymap shows the letters sent by each key.  Some letters require only a single key press, show by the large boxes. Other letters reqire several keys pressed simultaneously,
 
 ## 2-Key Chords
 
