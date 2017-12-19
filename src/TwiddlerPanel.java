@@ -47,7 +47,7 @@ public class TwiddlerPanel extends TwiddlerSubPanel implements TwidorConstants {
 	private boolean showThumbMap;
 	private boolean showThumbBoard;
 	private boolean showFingerMap;
-	private boolean show2KeyChords = true;
+	private boolean show2KeyChords = TWIDDLER_SHOW_2KEY;
 	private boolean showTwiddler;
 	private Vector <TwiddlerSubPanel> panelList;
     private FingerPanel fingerPanel;

@@ -59,8 +59,8 @@ public class Twidor extends JFrame implements TwidorConstants {
 	private String currentSentence;
 	private JFileChooser fc;
 	private java.io.PrintWriter keylog;
-	private boolean chord_1key_limit;
-	private boolean chord_2key_limit;
+	private boolean twiddler_limit_1key;
+	private boolean twiddler_limit_2key;
 
 	/**
 	 * Default Constructor.
@@ -86,8 +86,8 @@ public class Twidor extends JFrame implements TwidorConstants {
 		setTitle(windowTitle);
 		setBackground(windowBackground);
 		setResizable(windowResizable);
-		chord_1key_limit = TWIDDLER_LIMIT_1KEY;
-		chord_2key_limit = TWIDDLER_LIMIT_2KEY;
+		twiddler_limit_1key = TWIDDLER_LIMIT_1KEY;
+		twiddler_limit_2key = TWIDDLER_LIMIT_2KEY;
 
 		/* Root Panel Settings */
 		Container contentPane = getContentPane();
@@ -384,8 +384,8 @@ public class Twidor extends JFrame implements TwidorConstants {
 			String remainder = getSentence().substring(begin);
 
 			int limit = 0;
-			if ( chord_2key_limit ) limit = 2;
-			if ( chord_1key_limit ) limit = 1;
+			if ( twiddler_limit_2key ) limit = 2;
+			if ( twiddler_limit_1key ) limit = 1;
 			match = getKeyMap().matchLargestChunk(remainder, limit);
 			if ( match == null ) { // try single capital character
 				if(Character.isUpperCase(remainder.charAt(0))) {
@@ -520,10 +520,10 @@ public class Twidor extends JFrame implements TwidorConstants {
 			getTwiddlerPanel().setThumbBoardVisible(status);
 		}
 		else if (option.equals(TWIDDLER_LIMIT_1KEY_TEXT)) {
-			chord_1key_limit = status;
+			twiddler_limit_1key = status;
 		}
 		else if (option.equals(TWIDDLER_LIMIT_2KEY_TEXT)) {
-			chord_2key_limit = status;
+			twiddler_limit_2key = status;
 		}
 		else if (bDEBUG) System.out.println("Unhandled option");
 
