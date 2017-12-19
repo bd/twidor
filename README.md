@@ -28,8 +28,9 @@ The 4x3 array of keys is composed of horizontal rows, for index finger on top, t
 
 The keymap shows the letters sent by each key.  Some letters require only a single key press, shown by the large boxes. Other letters reqire several keys pressed simultaneously,
 
-## 2-Key Chords <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_screenshot.png"
+<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_screenshot.png"
 width="40%" align="right">
+## 2-Button Chords
 
 A "chord" is a keystroke using two or more keys pressed simultaneously.  The <kbd>View</kbd> menu has options to display chords.
 
