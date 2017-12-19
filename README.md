@@ -17,7 +17,7 @@ could achieve 45 WPM."
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_SCC.png"
 width="40%" align="right">Twidor shows a visual keymap and lesson text. Text entered by the user is shown below, in grey or red for correct or incorrect text, respectively.
 
-The next letter of the lesson text and the buttons that send that character are highlighted in green.
+The next letter of the lesson text and the buttons that send that letter are highlighted in green.
 
 By default, Twidor loads the the
 [Backspice keymap](https://raw.githubusercontent.com/AlexBravo/Twiddler/master/Backspice2%20cheat%20sheet.txt).
@@ -48,13 +48,13 @@ width="25%" align="right"> Here are some two-key chords whose first key is <kbd>
 
 ## Usage
 
-The next character of the lesson, and the buttons that send that character, are highlighted in green.  
+The next letter of the lesson, and the buttons that send that letter, are highlighted in green.  
 
-By default, Twidor limits training to chords that send a single character.  This is controlled by the option <kbd>View | Single character chords only</kbd>.
+By default, Twidor limits training to chords that send a single letter.  This is controlled by the option <kbd>View | Single letter chords only</kbd>.
 
-If you wish to learn both single and double letter chords, select only the option: <kbd>View | Two character chords maximum</kbd>.
+If you wish to learn both single and double letter chords, select only the option: <kbd>View | Two letter chords maximum</kbd>.
 
-If you wish to learn all available chords, disable both <kbd>Single character chords only</kbd> and <kbd>Two character chords maximum</kbd>, in which case, Twidor will chooses the longest text that matches a chord.  Given the text, "the", Twidor will prompt for a macro that sends "the", rather than "th" or "t".
+If you wish to learn all available chords, disable both <kbd>Single letter chords only</kbd> and <kbd>Two letter chords maximum</kbd>, in which case, Twidor will chooses the longest text that matches a chord.  Given the text, "the", Twidor will prompt for a macro that sends "the", rather than "th" or "t".
 
 To display the expanded key map, select <kbd>View | Show 2-key chords in Map</kbd>.
 
