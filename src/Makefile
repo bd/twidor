@@ -1,7 +1,6 @@
 
-../dist/lib/Twidor.jar: *.java
+../dist/lib/Twidor.jar: *.java lesson*.txt *.csv VERSION
 	cd ..; ant
 
 clean:
 	cd ..; ant clean
-	# rm ../build/* ../dist/lib/*
