@@ -121,26 +121,26 @@ public interface TwidorConstants {
 	 * In-program settings
 	 */
 	/* Menu stuff: Twidor */
-	public static final String LOAD_KEYMAP_TEXT = "Load CSV Keymap";
-	public static final String LOAD_LESSON_TEXT = "Load Lesson";
-	public static final String SAVE_KEYLOG_TEXT = "Save Keylog File";
+	public static final String LOAD_KEYMAP_TEXT = "Load CSV keymap";
+	public static final String LOAD_LESSON_TEXT = "Load lesson";
+	public static final String SAVE_KEYLOG_TEXT = "Save keylog file";
 	public static final String QUIT_TEXT = "Quit";
 
 	/* Twiddler */
-	public static final String TWIDDLER_SHOW_TEXT = "Show Key Map";
+	public static final String TWIDDLER_SHOW_TEXT = "Show key map";
 	public boolean TWIDDLER_SHOW = true;
 	public static final String TWIDDLER_SHOW_2KEY_TEXT = "Show chords";
 	public boolean TWIDDLER_SHOW_2KEY = false;
-	public static final String TWIDDLER_SINGLE_LETTER_ONLY_TEXT = "Single letters only";
+	public static final String TWIDDLER_SINGLE_LETTER_ONLY_TEXT = "Hint single letters only";
 	public boolean TWIDDLER_SINGLE_LETTER_ONLY = true;
 
-	public static final String TWIDDLER_MIRROR_TEXT = "Horizontal Reverse Keyboard";
+	public static final String TWIDDLER_MIRROR_TEXT = "Horizontal reverse keyboard";
 	public boolean TWIDDLER_MIRROR = false;
-	public static final String TWIDDLER_SHOW_LETTERS_TEXT = "Show Labels on Keyboard";
+	public static final String TWIDDLER_SHOW_LETTERS_TEXT = "Show labels on keyboard";
 	public boolean TWIDDLER_SHOW_LETTERS = true;
-	public static final String TWIDDLER_SHOW_THUMB_TEXT = "Show Thumb Buttons";
+	public static final String TWIDDLER_SHOW_THUMB_TEXT = "Show thumb buttons";
 	public boolean TWIDDLER_SHOW_THUMB = true;
-	public static final String TWIDDLER_MIRROR_THUMB_TEXT = "Horizontal Reverse Thumb Buttons";
+	public static final String TWIDDLER_MIRROR_THUMB_TEXT = "Horizontal reverse thumb buttons";
 	public boolean TWIDDLER_MIRROR_THUMB = false;
 
 	public static final String MACRO_REGEXP = "\"\\w*\"";
