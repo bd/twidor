@@ -17,7 +17,7 @@ could achieve 45 WPM."
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_SCC.png"
 width="40%" align="right">Twidor shows a visual keymap and lesson text. Text entered by the user is shown below, in grey or red for correct or incorrect text, respectively.
 
-The next letter of the lesson text and the buttons that send that letter are highlighted in green.
+Twidor show highlighted "hints" in green: the next letter of the lesson text and the buttons that send that letter.
 
 By default, Twidor loads the the
 [Backspice keymap](https://raw.githubusercontent.com/AlexBravo/Twiddler/master/Backspice2%20cheat%20sheet.txt).
@@ -47,15 +47,15 @@ width="25%" align="right">Here are some two-button chords whose first button is 
 * <kbd>I + SP</kbd> sends "C".
 * <kbd>I + H</kbd> sends "Y".
 
-## Double Letters and Longer
+## Multiple Character Chords (MCCs)
 
-By default, Twidor limits training to chords that send a single letter.  This is controlled by the option <kbd>View | Single letters only</kbd>.
+Some chords send more than one letter, such as "is", "in" and "it" in the keymap above. These are called a mulitple character chords (MCCs). 
 
-If you wish to learn both single and double letter chords, select only the option: <kbd>View | Double letters only</kbd>.
+Twidor can optionally show hints for mulitple character chords if you enable it.  However, by default Twidor shows green highlights only for chords that send a single character, as shown for the highlighted letter "d", above. This is intended to make learning easier initially.
 
-If you wish to learn all available chords, un-check the boxes for both <kbd>Single letters only</kbd> and <kbd>Double letters only</kbd>, in which case, Twidor will chooses the longest text that matches a chord.  Given the text, "the", Twidor will prompt for a macro that sends "the", rather than "th" or "t".
+If you wish to learn all available chords, un-check the box <kbd>View | Hint single letters only</kbd>.  This will show green highlighted  buttons for the longest matching multiple character chord. For example, given the text, "the", Twidor will highlight the chord that sends "the", rather than "th" or "t".
 
-To display the expanded keymap, select <kbd>View | Show chords</kbd>.
+## Other Usage
 
 Hit <kbd>ENTER</kbd> at the end of a line to go to the next sentence. This also updates statistics for the session, including words per minute (WPM) and average error rate (AER).
 
