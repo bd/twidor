@@ -97,8 +97,8 @@ welcome [here](https://github.com/rich-murphey/twidor/issues).
 
 ## Limitations
 
-* Key-Map labels are shortened to the first three letters, which is sufficient for all of the popular key-maps.
-* The visual keymap does not show the mouse buttons.
+* Key-Map labels are shortened to the first three letters, which is currently sufficient for all of the popular key-maps.
+* The visual key-map does not show the mouse buttons.
 
 ## How to Build
 
