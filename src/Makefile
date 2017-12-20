@@ -3,4 +3,5 @@
 	cd ..; ant
 
 clean:
-	rm ../build/* ../dist/lib/*
+	cd ..; ant clean
+	# rm ../build/* ../dist/lib/*
