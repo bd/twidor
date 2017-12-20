@@ -1,5 +1,14 @@
 <!--  -*- mode: html; compile-command: "ant"; -*- -->
-<!-- sudo apt-get install -y ant openjdk-8-jdk -->
+<!-- 
+ Here are the Prerequisites.
+ Install the jdk and ant in order to build Twidor:
+
+sudo apt-get install -y ant openjdk-8-jdk
+git clone https://github.com/rich-murphey/twidor.git
+cd twidor
+ant
+
+ -->
 <project name="Twidor" default="dist" basedir=".">
   <description>Twidor typing tutor</description>
 
@@ -34,7 +43,11 @@
     <mkdir dir="${dist}/lib"/>
 
     <!-- Put everything in ${build} into the Twidor-${DSTAMP}.jar file -->
-    <jar jarfile="${dist}/lib/Twidor.jar" basedir="${build}"/>
+    <jar jarfile="${dist}/lib/Twidor.jar" basedir="${build}">
+      <manifest>
+        <attribute name="Main-Class" value="Twidor"/>
+      </manifest>
+    </jar>
   </target>
 
   <target name="clean"
