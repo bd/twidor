@@ -61,6 +61,10 @@ Note that this affects only the green highlighted "hints".  The Twiddler itself 
 
 Hit <kbd>ENTER</kbd> at the end of a line to go to the next sentence. This also updates statistics for the session, including words per minute (WPM) and average error rate (AER).
 
+Lessons 1-7 provide a random selection of lower-case text alphabetic text.
+
+Lessons 8 and 9, borrowed from GNU Typist, provide longer texts with capitalization, numbers and special characters.
+
 Menu options include:
 * <kbd>File | Load Keymap</kbd> imports a CSV key-map exported by the [Twiddler Tuner](https://twiddler.tekgear.com/tuner/).
 * <kbd>File | Load Lesson</kbd> imports training text from a file.
@@ -90,7 +94,7 @@ install Java, and invoke the application using javaw. For
 example, on Debian or Ubuntu, one may use:
 
     sudo apt install openjdk-8-jre
-    javaw -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -jar Twidor.jar Twidor
+    javaw -jar Twidor.jar
 
 Feedback and reports of issues are
 welcome [here](https://github.com/rich-murphey/twidor/issues).
@@ -178,3 +182,5 @@ released a simplified windows installer, added build files and
 documentation, rewrote keypad display, rewrote layout to support
 macros and alternate key-maps, and added options such as thumb pad
 orientation and thumb pad labels visibility.
+
+Lessons 8 and 9 were written by Simon Baldwin as part of [GNU Typist](https://www.gnu.org/software/gtypist/index.html), and are redistributed as permitted by the GPL.  
