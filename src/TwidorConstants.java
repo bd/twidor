@@ -131,10 +131,8 @@ public interface TwidorConstants {
 	public boolean TWIDDLER_SHOW = true;
 	public static final String TWIDDLER_SHOW_2KEY_TEXT = "Show chords";
 	public boolean TWIDDLER_SHOW_2KEY = false;
-	public static final String TWIDDLER_LIMIT_1KEY_TEXT = "Single letters only";
-	public boolean TWIDDLER_LIMIT_1KEY = true;
-	public static final String TWIDDLER_LIMIT_2KEY_TEXT = "Double letters only";
-	public boolean TWIDDLER_LIMIT_2KEY = false;
+	public static final String TWIDDLER_SINGLE_LETTER_ONLY_TEXT = "Single letters only";
+	public boolean TWIDDLER_SINGLE_LETTER_ONLY = true;
 
 	public static final String TWIDDLER_MIRROR_TEXT = "Horizontal Reverse Keyboard";
 	public boolean TWIDDLER_MIRROR = false;

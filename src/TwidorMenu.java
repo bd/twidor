@@ -98,10 +98,7 @@ public class TwidorMenu extends JMenuBar implements TwidorConstants {
 		jmItem = jcheckItem(TWIDDLER_MIRROR_THUMB_TEXT, TWIDDLER_MIRROR_THUMB);
 		Twiddler.add(jmItem);
 		menu.add(jmItem);
-		jmItem = jcheckItem(TWIDDLER_LIMIT_1KEY_TEXT, TWIDDLER_LIMIT_1KEY);
-		Twiddler.add(jmItem);
-		menu.add(jmItem);
-		jmItem = jcheckItem(TWIDDLER_LIMIT_2KEY_TEXT, TWIDDLER_LIMIT_2KEY);
+		jmItem = jcheckItem(TWIDDLER_SINGLE_LETTER_ONLY_TEXT, TWIDDLER_SINGLE_LETTER_ONLY);
 		Twiddler.add(jmItem);
 		menu.add(jmItem);
 
