@@ -49,17 +49,17 @@ width="25%" align="right">Here are some two-button chords whose first button is 
 
 ## Multiple Character Chords (MCCs)
 
-Some chords send more than one letter, such as "is", "in" and "it" in the key-map above. These are called a multiple character chords (MCCs). 
+Some chords send more than one letter, such as "is", "in" and "it" in the key-map above. These are called multiple character chords (MCCs). 
 
 Twidor can optionally show hints for multiple character chords if you enable it.  However, by default Twidor shows green highlights only for chords that send a single character, as shown for the highlighted letter "d", above. This is intended to make learning easier initially.
 
 If you wish to learn all available chords, un-check the box <kbd>View | Hint single letters only</kbd>.  This will show green highlighted  buttons for the longest matching multiple character chord. For example, given the text, "the", Twidor will highlight the chord that sends "the", rather than "th" or "t".
 
-Note that this affects only the green highlighted "hints".  The Twiddler itself is capable of sending MCCs, and Twidor will accept MCCs as input, and score input text correspondingly regardless.
+Note that this affects only the green highlighted "hints".  Regardless, the Twiddler can send MCCs, and Twidor accepts input MCCs.
 
 ## Other Usage
 
-Hit <kbd>ENTER</kbd> at the end of a line to go to the next sentence. This also updates statistics for the session, including words per minute (WPM) and average error rate (AER).
+Hit <kbd>ENTER</kbd> at the end of a line to go to the next sentence. The words per minute (WPM) and average error rate (AER) are updated when the user presses <kbd>ENTER</kbd>.
 
 Lessons 1-7 provide a random selection of lower-case text alphabetic text.
 
