@@ -68,8 +68,8 @@ Lessons 8 and 9, borrowed from GNU Typist, provide longer texts with capitalizat
 Menu options include:
 * <kbd>File | Load Keymap</kbd> imports a CSV key-map exported by the [Twiddler Tuner](https://twiddler.tekgear.com/tuner/).
 * <kbd>File | Load Lesson</kbd> imports training text from a file.
-* <kbd>Keyboard | Show..</kbd> toggles show/hide key labels and flips right-to-left orientation.
-* <kbd>Hints | Highlight...</kbd> toggles show/hide which keys to press to send the next chord of the lesson.
+* <kbd>View | Show..</kbd> toggles show/hide key labels and flips right-to-left orientation.
+* <kbd>View | Highlight...</kbd> toggles show/hide which keys to press to send the next letter of the lesson.
 * <kbd>Keymaps</kbd> loads certain key-maps: Backspice, Default_V5, TabSpace, or Typemax.
 
 To load a custom key-map, users may:
