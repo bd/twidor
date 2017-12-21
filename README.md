@@ -12,9 +12,9 @@ research suggests that learners may achieve faster typing speeds on single-hande
 (approximately 80 sessions or 27 hours) while the slower typists
 could achieve 45 WPM."
 
-## The Keyboard Layout
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_SCC.png"
 width="40%" align="right">
+## The Keyboard Layout
 
 Twidor shows a visual keyboard layout and lesson text. Labels in the layout show the characters sent by each button.
 
