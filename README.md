@@ -59,9 +59,9 @@ Note that this affects only the green highlighted "hints".  Regardless, the Twid
 
 ## Other Usage
 
-Hit <kbd>ENTER</kbd> at the end of a line to go to the next sentence. The words per minute (WPM) and average error rate (AER) are updated when the user presses <kbd>ENTER</kbd>.
+Hit <kbd>ENTER</kbd> at the end of a line to go to the next sentence. The words per minute (WPM) and average error rate (AER) are updated when <kbd>ENTER</kbd> is pressed.
 
-Lessons 1-7 provide a random selection of lower-case text alphabetic text.
+Lessons 1-7 each present a random set of phrases. The lessons progress through various subsets of the alphabet (e.g. letters a–h in lesson 1), progressing to larger subsets in later lessons. 
 
 Lessons 8 and 9, borrowed from GNU Typist, provide longer texts with capitalization, numbers and special characters.
 
