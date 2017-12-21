@@ -89,7 +89,12 @@ Download the releases from here:
 
 On windows, download and run the Twidor-setup.exe installer.
 
-On Linux and others, download Twidor.jar from the above link,
+On Debian stretch, download the twidor-x.x.deb. To install and run it one may use:
+
+    dpkg -i twidor-x.x.deb
+    twidor
+
+On other Linux, OSX, and unix variants, download Twidor.jar from the above link,
 install Java, and invoke the application using javaw. For
 example, on Debian or Ubuntu, one may use:
 
@@ -108,10 +113,10 @@ welcome [here](https://github.com/rich-murphey/twidor/issues).
 
 To compile and build Twidor.jar, one may use:
 
-    sudo apt install git openjdk-8-jdk ant
+    sudo apt install git openjdk-8-jdk ant make
     git clone https://github.com/rich-murphey/twidor.git
     cd twidor
-    ant
+    make
 
 ## Other Relevant Projects
 
