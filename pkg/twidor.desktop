@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Twidor
+Comment=Twidor typing tutor
+Exec=/usr/bin/twidor
+Icon=/usr/share/twidor/icon.gif
+Terminal=false
+Type=Application
+Categories=Utility
+StartupNotify=true

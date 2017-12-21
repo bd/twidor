@@ -1,0 +1,9 @@
+Section: misc
+Priority: optional
+Maintainer: Rich Murphey
+Homepage: https://github.com/rich-murphey/twidor
+Architecture: all
+Depends: openjdk-8-jre
+Description: A java based typing tutor for the Twiddler chording keyboard.
+ Displays exercise lines, and a keyboard that highlights the next letter.
+ It measures your typing speed and accuracy, and displays the results. 
