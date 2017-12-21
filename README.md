@@ -1,3 +1,4 @@
+[//]: # (Copyright C 2017  Carey Richard Murphey. This file is released under the terms of the GNU General Public License version 2.)
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/twiddler.jpg"
 width="20%" align="right">
 ## Twidor - a typing tutor for the Twiddler keyboard
@@ -186,5 +187,3 @@ macros and alternate key-maps, and added options such as thumb pad
 orientation and thumb pad labels visibility.
 
 Lessons 8 and 9 were written by Simon Baldwin as part of [GNU Typist](https://www.gnu.org/software/gtypist/index.html), and are redistributed as permitted by the GPL.  
-
-[//]: # (Copyright C 2017  Carey Richard Murphey. This file is released under the terms of the GNU General Public License version 2.)
