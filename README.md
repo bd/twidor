@@ -15,7 +15,7 @@ could achieve 45 WPM."
 ## The Visual Key Map
 
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_SCC.png"
-width="40%" align="right">Twidor shows a visual key-map and lesson text. Labels in the key-map show the letters sent by each button.
+width="40%" align="right">Twidor shows a visual key-map and lesson text. Labels in the key-map show the characters sent by each button.
 
 The 4x3 array of buttons is composed of horizontal rows, for index finger on top, then middle, ring and pinky finger. Green, blue and red columns correspond to left, middle and right buttons on the Twiddler.
 
