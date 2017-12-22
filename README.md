@@ -31,10 +31,10 @@ the [Twiddler Tuner](https://twiddler.tekgear.com/tuner/edit.xhtml).
 
 ## 2-Button Chords
 
-A "chord" is a keystroke using two or more buttons pressed simultaneously, like playing a "chord" on a piano.  
+A "chord" is a keystroke using two or more buttons pressed simultaneously, like playing a "chord" on a piano.
+
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_screenshot.png"
 width="33%" align="right">
-
 To display labels for chords, as shown on the right, select <kbd>View | Show chords</kbd>.
 
 Each 4x3 sub-array shows letters sent by two buttons pressed simultaneously.  Button layout of the sub-array is the same: one row for each finger, and green/blue/red for left/middle/right columns.
