@@ -33,7 +33,7 @@ the [Twiddler Tuner](https://twiddler.tekgear.com/tuner/edit.xhtml).
 
 A "chord" is a keystroke using two or more buttons pressed simultaneously, like playing a "chord" on a piano.  
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_screenshot.png"
-width="40%" align="right">
+width="33%" align="right">
 
 To display labels for chords, as shown on the right, select <kbd>View | Show chords</kbd>.
 
