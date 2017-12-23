@@ -20,9 +20,9 @@ could achieve 45 WPM."
 width="30%" align="right">
 Twidor shows a visual keyboard layout and lesson text. Labels in the layout show the characters sent by each button.
 
-Four thumb buttons are on top. Below, rows from top to bottom correspond to index, middle, ring and pinky fingers. Green, blue and red borders match the coloring on the Twiddler's physical buttons.  
+Four thumb buttons are on top. Below, rows from top to bottom correspond to index, middle, ring and pinky fingers. Columns with green, blue and red borders match the coloring on the Twiddler's physical buttons.  
 
-Twidor shows highlighted "hints" in red: the next letter of the lesson, "e" and the button that send the letter "e".
+Twidor highlights in red the next letter of the lesson, "e", and the button that send the letter "e".
 
 Text entered by the user is shown below. Incorrect letters appear darker.
 
@@ -58,7 +58,7 @@ Here are some of the two-button chords on the left column of buttons:
 
 Some chords send more than one letter, such as "ed" and "ing".  They are called multiple character chords (MCCs).  Twidor does not show MCCs by default. By default Twidor shows red highlights only for single letters, as shown for the highlighted letter "d", above in "Keyboard Layout".  Lyons [2,3] has shown that, at the beginning, learning is faster when the incremental amount of learning material smaller.
 
-When <kbd>View | Show multiple character chords</kbd> is selected. Twidor shows hints for chords such as "ed" and "ing" (MCCs).
+When <kbd>View | Show multiple character chords</kbd> is selected, Twidor highlights multiple character chords such as "ed" and "ing" (MCCs).
 
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_MCC.png" width="30%" align="right"> For example, given the text "ed", shown on the right. Twidor highlights the chord that sends "ed", rather than just "e".  Note that this is different from the keymap shown above in "The Keyboard Layout", where the option was not selected by default, and only "e" is highlighted.
 
