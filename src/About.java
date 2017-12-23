@@ -28,6 +28,7 @@ import java.awt.*;
 import javax.swing.*;
 import java.lang.String;
 import java.io.*;
+import java.util.Properties;
 
 public class About extends JFrame implements TwidorConstants {
 

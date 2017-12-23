@@ -39,6 +39,7 @@ import javax.swing.*;
 import java.net.URL;
 import java.io.*;
 import java.awt.Font;
+import java.util.Properties;
 
 public class Twidor extends JFrame implements TwidorConstants {
 
@@ -60,7 +61,8 @@ public class Twidor extends JFrame implements TwidorConstants {
 	private JFileChooser fc;
 	private java.io.PrintWriter keylog;
 	private boolean twiddler_show_MCC;
-	public Properties prop;
+	static public Properties prop;
+
 	/**
 	 * Default Constructor.
 	 */
