@@ -134,6 +134,8 @@ To compile and build Twidor.jar and the debian package (.deb), one may use:
     cd twidor
     make
 
+One option for debuging Twidor, is use Eclipse. Select <kbd>File | Open | New Project</kbd>, then "Java Project from Existing Ant Buildfile", <kbd>Next</kdb>, and browse for the file twidor/build.xml. 
+
 ## Other Relevant Projects
 
 The [original Twidor source code and documentation](http://wearables.cc.gatech.edu/projects/twidor/) at Georgia Tech.
