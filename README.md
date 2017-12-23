@@ -121,7 +121,7 @@ welcome [here](https://github.com/rich-murphey/twidor/issues).
 
 * Key-Map labels are shortened to the first three letters, which is currently sufficient for all of the popular key-maps.
 * The visual key-map does not show the mouse buttons.
-* Lessons 1-7 are tailored to the Deafult key-map. Specifically, lesson one uses only single button keys of the Default key-map.  Other keymaps will require chords in lesson one.
+* Lessons 1-7 are tailored to the Deafult key-map. Specifically, lesson one uses only single button keys of the Default key-map.  Other key-maps will require chords in lesson one.
 
 ## How to Build
 
