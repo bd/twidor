@@ -2,7 +2,10 @@
 ## Twidor - a typing tutor for the Twiddler keyboard
 
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/twiddler.jpg" width="15%" align="right"> 
-Twidor is a typing tutor for the [Twiddler chording keyboard](https://twiddler.tekgear.com/).   A chord is formed by pressing several keys together, like playing a "chord" on a piano. There are [downloads for Windows, Linux and OSX](https://github.com/rich-murphey/twidor/releases).
+Twidor is a typing tutor for the
+[Twiddler chording keyboard](https://twiddler.tekgear.com/).
+A chord is formed by pressing several keys together, like playing a "chord" on a piano. There are 
+[downloads for Windows, Linux and OSX](https://github.com/rich-murphey/twidor/releases).
  
 Twidor was originally written by researchers studying
 [chording keyboard learning and performance](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.4.3606&rep=rep1&type=pdf). Their
