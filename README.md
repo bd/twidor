@@ -46,8 +46,8 @@ The first button of the chord is a given small box.  The position of the first b
 The second button of the chord is the large box to the immediate left of the given small button.  The location of the first button is relative to the array of large buttons.
 
 For example, here are some two-button chords:
-* <kbd>s + i</kbd> sends "is".
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_chord_map.png" width="20%" align="right">
+* <kbd>s + i</kbd> sends "is".
 * <kbd>n + i</kbd> sends "in".
 * <kbd>a + i</kbd> sends "g".
 * <kbd>h + i</kbd> sends "y".
