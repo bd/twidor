@@ -20,11 +20,11 @@ could achieve 45 WPM."
 width="30%" align="right">
 Twidor shows a visual keyboard layout and lesson text. Labels in the layout show the characters sent by each button.
 
-Number, alt, control and shift thumb buttons are on top. Below, rows from top to bottom correspond to index, middle, ring and pinky fingers. Green, blue and red borders match the coloring on the Twiddler's buttons.  
+Four thumb buttons are on top. Below, rows from top to bottom correspond to index, middle, ring and pinky fingers. Green, blue and red borders match the coloring on the Twiddler's physical buttons.  
 
-Twidor shows highlighted "hints" in green: the next letter of the lesson text ("d" shown on the right) and the buttons that send that letter.
+Twidor shows highlighted "hints" in red: the next letter of the lesson, "e" and the button that send the letter "e".
 
-Text entered by the user is shown below, in grey or red for correct or incorrect text, respectively.
+Text entered by the user is shown below. Incorrect letters appear darker.
 
 ## Chords
 
@@ -32,9 +32,11 @@ Text entered by the user is shown below, in grey or red for correct or incorrect
 width="30%" align="right">
 A "chord" is two or more buttons pressed at the same time, like playing a "chord" on a piano.
 
-In the lesson shown on the right, the letter "m" is formed by the "SP" and "g" buttons.
+In the lesson shown on the right, the letter "m" is formed by the "SP" (space) and "g" buttons.
 
-## 2-Button Chord Map
+Twidor will optionally show a map of the two-button chords, when the menu item <kbd>View | Show chords</kbd> is selected.
+
+## View | Show Chords
 
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_screenshot.png"
 width="20%" align="right">
