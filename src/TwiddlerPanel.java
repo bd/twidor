@@ -49,6 +49,7 @@ public class TwiddlerPanel extends TwiddlerSubPanel implements TwidorConstants {
 	private boolean showFingerMap;
 	private boolean show2KeyChords = TWIDDLER_SHOW_2KEY;
 	private boolean showTwiddler;
+	private boolean showMCC;
 	private Vector <TwiddlerSubPanel> panelList;
     private FingerPanel fingerPanel;
 	/**
@@ -204,6 +205,14 @@ public class TwiddlerPanel extends TwiddlerSubPanel implements TwidorConstants {
 	}
 
 	/**
+	 * modifier for the MCC visibility
+	 * @param KeyMap the desired KeyMap
+	 */
+	public void setShowMCC (boolean status) {
+		showMCC = status;
+	}
+
+	/**
 	 * initializer for the panel list
 	 */
 	private void initPanels () {
@@ -289,7 +298,7 @@ public class TwiddlerPanel extends TwiddlerSubPanel implements TwidorConstants {
 			getPanels().addElement(new ThumbPanel(getThumbOrientation(), getKeyMap(), getThumbKeysVisible()));
 		}
 
-		fingerPanel = new FingerPanel(getFingerOrientation(), getKeyMap(), getFingerKeysVisible(), show2KeyChords);
+		fingerPanel = new FingerPanel(getFingerOrientation(), getKeyMap(), getFingerKeysVisible(), show2KeyChords, showMCC);
 		getPanels().addElement(fingerPanel);
 
 		for (int i = 0; i < getPanels().size(); i++) {

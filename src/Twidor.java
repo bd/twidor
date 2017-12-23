@@ -59,7 +59,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 	private String currentSentence;
 	private JFileChooser fc;
 	private java.io.PrintWriter keylog;
-	private boolean twiddler_single_letter_only;
+	private boolean twiddler_show_MCC;
 
 	/**
 	 * Default Constructor.
@@ -85,7 +85,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 		setTitle(windowTitle);
 		setBackground(windowBackground);
 		setResizable(windowResizable);
-		twiddler_single_letter_only = TWIDDLER_SINGLE_LETTER_ONLY;
+		twiddler_show_MCC = TWIDDLER_SHOW_MCC;
 
 		/* Root Panel Settings */
 		Container contentPane = getContentPane();
@@ -382,9 +382,9 @@ public class Twidor extends JFrame implements TwidorConstants {
 			String remainder = getSentence().substring(begin);
 
 			int limit = 0;
-			if ( twiddler_single_letter_only ) limit = 1;
+			if ( ! twiddler_show_MCC ) limit = 1;
 			match = getKeyMap().matchLargestChunk(remainder, limit);
-			if ( match == null ) { // try single capital character
+			if ( match == null ) {
 				if(Character.isUpperCase(remainder.charAt(0))) {
 					match = getKeyMap().getKey(remainder.substring(0,1).toLowerCase());
 					if ( match != null ) {
@@ -399,7 +399,6 @@ public class Twidor extends JFrame implements TwidorConstants {
 		getTwiddlerPanel().highlight(match);
 		getTypingPanel().highlight(match);
 	}
-
 	/**
 	 * sets the Input flag (whether we are recording or not)
 	 * @param boolean the new status
@@ -490,6 +489,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 	public void reOrient () {
 		setVisible(false);
 		getTwiddlerPanel().reOrient();
+		getTypingPanel().remove_highlight();
 		doHighlighting();
 		pack();
 		setVisible(true);
@@ -519,8 +519,9 @@ public class Twidor extends JFrame implements TwidorConstants {
 		else if (option.equals(TWIDDLER_SHOW_THUMB_TEXT)) {
 			getTwiddlerPanel().setThumbBoardVisible(status);
 		}
-		else if (option.equals(TWIDDLER_SINGLE_LETTER_ONLY_TEXT)) {
-			twiddler_single_letter_only = status;
+		else if (option.equals(TWIDDLER_SHOW_MCC_TEXT)) {
+			twiddler_show_MCC = status;
+			getTwiddlerPanel().setShowMCC(status);
 		}
 		else if (bDEBUG) System.out.println("Unhandled option");
 

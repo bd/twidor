@@ -39,6 +39,7 @@ import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.util.Vector;
+import java.util.HashMap;
 import java.net.URL;
 import java.lang.Math;
 
@@ -65,8 +66,7 @@ public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
 			font = FONT_KEYPAD;
 		if( foreground == null )
 			foreground = TEXT_DEFAULT;
-		JLabel label;
-		label = new JLabel(text);
+		JLabel label = new JLabel(text);
 		label.setFont(font);
 		label.setForeground(foreground);
 		label.setBackground(Color.WHITE);
@@ -91,7 +91,7 @@ public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
 	 * @param boolean the orientation
 	 * @param KeyMap the KeyMap to write on it
 	 */
-	public FingerPanel (boolean orient, KeyMap keys, boolean visibleKeys, boolean show2KeyChords) {
+	public FingerPanel (boolean orient, KeyMap keys, boolean visibleKeys, boolean show2KeyChords, boolean show_MCC ) {
 		if (bDEBUG) System.out.println("FingerPanel: creating panel");
 		initButtons();
 		setBackground(twiddlerBackground);
@@ -99,7 +99,7 @@ public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
 
 		/* horizontal direction to arrange the keys */
 		ComponentOrientation keyOrient = ComponentOrientation.RIGHT_TO_LEFT;
-		if (orient) {
+		if (! orient) {
 			keyOrient = ComponentOrientation.LEFT_TO_RIGHT;
 		}
 
@@ -119,42 +119,50 @@ public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
 								subPanel.setLayout(new GridLayout(4, 1, 1, 1));
 								subPanel.setBackground(twiddlerBackground);
 								for (int chordFinger = 0; chordFinger < 4; chordFinger++) { // anchor finger
-									if (finger != chordFinger) {
+									if (finger >= chordFinger) {
+										add_label( subPanel, twiddlerBackground,  FONT_KEYPAD, "z");
+									} else {
 										int buttons = KeyElement.buttonMask(finger, fingerCol);
 										buttons |= KeyElement.buttonMask(chordFinger, chordCol);
 										KeyElement keyElement = keys.getKeyByButtons(buttons);
-										// Color color = keyRed;
-										Border border = redBorder;
-										if (chordCol == 1) {
-											// color  = keyBlue;
-											border = blueBorder;
-										}
-										else if (chordCol == 2) {
-											// color  = keyGreen;
-											border = greenBorder;
-										}
-										JLabel label = new JLabel();
-										label.setFont(FONT_KEYPAD);
-										label.setHorizontalAlignment(JLabel.CENTER);
-										label.setBorder(border);
-										label.setForeground( TEXT_DEFAULT );
-										if (keyElement != null) {
-											String keyLabel = keyElement.getLabel();
-											keyLabel = keyLabel.substring(0,Math.min(3,keyLabel.length()));
-											Font font = FONT_LABEL; // length = 1
-											if (keyLabel.length() == 2) {
-												font = FONT_LABEL2;
-											} else if (keyLabel.length() > 2) {
-												font = FONT_MACRO;
-											}
-											label.setFont(font);
-											label.setText(keyLabel);
-											subPanel.add(label);
-										} else {
+										if (keyElement == null) {
 											add_label( subPanel, twiddlerBackground, FONT_KEYPAD, "");
 										}
-									} else {
-										add_label( subPanel, twiddlerBackground,  FONT_KEYPAD, "z");
+										else if ( (! show_MCC) &&
+												  ( (keyElement.getLabel().length() > 1)
+													// || ! Character.isAlphabetic(keyElement.getLabel().codePointAt(0))
+													) ) { 
+											add_label( subPanel, twiddlerBackground, FONT_KEYPAD, "");
+										} else {
+											String keyLabel = keyElement.getLabel();
+											// Color color = keyRed;
+											Border border = redBorder;
+											if (chordCol == 1) {
+												// color  = keyBlue;
+												border = blueBorder;
+											}
+											else if (chordCol == 2) {
+												// color  = keyGreen;
+												border = greenBorder;
+											}
+											JLabel label = new JLabel();
+											label.setFont(FONT_KEYPAD);
+											label.setHorizontalAlignment(JLabel.CENTER);
+											label.setBorder(border);
+											label.setForeground( TEXT_DEFAULT );
+											if (keyElement != null) {
+												keyLabel = keyLabel.substring(0,Math.min(3,keyLabel.length()));
+												Font font = FONT_LABEL; // length = 1
+												if (keyLabel.length() == 2) {
+													font = FONT_LABEL2;
+												} else if (keyLabel.length() > 2) {
+													font = FONT_MACRO;
+												}
+												label.setFont(font);
+												label.setText(keyLabel);
+												subPanel.add(label);
+											}
+										}
 									}
 								}
 								panel.add(subPanel);

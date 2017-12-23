@@ -112,7 +112,7 @@ public interface TwidorConstants {
 	/**
 	 * Files that are searched for by the program when none are specified
 	 */
-	public static final String DEFAULT_KEYMAP = KEYMAPS[0] + ".csv";
+	public static final String DEFAULT_KEYMAP = KEYMAPS[1] + ".csv";
 	public static final String DEFAULT_LESSON = "lessons.txt";
 	public static final boolean DEFAULT_THUMB_ORIENTATION = true;
 	public static final boolean DEFAULT_FINGER_ORIENTATION = true;
@@ -129,14 +129,14 @@ public interface TwidorConstants {
 	/* Twiddler */
 	public static final String TWIDDLER_SHOW_TEXT = "Show key map";
 	public boolean TWIDDLER_SHOW = true;
-	public static final String TWIDDLER_SHOW_2KEY_TEXT = "Show chords";
+	public static final String TWIDDLER_SHOW_2KEY_TEXT = "Show chord map";
 	public boolean TWIDDLER_SHOW_2KEY = false;
-	public static final String TWIDDLER_SINGLE_LETTER_ONLY_TEXT = "Hint single letters only";
-	public boolean TWIDDLER_SINGLE_LETTER_ONLY = true;
+	public static final String TWIDDLER_SHOW_MCC_TEXT = "Show multiple character chords";
+	public boolean TWIDDLER_SHOW_MCC = false;
 
 	public static final String TWIDDLER_MIRROR_TEXT = "Horizontal reverse keyboard";
 	public boolean TWIDDLER_MIRROR = false;
-	public static final String TWIDDLER_SHOW_LETTERS_TEXT = "Show labels on keyboard";
+	public static final String TWIDDLER_SHOW_LETTERS_TEXT = "Show labels on keys";
 	public boolean TWIDDLER_SHOW_LETTERS = true;
 	public static final String TWIDDLER_SHOW_THUMB_TEXT = "Show thumb buttons";
 	public boolean TWIDDLER_SHOW_THUMB = true;

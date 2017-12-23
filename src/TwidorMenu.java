@@ -80,27 +80,13 @@ public class TwidorMenu extends JMenuBar implements TwidorConstants {
 
 		Twiddler = new Vector<>();
 		menu = new JMenu("View");
-		jmItem = jcheckItem(TWIDDLER_SHOW_TEXT, TWIDDLER_SHOW);
-		Twiddler.add(jmItem);
-		menu.add(jmItem);
-		jmItem = jcheckItem(TWIDDLER_SHOW_2KEY_TEXT, TWIDDLER_SHOW_2KEY);
-		Twiddler.add(jmItem);
-		menu.add(jmItem);
-		jmItem = jcheckItem(TWIDDLER_MIRROR_TEXT, TWIDDLER_MIRROR);
-		Twiddler.add(jmItem);
-		menu.add(jmItem);
-		jmItem = jcheckItem(TWIDDLER_SHOW_LETTERS_TEXT, TWIDDLER_SHOW_LETTERS);
-		Twiddler.add(jmItem);
-		menu.add(jmItem);
-		jmItem = jcheckItem(TWIDDLER_SHOW_THUMB_TEXT, TWIDDLER_SHOW_THUMB);
-		Twiddler.add(jmItem);
-		menu.add(jmItem);
-		jmItem = jcheckItem(TWIDDLER_MIRROR_THUMB_TEXT, TWIDDLER_MIRROR_THUMB);
-		Twiddler.add(jmItem);
-		menu.add(jmItem);
-		jmItem = jcheckItem(TWIDDLER_SINGLE_LETTER_ONLY_TEXT, TWIDDLER_SINGLE_LETTER_ONLY);
-		Twiddler.add(jmItem);
-		menu.add(jmItem);
+		addJcheckItem( menu, Twiddler, TWIDDLER_SHOW_TEXT, TWIDDLER_SHOW);
+		addJcheckItem( menu, Twiddler, TWIDDLER_SHOW_THUMB_TEXT, TWIDDLER_SHOW_THUMB);
+		addJcheckItem( menu, Twiddler, TWIDDLER_SHOW_2KEY_TEXT, TWIDDLER_SHOW_2KEY);
+		addJcheckItem( menu, Twiddler, TWIDDLER_SHOW_MCC_TEXT, TWIDDLER_SHOW_MCC);
+		addJcheckItem( menu, Twiddler, TWIDDLER_SHOW_LETTERS_TEXT, TWIDDLER_SHOW_LETTERS);
+		addJcheckItem( menu, Twiddler, TWIDDLER_MIRROR_TEXT, TWIDDLER_MIRROR);
+		addJcheckItem( menu, Twiddler, TWIDDLER_MIRROR_THUMB_TEXT, TWIDDLER_MIRROR_THUMB);
 
 		add(menu);
 
@@ -157,6 +143,12 @@ public class TwidorMenu extends JMenuBar implements TwidorConstants {
 		JCheckBoxMenuItem toReturn = new JCheckBoxMenuItem(text, status);
 		toReturn.addItemListener(myEventHandler);
 		return toReturn;
+	}
+
+	private void addJcheckItem (JMenu menu, Vector <JMenuItem> menuVec, String text, boolean status) {
+		JMenuItem jmItem = jcheckItem(text, status);
+		menuVec.add(jmItem);
+		menu.add(jmItem);
 	}
 
 	/**
