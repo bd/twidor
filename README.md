@@ -13,7 +13,7 @@ Twidor is the tool they developed to teach typing and measure performance.
 
 ## Getting Started
 
-See [How to Install](#how-to-install) for links to downloads for [downloads for Windows, Linux and OSX](https://github.com/rich-murphey/twidor/releases).
+See [How to Install](#how-to-install) for links to downloads for Windows, Linux and OSX and others.
 
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_single.png"
 width="30%" align="right"> 
