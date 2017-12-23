@@ -38,9 +38,12 @@ Twidor will optionally show a map of the two-button chords, when the menu item <
 
 ## View | Show Chords
 
+When <kbd>View | Show chords</kbd> is selected, an expanded key-map is shown, containing 2-button chords.
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_chord_map.png" width="40%" align="right">
 
-Each small button shows the letter sent by a two-button chord.  Let's consider typing the letter "m".
+Each small button shows the letter sent by a two-button chord.  
+
+Let's consider typing the letter "m".
 
 The first button of the chord for "m" is small box labeled "m".  The position of the first button is relative to the array of small buttons.  This is the button under the ring finger, middle column.  On the twiddler, that button is labeled "g".
 
