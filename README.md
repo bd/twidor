@@ -34,7 +34,7 @@ the [Twiddler Tuner](https://twiddler.tekgear.com/tuner/edit.xhtml).
 ## 2-Button Chords
 
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_screenshot.png"
-width="40%" align="right">
+width="20%" align="right">
 A "chord" is two or more buttons pressed at the same time, like playing a "chord" on a piano.
 
 To display labels for two-button chords, shown on the right, select <kbd>View | Show chords</kbd>.
@@ -46,7 +46,7 @@ The first button of the chord is a given small box.  The position of the first b
 The second button of the chord is the large box to the immediate left of the given small button.  The location of the first button is relative to the array of large buttons.
 
 For example, here are some two-button chords:
-<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_chord_map.png" width="20%" align="right">
+<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_chord_map.png" width="40%" align="right">
 * <kbd>s + i</kbd> sends "is".
 * <kbd>n + i</kbd> sends "in".
 * <kbd>a + i</kbd> sends "g".
