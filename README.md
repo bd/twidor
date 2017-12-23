@@ -58,7 +58,8 @@ Here are some of the two-button chords on the left column of buttons:
 
 Some chords send more than one letter, such as "ed" and "ing", are called multiple character chords (MCCs).  Twidor does not show these by default. By default Twidor shows red highlights only for single letters, as shown for the highlighted letter "d", above in "Keyboard Layout".  Lyons [2,3] has shown that, at the beginning, learning is faster when the incremental amount of learning material smaller.
 
-<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_MCC.png" width="30%" align="right"> When <kbd>View | Show multiple character chords</kbd> is selected. Twidor shows hints for chords such as "ed" and "ing" (MCCs).
+<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_MCC.png" width="30%" align="right">
+When <kbd>View | Show multiple character chords</kbd> is selected. Twidor shows hints for chords such as "ed" and "ing" (MCCs).
 
 If you wish to learn all available chords, select this option.  Twidor will show red highlighted buttons for the longest possible chorrd that matches the lesson text. For example, given the text, "the", Twidor will highlight the chord that sends "the", rather than "th" or "t".
 
