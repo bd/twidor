@@ -125,9 +125,9 @@ welcome [here](https://github.com/rich-murphey/twidor/issues).
 
 ## How to Build
 
-To compile and build Twidor.jar, one may use:
+To compile and build Twidor.jar and the debian package (.deb), one may use:
 
-    sudo apt install git openjdk-8-jdk ant make
+    sudo apt install git openjdk-8-jdk ant make fakeroot
     git clone https://github.com/rich-murphey/twidor.git
     cd twidor
     make
