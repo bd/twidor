@@ -38,20 +38,25 @@ Twidor will optionally show a map of the two-button chords, when the menu item <
 
 ## View | Show Chords
 
-<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_screenshot.png"
-width="20%" align="right">
-Each small button shows the letters sent by a two-button chord.  The small button layout is the same as above: one row for each finger, and green/blue/red columns.
-
-The first button of the chord is a given small box.  The position of the first button is relative to the array of small buttons.
-
-The second button of the chord is the large box to the immediate left of the given small button.  The location of the first button is relative to the array of large buttons.
-
-For example, here are some two-button chords:
+When <kbd>View | Show chords</kbd> is selected, an expanded key-map is shown, containing 2-button chords.
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_chord_map.png" width="40%" align="right">
-* <kbd>s + i</kbd> sends "is".
-* <kbd>n + i</kbd> sends "in".
-* <kbd>a + i</kbd> sends "g".
-* <kbd>h + i</kbd> sends "y".
+
+Each small button shows the letter sent by a two-button chord.  
+
+Let's consider typing the letter "m".
+
+The first button of the chord for "m" is small box labeled "m".  The position of the first button is relative to the array of small buttons.  This is the button under the ring finger, middle column.  On the twiddler, that button is labeled "g".
+
+The second button of the chord is the large box to the immediate right of the given small button, labeled "SP".  The location of the first button is relative to the array of large buttons.
+<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_screenshot.png" width="20%" align="right">
+
+Here are some of the two-button chords:
+* <kbd>g   + SP</kbd> sends "m".
+* <kbd>DEL + SP</kbd> sends "o".
+* <kbd>BS  + SP</kbd> sends "p".
+* <kbd>f   + SP</kbd> sends "l".
+
+
 
 ## Multiple Character Chords (MCCs)
 
