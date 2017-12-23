@@ -62,17 +62,17 @@ public interface TwidorConstants {
 	 */
 	public static final int buttonX = (twiddlerX - 30) / 6;
 	public static final int buttonY = windowY * 2 / 15; // 2/3 of 1/4 of 4/5 of windowY
-	public static final Color buttonBackground = Color.getHSBColor(0.f, 0.f, 0.95f); // light gray
-	public static final Color buttonHighlight = Color.getHSBColor(0.3333f, .3f, 1.0f); // light yellow
-	public static final Color mccHighlight = Color.getHSBColor(0.3333f, .3f, 1.0f); // light yellow
-	public static final Color twiddlerBackground = Color.getHSBColor(0.f, 0.f, 1.f); // dark grey
+	public static final Color buttonBackground		= Color.getHSBColor(0.f, 0.f, 0.95f);
+	public static final Color buttonHighlight		= Color.getHSBColor(0.f, .2f, 1.f);
+	public static final Color mccHighlight  		= Color.getHSBColor(0.f, .2f, 1.f);
+	public static final Color twiddlerBackground	= Color.getHSBColor(0.f, 0.f, 1.f);
 
-	public static final Color keyRed    	= Color.getHSBColor(0.0000f, 1.f, .7f);
-	public static final Color keyBlue   	= Color.getHSBColor(0.6000f, 1.f, 1.f);
-	public static final Color keyGreen  	= Color.getHSBColor(0.3333f, 1.f, .7f);
-	public static Border thickRedBorder 	= BorderFactory.createLineBorder(keyRed, 2, true);
-	public static Border thickBlueBorder 	= BorderFactory.createLineBorder(keyBlue, 2, true);
-	public static Border thickGreenBorder 	= BorderFactory.createLineBorder(keyGreen, 2, true);
+	public static final Color keyRed    	= Color.getHSBColor(0.0f, 1.f, .8f);
+	public static final Color keyBlue   	= Color.getHSBColor(0.6f, 1.f, 1.f);
+	public static final Color keyGreen  	= Color.getHSBColor(0.4f, 1.f, .6f);
+	public static Border thickRedBorder 	= BorderFactory.createLineBorder(Color.getHSBColor(0.0f, 1.f, .8f), 2, true);
+	public static Border thickBlueBorder 	= BorderFactory.createLineBorder(Color.getHSBColor(0.6f, 1.f, 1.f), 2, true);
+	public static Border thickGreenBorder 	= BorderFactory.createLineBorder(Color.getHSBColor(0.4f, 1.f, .8f), 2, true);
 	public static Border redBorder	 	= BorderFactory.createLineBorder(keyRed, 1, true);
 	public static Border blueBorder 	= BorderFactory.createLineBorder(keyBlue, 1, true);
 	public static Border greenBorder 	= BorderFactory.createLineBorder(keyGreen, 1, true);
@@ -84,16 +84,16 @@ public interface TwidorConstants {
 	public static final Font FONT_MACRO 	= new Font("RobotoCondensed", Font.BOLD, 12);
 	public static final Font FONT_KEYPAD 	= new Font("RobotoCondensed", Font.BOLD, 15);
 	public static final Font FONT_LABEL2 	= new Font("RobotoCondensed", Font.BOLD, 17);
-	public static final Font FONT_TEXT	 	= new Font("Roboto", Font.PLAIN, 20);
-	public static final Font FONT_LABEL 	= new Font("Roboto", Font.PLAIN, 22);
+	public static final Font FONT_TEXT	 	= new Font("Roboto", Font.BOLD, 20);
+	public static final Font FONT_LABEL 	= new Font("Roboto", Font.BOLD, 22);
 
 	/**
 	 * character colors
 	 */
 	public static final Color TEXT_DEFAULT 		= Color.BLACK;
-	public static final Color TEXT_ERROR 		= Color.getHSBColor(0.f, 1.f, .7f);
+	public static final Color TEXT_ERROR 		= Color.BLACK;
 	public static final Color TEXT_GOOD 		= Color.getHSBColor(0.f, 0.f, .7f);
-	public static final Color TEXT_HIGHLIGHT	= Color.getHSBColor(0.3333f, 1.f, .7f);
+	public static final Color TEXT_HIGHLIGHT	= Color.getHSBColor(0.f, 1.f, .8f);
 	public static final Color TEXT_BLINK 		= Color.BLUE;
 	public static final Color TEXT_BACKGROUND 	= Color.WHITE;
 

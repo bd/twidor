@@ -488,8 +488,11 @@ public class Twidor extends JFrame implements TwidorConstants {
 	}
 
 	public void reOrient () {
+		setVisible(false);
 		getTwiddlerPanel().reOrient();
 		doHighlighting();
+		pack();
+		setVisible(true);
 	}
 
 	/**

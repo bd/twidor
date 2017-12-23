@@ -111,7 +111,7 @@ public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
 
 			for (int finger = 0; finger < 4; finger++) { // four rows, one per finger
 				for (int fingerCol = 0; fingerCol < 3; fingerCol++) {			 // three button columns, and three chord columns
-					if ( show2KeyChords && visibleKeys ) {
+					if ( visibleKeys && show2KeyChords ) {
 							// chord map
 							for (int chordCol = 0; chordCol < 3; chordCol++) {
 								JPanel subPanel = new JPanel();
@@ -119,25 +119,25 @@ public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
 								subPanel.setLayout(new GridLayout(4, 1, 1, 1));
 								subPanel.setBackground(twiddlerBackground);
 								for (int chordFinger = 0; chordFinger < 4; chordFinger++) { // anchor finger
-									if (finger != chordFinger && visibleKeys) {
+									if (finger != chordFinger) {
 										int buttons = KeyElement.buttonMask(finger, fingerCol);
 										buttons |= KeyElement.buttonMask(chordFinger, chordCol);
 										KeyElement keyElement = keys.getKeyByButtons(buttons);
-										Color color = keyRed;
+										// Color color = keyRed;
 										Border border = redBorder;
 										if (chordCol == 1) {
-											color  = keyBlue;
+											// color  = keyBlue;
 											border = blueBorder;
 										}
 										else if (chordCol == 2) {
-											color  = keyGreen;
+											// color  = keyGreen;
 											border = greenBorder;
 										}
 										JLabel label = new JLabel();
 										label.setFont(FONT_KEYPAD);
 										label.setHorizontalAlignment(JLabel.CENTER);
 										label.setBorder(border);
-										label.setForeground( color );
+										label.setForeground( TEXT_DEFAULT );
 										if (keyElement != null) {
 											String keyLabel = keyElement.getLabel();
 											keyLabel = keyLabel.substring(0,Math.min(3,keyLabel.length()));
@@ -165,19 +165,19 @@ public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
 						JPanel subPanel = new JPanel();
 						subPanel.setBackground(buttonBackground);
 						subPanel.setLayout(new GridLayout(3, 1));
-						Color color = keyRed;
+						// Color color = keyRed;
 						Border border = thickRedBorder;
 						if (fingerCol == 1) {
-							color  = keyBlue;
+							// color  = keyBlue;
 							border = thickBlueBorder;
 						} else if (fingerCol == 2) {
-							color  = keyGreen;
+							// color  = keyGreen;
 							border = thickGreenBorder;
 						}
 						subPanel.setBorder(border);
 						subPanel.add(new JLabel()); // empty top row (label is in middle)
 						KeyElement keyElement = keys.getKeyByButtons(buttons);
-						if (keyElement != null) {
+						if ( visibleKeys && keyElement != null) {
 							String keyLabel = keyElement.getLabel();
 							Font font = FONT_MACRO;
 							if (keyLabel.length() == 1) {
@@ -185,12 +185,9 @@ public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
 							} else if (keyLabel.length() == 2) {
 								font = FONT_LABEL2;
 							}
-							if( ! visibleKeys ) {
-								color = twiddlerBackground;
-							}
-							add_label( subPanel, color, font, keyLabel);
+							add_label( subPanel, TEXT_DEFAULT, font, keyLabel);
 						} else {
-							add_label( subPanel, twiddlerBackground, FONT_LABEL, "  ");
+							add_label( subPanel, buttonBackground, FONT_LABEL, "  ");
 						}
 						/* We want to keep the "Buttons" around to 'highlight' */
 						getButtons().add(subPanel);
