@@ -38,16 +38,13 @@ Twidor will optionally show a map of the two-button chords, when the menu item <
 
 ## View | Show chords
 
-When <kbd>View | Show chords</kbd> is selected, an expanded key-map is shown, containing 2-button chords.
-<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_chord_map.png" width="40%" align="right">
-
-Each small button shows the letter sent by a two-button chord.  
+<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_chord_map.png" width="40%" align="right"> When <kbd>View | Show chords</kbd> is selected, an expanded key layout is shown with chords. Each small button shows a letter sent by a two-button chord.
 
 Let's consider typing the letter "m".
 
-The first button of the chord for "m" is small box labeled "m".  The position of the first button is relative to the array of small buttons.  This is the button under the ring finger, middle column.  On the twiddler, that button is labeled "g".
+The first button of the chord is small box labeled "m".  The position of the first button is relative to the grid of small buttons.  This button is under the ring finger, middle column.  On the twiddler, the physical button is labeled "g".
 
-<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_SCC_full.png" width="30%" align="right"> The second button of the chord is the large box to the immediate right, labeled "SP".  The location of the first button is relative to the array of large buttons.  This is the button under the index finger, left column.
+<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_SCC_full.png" width="30%" align="right"> The second button of the chord is the large box to the immediate right, labeled "SP".  The location is relative to the grid of large buttons.  This button is under the index finger, left column.
 
 Here are some of the two-button chords on the left column of buttons:
 * <kbd>DEL + SP</kbd>, index and middle fingers, sends "o".
