@@ -40,11 +40,7 @@ Twidor will optionally show a map of the two-button chords, when the menu item <
 
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_screenshot.png"
 width="20%" align="right">
-A "chord" is two or more buttons pressed at the same time, like playing a "chord" on a piano.
-
-To display labels for two-button chords, shown on the right, select <kbd>View | Show chords</kbd>.
-
-Each small button shows the letters sent by a two-button chord.  Small button layout is the same: one row for each finger, and green/blue/red columns.
+Each small button shows the letters sent by a two-button chord.  The small button layout is the same as above: one row for each finger, and green/blue/red columns.
 
 The first button of the chord is a given small box.  The position of the first button is relative to the array of small buttons.
 
