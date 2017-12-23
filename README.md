@@ -40,14 +40,14 @@ width="25%" align="right">
 
 To display labels for two-button chords, shown on the right, select <kbd>View | Show chords</kbd>.
 
-Each 4x3 sub-array shows letters sent by two buttons pressed simultaneously.  Button layout of the sub-array is the same: one row for each finger, and green/blue/red for left/middle/right columns.
+Each small buttons shows letters sent by a two-button chord.  Small button layout is the same: one row for each finger, and green/blue/red columns.
 
-The first button of the chord is the large box.  The location of the first button is relative to the larger 4x3 array.
+The first button of the chord is a given small box.  The position of the first button is relative to the array of small buttons.
 
-The second button of the chord is a small box.  The position of the 2nd button is relative to the smaller 4x3 array.
+The second button of the chord is the large box to the immediate left of the given small button.  The location of the first button is relative to the array of large buttons.
 
-<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_chord_map.png"
-width="20%" align="right">Here are some two-button chords whose first button is <kbd>I</kbd>:
+For example, here are some two-button chords whose first button is <kbd>I</kbd>:
+<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_chord_map.png" width="20%" align="right">
 * <kbd>I + S</kbd> sends "is".
 * <kbd>I + N</kbd> sends "in".
 * <kbd>I + SP</kbd> sends "C".
