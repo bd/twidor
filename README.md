@@ -4,21 +4,15 @@
 
 Twidor teaches typing on the
 [Twiddler chording keyboard](https://twiddler.tekgear.com).
-A chord is formed by pressing several keys together, like playing a "chord" on a piano. There are 
-[downloads for Windows, Linux and OSX](https://github.com/rich-murphey/twidor/releases).
+A chord is formed by pressing several keys together, like playing a "chord" on a piano. 
  
-Twidor was originally written by researchers studying
-[chording keyboard learning and performance](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.4.3606&rep=rep1&type=pdf). Their
-research suggests that learners may achieve faster typing speeds on single-handed chording keyboards than two-handed QWERTY keyboards given equal amount of practice.  In article [2] below, Lyons states, "faster typists would reach
-60 WPM, the rate of our expert, after 10,000 phrases
-(approximately 80 sessions or 27 hours) while the slower typists
-could achieve 45 WPM."
+## Getting Started
 
-## The Keyboard Layout
+See [How to Install](#How to Install) for links to downloads for [downloads for Windows, Linux and OSX](https://github.com/rich-murphey/twidor/releases).
 
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_single.png"
-width="30%" align="right">
-Twidor shows a visual keyboard layout and lesson text. Labels in the layout show the characters sent by each button.
+width="30%" align="right"> 
+When you start Twidor, it will show a visual keyboard layout beside the first typing lesson. Labels in the layout show the characters sent by each button on the Twiddler.
 
 Four thumb buttons are on top. Below, rows from top to bottom correspond to index, middle, ring and pinky fingers. Columns with green, blue and red borders match the coloring on the Twiddler's physical buttons.  
 
@@ -159,6 +153,13 @@ mouse buttons as letter keys, and many other design issues.
 The [Twiddler 3 Google Group](https://groups.google.com/forum/?hl=en#!forum/twiddler-3) has links to various resources.
 
 ## References
+
+Twidor was originally written by researchers studying
+[chording keyboard learning and performance](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.4.3606&rep=rep1&type=pdf). Their
+research suggests that learners may achieve faster typing speeds on single-handed chording keyboards than two-handed QWERTY keyboards given equal amount of practice.  In article [2] below, Lyons states, "faster typists would reach
+60 WPM, the rate of our expert, after 10,000 phrases
+(approximately 80 sessions or 27 hours) while the slower typists
+could achieve 45 WPM."
 
 [1] Expert Chording Text Entry on the Twiddler One-Handed Keyboard,
 Kent Lyons, Thad Starner, Daniel Plaisted,
