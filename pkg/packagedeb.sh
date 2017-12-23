@@ -6,6 +6,13 @@ SOURCE_DIR=../dist
 TEMP_DIR="./tmp"
 BUILD_DIR=../dist/lib
 
+if [ -d $TEMP_DIR/$$ ]; then
+    echo ERROR: temp dir alread exists: $TEMP_DIR/$$
+    exit 1
+fi
+$TEMP_DIR=$TEMP_DIR/$$
+mkdir -p $TEMP_DIR/debian/DEBIAN
+
 mkdir -p $TEMP_DIR/debian/DEBIAN
 mkdir -p $TEMP_DIR/debian/lib
 mkdir -p $TEMP_DIR/debian/usr/bin
@@ -41,3 +48,4 @@ echo "Installed-Size: $PACKAGE_SIZE" >> $TEMP_DIR/debian/DEBIAN/control
 
 (cd $TEMP_DIR/; fakeroot dpkg --build debian)
 mv -f $TEMP_DIR/debian.deb $SOURCE_DIR/$PACKAGE_NAME-$PACKAGE_VERSION.deb
+rm -rf $TEMP_DIR changelog
