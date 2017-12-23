@@ -1,7 +1,7 @@
 [//]: # (Copyright C 2017  Carey Richard Murphey. This file is released under the terms of the GNU General Public License version 2.)
 ## Twidor - a typing tutor for the Twiddler keyboard
-
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/twiddler.jpg" width="15%" align="right"> 
+
 Twidor is a typing tutor for the
 [Twiddler chording keyboard](https://twiddler.tekgear.com).
 A chord is formed by pressing several keys together, like playing a "chord" on a piano. There are 
