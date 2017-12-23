@@ -47,8 +47,7 @@ Let's consider typing the letter "m".
 
 The first button of the chord for "m" is small box labeled "m".  The position of the first button is relative to the array of small buttons.  This is the button under the ring finger, middle column.  On the twiddler, that button is labeled "g".
 
-The second button of the chord is the large box to the immediate right of the given small button, labeled "SP".  The location of the first button is relative to the array of large buttons.
-<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_SCC_full.png" width="30%" align="right">
+<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_SCC_full.png" width="30%" align="right"> The second button of the chord is the large box to the immediate right of the given small button, labeled "SP".  The location of the first button is relative to the array of large buttons.
 
 Here are some of the two-button chords:
 * <kbd>g   + SP</kbd> sends "m".
