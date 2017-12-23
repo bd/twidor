@@ -50,9 +50,9 @@ The first button of the chord for "m" is small box labeled "m".  The position of
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_SCC_full.png" width="30%" align="right"> The second button of the chord is the large box to the immediate right, labeled "SP".  The location of the first button is relative to the array of large buttons.  This is the button under the index finger, left column.
 
 Here are some of the two-button chords on the left column of buttons:
-* <kbd>DEL + SP</kbd> sends "o".
-* <kbd>BS  + SP</kbd> sends "p".
-* <kbd>NL  + SP</kbd> sends "q".
+* <kbd>DEL + SP</kbd>, index and middle fingers, sends "o".
+* <kbd>BS  + SP</kbd>, index and ring fingers, sends "p".
+* <kbd>NL  + SP</kbd>, index and pinky fingers, sends "q".
 
 ## View | Show multiple character chords
 
