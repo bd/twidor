@@ -17,7 +17,7 @@ could achieve 45 WPM."
 ## The Keyboard Layout
 
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_single.png"
-width="33%" align="right">
+width="30%" align="right">
 Twidor shows a visual keyboard layout and lesson text. Labels in the layout show the characters sent by each button.
 
 Number, alt, control and shift thumb buttons are on top. Below, rows from top to bottom correspond to index, middle, ring and pinky fingers. Green, blue and red borders match the coloring on the Twiddler's buttons.  
@@ -29,7 +29,7 @@ Text entered by the user is shown below, in grey or red for correct or incorrect
 ## Chords
 
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_SCC.png"
-width="20%" align="right">
+width="30%" align="right">
 A "chord" is two or more buttons pressed at the same time, like playing a "chord" on a piano.
 
 In the lesson shown on the right, the letter "m" is formed by the "SP" and "g" buttons.
@@ -57,7 +57,7 @@ For example, here are some two-button chords:
 
 ## Multiple Character Chords (MCCs)
 
-<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_MCC.png" width="33%" align="right"> Some chords send more than one letter, such as "is", "in" and "it" in the key-map above. These are called multiple character chords (MCCs). 
+<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_MCC.png" width="30%" align="right"> Some chords send more than one letter, such as "is", "in" and "it" in the key-map above. These are called multiple character chords (MCCs). 
 
 Twidor can optionally show hints for multiple character chords if you enable it.  However, by default Twidor shows green highlights only for chords that send a single character, as shown for the highlighted letter "d", above.  This is intended to make learning easier initially.
 
