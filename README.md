@@ -21,7 +21,7 @@ When you start Twidor, it will show a visual keyboard layout beside the first ty
 
 Four thumb buttons are on top. Below, rows from top to bottom correspond to index, middle, ring and pinky fingers. Columns with green, blue and red borders match colors on the Twiddler's physical buttons.  
 
-A red highlight identifies the next letter of the lesson, "e", and the button that send the letter "e".
+Red highlights identify the next letter of the lesson, "e", and the button that send the letter "e".
 
 Text entered by the user is shown below. Incorrect letters appear darker.
 
