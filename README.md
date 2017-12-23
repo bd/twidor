@@ -54,7 +54,7 @@ For example, here are some two-button chords:
 
 ## Multiple Character Chords (MCCs)
 
-<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_MCC.png" width="25%" align="right"> Some chords send more than one letter, such as "is", "in" and "it" in the key-map above. These are called multiple character chords (MCCs). 
+<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_MCC.png" width="33%" align="right"> Some chords send more than one letter, such as "is", "in" and "it" in the key-map above. These are called multiple character chords (MCCs). 
 
 Twidor can optionally show hints for multiple character chords if you enable it.  However, by default Twidor shows green highlights only for chords that send a single character, as shown for the highlighted letter "d", above.  This is intended to make learning easier initially.
 
