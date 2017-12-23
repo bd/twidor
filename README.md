@@ -34,7 +34,7 @@ the [Twiddler Tuner](https://twiddler.tekgear.com/tuner/edit.xhtml).
 ## 2-Button Chords
 
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_screenshot.png"
-width="20%" align="right">
+width="40%" align="right">
 A "chord" is two or more buttons pressed at the same time, like playing a "chord" on a piano.
 
 To display labels for two-button chords, shown on the right, select <kbd>View | Show chords</kbd>.
