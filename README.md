@@ -20,7 +20,7 @@ could achieve 45 WPM."
 width="33%" align="right">
 Twidor shows a visual keyboard layout and lesson text. Labels in the layout show the characters sent by each button.
 
-There are horizontal rows for index finger on top, then middle, ring and pinky finger. Green, blue and red columns correspond to left, middle and right buttons on the Twiddler.
+Rows from top to bottom correspond to index, middle, ring and pinky fingers. Green, blue and red columns correspond to left, middle and right buttons on the Twiddler.
 
 Twidor shows highlighted "hints" in green: the next letter of the lesson text ("d" shown on the right) and the buttons that send that letter.
 
