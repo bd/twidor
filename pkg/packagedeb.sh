@@ -1,7 +1,7 @@
 #!/bin/sh
 set -x
 PACKAGE_NAME="twidor"
-PACKAGE_VERSION=$(cat ../src/VERSION)
+PACKAGE_VERSION=$(sed -n 's/^version=//p' ../src/Twidor.properties)
 SOURCE_DIR=../dist
 TEMP_DIR="./tmp"
 BUILD_DIR=../dist/lib

@@ -16,7 +16,9 @@ ant
   <property name="src" location="src"/>
   <property name="build" location="build"/>
   <property name="dist" location="dist"/>
-  <property name="fonts" location="fonts"/>
+  <propertyfile file="${src}/Twidor.properties">
+    <entry  key="version" value="avalue"/>
+  </propertyfile>
 
   <target name="init">
     <!-- Create the time stamp -->
@@ -35,7 +37,6 @@ ant
       <fileset dir="${src}" excludes="**/*.java **/*~"/>
     </copy>
     <copy todir="${build}" file="LICENSE"/>
-    <!-- <copy todir="${build}" file="fonts/Roboto_Mono/RobotoMono-Bold.ttf"/> -->
   </target>
 
   <target name="dist" depends="compile" description="generate the distribution">
@@ -55,5 +56,28 @@ ant
     <!-- Delete the ${build} and ${dist} directory trees -->
     <delete dir="${build}"/>
     <delete dir="${dist}"/>
+  </target>
+
+  <target name="bundle" depends="dist">
+    <bundleapp outputdirectory="${dist}"
+               name="Twidor"
+               displayname="Twidor"
+               identifier="org.murphey.twidor.client.Client"
+               shortversion="0.1"
+               icon="icon.gif"
+               copyright="James Fusia, Carey Richard Murphey"
+               applicationCategory="public.app-category.utilities"
+               mainclassname="Twidor">
+      <runtime dir="${env.JAVA_HOME}" />
+      
+      <!-- the only jar file needed when using sbt-assembly -->
+      <!--       <classpath file="../target/scala-2.10/WikiReaderClient-assembly-0.1.jar" /> -->
+      <!--       <option value="-Xdock:icon=Contents/Resources/WikiReader.icns"/> -->
+      <option value="-Dapple.laf.useScreenMenuBar=true"/>
+      <option value="-Dcom.apple.macos.use-file-dialog-packages=true"/>
+      <option value="-Dcom.apple.macos.useScreenMenuBar=true"/>
+      <option value="-Dapple.awt.application.name=Twidor"/>
+      <!-- <option value="-Dcom.apple.smallTabs=true"/> -->
+    </bundleapp>
   </target>
 </project>

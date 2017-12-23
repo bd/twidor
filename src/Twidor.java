@@ -60,7 +60,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 	private JFileChooser fc;
 	private java.io.PrintWriter keylog;
 	private boolean twiddler_show_MCC;
-
+	public Properties prop;
 	/**
 	 * Default Constructor.
 	 */
@@ -76,6 +76,23 @@ public class Twidor extends JFrame implements TwidorConstants {
 			e.printStackTrace();
 		} catch(FontFormatException e) {
 			e.printStackTrace();
+		}
+
+		prop = new Properties();
+		InputStream input = null;
+		try {
+			input = new FileInputStream("config.properties");
+			prop.load(input);
+		} catch (IOException ex) {
+			ex.printStackTrace();
+		} finally {
+			if (input != null) {
+				try {
+					input.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
 		}
 
 		ignoreInput(true);

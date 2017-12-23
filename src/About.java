@@ -32,20 +32,9 @@ import java.io.*;
 public class About extends JFrame implements TwidorConstants {
 
 	public About() {
-		String version = "unkown";
-		try {
-			InputStream iStream = this.getClass().getResourceAsStream("VERSION");
-			if (iStream != null) {
-				BufferedReader bReader = new BufferedReader(new InputStreamReader(iStream));
-				version = bReader.readLine();
-				bReader.close();
-			}
-		} catch (Exception e) {
-		}
-
 		Container contentPane = getContentPane();
 		JPanel panel = new JPanel();
-		panel.add(new JLabel("Twidor version " + version));
+		panel.add(new JLabel("Twidor version " + Twidor.prop.getProperty("version")));
 		contentPane.add(panel, BorderLayout.PAGE_START);
 		
 		panel = new JPanel();
