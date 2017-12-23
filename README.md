@@ -19,9 +19,9 @@ See [How to Install](#how-to-install) for links to downloads for Windows, Linux 
 width="30%" align="right"> 
 When you start Twidor, it will show a visual keyboard layout beside the first typing lesson. Labels in the layout show the characters sent by each button on the Twiddler.
 
-Four thumb buttons are on top. Below, rows from top to bottom correspond to index, middle, ring and pinky fingers. Columns with green, blue and red borders match the coloring on the Twiddler's physical buttons.  
+Four thumb buttons are on top. Below, rows from top to bottom correspond to index, middle, ring and pinky fingers. Columns with green, blue and red borders match colors on the Twiddler's physical buttons.  
 
-Twidor highlights in red the next letter of the lesson, "e", and the button that send the letter "e".
+A red highlight identifies the next letter of the lesson, "e", and the button that send the letter "e".
 
 Text entered by the user is shown below. Incorrect letters appear darker.
 
