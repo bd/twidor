@@ -37,7 +37,7 @@ the [Twiddler Tuner](https://twiddler.tekgear.com/tuner/edit.xhtml).
 A "chord" is a keystroke using two or more buttons pressed simultaneously, like playing a "chord" on a piano.
 
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_screenshot.png"
-width="33%" align="right">
+width="25%" align="right">
 To display labels for chords, as shown on the right, select <kbd>View | Show chords</kbd>.
 
 Each 4x3 sub-array shows letters sent by two buttons pressed simultaneously.  Button layout of the sub-array is the same: one row for each finger, and green/blue/red for left/middle/right columns.
@@ -47,7 +47,7 @@ The first button of the chord is the large box.  The location of the first butto
 The second button of the chord is a small box.  The position of the 2nd button is relative to the smaller 4x3 array.
 
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_chord_map.png"
-width="25%" align="right">Here are some two-button chords whose first button is <kbd>I</kbd>:
+width="20%" align="right">Here are some two-button chords whose first button is <kbd>I</kbd>:
 * <kbd>I + S</kbd> sends "is".
 * <kbd>I + N</kbd> sends "in".
 * <kbd>I + SP</kbd> sends "C".
