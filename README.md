@@ -56,13 +56,13 @@ Here are some of the two-button chords on the left column of buttons:
 
 ## View | Show multiple character chords
 
-Some chords send more than one letter, such as "ed" and "ing".  They are called multiple character chords (MCCs).  
+Typing a single chord on the Twidller can send more than one letter, for example, "ed" or "ing".  These are called multiple character chords (MCCs).  
 
-Twidor does not show MCCs by default. By default Twidor highlights only single letters, as shown for the highlighted letter "d", above in "Keyboard Layout".  Lyons [2,3] has shown that, at the beginning, learning is faster when the incremental amount of learning material smaller.
+By default, Twidor does not highlight MCCs, but rather only highlights single letters, as shown for the highlighted letter "d", above in "Keyboard Layout".  This default is intended to help users who are just beginning. Lyons [2,3] has shown that learning is faster when the incremental amount of learning material smaller.
 
-When <kbd>View | Show multiple character chords</kbd> is selected, Twidor highlights MCCs.  For example, given the text "ed", shown on the right. Twidor highlights the chord that sends "ed", rather than just "e".  
+When <kbd>Show multiple character chords</kbd> is selected, Twidor highlights MCCs.  
 
-<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_MCC.png" width="30%" align="right"> Note that this is different from the keymap shown above in "The Keyboard Layout", where the option was not selected by default, and only "e" is highlighted.
+<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_MCC.png" width="30%" align="right"> For example, given the text "ed", shown on the right. Twidor highlights the chord that sends "ed", rather than just "e".  Note that this is different from the keymap shown above in "The Keyboard Layout", where the option was not selected by default, and only "e" is highlighted.
 
 If you wish to learn all available chords, select this option.  Twidor will show red highlighted buttons for the longest possible chorrd that matches the lesson text.  For example, given the text, "the", Twidor will highlight the chord that sends "the", rather than "th" or "t".
 
