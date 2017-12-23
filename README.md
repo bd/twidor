@@ -3,12 +3,17 @@
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/twiddler.jpg" width="15%" align="right"> 
 
 Twidor teaches typing on the
-[Twiddler chording keyboard](https://twiddler.tekgear.com).
+[Twiddler](https://twiddler.tekgear.com), a chording keyboard shown on the right.
 A chord is formed by pressing several keys together, like playing a "chord" on a piano. 
- 
+
+Regarding learning rates on Twiddler, [[Lyons 04](#lyons-04)] 
+states, "faster typists would reach 60 WPM, the rate of our expert, after 10,000 phrases
+(approximately 80 sessions or 27 hours) while the slower typists could achieve 45 WPM."
+Twidor is the tool they developed to teach typing and measure performance.
+
 ## Getting Started
 
-See [How to Install](#How to Install) for links to downloads for [downloads for Windows, Linux and OSX](https://github.com/rich-murphey/twidor/releases).
+See [How to Install](How to Install) for links to downloads for [downloads for Windows, Linux and OSX](https://github.com/rich-murphey/twidor/releases).
 
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_single.png"
 width="30%" align="right"> 
@@ -116,7 +121,7 @@ welcome [here](https://github.com/rich-murphey/twidor/issues).
 * The visual key-map does not show the mouse buttons.
 * Lessons 1-7 are tailored to the Deafult key-map. Specifically, lesson one uses only single button keys of the Default key-map.  Other key-maps will require chords in lesson one.
 
-## How to Build
+##How to Build
 
 To compile and build Twidor.jar and the debian package (.deb), one may use:
 
@@ -161,35 +166,40 @@ research suggests that learners may achieve faster typing speeds on single-hande
 (approximately 80 sessions or 27 hours) while the slower typists
 could achieve 45 WPM."
 
-[1] Expert Chording Text Entry on the Twiddler One-Handed Keyboard,
-Kent Lyons, Thad Starner, Daniel Plaisted,
-James Fusia, Amanda Lyons, Aaron Drew, E. W. Looney, 
-2012 16th International Symposium on Wearable Computers (2004)
-Arlington, Virginia, Oct. 31, 2004 to Nov. 3, 2004.
-[full text.](https://www.researchgate.net/publication/27521297_Twiddler_Typing_One-Handed_Chording_Text_Entry_for_Mobile_Phones)
-
-[2] Twiddler Typing: One-Handed Chording Text Entry for Mobile
-Phones, Kent Lyons, Thad Starner, Daniel Plaisted, James Fusia,
-Amanda Lyons, Aaron Drew, E. W. Looney. Proceeding CHI '04
-Proceedings of the SIGCHI Conference on Human Factors in
-Computing Systems, Pages
-671-678. [full text](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.4.3606&rep=rep1&type=pdf)
-
-[3] Experimental Evaluations of the Twiddler One-Handed Chording
-Mobile Keyboard. Kent Lyons, Brian Gane, and Thad
-Starner. Journal Human-Computer Interaction archive Volume 21
-Issue 4, November 2006 Pages
-343-392. [full text](https://pdfs.semanticscholar.org/70c3/995e2487921b8a08bec07977f8cc161655fa.pdf)
-
+##### Clawson 05
 [4] The Impacts of Limited Visual Feedback on Mobile Text Entry for
 the Twiddler and Mini-QWERTY Keyboards. James Clawson, Kent
 Lyons, Thad Starner, and Edward Clarkson. Proceedings of
 ISWC 2005. Osaka, Japan. November 2005.
 [full text.](https://pdfs.semanticscholar.org/70c3/995e2487921b8a08bec07977f8cc161655fa.pdf)
 
+##### Lyons 04a
+Expert Chording Text Entry on the Twiddler One-Handed Keyboard,
+Kent Lyons, Thad Starner, Daniel Plaisted,
+James Fusia, Amanda Lyons, Aaron Drew, E. W. Looney, 
+2012 16th International Symposium on Wearable Computers (2004)
+Arlington, Virginia, Oct. 31, 2004 to Nov. 3, 2004.
+[full text.](https://www.researchgate.net/publication/27521297_Twiddler_Typing_One-Handed_Chording_Text_Entry_for_Mobile_Phones)
+
+##### Lyons 04b
+Twiddler Typing: One-Handed Chording Text Entry for Mobile
+Phones, Kent Lyons, Thad Starner, Daniel Plaisted, James Fusia,
+Amanda Lyons, Aaron Drew, E. W. Looney. Proceeding CHI '04
+Proceedings of the SIGCHI Conference on Human Factors in
+Computing Systems, Pages
+671-678. [full text](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.4.3606&rep=rep1&type=pdf)
+
+##### Lyons 06a
+Experimental Evaluations of the Twiddler One-Handed Chording
+Mobile Keyboard. Kent Lyons, Brian Gane, and Thad
+Starner. Journal Human-Computer Interaction archive Volume 21
+Issue 4, November 2006 Pages
+343-392. [full text](https://pdfs.semanticscholar.org/70c3/995e2487921b8a08bec07977f8cc161655fa.pdf)
+
+##### Lyons 06b
 [5] Mobile Text Entry, Kent Loyons, [Lecture slides.](https://wiki.cc.gatech.edu/ccg/_media/classes/7470/7470-f06/mobile-text-entry.pdf?id=classes%3A7470%3A7470-f06%3Apowerpoint_slides&cache=cache)
 
-## Acknowledgements
+##Acknowledgements
 
 [James Gibson Fusia](http://wearables.cc.gatech.edu/people/james/)
 is the original author of Twidor.
