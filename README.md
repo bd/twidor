@@ -47,25 +47,20 @@ Let's consider typing the letter "m".
 
 The first button of the chord for "m" is small box labeled "m".  The position of the first button is relative to the array of small buttons.  This is the button under the ring finger, middle column.  On the twiddler, that button is labeled "g".
 
-<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_SCC_full.png" width="30%" align="right"> The second button of the chord is the large box to the immediate right of the given small button, labeled "SP".  The location of the first button is relative to the array of large buttons.
+<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_SCC_full.png" width="30%" align="right"> The second button of the chord is the large box to the immediate right, labeled "SP".  The location of the first button is relative to the array of large buttons: index figure, left column.
 
-Here are some of the two-button chords:
-* <kbd>g   + SP</kbd> sends "m".
+Here are some of the two-button chords on the left column of buttons:
 * <kbd>DEL + SP</kbd> sends "o".
 * <kbd>BS  + SP</kbd> sends "p".
-* <kbd>f   + SP</kbd> sends "l".
+* <kbd>NL  + SP</kbd> sends "q".
 
+## View | Show multiple character chords
 
+Some chords send more than one letter, such as "is", "the" and "ing", are called multiple character chords (MCCs).  Twidor does not show these by default. By default Twidor shows red highlights only for single letters, as shown for the highlighted letter "d", above in "Keyboard Layout".  Research has shown that, at the beginning, learning is faster when the incremental amount of learning material smaller.
 
-## Multiple Character Chords (MCCs)
+<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_MCC.png" width="30%" align="right"> When <kbd>View | Show multiple character chords</kbd> is selected. Twidor shows hints for chords such as "is", "ing", and "the".
 
-<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_MCC.png" width="30%" align="right"> Some chords send more than one letter, such as "is", "in" and "it" in the key-map above. These are called multiple character chords (MCCs). 
-
-Twidor can optionally show hints for multiple character chords if you enable it.  However, by default Twidor shows green highlights only for chords that send a single character, as shown for the highlighted letter "d", above.  This is intended to make learning easier initially.
-
-If you wish to learn all available chords, un-check the box <kbd>View | Hint single letters only</kbd>.
-This will show green highlighted  buttons for the longest matching multiple character chord.
-For example, given the text, "the", Twidor will highlight the chord that sends "the", rather than "th" or "t".
+If you wish to learn all available chords, select this option.  Twidor will show red highlighted buttons for the longest possible chorrd that matches the lesson text. For example, given the text, "the", Twidor will highlight the chord that sends "the", rather than "th" or "t".
 
 Note that this affects only the green highlighted "hints".  Regardless, the Twiddler can send MCCs, and Twidor accepts input MCCs.
 
