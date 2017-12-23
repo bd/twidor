@@ -3,7 +3,7 @@
 
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/twiddler.jpg" width="15%" align="right"> 
 Twidor is a typing tutor for the
-[Twiddler chording keyboard](https://twiddler.tekgear.com/).
+[Twiddler chording keyboard](https://twiddler.tekgear.com).
 A chord is formed by pressing several keys together, like playing a "chord" on a piano. There are 
 [downloads for Windows, Linux and OSX](https://github.com/rich-murphey/twidor/releases).
  
