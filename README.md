@@ -38,7 +38,7 @@ Twidor will optionally show a map of the two-button chords, when the menu item <
 
 ## View | Show chords
 
-<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_chord_map.png" width="40%" align="right"> When <kbd>View | Show chords</kbd> is selected, an expanded key layout is shown with chords. Each small button shows a letter sent by a two-button chord.
+<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_chord_map.png" width="40%" align="right"> When <kbd>View | Show chords</kbd> is selected, the keyboard layout expands to shown chords. Each small button shows a letter sent by a two-button chord.
 
 Let's consider typing the letter "m".
 
