@@ -48,10 +48,10 @@ The second button of the chord is the large box to the immediate left of the giv
 
 For example, here are some two-button chords:
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_chord_map.png" width="40%" align="right">
-* <kbd>s + i</kbd> sends "is".
-* <kbd>n + i</kbd> sends "in".
-* <kbd>a + i</kbd> sends "g".
-* <kbd>h + i</kbd> sends "y".
+* <kbd>g   + SP</kbd> sends "m".
+* <kbd>DEL + SP</kbd> sends "o".
+* <kbd>BS  + SP</kbd> sends "p".
+* <kbd>f   + SP</kbd> sends "l".
 
 ## Multiple Character Chords (MCCs)
 
