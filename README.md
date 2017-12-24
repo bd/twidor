@@ -25,6 +25,8 @@ Red highlights identify the next letter of the lesson, "e", and the button that 
 
 Text entered by the user is shown below. Incorrect letters appear darker.
 
+Hit <kbd>ENTER</kbd> at the end of a line to go to the next sentence. The words per minute (WPM) and average error rate (AER) are updated when <kbd>ENTER</kbd> is pressed.
+
 ## Chords
 
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_SCC.png"
@@ -71,11 +73,13 @@ When you enable "show multiple character chords", it also expands "show chords" 
 
 Note that this option affects only the red highlighted "hints".  Regardless fo this setting, the Twiddler can send MCCs, and Twidor will accept MCCs as input.
 
-## Alternate Keymaps
+## Keymaps | Backspice, TabSpace, Typemax
 
 By default, Twidor loads the the default keymap that comes factory installed on a new Twiddler.  
 
 There are a number of keymaps that have become popular over the years since the Twiddler was first introduced.  A few of these are bundled with Twidor. Users may select the Backspice, Default, TabSpace, or Typemax layouts in the <kbd>Keymaps</kbd> menu.
+
+## File | Load Keymap
 
 Arbitrary keymap files can be loaded by the user. To load a custom key-map, export it from the 
 the [Twiddler Tuner](https://twiddler.tekgear.com/tuner/edit.xhtml) and load it as follows:
@@ -86,20 +90,21 @@ the [Twiddler Tuner](https://twiddler.tekgear.com/tuner/edit.xhtml) and load it 
 * download the CSV file.
 * In Twidor, select <kbd>File | Load Keymap</kbd> and select the CSV file.
 
-## Other Usage
-
-Hit <kbd>ENTER</kbd> at the end of a line to go to the next sentence. The words per minute (WPM) and average error rate (AER) are updated when <kbd>ENTER</kbd> is pressed.
+## Lessons | Lesson 1..9
 
 Lessons 1-7 each present a random set of phrases. The lessons progress through various subsets of the alphabet (e.g. letters a–h in lesson 1), progressing to larger subsets in later lessons. 
 
 Lessons 8 and 9, borrowed from GNU Typist, provide longer texts with capitalization, numbers and special characters.
 
+## Overview of Menus
+
 Menu options include:
 * <kbd>File | Load Keymap</kbd> imports a CSV key-map exported by the [Twiddler Tuner](https://twiddler.tekgear.com/tuner/).
 * <kbd>File | Load Lesson</kbd> imports training text from a file.
-* <kbd>View | Show..</kbd> toggles show/hide key labels and flips right-to-left orientation.
-* <kbd>View | Highlight...</kbd> toggles show/hide which keys to press to send the next letter of the lesson.
-* <kbd>Keymaps</kbd> loads certain key-maps: Backspice, Default_V5, TabSpace, or Typemax.
+* <kbd>View | Show..</kbd> toggles show/hide key labels, chords and MCCs, and flips right-to-left orientation.
+* <kbd>Lessons | Lesson 1..9</kbd> loads the selected lesson text.
+* <kbd>Keymaps | Backspace, etc.</kbd> loads certain key-maps: Backspice, Default_V5, TabSpace, or Typemax.
+* <kbd>Help | About</kbd> shows the Twidor version number.
 
 ## How to Install
 
