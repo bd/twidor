@@ -65,6 +65,8 @@ When <kbd>View | Show multiple character chords</kbd> is selected, Twidor highli
 
 If you wish to learn all available chords, select this option.  Twidor will show red highlighted buttons for the longest possible chord that matches the lesson text.  For example, given the text, "the", Twidor will highlight the chord that sends "the", rather than "th" or "t".
 
+When you enable "show multiple character chords", it also expands "show chords" furhter to include labels for MCCs. 
+
 Note that this option affects only the red highlighted "hints".  Regardless fo this setting, the Twiddler can send MCCs, and Twidor accepts input MCCs.
 
 ## Alternate Keymaps
