@@ -48,6 +48,7 @@ First we locate "m" in they layout.  We find it in a small grid beside the large
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_SCC_full.png" width="30%" align="right"> 
 The anchor buton is always shown in the top row of the smaller grid.  Here, "SP" is on the index finger, left column.
 
+
 The small box labeled "m" shows the button location relative to the small grid: ring finger, middle column.  On the twiddler, the physical button is labeled "g".
 
 Here are some of the two-button chords on the left column of buttons:
