@@ -63,13 +63,13 @@ By default, Twidor does not highlight MCCs, but rather only highlights single le
 
 When <kbd>View | Show multiple character chords</kbd> is selected, Twidor highlights MCCs.  
 
-<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_MCC.png" width="30%" align="right"> For example, given the text "ed", shown on the right. Twidor highlights the chord that sends "ed", rather than just "e".  Note that this is different from the keymap shown above in "The Keyboard Layout", where the option was not selected, and only "e" is highlighted.
+<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_MCC.png" width="30%" align="right"> For example, given the text "ed", shown on the right.  When this is enabled, Twidor highlights the chord that sends "ed", rather than just "e".  Note that this is different from the keymap shown above in "The Keyboard Layout", where the option was not selected, and only "e" is highlighted.
 
-If you wish to learn all available chords, select this option.  Twidor will show red highlighted buttons for the longest possible chord that matches the lesson text.  For example, given the text, "the", Twidor will highlight the chord that sends "the", rather than "th" or "t".
+If you wish to learn all available chords, select this option.  Twidor will show red highlighted buttons for the chord that matches the longest lesson text.  For example, given the text, "the", Twidor will highlight the chord that sends "the", rather than "th" or "t".
 
-When you enable "show multiple character chords", it also expands "show chords" furhter to include labels for MCCs. 
+When you enable "show multiple character chords", it also expands "show chords" furhter to include labels for MCCs in the chord layout.
 
-Note that this option affects only the red highlighted "hints".  Regardless fo this setting, the Twiddler can send MCCs, and Twidor accepts input MCCs.
+Note that this option affects only the red highlighted "hints".  Regardless fo this setting, the Twiddler can send MCCs, and Twidor will accept MCCs as input.
 
 ## Alternate Keymaps
 
