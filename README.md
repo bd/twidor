@@ -37,11 +37,13 @@ Twidor will optionally show a map of the two-button chords, when the menu item <
 
 ## View | Show chords
 
-<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_chord_map.png" width="40%" align="right"> When this is selected, the keyboard layout expands as shown in the two figures on the right. Twidor uses the popular convention for depicting 2-button chords, where the top row shows an "anchor" button that is pressed in combination with one of the buttons in the grid below it.  In the grid below, each small button shows a letter sent by the two-button chord.
+<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_chord_map.png" width="40%" align="right"> When this is selected, the keyboard layout expands as shown in the two figures on the right. 
+
+Twidor uses a popular convention for depicting 2-button chords. In each grid of small boxes, the top row shows an "anchor" button that is pressed in combination with one of the buttons below.  Each button below shows the letter sent by the two-button chord.
 
 Let's consider typing the letter "m".
 
-First we locate "m" in they layout.  It's found beside the large "SP" box.  This means that "SP" is the anchor button for the set of two-button chords. And the position of the "m" button is related to the "SP" by the position within this smaller grid.
+First we locate "m" in they layout.  It's found beside the large "SP" (space).  This means that "SP" is the anchor button for the two-button chords. And the position of the "m" button is related to the "SP" by the position within this smaller grid.
 
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_SCC_full.png" width="30%" align="right"> 
 The first of two buttons of the chord is repeated in the high row of the grid.  Here, "SP" is on the index finger, left column.
