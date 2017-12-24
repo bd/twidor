@@ -6,7 +6,7 @@ Twidor teaches typing on the
 [Twiddler](https://twiddler.tekgear.com), a chording keyboard shown on the right.
 A chord is formed by pressing several keys together, like playing a "chord" on a piano. 
 
-Regarding learning rates on Twiddler, [[Lyons 04](#lyons-04a)] 
+Regarding learning rates on Twiddler, [[Lyons 2004a](#lyons-2004a)] 
 states, "faster typists would reach 60 WPM, the rate of our expert, after 10,000 phrases
 (approximately 80 sessions or 27 hours) while the slower typists could achieve 45 WPM."
 Twidor is the tool they developed to teach typing and measure performance.
@@ -39,7 +39,7 @@ Twidor will optionally show a map of the two-button chords, when the menu item <
 
 ## View | Show chords
 
-<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_chord_map.png" width="40%" align="right"> When this is selected, the keyboard layout expands as shown in the two figures on the right. 
+<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_chord_map.png" width="40%" align="right"> WHen this menu option is selected, the keyboard layout expands as shown in the two figures on the right. 
 
 Twidor uses a popular convention for depicting 2-button chords. In each grid of small boxes, the top row shows an "anchor" button that is pressed in combination with one of the buttons below.  Each button below shows the letter sent by the two-button chord.
 
@@ -75,9 +75,9 @@ Note that this option affects only the red highlighted "hints".  Regardless fo t
 
 ## Keymaps | Backspice, TabSpace, Typemax
 
-By default, Twidor loads the the default keymap that comes factory installed on a new Twiddler.  
+By default, Twidor loads the the default keymap that comes factory installed on a new Twiddler.   The <kbd>Keymaps</kbd> menu selects alternate key-map layouts.
 
-There are a number of keymaps that have become popular over the years since the Twiddler was first introduced.  A few of these are bundled with Twidor. Users may select the Backspice, Default, TabSpace, or Typemax layouts in the <kbd>Keymaps</kbd> menu.
+There are a number of keymaps that have become popular over the years since the Twiddler was first introduced.  A few of these are bundled with Twidor. Users may select the Backspice, Default, TabSpace, or Typemax layouts under <kbd>Keymaps</kbd>.
 
 ## File | Load Keymap
 
@@ -103,7 +103,7 @@ Menu options include:
 * <kbd>File | Load Lesson</kbd> imports training text from a file.
 * <kbd>View | Show..</kbd> toggles show/hide key labels, chords and MCCs, and flips right-to-left orientation.
 * <kbd>Lessons | Lesson 1..9</kbd> loads the selected lesson text.
-* <kbd>Keymaps | Backspace, etc.</kbd> loads certain key-maps: Backspice, Default_V5, TabSpace, or Typemax.
+* <kbd>Keymaps | Backspace, etc.</kbd> loads certain popular key-maps: Backspice, Default_V5, TabSpace, or Typemax.
 * <kbd>Help | About</kbd> shows the Twidor version number.
 
 ## How to Install
@@ -125,7 +125,7 @@ install openjdk-8-jre, and invoke the application using:
     java -jar Twidor.jar
 
 Feedback and reports of issues are
-welcome [here](https://github.com/rich-murphey/twidor/issues).
+welcome in the [github issue tracker](https://github.com/rich-murphey/twidor/issues).
 
 ## Limitations
 
@@ -178,14 +178,14 @@ research suggests that learners may achieve faster typing speeds on single-hande
 (approximately 80 sessions or 27 hours) while the slower typists
 could achieve 45 WPM."
 
-##### Clawson 05
-[4] The Impacts of Limited Visual Feedback on Mobile Text Entry for
+##### Clawson 2005
+The Impacts of Limited Visual Feedback on Mobile Text Entry for
 the Twiddler and Mini-QWERTY Keyboards. James Clawson, Kent
 Lyons, Thad Starner, and Edward Clarkson. Proceedings of
 ISWC 2005. Osaka, Japan. November 2005.
 [full text.](https://pdfs.semanticscholar.org/70c3/995e2487921b8a08bec07977f8cc161655fa.pdf)
 
-##### Lyons 04a
+##### Lyons 2004a
 Expert Chording Text Entry on the Twiddler One-Handed Keyboard,
 Kent Lyons, Thad Starner, Daniel Plaisted,
 James Fusia, Amanda Lyons, Aaron Drew, E. W. Looney, 
@@ -193,7 +193,7 @@ James Fusia, Amanda Lyons, Aaron Drew, E. W. Looney,
 Arlington, Virginia, Oct. 31, 2004 to Nov. 3, 2004.
 [full text.](https://www.researchgate.net/publication/27521297_Twiddler_Typing_One-Handed_Chording_Text_Entry_for_Mobile_Phones)
 
-##### Lyons 04b
+##### Lyons 2004b
 Twiddler Typing: One-Handed Chording Text Entry for Mobile
 Phones, Kent Lyons, Thad Starner, Daniel Plaisted, James Fusia,
 Amanda Lyons, Aaron Drew, E. W. Looney. Proceeding CHI '04
@@ -201,14 +201,14 @@ Proceedings of the SIGCHI Conference on Human Factors in
 Computing Systems, Pages
 671-678. [full text](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.4.3606&rep=rep1&type=pdf)
 
-##### Lyons 06a
+##### Lyons 2006a
 Experimental Evaluations of the Twiddler One-Handed Chording
 Mobile Keyboard. Kent Lyons, Brian Gane, and Thad
 Starner. Journal Human-Computer Interaction archive Volume 21
 Issue 4, November 2006 Pages
 343-392. [full text](https://pdfs.semanticscholar.org/70c3/995e2487921b8a08bec07977f8cc161655fa.pdf)
 
-##### Lyons 06b
+##### Lyons 2006b
 Mobile Text Entry, Kent Loyons, [Lecture slides.](https://wiki.cc.gatech.edu/ccg/_media/classes/7470/7470-f06/mobile-text-entry.pdf?id=classes%3A7470%3A7470-f06%3Apowerpoint_slides&cache=cache)
 
 ##Acknowledgements
