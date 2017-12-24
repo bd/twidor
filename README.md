@@ -58,7 +58,7 @@ Here are some of the two-button chords on the left column of buttons:
 
 ## View | Show multiple character chords
 
-A chord on the Twiddler can send several letter, such as "ed" or "ing".  These are called multiple character chords (MCCs).  
+A chord on the Twiddler can send several letters such as "ed" or "ing".  These are called multiple character chords (MCCs).
 
 By default, Twidor does not highlight MCCs, but rather only highlights single letters as shown above in "Getting Started".  This default is intended to help users who are just beginning. Lyons [2,3] has shown that learning is faster when the incremental amount of learning material smaller.
 
