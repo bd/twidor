@@ -61,28 +61,32 @@ public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
 	 * add a label to a key in the keyboard display
          * string must be three chara for top middle and bottom of label.
 	 */
-        private void add_label ( JPanel panel, Color foreground, Font font, String text ) {
-		if( font == null )
-			font = FONT_KEYPAD;
-		if( foreground == null )
-			foreground = TEXT_DEFAULT;
-		JLabel label = new JLabel(text);
-		label.setFont(font);
-		label.setForeground(foreground);
-		label.setBackground(Color.WHITE);
-		label.setHorizontalAlignment(JLabel.CENTER);
-		label.setBorder(noBorder);
-		panel.add(label);
-	}
+	private void add_key ( JPanel panel, Color text_color, Font font, String text, Border border ) {
+		if( border == null )
+			border = blackBorder;
+		if( text_color == null )
+			text_color = TEXT_DEFAULT;
 
-	/**
-	 * add a label to a key in the keyboard display
-         * string must be three chara for top middle and bottom of label.
-	 */
-        private void add_long_label ( JPanel panel, String text ) {
-            for (int i = 0; i < 3; i++) {
-		    add_label( panel, TEXT_DEFAULT, FONT_KEYPAD, text.substring(i, i+1));
-            }
+		JLabel label = new JLabel();
+		label.setHorizontalAlignment(JLabel.CENTER);
+		label.setBorder(border);
+		label.setBackground( buttonBackground );
+		label.setForeground( text_color );
+		if (text != null) {
+			String keyLabel = text.substring(0,Math.min(3,text.length()));
+			if( font == null ) {
+				if (keyLabel.length() == 1) {
+					font = FONT_LABEL;
+				} else if (keyLabel.length() == 2) {
+					font = FONT_LABEL2;
+				} else if (keyLabel.length() > 2) {
+					font = FONT_MACRO;
+				}
+				label.setFont(font);
+				label.setText(keyLabel);
+			}
+		}
+		panel.add(label);
 	}
 
 	/**
@@ -112,61 +116,58 @@ public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
 			for (int finger = 0; finger < 4; finger++) { // four rows, one per finger
 				for (int fingerCol = 0; fingerCol < 3; fingerCol++) {			 // three button columns, and three chord columns
 					if ( visibleKeys && show2KeyChords ) {
-							// chord map
-							for (int chordCol = 0; chordCol < 3; chordCol++) {
-								JPanel subPanel = new JPanel();
-								subPanel.setComponentOrientation( keyOrient );
-								subPanel.setLayout(new GridLayout(4, 1, 1, 1));
-								subPanel.setBackground(twiddlerBackground);
-								for (int chordFinger = 0; chordFinger < 4; chordFinger++) { // anchor finger
-									if (finger >= chordFinger) {
-										add_label( subPanel, twiddlerBackground,  FONT_KEYPAD, "z");
+						// chord map
+						Vector <JPanel> subPanels = new Vector <JPanel> ();
+						boolean has_chords = false;
+						for (int chordCol = 0; chordCol < 3; chordCol++) {
+							JPanel subPanel = new JPanel();
+							subPanel.setComponentOrientation( keyOrient );
+							subPanel.setLayout(new GridLayout(4, 1, 1, 1));
+							subPanel.setBackground(twiddlerBackground);
+							Border border = redBorder; // chordCol == 0
+							if (chordCol == 1) {
+								border = blueBorder;
+							}
+							else if (chordCol == 2) {
+								border = greenBorder;
+							}
+							for (int chordFinger = 0; chordFinger < 4; chordFinger++) { // anchor finger
+								if ((finger == chordFinger) && (fingerCol == chordCol)) {
+									KeyElement keyElement = keys.getKeyByButtons(KeyElement.buttonMask(finger, fingerCol));
+									add_key( subPanel, null, null, keyElement.getLabel(), border );
+								}
+								else if (finger > chordFinger) {
+									add_key( subPanel, twiddlerBackground, null, "z", emptyBorder);
+								} else {
+									int buttons = KeyElement.buttonMask(finger, fingerCol);
+									buttons |= KeyElement.buttonMask(chordFinger, chordCol);
+									KeyElement keyElement = keys.getKeyByButtons(buttons);
+									if (keyElement == null) {
+										add_key( subPanel, twiddlerBackground, FONT_KEYPAD, "", emptyBorder);
+									}
+									else if ( (! show_MCC) &&
+											  ( (keyElement.getLabel().length() > 1)
+												// show only alphabet
+												// || ! Character.isAlphabetic(keyElement.getLabel().codePointAt(0))
+												) ) { 
+										add_key( subPanel, twiddlerBackground, FONT_KEYPAD, "", emptyBorder);
 									} else {
-										int buttons = KeyElement.buttonMask(finger, fingerCol);
-										buttons |= KeyElement.buttonMask(chordFinger, chordCol);
-										KeyElement keyElement = keys.getKeyByButtons(buttons);
-										if (keyElement == null) {
-											add_label( subPanel, twiddlerBackground, FONT_KEYPAD, "");
-										}
-										else if ( (! show_MCC) &&
-												  ( (keyElement.getLabel().length() > 1)
-													// || ! Character.isAlphabetic(keyElement.getLabel().codePointAt(0))
-													) ) { 
-											add_label( subPanel, twiddlerBackground, FONT_KEYPAD, "");
-										} else {
-											String keyLabel = keyElement.getLabel();
-											// Color color = keyRed;
-											Border border = redBorder;
-											if (chordCol == 1) {
-												// color  = keyBlue;
-												border = blueBorder;
-											}
-											else if (chordCol == 2) {
-												// color  = keyGreen;
-												border = greenBorder;
-											}
-											JLabel label = new JLabel();
-											label.setFont(FONT_KEYPAD);
-											label.setHorizontalAlignment(JLabel.CENTER);
-											label.setBorder(border);
-											label.setForeground( TEXT_DEFAULT );
-											if (keyElement != null) {
-												keyLabel = keyLabel.substring(0,Math.min(3,keyLabel.length()));
-												Font font = FONT_LABEL; // length = 1
-												if (keyLabel.length() == 2) {
-													font = FONT_LABEL2;
-												} else if (keyLabel.length() > 2) {
-													font = FONT_MACRO;
-												}
-												label.setFont(font);
-												label.setText(keyLabel);
-												subPanel.add(label);
-											}
-										}
+										has_chords = true;
+										add_key( subPanel, null, null, keyElement.getLabel(), border );
 									}
 								}
-								panel.add(subPanel);
 							}
+							subPanels.add(subPanel);
+						}
+						for (JPanel jp : subPanels) {
+							if(has_chords) {
+								panel.add(jp);
+							} else {
+								JPanel p = new JPanel();
+								p.setBackground(twiddlerBackground);
+								panel.add(p);
+							}
+						}
 					}
 					{			// single button keymap
 						int buttons = KeyElement.buttonMask(finger, fingerCol);
@@ -186,16 +187,9 @@ public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
 						subPanel.add(new JLabel()); // empty top row (label is in middle)
 						KeyElement keyElement = keys.getKeyByButtons(buttons);
 						if ( visibleKeys && keyElement != null) {
-							String keyLabel = keyElement.getLabel();
-							Font font = FONT_MACRO;
-							if (keyLabel.length() == 1) {
-								font = FONT_LABEL;
-							} else if (keyLabel.length() == 2) {
-								font = FONT_LABEL2;
-							}
-							add_label( subPanel, TEXT_DEFAULT, font, keyLabel);
+							add_key( subPanel, TEXT_DEFAULT, null, keyElement.getLabel(), emptyBorder);
 						} else {
-							add_label( subPanel, buttonBackground, FONT_LABEL, "  ");
+							add_key( subPanel, buttonBackground, FONT_LABEL, "  ", emptyBorder);
 						}
 						/* We want to keep the "Buttons" around to 'highlight' */
 						getButtons().add(subPanel);

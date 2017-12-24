@@ -73,9 +73,12 @@ public interface TwidorConstants {
 	public static Border thickRedBorder 	= BorderFactory.createLineBorder(Color.getHSBColor(0.0f, 1.f, .8f), 2, true);
 	public static Border thickBlueBorder 	= BorderFactory.createLineBorder(Color.getHSBColor(0.6f, 1.f, 1.f), 2, true);
 	public static Border thickGreenBorder 	= BorderFactory.createLineBorder(Color.getHSBColor(0.4f, 1.f, .8f), 2, true);
+	public static Border thickBlackBorder 	= BorderFactory.createLineBorder(Color.BLACK, 2, true);
 	public static Border redBorder	 	= BorderFactory.createLineBorder(keyRed, 1, true);
 	public static Border blueBorder 	= BorderFactory.createLineBorder(keyBlue, 1, true);
 	public static Border greenBorder 	= BorderFactory.createLineBorder(keyGreen, 1, true);
+	public static Border blackBorder 	= BorderFactory.createLineBorder(Color.BLACK, 1, true);
+	public static Border emptyBorder 	= BorderFactory.createEmptyBorder();
 
 	/**
 	 * fonts

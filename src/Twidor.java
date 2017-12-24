@@ -83,7 +83,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 		prop = new Properties();
 		InputStream input = null;
 		try {
-			input = new FileInputStream("config.properties");
+			input = this.getClass().getResourceAsStream("Twidor.properties");
 			prop.load(input);
 		} catch (IOException ex) {
 			ex.printStackTrace();
