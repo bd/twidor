@@ -47,8 +47,7 @@ Let's consider typing the letter "m".
 
 First we locate "m" in they layout.  We find it in a small grid beside the large "SP" box.  This indicates that "SP" (space) is the  anchor for the two-button chord that sends "m".  This small grid shows the positions of the two buttons of the chord.
 
-<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_chord_map.png" width="25%" align="right"> 
-The anchor button is always appears in the top row of the small grid.  Here, "SP" is on the index finger, left column.
+<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_chord_map.png" width="25%" align="right">  The anchor button is always appears in the top row of the small grid.  Here, "SP" is on the index finger, left column.
 
 The small box labeled "m" shows the location of the second button of the chord, relative to the small grid: ring finger, middle column.  On the twiddler, this physical button is labeled "g".
 
