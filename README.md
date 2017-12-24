@@ -133,7 +133,7 @@ welcome in the [github issue tracker](https://github.com/rich-murphey/twidor/iss
 * The visual key-map does not show the mouse buttons.
 * Lessons 1-7 are tailored to the Deafult key-map. Specifically, lesson one uses only single button keys of the Default key-map.  Other key-maps will require chords in lesson one.
 
-##How to Build
+## How to Build
 
 To compile and build Twidor.jar and the debian package (.deb), one may use:
 
@@ -211,7 +211,7 @@ Issue 4, November 2006 Pages
 ##### Lyons 2006b
 Mobile Text Entry, Kent Loyons, [Lecture slides.](https://wiki.cc.gatech.edu/ccg/_media/classes/7470/7470-f06/mobile-text-entry.pdf?id=classes%3A7470%3A7470-f06%3Apowerpoint_slides&cache=cache)
 
-##Acknowledgements
+## Acknowledgements
 
 [James Gibson Fusia](http://wearables.cc.gatech.edu/people/james/)
 is the original author of Twidor.
