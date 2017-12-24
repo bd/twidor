@@ -61,7 +61,7 @@ Here are some of the two-button chords on the left column of buttons:
 
 A chord on the Twiddler can send several letter, such as "ed" or "ing".  These are called multiple character chords (MCCs).  
 
-By default, Twidor does not highlight MCCs, but rather only highlights single letters as shown above in "Keyboard Layout".  This default is intended to help users who are just beginning. Lyons [2,3] has shown that learning is faster when the incremental amount of learning material smaller.
+By default, Twidor does not highlight MCCs, but rather only highlights single letters as shown above in "Getting Started".  This default is intended to help users who are just beginning. Lyons [2,3] has shown that learning is faster when the incremental amount of learning material smaller.
 
 When <kbd>View | Show multiple character chords</kbd> is selected, Twidor highlights MCCs.  
 
@@ -170,13 +170,6 @@ mouse buttons as letter keys, and many other design issues.
 The [Twiddler 3 Google Group](https://groups.google.com/forum/?hl=en#!forum/twiddler-3) has links to various resources.
 
 ## References
-
-Twidor was originally written by researchers studying
-[chording keyboard learning and performance](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.4.3606&rep=rep1&type=pdf). Their
-research suggests that learners may achieve faster typing speeds on single-handed chording keyboards than two-handed QWERTY keyboards given equal amount of practice.  In article [2] below, Lyons states, "faster typists would reach
-60 WPM, the rate of our expert, after 10,000 phrases
-(approximately 80 sessions or 27 hours) while the slower typists
-could achieve 45 WPM."
 
 ##### Clawson 2005
 The Impacts of Limited Visual Feedback on Mobile Text Entry for
