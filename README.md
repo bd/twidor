@@ -116,7 +116,8 @@ On windows, download and run the Twidor-setup.exe installer.
 
 On Debian or Ubuntu, download the twidor-x.x.deb. To install and run it one may use:
 
-    dpkg -i twidor-x.x.deb
+    wget https://github.com/rich-murphey/twidor/releases/download/vX.X/twidor-X.X.deb
+    dpkg -i twidor-X.X.deb
     twidor
 
 On other Linux, OSX, and Unix variants, download Twidor.jar from the above link,
