@@ -50,7 +50,7 @@ First we locate "m" in they layout.  We find it in a small grid beside the large
 
 The anchor button is always appears in the top row of the small grid.  Here, "SP" is on the index finger, left column.
 
-The small box labeled "m" shows the location of the second button of the chord, relative to the small grid: ring finger, middle column.  On the twiddler, the physical button is labeled "g".
+The small box labeled "m" shows the location of the second button of the chord, relative to the small grid: ring finger, middle column.  On the twiddler, this physical button is labeled "g".
 
 Here are some of the two-button chords on the left column of buttons:
 * <kbd>DEL + SP</kbd>, index and middle fingers, sends "o".
