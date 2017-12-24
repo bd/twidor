@@ -146,10 +146,7 @@ public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
 										add_key( subPanel, twiddlerBackground, FONT_KEYPAD, "", emptyBorder);
 									}
 									else if ( (! show_MCC) &&
-											  ( (keyElement.getLabel().length() > 1)
-												// show only alphabet
-												// || ! Character.isAlphabetic(keyElement.getLabel().codePointAt(0))
-												) ) { 
+											  ( (keyElement.getLabel().length() > 1) ) ) { 
 										add_key( subPanel, twiddlerBackground, FONT_KEYPAD, "", emptyBorder);
 									} else {
 										has_chords = true;
