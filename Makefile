@@ -1,10 +1,10 @@
 
 VERSION=`cat src/VERSION`
 
-dist/twidor-$VERSION.deb: dist/lib/Twidor.jar
+dist/twidor-$VERSION.deb: dist/Twidor.jar
 	cd pkg; ./packagedeb.sh
 
-dist/lib/Twidor.jar: src/*.java src/lesson*.txt src/*.csv src/Twidor.properties
+dist/Twidor.jar: src/*.java src/lesson*.txt src/*.csv src/Twidor.properties
 	ant
 
 clean:

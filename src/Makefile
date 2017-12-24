@@ -1,5 +1,5 @@
 
-../dist/lib/Twidor.jar: *.java lesson*.txt *.csv Twidor.properties
+../dist/Twidor.jar: *.java lesson*.txt *.csv Twidor.properties
 	cd ..; ant
 
 clean:

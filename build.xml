@@ -39,10 +39,10 @@ ant
 
   <target name="dist" depends="compile" description="generate the distribution">
     <!-- Create the distribution directory -->
-    <mkdir dir="${dist}/lib"/>
+    <mkdir dir="${dist}"/>
 
     <!-- Put everything in ${build} into the Twidor-${DSTAMP}.jar file -->
-    <jar jarfile="${dist}/lib/Twidor.jar" basedir="${build}">
+    <jar jarfile="${dist}/Twidor.jar" basedir="${build}">
       <manifest>
         <attribute name="Main-Class" value="Twidor"/>
       </manifest>
@@ -56,26 +56,4 @@ ant
     <delete dir="${dist}"/>
   </target>
 
-  <target name="bundle" depends="dist">
-    <bundleapp outputdirectory="${dist}"
-               name="Twidor"
-               displayname="Twidor"
-               identifier="org.murphey.twidor.client.Client"
-               shortversion="0.1"
-               icon="icon.gif"
-               copyright="James Fusia, Carey Richard Murphey"
-               applicationCategory="public.app-category.utilities"
-               mainclassname="Twidor">
-      <runtime dir="${env.JAVA_HOME}" />
-      
-      <!-- the only jar file needed when using sbt-assembly -->
-      <!--       <classpath file="../target/scala-2.10/WikiReaderClient-assembly-0.1.jar" /> -->
-      <!--       <option value="-Xdock:icon=Contents/Resources/WikiReader.icns"/> -->
-      <option value="-Dapple.laf.useScreenMenuBar=true"/>
-      <option value="-Dcom.apple.macos.use-file-dialog-packages=true"/>
-      <option value="-Dcom.apple.macos.useScreenMenuBar=true"/>
-      <option value="-Dapple.awt.application.name=Twidor"/>
-      <!-- <option value="-Dcom.apple.smallTabs=true"/> -->
-    </bundleapp>
-  </target>
 </project>

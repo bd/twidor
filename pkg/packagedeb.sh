@@ -4,7 +4,7 @@ PACKAGE_NAME="twidor"
 PACKAGE_VERSION=$(sed -n 's/^version=//p' ../src/Twidor.properties)
 SOURCE_DIR=../dist
 TEMP_DIR="./tmp"
-BUILD_DIR=../dist/lib
+BUILD_DIR=../dist
 
 if [ -d $TEMP_DIR/$$ ]; then
     echo ERROR: temp dir alread exists: $TEMP_DIR/$$
