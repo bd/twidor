@@ -42,9 +42,9 @@ Twidor will optionally show a map of the two-button chords, when the menu item <
 Twidor uses a popular convention for depicting 2-button chords. In each grid of small boxes, the top row shows an "anchor" button that is pressed in combination with one of the buttons below.  Each button below shows the letter sent by the two-button chord.
 
 Let's consider typing the letter "m".
+<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_SCC_full.png" width="30%" align="right">
 
 First we locate "m" in they layout.  We find it in a small grid beside the large "SP" box.  This indicatest that "SP" (space) is the  anchor for the two-button chord that sends "m".  This small grid shows the positions of the two buttons of the chord.
-<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_SCC_full.png" width="30%" align="right">
 
 The anchor buton is always appears in the top row of the small grid.  Here, "SP" is on the index finger, left column.
 
