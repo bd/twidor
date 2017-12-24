@@ -43,12 +43,12 @@ Twidor uses a popular convention for depicting 2-button chords. In each grid of 
 
 Let's consider typing the letter "m".
 
-First we locate "m" in they layout.  It's found beside the large "SP" (space).  This means that "SP" is the anchor button for the two-button chords. And the position of the "m" button is related to the "SP" by the position within this smaller grid.
+First we locate "m" in they layout.  We find it in a small grid beside the large "SP" box.  This indicatest that "SP" (space) is the  anchor for the two-button chord that sends "m".  This small grid shows the positions of the two buttons of the chord.
 
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_SCC_full.png" width="30%" align="right"> 
-The first of two buttons of the chord is repeated in the high row of the grid.  Here, "SP" is on the index finger, left column.
+The anchor buton is always shown in the top row of the smaller grid.  Here, "SP" is on the index finger, left column.
 
-The second button of the chord is small box labeled "m".  The position of "m" within this grid is under the ring finger, middle column.  On the twiddler, the physical button is labeled "g".
+The small box labeled "m" shows the button location relative to the small grid: ring finger, middle column.  On the twiddler, the physical button is labeled "g".
 
 Here are some of the two-button chords on the left column of buttons:
 * <kbd>DEL + SP</kbd>, index and middle fingers, sends "o".
