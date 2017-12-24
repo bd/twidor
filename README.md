@@ -39,7 +39,7 @@ Twidor will optionally show a map of the two-button chords, when the menu item <
 
 ## View | Show chords
 
-<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_chord_map.png" width="40%" align="right"> WHen this menu option is selected, the keyboard layout expands as shown in the two figures on the right. 
+<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_chord_map.png" width="40%" align="right"> When this menu option is selected, the keyboard layout expands as shown in the two figures on the right. 
 
 Twidor uses a popular convention for depicting 2-button chords. In each grid of small boxes, the top row shows an "anchor" button that is pressed in combination with one of the buttons below.  Each button below shows the letter sent by the two-button chord.
 
