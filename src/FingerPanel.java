@@ -186,7 +186,7 @@ public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
 						if ( visibleKeys && keyElement != null) {
 							add_key( subPanel, TEXT_DEFAULT, null, keyElement.getLabel(), emptyBorder);
 						} else {
-							add_key( subPanel, buttonBackground, FONT_LABEL, "  ", emptyBorder);
+							add_key( subPanel, buttonBackground, null, " ", emptyBorder);
 						}
 						/* We want to keep the "Buttons" around to 'highlight' */
 						getButtons().add(subPanel);
