@@ -46,9 +46,9 @@ Twidor uses a popular convention for depicting 2-button chords. In each grid of 
 Let's consider typing the letter "m".
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_SCC_full.png" width="30%" align="right">
 
-First we locate "m" in they layout.  We find it in a small grid beside the large "SP" box.  This indicatest that "SP" (space) is the  anchor for the two-button chord that sends "m".  This small grid shows the positions of the two buttons of the chord.
+First we locate "m" in they layout.  We find it in a small grid beside the large "SP" box.  This indicates that "SP" (space) is the  anchor for the two-button chord that sends "m".  This small grid shows the positions of the two buttons of the chord.
 
-The anchor buton is always appears in the top row of the small grid.  Here, "SP" is on the index finger, left column.
+The anchor button is always appears in the top row of the small grid.  Here, "SP" is on the index finger, left column.
 
 The small box labeled "m" shows the location of the second button of the chord, relative to the small grid: ring finger, middle column.  On the twiddler, the physical button is labeled "g".
 
@@ -59,19 +59,19 @@ Here are some of the two-button chords on the left column of buttons:
 
 ## View | Show multiple character chords
 
-A chord on the Twidller can send several letter, such as "ed" or "ing".  These are called multiple character chords (MCCs).  
+A chord on the Twiddler can send several letter, such as "ed" or "ing".  These are called multiple character chords (MCCs).  
 
 By default, Twidor does not highlight MCCs, but rather only highlights single letters as shown above in "Keyboard Layout".  This default is intended to help users who are just beginning. Lyons [2,3] has shown that learning is faster when the incremental amount of learning material smaller.
 
 When <kbd>View | Show multiple character chords</kbd> is selected, Twidor highlights MCCs.  
 
-<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_MCC.png" width="30%" align="right"> For example, given the text "ed", shown on the right.  When this is enabled, Twidor highlights the chord that sends "ed", rather than just "e".  Note that this is different from the keymap shown above in "The Keyboard Layout", where the option was not selected, and only "e" is highlighted.
+<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_MCC.png" width="30%" align="right"> For example, given the text "ed", shown on the right.  When this is enabled, Twidor highlights the chord that sends "ed", rather than just "e".  Note that this is different from the layout shown above in "Getting Started", where the option was not enabled and only "e" is highlighted.
 
 If you wish to learn all available chords, select this option.  Twidor will show red highlighted buttons for the chord that matches the longest lesson text.  For example, given the text, "the", Twidor will highlight the chord that sends "the", rather than "th" or "t".
 
-When you enable "show multiple character chords", it also expands "show chords" furhter to include labels for MCCs in the chord layout.
+When you enable "show multiple character chords", it also expands "show chords" further to include labels for MCCs in the chord layout.
 
-Note that this option affects only the red highlighted "hints".  Regardless fo this setting, the Twiddler can send MCCs, and Twidor will accept MCCs as input.
+Note that this option affects only the red highlighted "hints".  Regardless of this setting, the Twiddler can send MCCs, and Twidor will accept MCCs as input.
 
 ## Keymaps | Backspice, TabSpace, Typemax
 
@@ -119,7 +119,7 @@ On Debian or Ubuntu, download the twidor-x.x.deb. To install and run it one may 
     dpkg -i twidor-x.x.deb
     twidor
 
-On other Linux, OSX, and unix variants, download Twidor.jar from the above link,
+On other Linux, OSX, and Unix variants, download Twidor.jar from the above link,
 install openjdk-8-jre, and invoke the application using:
 
     java -jar Twidor.jar
@@ -131,18 +131,18 @@ welcome in the [github issue tracker](https://github.com/rich-murphey/twidor/iss
 
 * Key-Map labels are shortened to the first three letters, which is currently sufficient for all of the popular key-maps.
 * The visual key-map does not show the mouse buttons.
-* Lessons 1-7 are tailored to the Deafult key-map. Specifically, lesson one uses only single button keys of the Default key-map.  Other key-maps will require chords in lesson one.
+* Lessons 1-7 are tailored to the Default key-map. Specifically, lesson one uses only single button keys of the Default key-map.  Other key-maps will require chords in lesson one.
 
 ## How to Build
 
-To compile and build Twidor.jar and the debian package (.deb), one may use:
+To compile and build Twidor.jar and the Debian package (.deb), one may use:
 
     sudo apt install git openjdk-8-jdk ant make fakeroot
     git clone https://github.com/rich-murphey/twidor.git
     cd twidor
     make
 
-One option for debuging Twidor is use [Eclipse](http://www.eclipse.org/downloads/). In Eclipse, select <kbd>File | Open | New Project</kbd>, then select "Java Project from Existing Ant Buildfile", click <kbd>Next</kbd>, click <kbd>Browse</kbd>, select file twidor/build.xml, and click <kbd>Finish</kdb>. 
+One option for debugging Twidor is use [Eclipse](http://www.eclipse.org/downloads/). In Eclipse, select <kbd>File | Open | New Project</kbd>, then select "Java Project from Existing Ant Buildfile", click <kbd>Next</kbd>, click <kbd>Browse</kbd>, select file twidor/build.xml, and click <kbd>Finish</kbd>. 
 
 ## Other Relevant Projects
 
