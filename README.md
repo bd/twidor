@@ -45,9 +45,9 @@ Twidor uses a popular convention for depicting 2-button chords, shown on the rig
 
 Let's consider typing the letter "m".
 
-<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_SCC_full.png" width="30%" align="right"> First we locate "m" in they layout.  We find it in a small grid beside the large "SP" box.  This indicates that "SP" (space) is the  anchor for the two-button chord that sends "m".  This small grid shows the positions of the two buttons of the chord.
+First we locate "m" in they layout.  We find it in a small grid beside the large "SP" box.  This indicates that "SP" (space) is the  anchor for the two-button chord that sends "m".  This small grid shows the positions of the two buttons of the chord.
 
-The anchor button is always appears in the top row of the small grid.  Here, "SP" is on the index finger, left column.
+<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_SCC_full.png" width="30%" align="right"> The anchor button is always appears in the top row of the small grid.  Here, "SP" is on the index finger, left column.
 
 The small box labeled "m" shows the location of the second button of the chord, relative to the small grid: ring finger, middle column.  On the twiddler, this physical button is labeled "g".
 
@@ -64,9 +64,9 @@ By default, Twidor does not highlight MCCs, but rather only highlights single le
 
 When <kbd>View | Show multiple character chords</kbd> is selected, Twidor highlights MCCs.  
 
-For example, given the text "ed", shown on the right.  When this is enabled, Twidor highlights the chord that sends "ed", rather than just "e".  Note that this is different from the layout shown above in "Getting Started", where the option was not enabled and only "e" is highlighted.
+<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_MCC.png" width="30%" align="right"> For example, given the text "ed", shown on the right.  When this is enabled, Twidor highlights the chord that sends "ed", rather than just "e".  Note that this is different from the layout shown above in "Getting Started", where the option was not enabled and only "e" is highlighted.
 
-<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_MCC.png" width="30%" align="right"> If you wish to learn all available chords, select this option.  Twidor will show red highlighted buttons for the chord that matches the longest lesson text.  For example, given the text, "the", Twidor will highlight the chord that sends "the", rather than "th" or "t".
+If you wish to learn all available chords, select this option.  Twidor will show red highlighted buttons for the chord that matches the longest lesson text.  For example, given the text, "the", Twidor will highlight the chord that sends "the", rather than "th" or "t".
 
 When you enable "show multiple character chords", it also expands "show chords" further to include labels for MCCs in the chord layout.
 
