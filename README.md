@@ -45,9 +45,9 @@ First we locate "m" in they layout.  It's found beside the large "SP" box.  This
 
 The first of two buttons of the chord is repeated in the high row of the grid.  Here, "SP" is on the index finger, left column.
 
+<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_SCC_full.png" width="30%" align="right"> 
 The second button of the chord is small box labeled "m".  The position of "m" within this grid is under the ring finger, middle column.  On the twiddler, the physical button is labeled "g".
 
-<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_SCC_full.png" width="30%" align="right"> 
 Here are some of the two-button chords on the left column of buttons:
 * <kbd>DEL + SP</kbd>, index and middle fingers, sends "o".
 * <kbd>BS  + SP</kbd>, index and ring fingers, sends "p".
