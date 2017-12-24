@@ -145,6 +145,8 @@ public interface TwidorConstants {
 	public boolean TWIDDLER_SHOW_THUMB = true;
 	public static final String TWIDDLER_MIRROR_THUMB_TEXT = "Horizontal reverse thumb buttons";
 	public boolean TWIDDLER_MIRROR_THUMB = false;
+	public static final String TWIDDLER_LESSON_NUMBER_TEXT = "lesson number";
+
 
 	public static final String MACRO_REGEXP = "\"\\w*\"";
 

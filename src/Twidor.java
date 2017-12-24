@@ -40,6 +40,7 @@ import java.net.URL;
 import java.io.*;
 import java.awt.Font;
 import java.util.Properties;
+import java.util.prefs.Preferences;
 
 public class Twidor extends JFrame implements TwidorConstants {
 
@@ -60,8 +61,18 @@ public class Twidor extends JFrame implements TwidorConstants {
 	private String currentSentence;
 	private JFileChooser fc;
 	private java.io.PrintWriter keylog;
-	private boolean twiddler_show_MCC;
 	static public Properties prop;
+	static public Preferences pref;
+
+	private boolean twiddler_show_text;
+	private boolean twiddler_show_2key;
+	private boolean twiddler_show_MCC;
+	private boolean twiddler_mirror;
+	private boolean twiddler_show_letters;
+	private boolean twiddler_show_thumb;
+	private boolean twiddler_mirror_thumb;
+	private int twiddler_lesson_number;
+	private String keymap_filename;
 
 	/**
 	 * Default Constructor.
@@ -97,6 +108,22 @@ public class Twidor extends JFrame implements TwidorConstants {
 			}
 		}
 
+		// Retrieve the user preference
+		pref = Preferences.userNodeForPackage(Twidor.class);
+		// pref.put(PREF_NAME, newValue);
+		// String propertyValue = pref.get(PREF_NAME, defaultValue); // "a string"
+
+		twiddler_show_text = pref.getBoolean(TWIDDLER_SHOW_TEXT, TWIDDLER_SHOW);
+		twiddler_show_2key = pref.getBoolean(TWIDDLER_SHOW_2KEY_TEXT, TWIDDLER_SHOW_2KEY);
+		twiddler_show_MCC = pref.getBoolean(TWIDDLER_SHOW_MCC_TEXT, TWIDDLER_SHOW_MCC);
+		twiddler_mirror = pref.getBoolean(TWIDDLER_MIRROR_TEXT, TWIDDLER_MIRROR);
+		twiddler_show_letters = pref.getBoolean(TWIDDLER_SHOW_LETTERS_TEXT, TWIDDLER_SHOW_LETTERS);
+		twiddler_show_thumb = pref.getBoolean(TWIDDLER_SHOW_THUMB_TEXT, TWIDDLER_SHOW_THUMB);
+		twiddler_mirror_thumb = pref.getBoolean(TWIDDLER_MIRROR_THUMB_TEXT, TWIDDLER_MIRROR_THUMB);
+		twiddler_lesson_number = pref.getInt(TWIDDLER_LESSON_NUMBER_TEXT, 1);
+		keymap_filename = pref.get("keymap", DEFAULT_KEYMAP);
+
+
 		ignoreInput(true);
 		showingStats(false);
 		/* JFrame Settings */
@@ -111,10 +138,10 @@ public class Twidor extends JFrame implements TwidorConstants {
 		contentPane.setLayout(new BorderLayout());
 
 		setEventHandler();
-		setKeyMap(DEFAULT_KEYMAP);
+		setKeyMap(keymap_filename);
 		setLessonPlan(DEFAULT_LESSON);
 		setTwidorMenu();
-		setTwiddlerPanel(TWIDDLER_MIRROR_THUMB, TWIDDLER_MIRROR);
+		setTwiddlerPanel(twiddler_mirror_thumb, twiddler_mirror);
 		setTypingPanel();
 		setStatsPanel();
 		setInfoPanel();
@@ -611,6 +638,17 @@ public class Twidor extends JFrame implements TwidorConstants {
 	 */
 	public void twidorQuit () {
 		if (bDEBUG) System.out.println("Exiting Twidor.");
+
+		pref.putBoolean(TWIDDLER_SHOW_TEXT, twiddler_show_text);
+		pref.putBoolean(TWIDDLER_SHOW_2KEY_TEXT, twiddler_show_2key);
+		pref.putBoolean(TWIDDLER_SHOW_MCC_TEXT, twiddler_show_MCC);
+		pref.putBoolean(TWIDDLER_MIRROR_TEXT, twiddler_mirror);
+		pref.putBoolean(TWIDDLER_SHOW_LETTERS_TEXT, twiddler_show_letters);
+		pref.putBoolean(TWIDDLER_SHOW_THUMB_TEXT, twiddler_show_thumb);
+		pref.putBoolean(TWIDDLER_MIRROR_THUMB_TEXT, twiddler_mirror_thumb);
+		pref.putInt(TWIDDLER_LESSON_NUMBER_TEXT, twiddler_lesson_number);
+		pref.put("keymap", keymap_filename);
+
 		setVisible(false);
 		// insert stats saving stuff here.
 		getStatsPanel().save();
