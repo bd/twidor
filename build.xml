@@ -32,7 +32,7 @@ ant
       <compilerarg value="-Xlint:unchecked"/>
     </javac>
     <copy todir="${build}">
-      <fileset dir="${src}" excludes="**/*.java **/*~"/>
+      <fileset dir="${src}" excludes="**/*.java **/*~ **/TAGS"/>
     </copy>
     <copy todir="${build}" file="LICENSE"/>
   </target>

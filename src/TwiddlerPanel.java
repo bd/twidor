@@ -41,32 +41,21 @@ public class TwiddlerPanel extends TwiddlerSubPanel implements TwidorConstants {
 	/**
 	 * internal variables
 	 */
-	private KeyMap myKeyMap;
-	private boolean thumbOrientation;
-	private boolean fingerOrientation;
-	private boolean showThumbMap;
-	private boolean showThumbBoard;
-	private boolean showFingerMap;
-	private boolean show2KeyChords = TWIDDLER_SHOW_2KEY;
-	private boolean showTwiddler;
-	private boolean showMCC;
+	private KeyMap keyMap;
 	private Vector <TwiddlerSubPanel> panelList;
     private FingerPanel fingerPanel;
+	private TwidorPreference pref;
 	/**
 	 * default constructor
 	 */
-	public TwiddlerPanel (KeyMap newMap, boolean thumb, boolean finger) {
+	public TwiddlerPanel (KeyMap newMap, TwidorPreference p) {
 		if (bDEBUG) System.out.println("TwiddlerPanel: creating panel");
 
-		setKeyMap(newMap);
-		setThumbOrientation(thumb);
-		setFingerOrientation(finger);
-		setThumbKeysVisible(TWIDDLER_SHOW);
-		setThumbBoardVisible(TWIDDLER_SHOW_THUMB);
-		setFingerKeysVisible(TWIDDLER_SHOW);
+		keyMap = newMap;
+		pref = p;
+
 		setBackground(twiddlerBackground);
 		setBorder(margin);
-		setTwiddlerVisible(true);
 
 		initPanels();
 		/* general doodlings with the JPanel */
@@ -76,61 +65,7 @@ public class TwiddlerPanel extends TwiddlerSubPanel implements TwidorConstants {
 		if (bDEBUG) System.out.println("TwiddlerPanel: panel created");
 	}
 
-	/**
-	 * accessor for thumb orientation
-	 * @return boolean the current thumb orientation
-	 */
-	public boolean getThumbOrientation () {
-		return thumbOrientation;
-	}
 
-	/**
-	 * accessor for finger orientation
-	 * @return boolean the current finger orientation
-	 */
-	public boolean getFingerOrientation () {
-		return fingerOrientation;
-	}
-
-	/**
-	 * accessor for thumb keys
-	 * @return boolean the current key visability
-	 */
-	public boolean getThumbKeysVisible () {
-		return showThumbMap;
-	}
-
-	/**
-	 * accessor for thumb board visibility
-	 * @return boolean the current thumb board visability
-	 */
-	public boolean getThumbBoardVisible () {
-		return showThumbBoard;
-	}
-
-	/**
-	 * accessor for finger keys
-	 * @return boolean the current key visability
-	 */
-	public boolean getFingerKeysVisible () {
-		return showFingerMap;
-	}
-
-	/**
-	 * accessor for the Twiddler itself
-	 * @return boolean the current visibility
-	 */
-	public boolean getTwiddlerVisible () {
-		return showTwiddler;
-	}
-
-	/**
-	 * accessor for the current keymap
-	 * @return KeyMap the current keymap
-	 */
-	public KeyMap getKeyMap () {
-		return myKeyMap;
-	}
 
 	/**
 	 * accessor for the JPanels we contain
@@ -138,78 +73,6 @@ public class TwiddlerPanel extends TwiddlerSubPanel implements TwidorConstants {
 	 */
 	public Vector <TwiddlerSubPanel> getPanels () {
 		return panelList;
-	}
-
-	/**
-	 * modifier for thumb orientation
-	 * @param boolean the desired thumb orientation
-	 */
-	public void setThumbOrientation (boolean newOrientation) {
-		thumbOrientation = newOrientation;
-	}
-
-	/**
-	 * modifier for finger orientation
-	 * @param boolean the desired finger orientation
-	 */
-	public void setFingerOrientation (boolean newOrientation) {
-		fingerOrientation = newOrientation;
-	}
-
-	/**
-	 * modifier for thumb key visibility
-	 * @param boolean the new status
-	 */
-	public void setThumbKeysVisible (boolean status) {
-		showThumbMap = status;
-	}
-
-	/**
-	 * modifier for thumb board visibility
-	 * @param boolean the new status
-	 */
-	public void setThumbBoardVisible (boolean status) {
-		showThumbBoard = status;
-	}
-
-	/**
-	 * modifier for finger key visiblity
-	 * @param boolean the new status
-	 */
-	public void setFingerKeysVisible (boolean status) {
-		showFingerMap = status;
-	}
-
-	/**
-	 * modifier for twiddler visibility
-	 * @param boolean the new status
-	 */
-	public void setTwiddlerVisible (boolean status) {
-		showTwiddler = status;
-	}
-
-	/**
-	 * modifier for display of 2-key chords
-	 * @param boolean the new status
-	 */
-	public void set2keyChordsVisible (boolean status) {
-		show2KeyChords = status;
-	}
-
-	/**
-	 * modifier for the current keymap
-	 * @param KeyMap the desired KeyMap
-	 */
-	public void setKeyMap (KeyMap newMap) {
-		myKeyMap = newMap;
-	}
-
-	/**
-	 * modifier for the MCC visibility
-	 * @param KeyMap the desired KeyMap
-	 */
-	public void setShowMCC (boolean status) {
-		showMCC = status;
 	}
 
 	/**
@@ -224,7 +87,7 @@ public class TwiddlerPanel extends TwiddlerSubPanel implements TwidorConstants {
 	 * @param String the character to highlight
 	 */
 	public void highlight (String key) {
-		KeyElement keyPress = getKeyMap().getKey(key);
+		KeyElement keyPress = keyMap.getKey(key);
 		if (keyPress != null) {
 			highlight(keyPress);
 		}
@@ -281,6 +144,10 @@ public class TwiddlerPanel extends TwiddlerSubPanel implements TwidorConstants {
 		}
 	}
 
+	void setKeyMap (KeyMap keymap) {
+		keyMap = keymap;
+	}
+
 	/**
 	 * called whenever you want to do a redraw of the Twiddler display;
 	 * i.e. anytime you modify the Finger/Thumb Orientation or KeyMap.
@@ -294,17 +161,18 @@ public class TwiddlerPanel extends TwiddlerSubPanel implements TwidorConstants {
 
 		setMinimumSize(new Dimension(twiddlerX, windowY));
 		getPanels().clear();
-		if (getThumbBoardVisible()) {
-			getPanels().addElement(new ThumbPanel(getThumbOrientation(), getKeyMap(), getThumbKeysVisible()));
+		if (pref.show_thumb_board) {
+			getPanels().addElement(new ThumbPanel(keyMap, pref.thumb_left_to_right, pref.show_thumb_board));
 		}
 
-		fingerPanel = new FingerPanel(getFingerOrientation(), getKeyMap(), getFingerKeysVisible(), show2KeyChords, showMCC);
+		fingerPanel = new FingerPanel(keyMap, pref.fingerboard_left_to_right, pref.show_keyboard,
+									  pref.show_SCC, pref.show_MCC);
 		getPanels().addElement(fingerPanel);
 
 		for (int i = 0; i < getPanels().size(); i++) {
 			this.add(getPanels().elementAt(i));
 		}
-		if (getTwiddlerVisible()) {
+		if (pref.show_keyboard) {
 			setVisible(true);
 		}
 		if (bDEBUG) System.out.println("TwiddlerPanel: rearrangement complete");

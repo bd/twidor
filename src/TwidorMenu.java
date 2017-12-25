@@ -42,7 +42,6 @@ public class TwidorMenu extends JMenuBar implements TwidorConstants {
 	 * internal variables
 	 */
 	EventHandler myEventHandler;
-	Twidor myTutor;
 	Vector <JMenuItem> Tutor, Twiddler;
 	ButtonGroup Lesson;
 	Vector <JRadioButtonMenuItem> lessonButtons;
@@ -57,14 +56,13 @@ public class TwidorMenu extends JMenuBar implements TwidorConstants {
 	/**
 	 * default constructor
 	 */
-	public TwidorMenu (Twidor tutor, EventHandler events, int lessonCount) {
+	public TwidorMenu (TwidorPreference pref, EventHandler events, int lessonCount) {
 		this();
 
 		JMenu menu;
 		JMenuItem jmItem;
 		JCheckBoxMenuItem cbItem;
 		JRadioButtonMenuItem rbItem;
-		Tutor(tutor);
 		myEventHandler = events;
 
 		menu = new JMenu("File");
@@ -80,25 +78,21 @@ public class TwidorMenu extends JMenuBar implements TwidorConstants {
 
 		Twiddler = new Vector<>();
 		menu = new JMenu("View");
-		addJcheckItem( menu, Twiddler, TWIDDLER_SHOW_TEXT, TWIDDLER_SHOW);
-		addJcheckItem( menu, Twiddler, TWIDDLER_SHOW_THUMB_TEXT, TWIDDLER_SHOW_THUMB);
-		addJcheckItem( menu, Twiddler, TWIDDLER_SHOW_2KEY_TEXT, TWIDDLER_SHOW_2KEY);
-		addJcheckItem( menu, Twiddler, TWIDDLER_SHOW_MCC_TEXT, TWIDDLER_SHOW_MCC);
-		addJcheckItem( menu, Twiddler, TWIDDLER_SHOW_LETTERS_TEXT, TWIDDLER_SHOW_LETTERS);
-		addJcheckItem( menu, Twiddler, TWIDDLER_MIRROR_TEXT, TWIDDLER_MIRROR);
-		addJcheckItem( menu, Twiddler, TWIDDLER_MIRROR_THUMB_TEXT, TWIDDLER_MIRROR_THUMB);
+		addJcheckItem( menu, Twiddler, TWIDDLER_SHOW_KEYBOARD_TEXT, pref.show_keyboard);
+		addJcheckItem( menu, Twiddler, TWIDDLER_SHOW_THUMB_BOARD_TEXT, pref.show_thumb_board);
+		addJcheckItem( menu, Twiddler, TWIDDLER_SHOW_SCC_TEXT, pref.show_SCC);
+		addJcheckItem( menu, Twiddler, TWIDDLER_SHOW_MCC_TEXT, pref.show_MCC);
+		addJcheckItem( menu, Twiddler, TWIDDLER_SHOW_KEY_LABELS_TEXT, pref.show_key_labels);
+		addJcheckItem( menu, Twiddler, TWIDDLER_FINGERBOARD_LEFT_TO_RIGHT_TEXT, pref.fingerboard_left_to_right);
+		addJcheckItem( menu, Twiddler, TWIDDLER_THUMB_LEFT_TO_RIGHT_TEXT, pref.thumb_left_to_right);
 
 		add(menu);
 
 		Lesson = new ButtonGroup();
 		lessonButtons = new Vector<>();
 		menu = new JMenu("Lessons");
-		rbItem = jradioItem("Lesson 1", true);
-		Lesson.add(rbItem);
-		lessonButtons.add(rbItem);
-		menu.add(rbItem);
-		for (int i = 2; i <= lessonCount; i++) {
-			rbItem = jradioItem("Lesson " + i, false);
+		for (int i = 1; i <= lessonCount; i++) {
+			rbItem = jradioItem("Lesson " + i, (i == pref.lesson_number));
 			Lesson.add(rbItem);
 			lessonButtons.add(rbItem);
 			menu.add(rbItem);
@@ -175,21 +169,4 @@ public class TwidorMenu extends JMenuBar implements TwidorConstants {
 			}
 		}
 	}
-
-	/**
-	 * Modifier
-	 * @param Twidor
-	 */
-	private void Tutor (Twidor tutor) {
-		myTutor = tutor;
-	}
-
-	/**
-	 * Accessor
-	 * @return Twidor
-	 */
-	public Twidor Tutor () {
-		return myTutor;
-	}
-
 }

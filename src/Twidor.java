@@ -61,18 +61,9 @@ public class Twidor extends JFrame implements TwidorConstants {
 	private String currentSentence;
 	private JFileChooser fc;
 	private java.io.PrintWriter keylog;
-	static public Properties prop;
-	static public Preferences pref;
+	private TwidorPreference pref;
 
-	private boolean twiddler_show_text;
-	private boolean twiddler_show_2key;
-	private boolean twiddler_show_MCC;
-	private boolean twiddler_mirror;
-	private boolean twiddler_show_letters;
-	private boolean twiddler_show_thumb;
-	private boolean twiddler_mirror_thumb;
-	private int twiddler_lesson_number;
-	private String keymap_filename;
+	static public Properties prop;
 
 	/**
 	 * Default Constructor.
@@ -109,20 +100,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 		}
 
 		// Retrieve the user preference
-		pref = Preferences.userNodeForPackage(Twidor.class);
-		// pref.put(PREF_NAME, newValue);
-		// String propertyValue = pref.get(PREF_NAME, defaultValue); // "a string"
-
-		twiddler_show_text = pref.getBoolean(TWIDDLER_SHOW_TEXT, TWIDDLER_SHOW);
-		twiddler_show_2key = pref.getBoolean(TWIDDLER_SHOW_2KEY_TEXT, TWIDDLER_SHOW_2KEY);
-		twiddler_show_MCC = pref.getBoolean(TWIDDLER_SHOW_MCC_TEXT, TWIDDLER_SHOW_MCC);
-		twiddler_mirror = pref.getBoolean(TWIDDLER_MIRROR_TEXT, TWIDDLER_MIRROR);
-		twiddler_show_letters = pref.getBoolean(TWIDDLER_SHOW_LETTERS_TEXT, TWIDDLER_SHOW_LETTERS);
-		twiddler_show_thumb = pref.getBoolean(TWIDDLER_SHOW_THUMB_TEXT, TWIDDLER_SHOW_THUMB);
-		twiddler_mirror_thumb = pref.getBoolean(TWIDDLER_MIRROR_THUMB_TEXT, TWIDDLER_MIRROR_THUMB);
-		twiddler_lesson_number = pref.getInt(TWIDDLER_LESSON_NUMBER_TEXT, 1);
-		keymap_filename = pref.get("keymap", DEFAULT_KEYMAP);
-
+		pref = new TwidorPreference();
 
 		ignoreInput(true);
 		showingStats(false);
@@ -131,17 +109,16 @@ public class Twidor extends JFrame implements TwidorConstants {
 		setTitle(windowTitle);
 		setBackground(windowBackground);
 		setResizable(windowResizable);
-		twiddler_show_MCC = TWIDDLER_SHOW_MCC;
 
 		/* Root Panel Settings */
 		Container contentPane = getContentPane();
 		contentPane.setLayout(new BorderLayout());
 
 		setEventHandler();
-		setKeyMap(keymap_filename);
+		setKeyMap(pref.keymap_filename);
 		setLessonPlan(DEFAULT_LESSON);
 		setTwidorMenu();
-		setTwiddlerPanel(twiddler_mirror_thumb, twiddler_mirror);
+		setTwiddlerPanel();
 		setTypingPanel();
 		setStatsPanel();
 		setInfoPanel();
@@ -161,7 +138,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 		pack();
 		/* Show it all */
 		setVisible(true);
-		setLesson("Lesson 1");
+		setLesson("Lesson " + String.valueOf(pref.lesson_number));
 		ignoreInput(false);
 		fc = new JFileChooser("."); // this retains user's choice of directory across 'Load' menu invocations
 	}
@@ -190,6 +167,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 	 * @param String the path of the keymap file
 	 */
 	private void setKeyMap (String path) {
+		pref.keymap_filename = path;
 		myKeyMap = new KeyMap(path);
 		if (myKeyMap.appearsValid()) {
 			if (bDEBUG) System.out.println("Keymap Loaded");
@@ -220,7 +198,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 	 * Sets the JMenuBar for the options
 	 */
 	private void setTwidorMenu () {
-		myMenuBar = new TwidorMenu(this, getEventHandler(), getLessonPlan().getLessonCount());
+		myMenuBar = new TwidorMenu(pref, getEventHandler(), getLessonPlan().getLessonCount());
 		setJMenuBar(myMenuBar);
 	}
 
@@ -238,9 +216,10 @@ public class Twidor extends JFrame implements TwidorConstants {
 	 * @param boolean the Thumb Orientation
 	 * @param boolean the Finger Orientation
 	 */
-	private void setTwiddlerPanel (boolean thumb, boolean finger) {
+	private void setTwiddlerPanel ()
+	{
 		if (bDEBUG) System.out.println("Adding TwiddlerPanel");
-		myTwiddler = new TwiddlerPanel(getKeyMap(), thumb, finger);
+		myTwiddler = new TwiddlerPanel(getKeyMap(), pref );
 	}
 
 	/**
@@ -340,6 +319,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 		for (int i = 0; i < lpTemp.getLessonCount(); i++) {
 			lTemp = lpTemp.getLesson(i);
 			if (lTemp.getLessonName().equals(lesson)) {
+				pref.lesson_number = i + 1;
 				currentLesson = lTemp;
 				currentLesson.reloadSentences();
 				getStatsPanel().reset();
@@ -404,6 +384,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 		int next = getLesson().getLessonNumber() + 1;
 		if (next > getLessonPlan().getLessonCount())
 			next--;
+		pref.lesson_number = next;
 		getTwidorMenu().makeSelectedLesson("Lesson " + next);
 		//setLesson("Lesson " + next);
 	}
@@ -428,7 +409,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 			String remainder = getSentence().substring(begin);
 
 			int limit = 0;
-			if ( ! twiddler_show_MCC ) limit = 1;
+			if ( ! pref.show_MCC ) limit = 1;
 			match = getKeyMap().matchLargestChunk(remainder, limit);
 			if ( match == null ) {
 				if(Character.isUpperCase(remainder.charAt(0))) {
@@ -549,25 +530,23 @@ public class Twidor extends JFrame implements TwidorConstants {
 	public void booleanOption (String option, boolean status) {
 		if (bDEBUG) System.out.println("Changing " + option + ":" + status);
 
-		if (option.equals(TWIDDLER_SHOW_TEXT)) {
-			getTwiddlerPanel().setTwiddlerVisible(status);
+		if (option.equals(TWIDDLER_SHOW_KEYBOARD_TEXT)) {
+			pref.show_keyboard = status;
 		}
-		else if (option.equals(TWIDDLER_SHOW_2KEY_TEXT)) {
-			getTwiddlerPanel().set2keyChordsVisible(status);
+		else if (option.equals(TWIDDLER_SHOW_SCC_TEXT)) {
+			pref.show_SCC = status;
 		}
-		else if (option.equals(TWIDDLER_SHOW_LETTERS_TEXT)) {
-			getTwiddlerPanel().setThumbKeysVisible(status);
-			getTwiddlerPanel().setFingerKeysVisible(status);
+		else if (option.equals(TWIDDLER_SHOW_KEY_LABELS_TEXT)) {
+			pref.show_key_labels = status;
 		}
-		else if (option.equals(TWIDDLER_MIRROR_TEXT)) {
-			getTwiddlerPanel().setFingerOrientation(status);
+		else if (option.equals(TWIDDLER_FINGERBOARD_LEFT_TO_RIGHT_TEXT)) {
+			pref.fingerboard_left_to_right = status;
 		}
-		else if (option.equals(TWIDDLER_SHOW_THUMB_TEXT)) {
-			getTwiddlerPanel().setThumbBoardVisible(status);
+		else if (option.equals(TWIDDLER_SHOW_THUMB_BOARD_TEXT)) {
+			pref.show_thumb_board = status;
 		}
 		else if (option.equals(TWIDDLER_SHOW_MCC_TEXT)) {
-			twiddler_show_MCC = status;
-			getTwiddlerPanel().setShowMCC(status);
+			pref.show_MCC = status;
 		}
 		else if (bDEBUG) System.out.println("Unhandled option");
 
@@ -639,15 +618,8 @@ public class Twidor extends JFrame implements TwidorConstants {
 	public void twidorQuit () {
 		if (bDEBUG) System.out.println("Exiting Twidor.");
 
-		pref.putBoolean(TWIDDLER_SHOW_TEXT, twiddler_show_text);
-		pref.putBoolean(TWIDDLER_SHOW_2KEY_TEXT, twiddler_show_2key);
-		pref.putBoolean(TWIDDLER_SHOW_MCC_TEXT, twiddler_show_MCC);
-		pref.putBoolean(TWIDDLER_MIRROR_TEXT, twiddler_mirror);
-		pref.putBoolean(TWIDDLER_SHOW_LETTERS_TEXT, twiddler_show_letters);
-		pref.putBoolean(TWIDDLER_SHOW_THUMB_TEXT, twiddler_show_thumb);
-		pref.putBoolean(TWIDDLER_MIRROR_THUMB_TEXT, twiddler_mirror_thumb);
-		pref.putInt(TWIDDLER_LESSON_NUMBER_TEXT, twiddler_lesson_number);
-		pref.put("keymap", keymap_filename);
+		// persist user preferences
+		pref.store();
 
 		setVisible(false);
 		// insert stats saving stuff here.

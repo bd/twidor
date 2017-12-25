@@ -1,6 +1,5 @@
 /*  -*- indent-tabs-mode: t; tab-width: 4; c-basic-offset: 4 -*-
 Twidor: the twiddler typing tutor.
-Copyright (C) 2005	James Fusia
 Copyright (C) 2017	Carey Richard Murphey
 
 This program is free software; you can redistribute it and/or
@@ -26,10 +25,8 @@ USA.
  */
 import java.awt.*;
 import javax.swing.*;
-import java.lang.String;
-import java.io.*;
-import java.util.Properties;
 
+@SuppressWarnings("serial")
 public class About extends JFrame implements TwidorConstants {
 
 	public About() {

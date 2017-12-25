@@ -58,64 +58,28 @@ public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
 	}
 
 	/**
-	 * add a label to a key in the keyboard display
-         * string must be three chara for top middle and bottom of label.
-	 */
-	private void add_key ( JPanel panel, Color text_color, Font font, String text, Border border ) {
-		if( border == null )
-			border = blackBorder;
-		if( text_color == null )
-			text_color = TEXT_DEFAULT;
-
-		JLabel label = new JLabel();
-		label.setHorizontalAlignment(JLabel.CENTER);
-		label.setBorder(border);
-		label.setBackground( buttonBackground );
-		label.setForeground( text_color );
-		if (text != null) {
-			String keyLabel = text.substring(0,Math.min(3,text.length()));
-			if( font == null ) {
-				if (keyLabel.length() == 1) {
-					font = FONT_LABEL;
-				} else if (keyLabel.length() == 2) {
-					font = FONT_LABEL2;
-				} else if (keyLabel.length() > 2) {
-					font = FONT_MACRO;
-				}
-				label.setFont(font);
-				label.setText(keyLabel);
-			}
-		}
-		panel.add(label);
-	}
-
-	/**
 	 * add one row of buttons for specified <finger>
 	 * @param int the which finger we are (0-3; index-pinky)
 	 * @param boolean the orientation
 	 * @param KeyMap the KeyMap to write on it
 	 */
-	public FingerPanel (boolean orient, KeyMap keys, boolean visibleKeys, boolean show2KeyChords, boolean show_MCC ) {
+	public FingerPanel (KeyMap keys, boolean left_to_right, boolean visibleKeys, boolean showSCC, boolean show_MCC ) {
 		if (bDEBUG) System.out.println("FingerPanel: creating panel");
 		initButtons();
 		setBackground(twiddlerBackground);
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
-		/* horizontal direction to arrange the keys */
-		ComponentOrientation keyOrient = ComponentOrientation.RIGHT_TO_LEFT;
-		if (! orient) {
-			keyOrient = ComponentOrientation.LEFT_TO_RIGHT;
-		}
+		ComponentOrientation keyOrient = left_to_right ? ComponentOrientation.LEFT_TO_RIGHT :  ComponentOrientation.RIGHT_TO_LEFT;
 
 		{
 			JPanel panel = new JPanel();
 			panel.setComponentOrientation( keyOrient );
-			panel.setLayout(new GridLayout(0, (show2KeyChords && visibleKeys) ? 12 : 3, 1, 4));
+			panel.setLayout(new GridLayout(0, (showSCC && visibleKeys) ? 12 : 3, 1, 4));
 			panel.setBackground(twiddlerBackground);
 
 			for (int finger = 0; finger < 4; finger++) { // four rows, one per finger
 				for (int fingerCol = 0; fingerCol < 3; fingerCol++) {			 // three button columns, and three chord columns
-					if ( visibleKeys && show2KeyChords ) {
+					if ( visibleKeys && showSCC ) {
 						// chord map
 						Vector <JPanel> subPanels = new Vector <JPanel> ();
 						boolean has_chords = false;
@@ -197,6 +161,38 @@ public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
 			add(panel);
 		}
 		if (bDEBUG) System.out.println("FingerPanel: panel created");
+	}
+
+	/**
+	 * add a label to a key in the keyboard display
+         * string must be three chara for top middle and bottom of label.
+	 */
+	private void add_key ( JPanel panel, Color text_color, Font font, String text, Border border ) {
+		if( border == null )
+			border = blackBorder;
+		if( text_color == null )
+			text_color = TEXT_DEFAULT;
+
+		JLabel label = new JLabel();
+		label.setHorizontalAlignment(JLabel.CENTER);
+		label.setBorder(border);
+		label.setBackground( buttonBackground );
+		label.setForeground( text_color );
+		if (text != null) {
+			String keyLabel = text.substring(0,Math.min(3,text.length()));
+			if( font == null ) {
+				if (keyLabel.length() == 1) {
+					font = FONT_LABEL;
+				} else if (keyLabel.length() == 2) {
+					font = FONT_LABEL2;
+				} else if (keyLabel.length() > 2) {
+					font = FONT_MACRO;
+				}
+				label.setFont(font);
+				label.setText(keyLabel);
+			}
+		}
+		panel.add(label);
 	}
 
 	private ImageIcon loadIcon (String file) {

@@ -43,13 +43,6 @@ public class EventHandler implements ActionListener, ItemListener, KeyListener, 
 
 	/**
 	 * Default Constructor.
-	 * Private. Don't want anybody to use it.
-	 */
-	private EventHandler () {
-	}
-
-	/**
-	 * Default Constructor.
 	 * @param Twidor the tutor we manage
 	 */
 	public EventHandler (Twidor tutor) {

@@ -130,21 +130,21 @@ public interface TwidorConstants {
 	public static final String QUIT_TEXT = "Quit";
 
 	/* Twiddler */
-	public static final String TWIDDLER_SHOW_TEXT = "Show key map";
-	public boolean TWIDDLER_SHOW = true;
-	public static final String TWIDDLER_SHOW_2KEY_TEXT = "Show chord map";
-	public boolean TWIDDLER_SHOW_2KEY = false;
+	public static final String TWIDDLER_SHOW_KEYBOARD_TEXT = "Show key map";
+	public boolean TWIDDLER_SHOW_KEYBOARD = true;
+	public static final String TWIDDLER_SHOW_SCC_TEXT = "Show chord map";
+	public boolean TWIDDLER_SHOW_SCC = false;
 	public static final String TWIDDLER_SHOW_MCC_TEXT = "Show multiple character chords";
 	public boolean TWIDDLER_SHOW_MCC = false;
 
-	public static final String TWIDDLER_MIRROR_TEXT = "Horizontal reverse keyboard";
-	public boolean TWIDDLER_MIRROR = false;
-	public static final String TWIDDLER_SHOW_LETTERS_TEXT = "Show labels on keys";
-	public boolean TWIDDLER_SHOW_LETTERS = true;
-	public static final String TWIDDLER_SHOW_THUMB_TEXT = "Show thumb buttons";
-	public boolean TWIDDLER_SHOW_THUMB = true;
-	public static final String TWIDDLER_MIRROR_THUMB_TEXT = "Horizontal reverse thumb buttons";
-	public boolean TWIDDLER_MIRROR_THUMB = false;
+	public static final String TWIDDLER_SHOW_KEY_LABELS_TEXT = "Show labels on keys";
+	public boolean TWIDDLER_SHOW_KEY_LABELS = true;
+	public static final String TWIDDLER_SHOW_THUMB_BOARD_TEXT = "Show thumb buttons";
+	public boolean TWIDDLER_SHOW_THUMB_BOARD = true;
+	public static final String TWIDDLER_FINGERBOARD_LEFT_TO_RIGHT_TEXT = "Horizontal reverse keyboard";
+	public boolean TWIDDLER_FINGERBOARD_LEFT_TO_RIGHT = false;
+	public static final String TWIDDLER_THUMB_LEFT_TO_RIGHT_TEXT = "Horizontal reverse thumb buttons";
+	public boolean TWIDDLER_THUMB_LEFT_TO_RIGHT = false;
 	public static final String TWIDDLER_LESSON_NUMBER_TEXT = "lesson number";
 
 
