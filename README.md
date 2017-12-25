@@ -58,17 +58,17 @@ Here are some of the two-button chords on the left column of buttons:
 
 ## View | Show multiple character chords
 
-A chord on the Twiddler can send several letter, such as "ed" or "ing".  These are called multiple character chords (MCCs).  
+A chord on the Twiddler can send several letters such as "ed" or "ing".  These are called multiple character chords (MCCs).
 
 By default, Twidor does not highlight MCCs, but rather only highlights single letters as shown above in "Getting Started".  This default is intended to help users who are just beginning. Lyons [2,3] has shown that learning is faster when the incremental amount of learning material smaller.
 
 When <kbd>View | Show multiple character chords</kbd> is selected, Twidor highlights MCCs.  
 
-<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_MCC.png" width="30%" align="right"> For example, given the text "ed", shown on the right.  When this is enabled, Twidor highlights the chord that sends "ed", rather than just "e".  Note that this is different from the layout shown above in "Getting Started", where the option was not enabled and only "e" is highlighted.
+<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_MCC.png" width="30%" align="right"> For example, given the text "ed", shown on the right, with this enabled, Twidor highlights the chord that sends "ed", rather than just "e".  Note that this is different from the layout shown above in "Getting Started", where the option was not enabled and only "e" is highlighted.
 
-If you wish to learn all available chords, select this option.  Twidor will show red highlighted buttons for the chord that matches the longest lesson text.  For example, given the text, "the", Twidor will highlight the chord that sends "the", rather than "th" or "t".
+If you wish to learn all available chords, select this option.  Twidor will show red highlighted buttons for the longest matching chord.  For example, given the text, "the", Twidor will highlight the chord that sends "the", rather than "th" or "t".
 
-When you enable "show multiple character chords", it also expands "show chords" further to include labels for MCCs in the chord layout.
+When you enable both "show chords" and "show multiple character chords", it further expands the keyboard layout to include labels for multiple character 2-button chords.
 
 Note that this option affects only the red highlighted "hints".  Regardless of this setting, the Twiddler can send MCCs, and Twidor will accept MCCs as input.
 
