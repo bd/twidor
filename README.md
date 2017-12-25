@@ -64,7 +64,7 @@ By default, Twidor does not highlight multiple character chords, but rather only
 
 When <kbd>View | Show multiple character chords</kbd> is selected, Twidor highlights MCCs.  
 
-<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_MCC.png" width="30%" align="right"> For example, given the text "ed", shown on the right, Twidor would highlight the chord that sends "ed", rather than just "e".  Note that this is different from the layout shown above in "Getting Started", where the option was not enabled and only "e" is highlighted.
+<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_MCC.png" width="30%" align="right"> For example, given the text "ed", shown on the right, Twidor will highlight the chord that sends "ed", rather than just "e".  Note that this is different from the layout shown above in "Getting Started", where the option was not enabled and only "e" is highlighted.
 
 If you wish to learn all available chords, select this option.  Twidor will show red highlighted buttons for the longest matching chord.  For example, given the text, "the", Twidor will highlight the chord that sends "the", rather than "th" or "t".
 
