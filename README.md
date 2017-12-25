@@ -60,7 +60,7 @@ Here are some of the two-button chords on the left column of buttons:
 
 A chord on the Twiddler can send several letters such as "ed" or "ing".  These are called multiple character chords (MCCs).
 
-By default, Twidor does not highlight MCCs, but rather only highlights single letters as shown above in "Getting Started".  This default is intended to help users who are just beginning. Lyons [2,3] has shown that learning is faster when the incremental amount of learning material smaller.
+By default, Twidor does not highlight multiple character chords, but rather only highlights single letters as shown above in "Getting Started".  This default is intended to help users who are just beginning. Lyons [2,3] has shown that learning is faster when the incremental amount of learning material smaller.
 
 When <kbd>View | Show multiple character chords</kbd> is selected, Twidor highlights MCCs.  
 
@@ -70,7 +70,7 @@ If you wish to learn all available chords, select this option.  Twidor will show
 
 When you enable both "show chords" and "show multiple character chords", it further expands the keyboard layout to include labels for multiple character 2-button chords.
 
-Note that this option affects only the red highlighted "hints".  Regardless of this setting, the Twiddler can send MCCs, and Twidor will accept MCCs as input.
+Note that this option affects only the red highlighted "hints".  Regardless of this setting, the Twiddler can send multiple character chords, and Twidor will accept MCCs as input.
 
 ## Keymaps | Backspice, TabSpace, Typemax
 
