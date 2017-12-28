@@ -97,8 +97,7 @@ public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
 							}
 							for (int chordFinger = 0; chordFinger < 4; chordFinger++) { // anchor finger
 								if ((finger == chordFinger) && (fingerCol == chordCol)) {
-									KeyElement keyElement = keys.getKeyByButtons(KeyElement.buttonMask(finger, fingerCol));
-									add_key( subPanel, null, null, keyElement.getLabel(), border );
+									add_key( subPanel, null, null, "•", border );
 								}
 								else if (finger > chordFinger) {
 									add_key( subPanel, twiddlerBackground, null, "z", emptyBorder);
