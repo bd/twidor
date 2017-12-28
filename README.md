@@ -60,17 +60,17 @@ Here are some of the two-button chords on the left column of buttons:
 
 A chord on the Twiddler can send several letters such as "ed" or "ing".  These are called multiple character chords (MCCs).
 
-By default, Twidor does not highlight MCCs, but rather only highlights single letters as shown above in "Getting Started".  This default is intended to help users who are just beginning. Lyons [2,3] has shown that learning is faster when the incremental amount of learning material smaller.
+By default, Twidor does not highlight multiple character chords, but rather only highlights single letters as shown above in "Getting Started".  This default is intended to help users who are just beginning. Lyons [2,3] has shown that learning is faster when the incremental amount of learning material smaller.
 
 When <kbd>View | Show multiple character chords</kbd> is selected, Twidor highlights MCCs.  
 
-<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_MCC.png" width="30%" align="right"> For example, given the text "ed", shown on the right, with this enabled, Twidor highlights the chord that sends "ed", rather than just "e".  Note that this is different from the layout shown above in "Getting Started", where the option was not enabled and only "e" is highlighted.
+<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_MCC.png" width="30%" align="right"> For example, given the text "ed", shown on the right, Twidor will highlight the chord that sends "ed", rather than just "e".  Note that this is different from the layout shown above in "Getting Started", where the option was not enabled and only "e" is highlighted.
 
 If you wish to learn all available chords, select this option.  Twidor will show red highlighted buttons for the longest matching chord.  For example, given the text, "the", Twidor will highlight the chord that sends "the", rather than "th" or "t".
 
 When you enable both "show chords" and "show multiple character chords", it further expands the keyboard layout to include labels for multiple character 2-button chords.
 
-Note that this option affects only the red highlighted "hints".  Regardless of this setting, the Twiddler can send MCCs, and Twidor will accept MCCs as input.
+Note that this option affects only the red highlighted "hints".  Regardless of this setting, the Twiddler can send multiple character chords, and Twidor will accept MCCs as input.
 
 ## Keymaps | Backspice, TabSpace, Typemax
 
@@ -113,16 +113,16 @@ Download the releases from here:
 
 On windows, download and run the Twidor-setup.exe installer.
 
-On Debian or Ubuntu, download the twidor-x.x.deb. To install and run it one may use:
+On Debian or Ubuntu, download the twidor-x.x.deb and install it.  For example:
 
-    wget https://github.com/rich-murphey/twidor/releases/download/vX.X/twidor-X.X.deb
-    dpkg -i twidor-X.X.deb
+    wget https://github.com/rich-murphey/twidor/releases/download/v2.5/twidor-2.5.deb
+    dpkg -i twidor-2.5.deb
     twidor
 
-On other Linux, OSX, and Unix variants, download Twidor.jar from the above link,
-install openjdk-8-jre, and invoke the application using:
+On other Linux, OSX, and Unix variants, install openjdk-8-jre, download Twidor.jar
+and invoke it, using, for example:
 
-     wget https://github.com/rich-murphey/twidor/releases/download/vX.X/Twidor.jar
+     wget https://github.com/rich-murphey/twidor/releases/download/v2.5/Twidor.jar
      java -jar Twidor.jar
 
 Feedback and reports of issues are
