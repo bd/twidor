@@ -162,11 +162,10 @@ public class TwiddlerPanel extends TwiddlerSubPanel implements TwidorConstants {
 		setMinimumSize(new Dimension(twiddlerX, windowY));
 		getPanels().clear();
 		if (pref.show_thumb_board) {
-			getPanels().addElement(new ThumbPanel(keyMap, pref.thumb_left_to_right, pref.show_thumb_board));
+			getPanels().addElement(new ThumbPanel(keyMap, pref));
 		}
 
-		fingerPanel = new FingerPanel(keyMap, pref.fingerboard_left_to_right, pref.show_keyboard,
-									  pref.show_SCC, pref.show_MCC);
+		fingerPanel = new FingerPanel(keyMap, pref);
 		getPanels().addElement(fingerPanel);
 
 		for (int i = 0; i < getPanels().size(); i++) {

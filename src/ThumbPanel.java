@@ -56,7 +56,7 @@ public class ThumbPanel extends TwiddlerSubPanel implements  TwidorConstants {
 	 * @param boolean the orientation
 	 * @param KeyMap the keymap to implement
 	 */
-	public ThumbPanel (KeyMap keyMap, boolean left_to_right, boolean show_key_labels) {
+	public ThumbPanel (KeyMap keyMap, TwidorPreference pref ) {
 		setAlignmentX(Component.CENTER_ALIGNMENT);
 		setAlignmentY(Component.CENTER_ALIGNMENT);
 		GridBagLayout gridbag = new GridBagLayout();
@@ -66,7 +66,7 @@ public class ThumbPanel extends TwiddlerSubPanel implements  TwidorConstants {
 		GridBagConstraints constraints = new GridBagConstraints();
                 
 		initButtons();
-		if (left_to_right) {
+		if (pref.thumb_left_to_right) {
 			setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
 		}
 		else {
@@ -75,7 +75,7 @@ public class ThumbPanel extends TwiddlerSubPanel implements  TwidorConstants {
 		if (bDEBUG) System.out.println("ThumbPanel: creating panel");
 
 		String[] labels;
-		if (show_key_labels) {
+		if (pref.show_key_labels) {
 			labels = new String[]{"Num", "Alt", "Ctrl", "Shft"};
 		} else {
 			labels = new String[]{"    ", "    ", "    ", "    "};

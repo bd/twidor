@@ -423,8 +423,10 @@ public class Twidor extends JFrame implements TwidorConstants {
 		} else {
 			match = getKeyMap().getKey(UNICODE_RETURN); // highlight ENTER when at end of line.
 		}
-		getTwiddlerPanel().highlight(match);
-		getTypingPanel().highlight(match);
+		if( match != null ) {
+			getTwiddlerPanel().highlight(match);
+			getTypingPanel().highlight(match);
+		}
 	}
 	/**
 	 * sets the Input flag (whether we are recording or not)
@@ -476,7 +478,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 	public void charTyped (String macro, long time) {
 		String sentence = getSentence();
 		KeyElement typed = getKeyMap().getKey(macro);
-                                                                                                                                   		if ( (typed == null) &&
+		if ( (typed == null) &&
 			 (Character.isUpperCase(macro.charAt(0)))
 			 ) {
 			typed = getKeyMap().getKey(macro.toLowerCase());
@@ -486,7 +488,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 			}
 		}
 		if (typed == null) {
-			if (bDEBUG) System.out.println("Really big problem with character typed.");
+			if (bDEBUG) System.out.println("Missing keymap entry for macro \"" + macro + "\".");
 			return;
 		}
 
@@ -538,6 +540,9 @@ public class Twidor extends JFrame implements TwidorConstants {
 		}
 		else if (option.equals(TWIDDLER_SHOW_KEY_LABELS_TEXT)) {
 			pref.show_key_labels = status;
+		}
+		else if (option.equals(TWIDDLER_SHOW_LETTERS_ONLY_TEXT)) {
+			pref.show_letters_only = status;
 		}
 		else if (option.equals(TWIDDLER_FINGERBOARD_LEFT_TO_RIGHT_TEXT)) {
 			pref.fingerboard_left_to_right = status;

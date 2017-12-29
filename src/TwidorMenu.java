@@ -83,6 +83,7 @@ public class TwidorMenu extends JMenuBar implements TwidorConstants {
 		addJcheckItem( menu, Twiddler, TWIDDLER_SHOW_SCC_TEXT, pref.show_SCC);
 		addJcheckItem( menu, Twiddler, TWIDDLER_SHOW_MCC_TEXT, pref.show_MCC);
 		addJcheckItem( menu, Twiddler, TWIDDLER_SHOW_KEY_LABELS_TEXT, pref.show_key_labels);
+		addJcheckItem( menu, Twiddler, TWIDDLER_SHOW_LETTERS_ONLY_TEXT, pref.show_letters_only);
 		addJcheckItem( menu, Twiddler, TWIDDLER_FINGERBOARD_LEFT_TO_RIGHT_TEXT, pref.fingerboard_left_to_right);
 		addJcheckItem( menu, Twiddler, TWIDDLER_THUMB_LEFT_TO_RIGHT_TEXT, pref.thumb_left_to_right);
 

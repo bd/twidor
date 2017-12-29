@@ -63,23 +63,24 @@ public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
 	 * @param boolean the orientation
 	 * @param KeyMap the KeyMap to write on it
 	 */
-	public FingerPanel (KeyMap keys, boolean left_to_right, boolean visibleKeys, boolean showSCC, boolean show_MCC ) {
+	public FingerPanel (KeyMap keys, TwidorPreference pref ) {
+
 		if (bDEBUG) System.out.println("FingerPanel: creating panel");
 		initButtons();
 		setBackground(twiddlerBackground);
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
-		ComponentOrientation keyOrient = left_to_right ? ComponentOrientation.LEFT_TO_RIGHT :  ComponentOrientation.RIGHT_TO_LEFT;
+		ComponentOrientation keyOrient = pref.fingerboard_left_to_right ? ComponentOrientation.LEFT_TO_RIGHT :  ComponentOrientation.RIGHT_TO_LEFT;
 
 		{
 			JPanel panel = new JPanel();
 			panel.setComponentOrientation( keyOrient );
-			panel.setLayout(new GridLayout(0, (showSCC && visibleKeys) ? 12 : 3, 1, 4));
+			panel.setLayout(new GridLayout(0, (pref.show_SCC && pref.show_key_labels) ? 12 : 3, 1, 4));
 			panel.setBackground(twiddlerBackground);
 
 			for (int finger = 0; finger < 4; finger++) { // four rows, one per finger
 				for (int fingerCol = 0; fingerCol < 3; fingerCol++) {			 // three button columns, and three chord columns
-					if ( visibleKeys && showSCC ) {
+					if ( pref.show_key_labels && pref.show_SCC ) {
 						// chord map
 						Vector <JPanel> subPanels = new Vector <JPanel> ();
 						boolean has_chords = false;
@@ -105,13 +106,14 @@ public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
 									int buttons = KeyElement.buttonMask(finger, fingerCol);
 									buttons |= KeyElement.buttonMask(chordFinger, chordCol);
 									KeyElement keyElement = keys.getKeyByButtons(buttons);
-									if (keyElement == null) {
+									if ( (keyElement == null) ||
+										 ( ! pref.show_key_labels ) ||
+										 ( pref.show_letters_only && ! isAlpha( keyElement.getLabel()) ) ||
+										 ((! pref.show_MCC) && ( (keyElement.getLabel().length() > 1) )) )
+										{
 										add_key( subPanel, twiddlerBackground, FONT_KEYPAD, "", emptyBorder);
-									}
-									else if ( (! show_MCC) &&
-											  ( (keyElement.getLabel().length() > 1) ) ) { 
-										add_key( subPanel, twiddlerBackground, FONT_KEYPAD, "", emptyBorder);
-									} else {
+										}
+									else {
 										has_chords = true;
 										add_key( subPanel, null, null, keyElement.getLabel(), border );
 									}
@@ -146,10 +148,14 @@ public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
 						subPanel.setBorder(border);
 						subPanel.add(new JLabel()); // empty top row (label is in middle)
 						KeyElement keyElement = keys.getKeyByButtons(buttons);
-						if ( visibleKeys && keyElement != null) {
+						if ( ( keyElement != null ) ||
+							 ( ! pref.show_key_labels ) ||
+							 ( pref.show_letters_only && ! isAlpha( keyElement.getLabel()) ) )
+							{
+								add_key( subPanel, buttonBackground, null, " ", emptyBorder);
+							}
+						else {
 							add_key( subPanel, TEXT_DEFAULT, null, keyElement.getLabel(), emptyBorder);
-						} else {
-							add_key( subPanel, buttonBackground, null, " ", emptyBorder);
 						}
 						/* We want to keep the "Buttons" around to 'highlight' */
 						getButtons().add(subPanel);
@@ -162,6 +168,15 @@ public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
 		if (bDEBUG) System.out.println("FingerPanel: panel created");
 	}
 
+	public static boolean isAlpha( String str )
+	{
+		for (int i = 0; i < str.length(); i++){
+			if( ! Character.isLetter(str.charAt(i))) {
+				return false;
+			}
+		}
+		return true;
+	}
 	/**
 	 * add a label to a key in the keyboard display
          * string must be three chara for top middle and bottom of label.
