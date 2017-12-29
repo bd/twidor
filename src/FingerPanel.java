@@ -108,8 +108,8 @@ public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
 									KeyElement keyElement = keys.getKeyByButtons(buttons);
 									if ( (keyElement == null) ||
 										 ( ! pref.show_key_labels ) ||
-										 ( pref.show_letters_only && ! isAlpha( keyElement.getLabel()) ) ||
-										 ((! pref.show_MCC) && ( (keyElement.getLabel().length() > 1) )) )
+										 ( pref.show_letters_only && ! keyElement.is_only_letters() ) ||
+										 ((! pref.show_MCC) && keyElement.is_MCC() ))
 										{
 										add_key( subPanel, twiddlerBackground, FONT_KEYPAD, "", emptyBorder);
 										}
@@ -148,9 +148,10 @@ public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
 						subPanel.setBorder(border);
 						subPanel.add(new JLabel()); // empty top row (label is in middle)
 						KeyElement keyElement = keys.getKeyByButtons(buttons);
-						if ( ( keyElement != null ) ||
+						if ( ( keyElement == null ) ||
 							 ( ! pref.show_key_labels ) ||
-							 ( pref.show_letters_only && ! isAlpha( keyElement.getLabel()) ) )
+							 ( pref.show_letters_only && ! keyElement.is_only_letters() ) ||
+							 ((! pref.show_MCC) && keyElement.is_MCC() ))
 							{
 								add_key( subPanel, buttonBackground, null, " ", emptyBorder);
 							}
@@ -168,15 +169,6 @@ public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
 		if (bDEBUG) System.out.println("FingerPanel: panel created");
 	}
 
-	public static boolean isAlpha( String str )
-	{
-		for (int i = 0; i < str.length(); i++){
-			if( ! Character.isLetter(str.charAt(i))) {
-				return false;
-			}
-		}
-		return true;
-	}
 	/**
 	 * add a label to a key in the keyboard display
          * string must be three chara for top middle and bottom of label.

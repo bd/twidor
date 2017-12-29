@@ -497,7 +497,7 @@ public class Twidor extends JFrame implements TwidorConstants {
 		/* Register the keypress */
 		getStatsPanel().charTyped(typed, time);
 		getTypingPanel().charTyped(typed);
-
+ 
 		/* Determine if we need to change sentences */
 		if (getTypingPanel().sentenceComplete()) {
 			if (getLesson().isComplete()) {

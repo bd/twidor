@@ -314,6 +314,42 @@ public class KeyElement extends java.lang.Object implements TwidorConstants {
 		return match( k, m, 0 );
 	}
 
+	public static boolean is_key_label( String str ) {
+		for( String label : labelByKeycode.values() ) {
+			if( label.equals( str )) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public boolean is_only_letters()
+	{
+		if (macro == null)
+			return false;
+
+		if ( labelByMacro.containsKey( macro ))
+			return true; 		// exception for NL, DEL, TAB BS
+
+		for (int i = 0; i < macro.length(); i++){
+			if( ! Character.isLetter(macro.charAt(i))) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	public boolean is_MCC()
+	{
+		if( macro == null ) {
+			return false;
+		}
+		if( macro.length() > 1 ) {
+			return true;
+		}
+		return false;
+	}	
+
 	/**
 	 * Function for returning this KeyElement in an easy-to-debug format
 	 * @return String the text version of this KeyElement
@@ -330,12 +366,12 @@ public class KeyElement extends java.lang.Object implements TwidorConstants {
 				ret += getKeycode();
 			}
 		}
-		if (getMacro() != null) {
+		if (macro != null) {
 			ret += " macro: ";
 			if ( labelByMacro.containsKey( macro )) {
 				ret += labelByMacro.get( macro );
 			} else {
-				ret += getMacro();
+				ret += macro;
 			}
 		}
 		return ret;
