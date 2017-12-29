@@ -41,15 +41,15 @@ Twidor will optionally show a map of the two-button chords, when the menu item <
 
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_SCC_full.png" width="30%" align="right"> When this menu option is selected, the keyboard layout expands to show two-button chords as shown on the right. 
 
-This way of depicting 2-button chords follows a popular convention. Each small grid in this layout shows a set of 2-button chords that share a common "anchor" key.  The "anchor" button appears in the top row denoted by a bullet (•).  The "anchor" is pressed in combination with one of the buttons below.  Each button below shows the letter sent by the two-button chord.
+This way of depicting 2-key chords follows a popular convention. In each smaller grid, The top row shows a bullet (•) key which is the "anchor".  The 2-key chords are composed of the the anchor key in the top row plus one of the keys below.  The key label below shows the letter that the chord sends.  
 
 Let's consider typing the letter "m".
 
-First we locate "m" in they layout.  We find it in a small grid beside the large "SP" box.  This indicates that "SP" (space) is the  anchor for the two-button chord that sends "m".  This small grid shows the positions of the two buttons of the chord.
+First we locate "m" in they layout.  We find it in a small grid beside the large "SP" box.  
 
-<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_chord_map.png" width="25%" align="right">  The anchor button is always appears as a bullet (•) in the top row of the small grid.  Here, the anchor is on the index finger, left column.
+The first button of the cord is the anchor, labeled with the bullet (•) in the top row.  This "anchor" key is shared by all of the 2-key chords in the grid. Here, the anchor is on the index finger, left column.
 
-The small box labeled "m" shows the location of the second button of the chord, relative to the small grid: ring finger, middle column.  On the twiddler, this physical button is labeled "g".
+<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_chord_map.png" width="25%" align="right">  The small box labeled "m" shows the location of the second button of the chord, relative to the small grid: ring finger, middle column.  On the twiddler, this physical button is labeled "g".
 
 Here are some of the two-button chords on the left column of buttons:
 * <kbd>DEL + SP</kbd>, index and middle fingers, sends "o".
