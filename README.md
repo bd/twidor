@@ -45,7 +45,7 @@ This way of depicting 2-key chords follows a popular convention. In each smaller
 
 Let's consider typing the letter "m".
 
-First we locate "m" in they layout.  We find it in a small grid beside the large "SP" box.  This indicates that "SP" is the anchor.
+First we locate "m" in they layout.  IT is found in a small grid beside the large "SP" box.  This indicates that "SP" is the anchor.
 
 The first button of the cord is the anchor, labeled with the bullet (•) in the top row.  This "anchor" key is shared by all of the 2-key chords in the grid. Here, the anchor is on the index finger, left column.
 
