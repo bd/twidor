@@ -17,11 +17,11 @@ See [How to Install](#how-to-install) for links to downloads for Windows, Linux 
 
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_single.png"
 width="30%" align="right"> 
-When you start Twidor, it will show a visual keyboard layout beside the first typing lesson. Labels in the layout show the characters sent by each button on the Twiddler.
+When you start Twidor, it will show a visual keyboard layout beside the first typing lesson. Labels in the layout show the characters sent by each key on the Twiddler.
 
-Four thumb buttons are on top. Below, rows from top to bottom correspond to index, middle, ring and pinky fingers. Columns with green, blue and red borders match colors on the Twiddler's physical buttons.  
+Four thumb keys are on top. Below, rows from top to bottom correspond to index, middle, ring and pinky fingers. Columns with green, blue and red borders match colors on the Twiddler's physical keys.  
 
-Red highlights identify the next letter of the lesson, "e", and the button that send the letter "e".
+Red highlights identify the next letter of the lesson, "e", and the key that send the letter "e".
 
 Text entered by the user is shown below. Incorrect letters appear darker.
 
@@ -31,15 +31,15 @@ Hit <kbd>ENTER</kbd> at the end of a line to go to the next sentence. The words 
 
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_SCC.png"
 width="30%" align="right">
-A "chord" is two or more buttons pressed at the same time, like playing a "chord" on a piano.
+A "chord" is two or more keys pressed at the same time, like playing a "chord" on a piano.
 
-In the lesson shown on the right, the letter "m" is formed by the "SP" (space) and "g" buttons.
+In the lesson shown on the right, the letter "m" is formed by the "SP" (space) and "g" keys.
 
-Twidor will optionally show a map of the two-button chords, when the menu item <kbd>View | Show chords</kbd> is selected.
+Twidor will optionally show a map of the two-key chords, when the menu item <kbd>View | Show chords</kbd> is selected.
 
 ## View | Show chords
 
-<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_SCC_full.png" width="30%" align="right"> When this menu option is selected, the keyboard layout expands to show two-button chords as shown on the right. 
+<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_SCC_full.png" width="30%" align="right"> When this menu option is selected, the keyboard layout expands to show two-key chords as shown on the right. 
 
 This way of depicting 2-key chords follows a popular convention. In each smaller grid, the top row shows a bullet (•) key which is the "anchor".  The 2-key chords are composed of the the anchor key in the top row plus one of the keys below.  The key label below shows the letter that the chord sends.  
 
@@ -47,11 +47,11 @@ Let's consider typing the letter "m".
 
 First we locate "m" in they layout.  "m" is found in a small grid beside the large "SP" box.  This indicates that "SP" is the anchor.
 
-The first button of the cord is the anchor, labeled with the bullet (•) in the top row.  This "anchor" key is shared by all of the 2-key chords in the grid. Here, the anchor is on the index finger, left column.
+The first key of the cord is the anchor, labeled with the bullet (•) in the top row.  This "anchor" key is shared by all of the 2-key chords in the grid. Here, the anchor is on the index finger, left column.
 
-<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_chord_map.png" width="25%" align="right">  The small box labeled "m" shows the location of the second button of the chord, relative to the small grid: ring finger, middle column.  On the twiddler, this physical button is labeled "g".
+<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_chord_map.png" width="25%" align="right">  The small box labeled "m" shows the location of the second key of the chord, relative to the small grid: ring finger, middle column.  On the twiddler, this physical key is labeled "g".
 
-Here are some of the two-button chords on the left column of buttons:
+Here are some of the two-key chords on the left column of keys:
 * <kbd>DEL + SP</kbd>, index and middle fingers, sends "o".
 * <kbd>BS  + SP</kbd>, index and ring fingers, sends "p".
 * <kbd>NL  + SP</kbd>, index and pinky fingers, sends "q".
@@ -66,9 +66,9 @@ When <kbd>View | Show multiple character chords</kbd> is selected, Twidor highli
 
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_MCC.png" width="30%" align="right"> For example, given the text "ed", shown on the right, Twidor will highlight the chord that sends "ed", rather than just "e".  Note that this is different from the layout shown above in "Getting Started", where the option was not enabled and only "e" is highlighted.
 
-If you wish to learn all available chords, select this option.  Twidor will show red highlighted buttons for the longest matching chord.  For example, given the text, "the", Twidor will highlight the chord that sends "the", rather than "th" or "t".
+If you wish to learn all available chords, select this option.  Twidor will show red highlighted keys for the longest matching chord.  For example, given the text, "the", Twidor will highlight the chord that sends "the", rather than "th" or "t".
 
-When you enable both "show chords" and "show multiple character chords", it further expands the keyboard layout to include labels for multiple character 2-button chords.
+When you enable both "show chords" and "show multiple character chords", it further expands the keyboard layout to include labels for multiple character 2-key chords.
 
 Note that this option affects only the red highlighted "hints".  Regardless of this setting, the Twiddler can send multiple character chords, and Twidor will accept MCCs as input.
 
@@ -132,7 +132,7 @@ welcome in the [github issue tracker](https://github.com/rich-murphey/twidor/iss
 
 * Key-Map labels are shortened to the first three letters, which is currently sufficient for all of the popular key-maps.
 * The visual key-map does not show the mouse buttons.
-* Lessons 1-7 are tailored to the Default key-map. Specifically, lesson one uses only single button keys of the Default key-map.  Other key-maps will require chords in lesson one.
+* Lessons 1-7 are tailored to the Default key-map. Specifically, lesson one uses only single-key chords of the Default key-map.  Other key-maps will require chords in lesson one.
 * Twidor silently ignores input characters that are not in the current keymap.
 
 ## How to Build
