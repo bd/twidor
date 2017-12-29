@@ -115,14 +115,14 @@ On windows, download and run the Twidor-setup.exe installer.
 
 On Debian or Ubuntu, download the twidor-x.x.deb and install it.  For example:
 
-    wget https://github.com/rich-murphey/twidor/releases/download/v2.5/twidor-2.5.deb
-    dpkg -i twidor-2.5.deb
+    wget https://github.com/rich-murphey/twidor/releases/download/v2.6/twidor-2.6.deb
+    dpkg -i twidor-2.6.deb
     twidor
 
 On other Linux, OSX, and Unix variants, install openjdk-8-jre, download Twidor.jar
 and invoke it, using, for example:
 
-     wget https://github.com/rich-murphey/twidor/releases/download/v2.5/Twidor.jar
+     wget https://github.com/rich-murphey/twidor/releases/download/v2.6/Twidor.jar
      java -jar Twidor.jar
 
 Feedback and reports of issues are
@@ -133,6 +133,7 @@ welcome in the [github issue tracker](https://github.com/rich-murphey/twidor/iss
 * Key-Map labels are shortened to the first three letters, which is currently sufficient for all of the popular key-maps.
 * The visual key-map does not show the mouse buttons.
 * Lessons 1-7 are tailored to the Default key-map. Specifically, lesson one uses only single button keys of the Default key-map.  Other key-maps will require chords in lesson one.
+* Twidor silently ignores input characters that are not in the current keymap.
 
 ## How to Build
 
