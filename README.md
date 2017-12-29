@@ -41,7 +41,7 @@ Twidor will optionally show a map of the two-button chords, when the menu item <
 
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_SCC_full.png" width="30%" align="right"> When this menu option is selected, the keyboard layout expands to show two-button chords as shown on the right. 
 
-This way of depicting 2-key chords follows a popular convention. In each smaller grid, The top row shows a bullet (•) key which is the "anchor".  The 2-key chords are composed of the the anchor key in the top row plus one of the keys below.  The key label below shows the letter that the chord sends.  
+This way of depicting 2-key chords follows a popular convention. In each smaller grid, the top row shows a bullet (•) key which is the "anchor".  The 2-key chords are composed of the the anchor key in the top row plus one of the keys below.  The key label below shows the letter that the chord sends.  
 
 Let's consider typing the letter "m".
 
