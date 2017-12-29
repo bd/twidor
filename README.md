@@ -45,9 +45,9 @@ This way of depicting 2-key chords follows a popular convention. In each smaller
 
 Let's consider typing the letter "m".
 
-First we locate "m" in they layout.  "m" is found in a small grid beside the large "SP" box.  This indicates that "SP" is the anchor.
+First we locate "m" in they layout.  "m" is found in a small grid on the top left.  This grid is inlarged in the figure below.
 
-The first key of the cord is the anchor, labeled with the bullet (•) in the top row.  This "anchor" key is shared by all of the 2-key chords in the grid. Here, the anchor is on the index finger, left column.
+The first key of the cord is the anchor, labeled with the bullet (•) in the top row.  This "anchor" key is shared by all of the 2-key chords in the grid. Here, the anchor is on the index finger, left column.  On the twiddler, this physical key is labeled "SP".
 
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_chord_map.png" width="25%" align="right">  The small box labeled "m" shows the location of the second key of the chord, relative to the small grid: ring finger, middle column.  On the twiddler, this physical key is labeled "g".
 
