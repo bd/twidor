@@ -133,7 +133,7 @@ public interface TwidorConstants {
 	public static final String TWIDDLER_SHOW_KEYBOARD_TEXT = "Show key map";
 	public static final String TWIDDLER_SHOW_SCC_TEXT = "Show chord map";
 	public static final String TWIDDLER_SHOW_MCC_TEXT = "Show multiple character chords";
-	public static final String TWIDDLER_SHOW_LETTERS_ONLY_TEXT = "Show letters only";
+	public static final String TWIDDLER_SHOW_LETTERS_ONLY_TEXT = "Show alphabet only";
 
 	public static final String TWIDDLER_SHOW_KEY_LABELS_TEXT = "Show labels on keys";
 	public static final String TWIDDLER_SHOW_THUMB_BOARD_TEXT = "Show thumb buttons";
