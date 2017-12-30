@@ -216,9 +216,8 @@ the source code available on github.
 
 [Rich Murphey](https://github.com/rich-murphey) modified Twidor
 to load [Twiddler v3 keyboard layouts](https://twiddler.tekgear.com/tuner/edit.xhtml),
-released a simplified windows installer, added build files and
-documentation, rewrote keypad display, rewrote layout to support
-macros and alternate key-maps, and added options such as thumb pad
-orientation and thumb pad labels visibility.
+released debian and windows installers, added build files and
+documentation, rewrote portions of the GUI including layout, 1- and 2-key chord display, 
+support for macros, alternate key-maps, loading user keymaps, lessons, and various GUI options.
 
 Lessons 8 and 9 were written by Simon Baldwin as part of [GNU Typist](https://www.gnu.org/software/gtypist/index.html), and are redistributed as permitted by the GPL.  
