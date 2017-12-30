@@ -214,10 +214,7 @@ is the original author of Twidor.
 [Evan Dower](https://github.com/evantd) made
 the source code available on github.
 
-[Rich Murphey](https://github.com/rich-murphey) modified Twidor
-to load [Twiddler v3 keyboard layouts](https://twiddler.tekgear.com/tuner/edit.xhtml),
-released debian and windows installers, added build files and
-documentation, rewrote portions of the GUI including layout, 1- and 2-key chord display, 
-support for macros, alternate key-maps, loading user keymaps, lessons, and various GUI options.
+[Rich Murphey](https://github.com/rich-murphey) wrote furhter enhancemnts including GUI layout, 1- and 2-key chord display, 
+support for macros, alternate key-maps, additional lessons, and various GUI options. He released debian and windows installers, added build files and this documentation.
 
 Lessons 8 and 9 were written by Simon Baldwin as part of [GNU Typist](https://www.gnu.org/software/gtypist/index.html), and are redistributed as permitted by the GPL.  
