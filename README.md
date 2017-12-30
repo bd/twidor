@@ -217,4 +217,4 @@ the source code available on github.
 [Rich Murphey](https://github.com/rich-murphey) wrote furhter enhancemnts including GUI layout, 1- and 2-key chord display, 
 support for macros, alternate key-maps, additional lessons, and various GUI options. He released debian and windows installers, added build files and this documentation.
 
-Lessons 8 and 9 were written by Simon Baldwin as part of [GNU Typist](https://www.gnu.org/software/gtypist/index.html), and are redistributed as permitted by the GPL.  
+Simon Baldwin wrote lessons 8 and 9 as part of [GNU Typist](https://www.gnu.org/software/gtypist/index.html), which are redistributed as permitted by the GPL.  
