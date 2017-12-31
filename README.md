@@ -45,7 +45,7 @@ This way of depicting 2-key chords follows a popular convention. In each smaller
 
 Let's consider typing the letter "m".
 
-First we locate "m" in they layout.  "m" is found in a small grid on the top left.  This grid is inlarged in the figure below.
+First we locate "m" in they layout.  "m" is found in a small grid on the top left.  This grid is enlarged in the figure below.
 
 The first key of the cord is the anchor, labeled with the bullet (•) in the top row.  This "anchor" key is shared by all of the 2-key chords in the grid. Here, the anchor is on the index finger, left column.  On the twiddler, this physical key is labeled "SP".
 
@@ -74,13 +74,13 @@ Note that this option affects only the red highlighted "hints".  Regardless of t
 
 ## Keymaps | Backspice, TabSpace, Typemax
 
-By default, Twidor loads the the default keymap that comes factory installed on a new Twiddler.   The <kbd>Keymaps</kbd> menu selects alternate key-map layouts.
+By default, Twidor loads the the default keymap that comes factory installed on a new Twiddler.   The <kbd>Keymaps</kbd> menu selects alternate keymap layouts.
 
 There are a number of keymaps that have become popular over the years since the Twiddler was first introduced.  A few of these are bundled with Twidor. Users may select the Backspice, Default, TabSpace, or Typemax layouts under <kbd>Keymaps</kbd>.
 
 ## File | Load Keymap
 
-Arbitrary keymap files can be loaded by the user. To load a custom key-map, export it from the 
+Arbitrary keymap files can be loaded by the user. To load a custom keymap, export it from the 
 the [Twiddler Tuner](https://twiddler.tekgear.com/tuner/edit.xhtml) and load it as follows:
 * open https://twiddler.tekgear.com/tuner/edit.xhtml,
 * import a keymap.cfg if not already present there.
@@ -98,11 +98,11 @@ Lessons 8 and 9, borrowed from GNU Typist, provide longer texts with capitalizat
 ## Overview of Menus
 
 Menu options include:
-* <kbd>File | Load Keymap</kbd> imports a CSV key-map exported by the [Twiddler Tuner](https://twiddler.tekgear.com/tuner/).
+* <kbd>File | Load Keymap</kbd> imports a CSV keymap exported by the [Twiddler Tuner](https://twiddler.tekgear.com/tuner/).
 * <kbd>File | Load Lesson</kbd> imports training text from a file.
 * <kbd>View | Show..</kbd> toggles show/hide key labels, chords and MCCs, and flips right-to-left orientation.
 * <kbd>Lessons | Lesson 1..9</kbd> loads the selected lesson text.
-* <kbd>Keymaps | Backspace, etc.</kbd> loads certain popular key-maps: Backspice, Default_V5, TabSpace, or Typemax.
+* <kbd>Keymaps | Backspace, etc.</kbd> loads certain popular keymaps: Backspice, Default_V5, TabSpace, or Typemax.
 * <kbd>Help | About</kbd> shows the Twidor version number.
 
 ## How to Install
@@ -130,9 +130,9 @@ welcome in the [github issue tracker](https://github.com/rich-murphey/twidor/iss
 
 ## Limitations
 
-* Key-Map labels are shortened to the first three letters, which is currently sufficient for all of the popular key-maps.
-* The visual key-map does not show the mouse buttons.
-* Lessons 1-7 are tailored to the Default key-map. Specifically, lesson one uses only single-key chords of the Default key-map.  Other key-maps will require chords in lesson one.
+* Keymap labels are shortened to the first three letters, which is currently sufficient for all of the popular keymaps.
+* The visual keymap does not show the mouse buttons.
+* Lessons 1-7 are tailored to the Default keymap. Specifically, lesson one uses only single-key chords of the Default keymap.  Other keymaps will require chords in lesson one.
 * Twidor silently ignores input characters that are not in the current keymap.
 
 ## How to Build
@@ -157,7 +157,7 @@ written in Java.
 
 [twiddler_layout](https://github.com/ben-horner/twiddler_layout) is a command line tool for editing Twiddler keyboard layouts, also written in Java.
 
-The [Backspice key-map](https://github.com/AlexBravo/Twiddler) by [Alex Bravo](https://plus.google.com/+AlexBravo).
+The [Backspice keymap](https://github.com/AlexBravo/Twiddler) by [Alex Bravo](https://plus.google.com/+AlexBravo).
 
 The [TabSpace 3 layout](http://ivanwfr.github.io/Twiddler3-Layout/) discusses a range of layout issues, including n-gram occurrence frequency and ranking the dexterity required for various multi-key chords.
 
@@ -214,7 +214,7 @@ is the original author of Twidor.
 [Evan Dower](https://github.com/evantd) made
 the source code available on github.
 
-[Rich Murphey](https://github.com/rich-murphey) wrote furhter enhancemnts including GUI layout, 1- and 2-key chord display, 
-support for macros, alternate key-maps, additional lessons, and various GUI options. He released debian and windows installers, added build files and this documentation.
+[Rich Murphey](https://github.com/rich-murphey) wrote further enhancements including GUI layout, 1- and 2-key chord display, 
+support for macros, alternate keymaps, additional lessons, and various GUI options. He released Debian and windows installers, added build files and this documentation.
 
-Simon Baldwin wrote lessons 8 and 9 as part of [GNU Typist](https://www.gnu.org/software/gtypist/index.html), which are redistributed as permitted by the GPL.  
+Simon Baldwin wrote lessons 8 and 9 as part of [GNU Typist](https://www.gnu.org/software/gtypist/index.html), which are redistributed as permitted by the GPL.
