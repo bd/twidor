@@ -6,7 +6,7 @@ Twidor teaches typing on the
 [Twiddler](https://twiddler.tekgear.com), a chording keyboard shown on the right.
 A chord is formed by pressing several keys together, like playing a "chord" on a piano. 
 
-Regarding learning rates on Twiddler, \[Lyons04a\]
+Regarding learning rates on Twiddler, \[[Lyons04a](#References)\]
 states, "faster typists would reach 60 WPM, the rate of our expert, after 10,000 phrases
 (approximately 80 sessions or 27 hours) while the slower typists could achieve 45 WPM."
 Twidor is the tool they developed to teach typing and measure performance.
@@ -60,7 +60,10 @@ Here are some of the two-key chords on the left column of keys:
 
 A chord on the Twiddler can send several letters such as "ed" or "ing".  These are called multiple character chords (MCCs).
 
-By default, Twidor does not highlight multiple character chords, but rather only highlights single letters as shown above in "Getting Started".  This default is intended to help users who are just beginning. Lyons [2,3] has shown that learning is faster when the incremental amount of learning material smaller.
+By default, Twidor does not highlight multiple character chords,
+but rather only highlights single letters as shown above in
+"Getting Started".  This default is intended to help users who
+are just beginning. \[[Lyons04a, 04b](#References)\] has shown that learning is faster when the incremental amount of learning material smaller.
 
 When <kbd>View | Show multiple character chords</kbd> is selected, Twidor highlights MCCs.  
 
