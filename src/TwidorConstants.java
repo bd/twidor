@@ -130,8 +130,8 @@ public interface TwidorConstants {
 	public static final String QUIT_TEXT = "Quit";
 
 	/* Twiddler */
-	public static final String TWIDDLER_SHOW_KEYBOARD_TEXT = "Show key map";
-	public static final String TWIDDLER_SHOW_SCC_TEXT = "Show chord map";
+	public static final String TWIDDLER_SHOW_KEYBOARD_TEXT = "Show keyboard";
+	public static final String TWIDDLER_SHOW_SCC_TEXT = "Show chords";
 	public static final String TWIDDLER_SHOW_MCC_TEXT = "Show multiple character chords";
 	public static final String TWIDDLER_SHOW_LETTERS_ONLY_TEXT = "Show alphabet only";
 
