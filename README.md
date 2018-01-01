@@ -176,7 +176,7 @@ The [Twiddler 3 Google Group](https://groups.google.com/forum/?hl=en#!forum/twid
 
 ## References
 
-\[Clawson005\]
+\[Clawson05\]
 The Impacts of Limited Visual Feedback on Mobile Text Entry for
 the Twiddler and Mini-QWERTY Keyboards. James Clawson, Kent
 Lyons, Thad Starner, and Edward Clarkson. Proceedings of
