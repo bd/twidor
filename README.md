@@ -6,11 +6,6 @@ Twidor teaches typing on the
 [Twiddler](https://twiddler.tekgear.com), a chording keyboard shown on the right.
 A chord is formed by pressing several keys together, like playing a "chord" on a piano. 
 
-Regarding learning rates on Twiddler, \[[Lyons04a](#references)\]
-states, "faster typists would reach 60 WPM, the rate of our expert, after 10,000 phrases
-(approximately 80 sessions or 27 hours) while the slower typists could achieve 45 WPM."
-Twidor is the tool they developed to teach typing and measure performance.
-
 ## Getting Started
 
 See [How to Install](#how-to-install) for links to downloads for Windows, Linux and OSX and others.
