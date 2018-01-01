@@ -6,7 +6,7 @@ Twidor teaches typing on the
 [Twiddler](https://twiddler.tekgear.com), a chording keyboard shown on the right.
 A chord is formed by pressing several keys together, like playing a "chord" on a piano. 
 
-Regarding learning rates on Twiddler, [[Lyons 2004a](#lyons-2004a)] 
+Regarding learning rates on Twiddler, \[Lyons04a\]
 states, "faster typists would reach 60 WPM, the rate of our expert, after 10,000 phrases
 (approximately 80 sessions or 27 hours) while the slower typists could achieve 45 WPM."
 Twidor is the tool they developed to teach typing and measure performance.
@@ -173,14 +173,14 @@ The [Twiddler 3 Google Group](https://groups.google.com/forum/?hl=en#!forum/twid
 
 ## References
 
-##### Clawson 2005
+\[Clawson005\]
 The Impacts of Limited Visual Feedback on Mobile Text Entry for
 the Twiddler and Mini-QWERTY Keyboards. James Clawson, Kent
 Lyons, Thad Starner, and Edward Clarkson. Proceedings of
 ISWC 2005. Osaka, Japan. November 2005.
 [full text.](https://pdfs.semanticscholar.org/70c3/995e2487921b8a08bec07977f8cc161655fa.pdf)
 
-##### Lyons 2004a
+\[Lyons04a\]
 Expert Chording Text Entry on the Twiddler One-Handed Keyboard,
 Kent Lyons, Thad Starner, Daniel Plaisted,
 James Fusia, Amanda Lyons, Aaron Drew, E. W. Looney, 
@@ -188,7 +188,7 @@ James Fusia, Amanda Lyons, Aaron Drew, E. W. Looney,
 Arlington, Virginia, Oct. 31, 2004 to Nov. 3, 2004.
 [full text.](https://www.researchgate.net/publication/27521297_Twiddler_Typing_One-Handed_Chording_Text_Entry_for_Mobile_Phones)
 
-##### Lyons 2004b
+\[Lyons04b\]
 Twiddler Typing: One-Handed Chording Text Entry for Mobile
 Phones, Kent Lyons, Thad Starner, Daniel Plaisted, James Fusia,
 Amanda Lyons, Aaron Drew, E. W. Looney. Proceeding CHI '04
@@ -196,14 +196,14 @@ Proceedings of the SIGCHI Conference on Human Factors in
 Computing Systems, Pages
 671-678. [full text](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.4.3606&rep=rep1&type=pdf)
 
-##### Lyons 2006a
+\[Lyons06a\]
 Experimental Evaluations of the Twiddler One-Handed Chording
 Mobile Keyboard. Kent Lyons, Brian Gane, and Thad
 Starner. Journal Human-Computer Interaction archive Volume 21
 Issue 4, November 2006 Pages
 343-392. [full text](https://pdfs.semanticscholar.org/70c3/995e2487921b8a08bec07977f8cc161655fa.pdf)
 
-##### Lyons 2006b
+\[Lyons06b\]
 Mobile Text Entry, Kent Loyons, [Lecture slides.](https://wiki.cc.gatech.edu/ccg/_media/classes/7470/7470-f06/mobile-text-entry.pdf?id=classes%3A7470%3A7470-f06%3Apowerpoint_slides&cache=cache)
 
 ## Acknowledgements
