@@ -24,8 +24,7 @@ Hit <kbd>ENTER</kbd> at the end of a line to go to the next sentence. The words 
 
 # Using Twidor
 
-The following sections discuss various menu options and user interface features of Twidor.
-<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_SCC.png" width="30%" align="right">
+<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_SCC.png" width="30%" align="right"> The following sections discuss various menu options and user interface features of Twidor.
 As discussed in the section, [Training Methodology](#training-methodology), the keyboard layout and highlighting work best as temporariy aids for users to initially learn the leyboard layout.  As soon as is practical, user's may benfit from transitioning to typing without these aids. 
 
 ### Highlighting Chords
