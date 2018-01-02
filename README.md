@@ -94,7 +94,7 @@ the [Twiddler Tuner](https://twiddler.tekgear.com/tuner/edit.xhtml) and load it 
 
 Menu items <kbd>Lessons | Lession 1..7</kbd> teach subsets of the alphabet, varying from smaller to larger subsets, starting with the letters a–h in lesson 1. The set of phrases varies, by random selection, each time a lessons loaded.
 
-Lessons 8 and 9, borrowed from GNU Typist, provide longer texts with capitalization, numbers and special characters.
+Lessons 8 and 9, borrowed from GNU Typist, provide random exerpts from longer texts with capitalization, numbers and special characters.
 
 ### Overview of Menus
 
