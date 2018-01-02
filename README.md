@@ -37,18 +37,21 @@ Twidor will optionally show a map of the two-key chords, when the menu item <kbd
 As discussed below, studies suggest:
 * Performance can improve moderately when physical keyboard is not visible to the user. 
 * Focus on the time time between keystrokes to absorb key assignment information. 
-* Learning may imrpove when Twidor does not highlight keys for the user.
+* Learning may improve when Twidor does not highlight keys for the user.
 
 Regarding the amount of time required for training, [Lyons 2004a] states, "faster typists would reach 60 WPM, the rate of our expert, after 10,000 phrases (approximately 80 sessions or 27 hours) while the slower typists could achieve 45 WPM." Twidor is the tool they developed to teach typing and measure performance.
 
-Twidor can show a keyboard layout and lightlight keyslabels for 1-key and 2-key chords, however, Reseach has shown that 
-The visual keyboard and highlighting the keys may help users initially, howoever disabling these features can enhance progress toward expert typing rates.  [Lyons 2004a] found that the "highlighting-off group’s effort to find and remember keys and key
-combinations improved their learning.  
+Twidor can show a keyboard layout and can highlight key
+labels. However, studies show that, while the visual keyboard
+and highlighting keys may help users initially, disabling these
+features can enhance progress toward expert typing rates.
+[Lyons 2004a] found that the "highlighting-off group’s effort to
+find and remember keys and key combinations improved their learning.  
 
 Lyons also states, "We examined how our participants learned to chord, showing most of the speed increase associated
-with learning occurs during the in-air time interval." In-air refers to the time between releasing one key and pressing the next.  This suggests that the user's efforts to absorb and recall key assignment information during the tranistion are a key to speed increases.
+with learning occurs during the in-air time interval." In-air refers to the time between releasing one key and pressing the next.  This suggests that the user's efforts to absorb and recall key assignment information during the transition are a key to speed increases.
 
-Lyons studied the effect of a user's inability to see the twiddler keyboard ("blind typing"), and found that it correllates with statistically significant improvement in typing rate or reduced error rate [Lyons04a, 369-370].  He suggestst that users can process the training information faster when not required to process the additional visual information of watching the physical keyboard. 
+Lyons studied the effect of a user's inability to see the Twiddler keyboard ("blind typing"), and found that it correlates with statistically significant improvement in typing rate or reduced error rate [Lyons04a, 369-370].  He suggests that users can process the training information faster when not required to process the additional visual information of watching the physical keyboard. 
 
 ## Using Twidor
 
@@ -64,9 +67,9 @@ Let's consider typing the letter "m".
 
 First we locate "m" in they layout.  "m" is found in a small grid on the top left.  This grid is enlarged in the figure below.
 
-The first key of the cord is the anchor, labeled with the bullet (•) in the top row.  This "anchor" key is shared by all of the 2-key chords in the grid. Here, the anchor is on the index finger, left column.  On the twiddler, this physical key is labeled "SP".
+The first key of the cord is the anchor, labeled with the bullet (•) in the top row.  This "anchor" key is shared by all of the 2-key chords in the grid. Here, the anchor is on the index finger, left column.  On the Twiddler, this physical key is labeled "SP".
 
-<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_chord_map.png" width="25%" align="right">  The small box labeled "m" shows the location of the second key of the chord, relative to the small grid: ring finger, middle column.  On the twiddler, this physical key is labeled "g".
+<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_chord_map.png" width="25%" align="right">  The small box labeled "m" shows the location of the second key of the chord, relative to the small grid: ring finger, middle column.  On the Twiddler, this physical key is labeled "g".
 
 Here are some of the two-key chords on the left column of keys:
 * <kbd>DEL + SP</kbd>, index and middle fingers, sends "o".
