@@ -27,8 +27,8 @@ Hit <kbd>ENTER</kbd> at the end of a line to go to the next sentence. The words 
 The following sections discuss various menu options and user interface features of Twidor.
 
 ### Highlighting Chords
-
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_SCC.png" width="30%" align="right">
+
 By default, Twidor will highlight chords.  A "chord" is two or more keys pressed at the same time, like playing a "chord" on a piano.
 
 In the lesson shown on the right, the letter "m" is formed by the "SP" (space) and "g" keys.
