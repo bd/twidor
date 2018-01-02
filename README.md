@@ -1,6 +1,6 @@
 [//]: # (Copyright C 2017  Carey Richard Murphey. This file is released under the terms of the GNU General Public License version 2.)
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/twiddler.jpg" width="15%" align="right"> 
-# Twidor - teaches typing on the Twiddler keyboard
+# Twidor - teaches typing on the Twiddler
 
 Twidor teaches typing on the
 [Twiddler](https://twiddler.tekgear.com), a chording keyboard shown on the right.
@@ -113,7 +113,7 @@ Menu options include:
 * Lessons 1-7 are tailored to the Default keymap. Specifically, lesson one uses only single-key chords of the Default keymap.  Other keymaps will require chords in lesson one.
 * Twidor silently ignores input characters that are not in the current keymap.
 
-## Training Methodology
+# Training Methodology
 
 As discussed below, studies suggest:
 * Performance can improve moderately when physical keyboard is not visible to the user. 
@@ -134,7 +134,7 @@ with learning occurs during the in-air time interval." In-air refers to the time
 
 Lyons studied the effect of a user's inability to see the Twiddler keyboard ("blind typing"), and found that it correlates with statistically significant improvement in typing rate or reduced error rate [Lyons04a, 369-370].  He suggests that users can process the training information faster when not required to process the additional visual information of watching the physical keyboard. 
 
-## How to Install
+# How to Install
 
 Download the releases from here:
 
@@ -158,7 +158,7 @@ Feedback and reports of issues are
 welcome in the [github issue tracker](https://github.com/rich-murphey/twidor/issues).
 
 
-## How to Build
+# How to Build
 
 To compile and build Twidor.jar and the Debian package (.deb), one may use:
 
@@ -169,7 +169,7 @@ To compile and build Twidor.jar and the Debian package (.deb), one may use:
 
 One option for debugging Twidor is use [Eclipse](http://www.eclipse.org/downloads/). In Eclipse, select <kbd>File | Open | New Project</kbd>, then select "Java Project from Existing Ant Buildfile", click <kbd>Next</kbd>, click <kbd>Browse</kbd>, select file twidor/build.xml, and click <kbd>Finish</kbd>. 
 
-## Other Relevant Projects
+# Other Relevant Projects
 
 The [original Twidor source code and documentation](http://wearables.cc.gatech.edu/projects/twidor/) at Georgia Tech.
 
@@ -194,7 +194,7 @@ mouse buttons as letter keys, and many other design issues.
 
 The [Twiddler 3 Google Group](https://groups.google.com/forum/?hl=en#!forum/twiddler-3) has links to various resources.
 
-## References
+# References
 
 \[Clawson05\]
 The Impacts of Limited Visual Feedback on Mobile Text Entry for
@@ -229,7 +229,7 @@ Issue 4, November 2006 Pages
 \[Lyons06b\]
 Mobile Text Entry, Kent Loyons, [Lecture slides.](https://wiki.cc.gatech.edu/ccg/_media/classes/7470/7470-f06/mobile-text-entry.pdf?id=classes%3A7470%3A7470-f06%3Apowerpoint_slides&cache=cache)
 
-## Acknowledgements
+# Acknowledgements
 
 [James Gibson Fusia](http://wearables.cc.gatech.edu/people/james/)
 is the original author of Twidor.
