@@ -160,9 +160,9 @@ with learning occurs during the in-air time interval." In-air refers to the time
 Lyons found that the "highlighting-off group’s effort to
 find and remember keys and key combinations improved their learning.
 Twidor can show a keyboard layout and can highlight key
-labels. However, studies show that, while the visual keyboard
-and highlighting keys may help users initially, disabling these
-features can enhance progress toward expert typing rates.
+labels. However, these studies show that, while the visual keyboard
+and highlighting keys may help users initially, disabling them 
+can accelerate progress toward expert typing rates.
 
 # Other Relevant Projects
 
