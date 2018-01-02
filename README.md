@@ -22,40 +22,18 @@ Text entered by the user is shown below. Incorrect letters appear darker.
 
 Hit <kbd>ENTER</kbd> at the end of a line to go to the next sentence. The words per minute (WPM) and average error rate (AER) are updated when <kbd>ENTER</kbd> is pressed.
 
-## Chords
+## Using Twidor
 
-<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_SCC.png"
-width="30%" align="right">
-A "chord" is two or more keys pressed at the same time, like playing a "chord" on a piano.
+The following sections discuss various menu options and user interface features of Twidor.
+
+### Highlighting Chords
+
+By default, Twidor will highlight chords.  A "chord" is two or more keys pressed at the same time, like playing a "chord" on a piano.
+<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_SCC.png" width="30%" align="right">
 
 In the lesson shown on the right, the letter "m" is formed by the "SP" (space) and "g" keys.
 
 Twidor will optionally show a map of the two-key chords, when the menu item <kbd>View | Show chords</kbd> is selected.
-
-## Training Methodology
-
-As discussed below, studies suggest:
-* Performance can improve moderately when physical keyboard is not visible to the user. 
-* Focus on the time time between keystrokes to absorb key assignment information. 
-* Learning may improve when Twidor does not highlight keys for the user.
-
-Regarding the amount of time required for training, [Lyons 2004a] states, "faster typists would reach 60 WPM, the rate of our expert, after 10,000 phrases (approximately 80 sessions or 27 hours) while the slower typists could achieve 45 WPM." Twidor is the tool they developed to teach typing and measure performance.
-
-Twidor can show a keyboard layout and can highlight key
-labels. However, studies show that, while the visual keyboard
-and highlighting keys may help users initially, disabling these
-features can enhance progress toward expert typing rates.
-[Lyons 2004a] found that the "highlighting-off group’s effort to
-find and remember keys and key combinations improved their learning.  
-
-Lyons also states, "We examined how our participants learned to chord, showing most of the speed increase associated
-with learning occurs during the in-air time interval." In-air refers to the time between releasing one key and pressing the next.  This suggests that the user's efforts to absorb and recall key assignment information during the transition are a key to speed increases.
-
-Lyons studied the effect of a user's inability to see the Twiddler keyboard ("blind typing"), and found that it correlates with statistically significant improvement in typing rate or reduced error rate [Lyons04a, 369-370].  He suggests that users can process the training information faster when not required to process the additional visual information of watching the physical keyboard. 
-
-## Using Twidor
-
-The following sections discuss various menu options and user interface features of Twidor
 
 ### View | Show chords
 
@@ -134,6 +112,27 @@ Menu options include:
 * The visual keymap does not show the mouse buttons.
 * Lessons 1-7 are tailored to the Default keymap. Specifically, lesson one uses only single-key chords of the Default keymap.  Other keymaps will require chords in lesson one.
 * Twidor silently ignores input characters that are not in the current keymap.
+
+## Training Methodology
+
+As discussed below, studies suggest:
+* Performance can improve moderately when physical keyboard is not visible to the user. 
+* Focus on the time time between keystrokes to absorb key assignment information. 
+* Learning may improve when Twidor does not highlight keys for the user.
+
+Regarding the amount of time required for training, [Lyons 2004a] states, "faster typists would reach 60 WPM, the rate of our expert, after 10,000 phrases (approximately 80 sessions or 27 hours) while the slower typists could achieve 45 WPM." Twidor is the tool they developed to teach typing and measure performance.
+
+Twidor can show a keyboard layout and can highlight key
+labels. However, studies show that, while the visual keyboard
+and highlighting keys may help users initially, disabling these
+features can enhance progress toward expert typing rates.
+[Lyons 2004a] found that the "highlighting-off group’s effort to
+find and remember keys and key combinations improved their learning.  
+
+Lyons also states, "We examined how our participants learned to chord, showing most of the speed increase associated
+with learning occurs during the in-air time interval." In-air refers to the time between releasing one key and pressing the next.  This suggests that the user's efforts to absorb and recall key assignment information during the transition are a key to speed increases.
+
+Lyons studied the effect of a user's inability to see the Twiddler keyboard ("blind typing"), and found that it correlates with statistically significant improvement in typing rate or reduced error rate [Lyons04a, 369-370].  He suggests that users can process the training information faster when not required to process the additional visual information of watching the physical keyboard. 
 
 ## How to Install
 
