@@ -1,6 +1,6 @@
 [//]: # (Copyright C 2017  Carey Richard Murphey. This file is released under the terms of the GNU General Public License version 2.)
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/twiddler.jpg" width="15%" align="right"> 
-## Twidor - teaches typing on the Twiddler keyboard
+# Twidor - teaches typing on the Twiddler keyboard
 
 Twidor teaches typing on the
 [Twiddler](https://twiddler.tekgear.com), a chording keyboard shown on the right.
@@ -22,14 +22,14 @@ Text entered by the user is shown below. Incorrect letters appear darker.
 
 Hit <kbd>ENTER</kbd> at the end of a line to go to the next sentence. The words per minute (WPM) and average error rate (AER) are updated when <kbd>ENTER</kbd> is pressed.
 
-## Using Twidor
+# Using Twidor
 
 The following sections discuss various menu options and user interface features of Twidor.
 
 ### Highlighting Chords
 
-By default, Twidor will highlight chords.  A "chord" is two or more keys pressed at the same time, like playing a "chord" on a piano.
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_SCC.png" width="30%" align="right">
+By default, Twidor will highlight chords.  A "chord" is two or more keys pressed at the same time, like playing a "chord" on a piano.
 
 In the lesson shown on the right, the letter "m" is formed by the "SP" (space) and "g" keys.
 
