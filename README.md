@@ -113,22 +113,6 @@ Menu options include:
 * Lessons 1-7 are tailored to the Default keymap. Specifically, lesson one uses only single-key chords of the Default keymap.  Other keymaps will require chords in lesson one.
 * Twidor silently ignores input characters that are not in the current keymap.
 
-# Discussion of Training Methodology
-
-Regarding the amount of time required for training, [Lyons 2004a] states, "faster typists would reach 60 WPM, the rate of our expert, after 10,000 phrases (approximately 80 sessions or 27 hours) while the slower typists could achieve 45 WPM." Twidor is the tool that they developed to collect data for their studies of learning and perferformance.
-
-Lyons studied the effect of a user's inability to see the Twiddler keyboard ("blind typing"), and found that it correlates with a statistically significant improvement in "typing rate or reduced error rate" [Lyons04a, 369-370].  He suggests that users can process the training information faster when not required to process the additional visual information of watching the physical keyboard. These results suggest that performance can improve moderately when physical keyboard is not visible to the user. 
-
-Lyons also states, "We examined how our participants learned to chord, showing most of the speed increase associated
-with learning occurs during the in-air time interval." In-air refers to the time between releasing one key and pressing the next.  This suggests that the user's efforts to absorb and recall key assignment information during the transition are a key to speed increases.
-
-[Lyons 2004a] found that the "highlighting-off group’s effort to
-find and remember keys and key combinations improved their learning.
-Twidor can show a keyboard layout and can highlight key
-labels. However, studies show that, while the visual keyboard
-and highlighting keys may help users initially, disabling these
-features can enhance progress toward expert typing rates.
-
 # How to Install
 
 Download the releases from here:
@@ -163,6 +147,22 @@ To compile and build Twidor.jar and the Debian package (.deb), one may use:
     make
 
 One option for debugging Twidor is use [Eclipse](http://www.eclipse.org/downloads/). In Eclipse, select <kbd>File | Open | New Project</kbd>, then select "Java Project from Existing Ant Buildfile", click <kbd>Next</kbd>, click <kbd>Browse</kbd>, select file twidor/build.xml, and click <kbd>Finish</kbd>. 
+
+# Discussion of Training Methodology
+
+Regarding the amount of time required for training, [Lyons 2004a] states, "faster typists would reach 60 WPM, the rate of our expert, after 10,000 phrases (approximately 80 sessions or 27 hours) while the slower typists could achieve 45 WPM." Twidor is the tool that they developed to collect data for their studies of learning and perferformance.
+
+Lyons studied the effect of a user's inability to see the Twiddler keyboard ("blind typing"), and found that it correlates with a statistically significant improvement in "typing rate or reduced error rate" [Lyons04a, 369-370].  He suggests that users can process the training information faster when not required to process the additional visual information of watching the physical keyboard. These results suggest that performance can improve moderately when physical keyboard is not visible to the user. 
+
+Lyons also states, "We examined how our participants learned to chord, showing most of the speed increase associated
+with learning occurs during the in-air time interval." In-air refers to the time between releasing one key and pressing the next.  This suggests that the user's efforts to absorb and recall key assignment information during the transition are a key to speed increases.
+
+[Lyons 2004a] found that the "highlighting-off group’s effort to
+find and remember keys and key combinations improved their learning.
+Twidor can show a keyboard layout and can highlight key
+labels. However, studies show that, while the visual keyboard
+and highlighting keys may help users initially, disabling these
+features can enhance progress toward expert typing rates.
 
 # Other Relevant Projects
 
