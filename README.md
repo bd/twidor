@@ -157,7 +157,7 @@ Lyons studied the effect of a user's inability to see the Twiddler keyboard ("bl
 Lyons also states, "We examined how our participants learned to chord, showing most of the speed increase associated
 with learning occurs during the in-air time interval." In-air refers to the time between releasing one key and pressing the next.  This suggests that the user's efforts to absorb and recall key assignment information during the transition are a key to speed increases.
 
-[Lyons 2004a] found that the "highlighting-off group’s effort to
+Lyons found that the "highlighting-off group’s effort to
 find and remember keys and key combinations improved their learning.
 Twidor can show a keyboard layout and can highlight key
 labels. However, studies show that, while the visual keyboard
