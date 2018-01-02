@@ -26,18 +26,18 @@ Hit <kbd>ENTER</kbd> at the end of a line to go to the next sentence. The words 
 
 The following sections discuss various menu options and user interface features of Twidor.
 
-### Highlighting Chords
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_SCC.png" width="30%" align="right">
+### Highlighting Chords
 
 By default, Twidor will highlight chords.  A "chord" is two or more keys pressed at the same time, like playing a "chord" on a piano.
 
 In the lesson shown on the right, the letter "m" is formed by the "SP" (space) and "g" keys.
 
-Twidor will optionally show a map of the two-key chords, when the menu item <kbd>View | Show chords</kbd> is selected.
 
 ### View | Show chords
 
-<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_SCC_full.png" width="30%" align="right"> When this menu option is selected, the keyboard layout expands to show two-key chords as shown on the right. 
+<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_SCC_full.png" width="30%" align="right"> Twidor will optionally show a map of the two-key chords, when the menu item <kbd>View | Show chords</kbd> is selected.
+This expands the keyboard layout to show two-key chords as shown on the right. 
 
 This way of depicting 2-key chords follows a popular convention. In each smaller grid, the top row shows a bullet (•) key which is the "anchor".  The 2-key chords are composed of the the anchor key in the top row plus one of the keys below.  The key label below shows the letter that the chord sends.  
 
