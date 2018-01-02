@@ -26,6 +26,7 @@ Hit <kbd>ENTER</kbd> at the end of a line to go to the next sentence. The words 
 
 The following sections discuss various menu options and user interface features of Twidor.
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_SCC.png" width="30%" align="right">
+As discussed in the section, [Training Methodology](#training-methodology), the keyboard layout and highlighting work best as temporariy aids for users to initially learn the leyboard layout.  As soon as is practical, user's may benfit from transitioning to typing without these aids. 
 
 ### Highlighting Chords
 
@@ -148,7 +149,7 @@ To compile and build Twidor.jar and the Debian package (.deb), one may use:
 
 One option for debugging Twidor is use [Eclipse](http://www.eclipse.org/downloads/). In Eclipse, select <kbd>File | Open | New Project</kbd>, then select "Java Project from Existing Ant Buildfile", click <kbd>Next</kbd>, click <kbd>Browse</kbd>, select file twidor/build.xml, and click <kbd>Finish</kbd>. 
 
-# Discussion of Training Methodology
+# Training Methodology
 
 Regarding the amount of time required for training, [Lyons 2004a] states, "faster typists would reach 60 WPM, the rate of our expert, after 10,000 phrases (approximately 80 sessions or 27 hours) while the slower typists could achieve 45 WPM." Twidor is the tool that they developed to collect data for their studies of learning and perferformance.
 
