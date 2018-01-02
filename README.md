@@ -75,7 +75,6 @@ Here are some of the two-key chords on the left column of keys:
 
 ### View | Show multiple character chords
 
-
 A chord on the Twiddler can send several letters such as "ed" or "ing".  These are called multiple character chords (MCCs).
 
 By default, Twidor does not highlight multiple character chords,
