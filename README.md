@@ -8,7 +8,7 @@ A chord is formed by pressing several keys together, like playing a "chord" on a
 
 ## Getting Started
 
-See [How to Install](#how-to-install) for links to downloads for Windows, Linux and OSX and others.
+See [How to Install](#how-to-install) for links to downloads for Windows, Linux and OSX and others. See [How to Build](#how-to-build) if you wish to modify or debug Twidor.
 
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_single.png"
 width="30%" align="right"> 
