@@ -25,7 +25,7 @@ Hit <kbd>ENTER</kbd> at the end of a line to go to the next sentence. The words 
 # Using Twidor
 
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_SCC.png" width="30%" align="right"> The following sections discuss various menu options and user interface features of Twidor.
-As discussed in the section, [Training Methodology](#training-methodology), the keyboard layout and highlighting work best as temporariy aids to help users initially learn the leyboard layout.  Studies show that, as soon as is practical, typing speed may progress faster without these aids. 
+As discussed in the section, [Training Methodology](#training-methodology), the keyboard layout and highlighting may work best as temporariy aids to help users initially learn the leyboard layout.  Studies suggest that, as soon as is practical, typing speed may progress faster without these aids. 
 
 ### Highlighting Chords
 
@@ -150,9 +150,9 @@ One option for debugging Twidor is to use [Eclipse](http://www.eclipse.org/downl
 
 # Training Methodology
 
-Regarding the amount of time required for training, [Lyons 2004a] states, "faster typists would reach 60 WPM, the rate of our expert, after 10,000 phrases (approximately 80 sessions or 27 hours) while the slower typists could achieve 45 WPM." Twidor is the tool that they developed to collect data for their studies of learning and perferformance.
+Regarding the amount of time required for training, [Lyons 2004a] states, "faster typists would reach 60 WPM, the rate of our expert, after 10,000 phrases (approximately 80 sessions or 27 hours) while the slower typists could achieve 45 WPM." Twidor is the tool that this group of researchers developed to collect data for their studies of learning and perferformance.
 
-Lyons studied the effect of a user's inability to see the Twiddler keyboard ("blind typing"), and found that it correlates with a statistically significant improvement in "typing rate or reduced error rate" [Lyons04a, 369-370].  He suggests that users can process the training information faster when not required to process the additional visual information of watching the physical keyboard. These results suggest that performance can improve moderately when physical keyboard is not visible to the user. 
+Lyons studied the effect of a user's inability to see the Twiddler keyboard ("blind typing"), and found that it correlates with a statistically significant improvement in "typing rate or reduced error rate" [Lyons04a, 369-370].  He suggests that users can process the training information faster when not required to process the additional visual information of watching the physical keyboard. These results suggest that performance improves moderately when the physical keyboard is not visible to the user. 
 
 Lyons also states, "We examined how our participants learned to chord, showing most of the speed increase associated
 with learning occurs during the in-air time interval." In-air refers to the time between releasing one key and pressing the next.  This suggests that the user's efforts to absorb and recall key assignment information during the transition are a key to speed increases.
