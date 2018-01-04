@@ -2,7 +2,7 @@
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/twiddler.jpg" width="15%" align="right"> 
 # Twidor - teaches typing on the Twiddler
 
-Twidor teaches typing on the
+Twidor is a desktop application that teaches typing on the
 [Twiddler](https://twiddler.tekgear.com), a chording keyboard shown on the right.
 A chord is formed by pressing several keys together, like playing a "chord" on a piano. 
 
