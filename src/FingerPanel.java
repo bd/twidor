@@ -74,6 +74,7 @@ public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
 
 		{
 			JPanel panel = new JPanel();
+			setMinimumSize(new Dimension(twiddlerX / 2, windowY / 8));
 			panel.setComponentOrientation( keyOrient );
 			panel.setLayout(new GridLayout(0, (pref.show_SCC && pref.show_key_labels) ? 12 : 3, 1, 4));
 			panel.setBackground(twiddlerBackground);
