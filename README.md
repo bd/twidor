@@ -1,14 +1,14 @@
 [//]: # (Copyright C 2017  Carey Richard Murphey. This file is released under the terms of the GNU General Public License version 2.)
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/twiddler.jpg" width="15%" align="right"> 
-## Twidor - teaches typing on the Twiddler keyboard
+# Twidor - teaches typing on the Twiddler
 
-Twidor teaches typing on the
+Twidor is a desktop application that teaches typing on the
 [Twiddler](https://twiddler.tekgear.com), a chording keyboard shown on the right.
 A chord is formed by pressing several keys together, like playing a "chord" on a piano. 
 
 ## Getting Started
 
-See [How to Install](#how-to-install) for links to downloads for Windows, Linux and OSX and others.
+See [How to Install](#how-to-install) for links to downloads for Windows, Linux and OSX and others. See [How to Build](#how-to-build) if you wish to modify or debug Twidor.
 
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_single.png"
 width="30%" align="right"> 
@@ -22,44 +22,22 @@ Text entered by the user is shown below. Incorrect letters appear darker.
 
 Hit <kbd>ENTER</kbd> at the end of a line to go to the next sentence. The words per minute (WPM) and average error rate (AER) are updated when <kbd>ENTER</kbd> is pressed.
 
-## Chords
+# Using Twidor
 
-<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_SCC.png"
-width="30%" align="right">
-A "chord" is two or more keys pressed at the same time, like playing a "chord" on a piano.
+<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_SCC.png" width="30%" align="right"> The following sections discuss various menu options and user interface features of Twidor.
+As discussed in the section, [Training Methodology](#training-methodology), the keyboard layout and highlighting may work best as temporariy aids to help users initially learn the leyboard layout.  Studies suggest that, as soon as is practical, typing speed may progress faster without these aids. 
+
+### Highlighting Chords
+
+By default, Twidor will highlight chords.  A "chord" is two or more keys pressed at the same time, like playing a "chord" on a piano.
 
 In the lesson shown on the right, the letter "m" is formed by the "SP" (space) and "g" keys.
 
-Twidor will optionally show a map of the two-key chords, when the menu item <kbd>View | Show chords</kbd> is selected.
-
-## Training Methodology
-
-As discussed below, studies suggest:
-* Performance can improve moderately when physical keyboard is not visible to the user. 
-* Focus on the time time between keystrokes to absorb key assignment information. 
-* Learning may improve when Twidor does not highlight keys for the user.
-
-Regarding the amount of time required for training, [Lyons 2004a] states, "faster typists would reach 60 WPM, the rate of our expert, after 10,000 phrases (approximately 80 sessions or 27 hours) while the slower typists could achieve 45 WPM." Twidor is the tool they developed to teach typing and measure performance.
-
-Twidor can show a keyboard layout and can highlight key
-labels. However, studies show that, while the visual keyboard
-and highlighting keys may help users initially, disabling these
-features can enhance progress toward expert typing rates.
-[Lyons 2004a] found that the "highlighting-off group’s effort to
-find and remember keys and key combinations improved their learning.  
-
-Lyons also states, "We examined how our participants learned to chord, showing most of the speed increase associated
-with learning occurs during the in-air time interval." In-air refers to the time between releasing one key and pressing the next.  This suggests that the user's efforts to absorb and recall key assignment information during the transition are a key to speed increases.
-
-Lyons studied the effect of a user's inability to see the Twiddler keyboard ("blind typing"), and found that it correlates with statistically significant improvement in typing rate or reduced error rate [Lyons04a, 369-370].  He suggests that users can process the training information faster when not required to process the additional visual information of watching the physical keyboard. 
-
-## Using Twidor
-
-The following sections discuss various menu options and user interface features of Twidor
 
 ### View | Show chords
 
-<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_SCC_full.png" width="30%" align="right"> When this menu option is selected, the keyboard layout expands to show two-key chords as shown on the right. 
+<img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_SCC_full.png" width="30%" align="right"> Twidor will optionally show a map of the two-key chords, when the menu item <kbd>View | Show chords</kbd> is selected.
+This expands the keyboard layout to display additional sections of keys as shown on the right. 
 
 This way of depicting 2-key chords follows a popular convention. In each smaller grid, the top row shows a bullet (•) key which is the "anchor".  The 2-key chords are composed of the the anchor key in the top row plus one of the keys below.  The key label below shows the letter that the chord sends.  
 
@@ -114,9 +92,9 @@ the [Twiddler Tuner](https://twiddler.tekgear.com/tuner/edit.xhtml) and load it 
 
 ### Lessons | Lesson 1..9
 
-Under <kbd>Lessons</kbd>, 1-7 teach subsets of the alphabet, varying from smaller to larger subsets, starting with the letters a–h in lesson 1. The set of phrases varies, by random selection, each time a lessons loaded.
+Menu items <kbd>Lessons | Lession 1..7</kbd> teach subsets of the alphabet, varying from smaller to larger subsets, starting with the letters a–h in lesson 1. The set of phrases varies, by random selection, each time a lessons loaded.
 
-Lessons 8 and 9, borrowed from GNU Typist, provide longer texts with capitalization, numbers and special characters.
+Lessons 8 and 9, borrowed from GNU Typist, provide random exerpts from longer texts with capitalization, numbers and special characters.
 
 ### Overview of Menus
 
@@ -135,7 +113,7 @@ Menu options include:
 * Lessons 1-7 are tailored to the Default keymap. Specifically, lesson one uses only single-key chords of the Default keymap.  Other keymaps will require chords in lesson one.
 * Twidor silently ignores input characters that are not in the current keymap.
 
-## How to Install
+# How to Install
 
 Download the releases from here:
 
@@ -159,7 +137,7 @@ Feedback and reports of issues are
 welcome in the [github issue tracker](https://github.com/rich-murphey/twidor/issues).
 
 
-## How to Build
+# How to Build
 
 To compile and build Twidor.jar and the Debian package (.deb), one may use:
 
@@ -168,9 +146,25 @@ To compile and build Twidor.jar and the Debian package (.deb), one may use:
     cd twidor
     make
 
-One option for debugging Twidor is use [Eclipse](http://www.eclipse.org/downloads/). In Eclipse, select <kbd>File | Open | New Project</kbd>, then select "Java Project from Existing Ant Buildfile", click <kbd>Next</kbd>, click <kbd>Browse</kbd>, select file twidor/build.xml, and click <kbd>Finish</kbd>. 
+One option for debugging Twidor is to use [Eclipse](http://www.eclipse.org/downloads/). In Eclipse, select <kbd>File | Open | New Project</kbd>, then select "Java Project from Existing Ant Buildfile", click <kbd>Next</kbd>, click <kbd>Browse</kbd>, select file twidor/build.xml, and click <kbd>Finish</kbd>. 
 
-## Other Relevant Projects
+# Training Methodology
+
+Regarding the amount of time required for training, [Lyons 2004a] states, "faster typists would reach 60 WPM, the rate of our expert, after 10,000 phrases (approximately 80 sessions or 27 hours) while the slower typists could achieve 45 WPM." Twidor is the tool that this group of researchers developed to collect data for their studies of learning and perferformance.
+
+Lyons studied the effect of a user's inability to see the Twiddler keyboard ("blind typing"), and found that it correlates with a statistically significant improvement in "typing rate or reduced error rate" [Lyons04a, 369-370].  He suggests that users can process the training information faster when not required to process the additional visual information of watching the physical keyboard. These results suggest that performance improves moderately when the physical keyboard is not visible to the user. 
+
+Lyons also states, "We examined how our participants learned to chord, showing most of the speed increase associated
+with learning occurs during the in-air time interval." In-air refers to the time between releasing one key and pressing the next.  This suggests that the user's efforts to absorb and recall key assignment information during the transition are a key to speed increases.
+
+Lyons found that the "highlighting-off group’s effort to
+find and remember keys and key combinations improved their learning.
+Twidor can show a keyboard layout and can highlight key
+labels. However, these studies show that, while the visual keyboard
+and highlighting keys may help users initially, disabling them 
+can accelerate progress toward expert typing rates.
+
+# Other Relevant Projects
 
 The [original Twidor source code and documentation](http://wearables.cc.gatech.edu/projects/twidor/) at Georgia Tech.
 
@@ -195,7 +189,7 @@ mouse buttons as letter keys, and many other design issues.
 
 The [Twiddler 3 Google Group](https://groups.google.com/forum/?hl=en#!forum/twiddler-3) has links to various resources.
 
-## References
+# References
 
 \[Clawson05\]
 The Impacts of Limited Visual Feedback on Mobile Text Entry for
@@ -230,7 +224,7 @@ Issue 4, November 2006 Pages
 \[Lyons06b\]
 Mobile Text Entry, Kent Loyons, [Lecture slides.](https://wiki.cc.gatech.edu/ccg/_media/classes/7470/7470-f06/mobile-text-entry.pdf?id=classes%3A7470%3A7470-f06%3Apowerpoint_slides&cache=cache)
 
-## Acknowledgements
+# Acknowledgements
 
 [James Gibson Fusia](http://wearables.cc.gatech.edu/people/james/)
 is the original author of Twidor.
