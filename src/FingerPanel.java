@@ -74,7 +74,6 @@ public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
 
 		{
 			JPanel panel = new JPanel();
-			setMinimumSize(new Dimension(twiddlerX / 2, windowY / 8));
 			panel.setComponentOrientation( keyOrient );
 			panel.setLayout(new GridLayout(0, (pref.show_SCC && pref.show_key_labels) ? 12 : 3, 1, 4));
 			panel.setBackground(twiddlerBackground);
@@ -135,6 +134,7 @@ public class FingerPanel extends TwiddlerSubPanel implements  TwidorConstants {
 					{			// single button keymap
 						int buttons = KeyElement.buttonMask(finger, fingerCol);
 						JPanel subPanel = new JPanel();
+						subPanel.setPreferredSize(new Dimension(buttonX, buttonY));
 						subPanel.setBackground(buttonBackground);
 						subPanel.setLayout(new GridLayout(3, 1));
 						// Color color = keyRed;

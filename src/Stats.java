@@ -131,7 +131,7 @@ public class Stats implements TwidorConstants {
 			typed = typed.substring(0, typed.length() - 1);
 		} else {
 			transcribedInput.add(new StatsElement(pressed, time));
-			typed += (char)pressed.getKeycode();
+			typed += pressed.getMacro();
 		}
 	}
 

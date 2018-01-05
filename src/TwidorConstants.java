@@ -60,8 +60,8 @@ public interface TwidorConstants {
 	/**
 	 * button attributes
 	 */
-	public static final int buttonX = (twiddlerX - 30) / 6;
-	public static final int buttonY = windowY * 2 / 15; // 2/3 of 1/4 of 4/5 of windowY
+	public static final int buttonX = twiddlerX / 6;
+	public static final int buttonY = windowY * 2 / 15; // 2/15 = 2/3 of 1/4 of 4/5
 	public static final Color buttonBackground		= Color.getHSBColor(0.f, 0.f, 0.95f);
 	public static final Color buttonHighlight		= Color.getHSBColor(0.f, .2f, 1.f);
 	public static final Color mccHighlight  		= Color.getHSBColor(0.f, .2f, 1.f);
