@@ -8,13 +8,13 @@ A chord is formed by pressing several keys together, like playing a "chord" on a
 
 ## Getting Started
 
-See [How to Install](#how-to-install) for links to downloads for Windows, Linux and OSX and others. See [How to Build](#how-to-build) if you wish to modify or debug Twidor.
+See [How to Install](#how-to-install) for links to downloads for Windows, Linux and OSX and others. See [How to Build](#how-to-build) if you wish to modify Twidor's code.
 
 <img src="https://raw.githubusercontent.com/rich-murphey/twidor/master/web.assets/Twidor_single.png"
 width="30%" align="right"> 
 When you start Twidor, it will show a visual keyboard layout beside the first typing lesson. Labels in the layout show the characters sent by each key on the Twiddler.
 
-Four thumb keys are on top. Below, rows from top to bottom correspond to index, middle, ring and pinky fingers. Columns with green, blue and red borders match colors on the Twiddler's physical keys.  
+Four thumb keys are on top. Finger keys are below, in four rows from top to bottom, corresponding to index, middle, ring and pinky fingers. Columns with green, blue and red borders match colors on the Twiddler's physical keys.  
 
 Red highlights identify the next letter of the lesson, "e", and the key that send the letter "e".
 
