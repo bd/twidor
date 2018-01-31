@@ -189,6 +189,8 @@ mouse buttons as letter keys, and many other design issues.
 
 The [Twiddler 3 Google Group](https://groups.google.com/forum/?hl=en#!forum/twiddler-3) has links to various resources.
 
+[Grit on Putty](https://gritonputty.kdf.sh/) is a "an engineer's typing tutor" that runs in the browser and can be served as strictly static files, with [code in github](https://github.com/edanaher/gritonputty).
+
 # References
 
 \[Clawson05\]
