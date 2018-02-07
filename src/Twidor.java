@@ -62,7 +62,6 @@ public class Twidor extends JFrame implements TwidorConstants {
 	private JFileChooser fc;
 	private java.io.PrintWriter keylog;
 	private TwidorPreference pref;
-
 	static public Properties prop;
 
 	/**

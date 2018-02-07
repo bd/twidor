@@ -154,7 +154,7 @@ public class Stats implements TwidorConstants {
 		int[] stats = StatsCalc.statsALL(getSentence(), getTyped(), getKeyPresses());
 
 		err = (double)(stats[INF] + stats[IF]) / (double)(stats[C] + stats[INF] + stats[IF]);
-		err = Math.floor(err * 1000) / 10;
+		err = 100 - Math.floor(err * 1000) / 10;
 		return err;
 	}
 
