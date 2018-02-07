@@ -77,7 +77,14 @@ Note that this option affects only the red highlighted "hints".  Regardless of t
 
 By default, Twidor loads the the default keymap that comes factory installed on a new Twiddler.   The <kbd>Keymaps</kbd> menu selects alternate keymap layouts.
 
-There are a number of keymaps that have become popular over the years since the Twiddler was first introduced.  A few of these are bundled with Twidor. Users may select the Backspice, Default, TabSpace, or Typemax layouts under <kbd>Keymaps</kbd>.
+There are a number of keymaps that have become popular over the years since the Twiddler was first introduced.  A few of these are bundled with Twidor. Users may select the 
+[Backspice](https://github.com/AlexBravo/Twiddler), 
+[Default](https://github.com/Griatch/twiddler-configs#default), 
+[TabSpace](http://ivanwfr.github.io/Twiddler3-Layout/), or 
+[Typemax](https://github.com/lancegatlin/typemax)
+layouts under <kbd>Keymaps</kbd>.
+
+https://github.com/Griatch/twiddler-configs has visual keymaps and cheat sheets for popular Twiddler keyboard layouts.
 
 ### File | Load Keymap
 
@@ -103,7 +110,7 @@ Menu options include:
 * <kbd>File | Load Lesson</kbd> imports training text from a file.
 * <kbd>View | Show..</kbd> toggles show/hide key labels, chords and MCCs, and flips right-to-left orientation.
 * <kbd>Lessons | Lesson 1..9</kbd> loads the selected lesson text.
-* <kbd>Keymaps | Backspace, etc.</kbd> loads certain popular keymaps: Backspice, Default_V5, TabSpace, or Typemax.
+* <kbd>Keymaps | Backspace, etc.</kbd> loads certain popular keymaps: [Backspice](https://github.com/AlexBravo/Twiddler), [Default](https://github.com/Griatch/twiddler-configs#default), [TabSpace](http://ivanwfr.github.io/Twiddler3-Layout/), or [Typemax](https://github.com/lancegatlin/typemax).
 * <kbd>Help | About</kbd> shows the Twidor version number.
 
 ### Limitations
@@ -188,6 +195,8 @@ separation of vowels and consonants on separate fingers, using
 mouse buttons as letter keys, and many other design issues.
 
 The [Twiddler 3 Google Group](https://groups.google.com/forum/?hl=en#!forum/twiddler-3) has links to various resources.
+
+[Grit on Putty](https://gritonputty.kdf.sh/) is a "an engineer's typing tutor" that runs in the browser and can be served as strictly static files, with [code in github](https://github.com/edanaher/gritonputty).
 
 # References
 
